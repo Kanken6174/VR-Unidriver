@@ -4,7 +4,7 @@ Cette interface permet de créer et mettre à jour des composants d'entrée (bou
 
 Chaque composant disponible (genre bouton, gachette, D-pad...) est décrit par un chemin, ex:
 
-`/input/trigger/value` pour une gachette (valeu analogique/continue)
+`/input/trigger/value` pour une gachette (valeur analogique/continue)
 `/input/a/click` pour le bouton a d'une manette type Xbox par exemple (valeur binaire)
 
 le composant [ou chemin] `/input/system/click` est spécial et correspond à la touche pour faire apparaître l'overlay steam en VR
