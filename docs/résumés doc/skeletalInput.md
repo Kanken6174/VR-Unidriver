@@ -6,3 +6,4 @@ Cette interface fonctionne en faisant passer un flux d'informations type squelet
 on utilise la fonction:
 
 `EVRInputError vr::IVRDriverInput::CreateSkeletonComponent( PropertyContainerHandle_t ulContainer, const char *pchName, const char *pchSkeletonPath, const char *pchBasePosePath, EVRSkeletalTrackingLevel eSkeletalTrackingLevel, const VRBoneTransform_t *pGripLimitTransforms, uint32_t unGripLimitTransformCount, VRInputComponentHandle_t *pHandle )`
+

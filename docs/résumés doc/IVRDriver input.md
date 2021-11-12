@@ -16,6 +16,7 @@ Ce fichier au format .json [format assez courant dans OVR], donne le type d'appa
 COMMANDES DE L'INTERFACE:
   FONCTIONS DE CREATION DE COMPOSANT:
 //___________________________________________________________________________________________________________________________________________________
+
 `EVRInputError CreateBooleanComponent( PropertyContainerHandle_t ulContainer, const char *pchName, VRInputComponentHandle_t *pHandle )`
 
 ^ `EVRInputError` est le type de retour, ne l'oubliez pas!!! cela veut dire que si la fonction s'execute correctement, la fonction retournera VRInputError_None et
@@ -26,6 +27,7 @@ arguments : `ulContainer` -> la propriété handle de l'appareil parent de ce co
             `pchName` -> le NOM du composant, il doit commencer par la forme "/input//", des exemples de noms ont déjà été donnés plus haut
             `pHandle` -> POINTEUR vers la valeur "handle" à mettre à jour avec le handle du nouveau composant [~flou~]
 //___________________________________________________________________________________________________________________________________________________
+
 `EVRInputError CreateScalarComponent( PropertyContainerHandle_t ulContainer, const char *pchName, VRInputComponentHandle_t *pHandle, EVRScalarType eType, EVRScalarUnits eUnits )`
 
 Même chose que CreateBooleanComponent mais scalaire, autrement dit continu ou analogique, exemple: une GACHETTE.
@@ -36,10 +38,12 @@ arguments: `ulContainer` -> déjà vu
            `eType` -> peut avoir deux valeurs: VRScalarType_Absolute [gachettes, joysticks] ou VRScalarType_Relative [souris, trackballs], cela dépend du comportement de la valeur
            `eUnits` -> donne l'unité utilisé: VRScalarUnits_NormalizedOneSided pour 0:1 [potentiomètre] OU VRScalarUnits_NormalizedTwoSided pour -1:1 [gyroscope?? enfin peut aller dans le negatif quoi]
 //___________________________________________________________________________________________________________________________________________________
+
 `EVRInputError CreateHapticComponent( PropertyContainerHandle_t ulContainer, const char *pchName, VRInputComponentHandle_t *pHandle )`
 
 ça va être tout ce qui est retour haptique (vibrations surtout), rien de nouveau au niveau des arguments. On peut pas update celui-là, c'est automatique
 //___________________________________________________________________________________________________________________________________________________
+
 `EVRInputError UpdateBooleanComponent( VRInputComponentHandle_t ulComponent, bool bNewValue, double fTimeOffset )`
 
 ça, c'est pour mettre à jour la valeur de notre composant booléen (bouton)!
@@ -49,6 +53,7 @@ arguments : `ulComponent` -> le handle du composant à mettre à jour
             `bNewValue` -> la nouvelle valeur booleenne du composant (0||1);
             `fTimeOffset` -> le temps depuis que l'utilisateur a pressé ce bouton, négatifs = passé positifs = futur, sert à jauger la latence du hardware [ignorable??]
 //___________________________________________________________________________________________________________________________________________________
+
 `EVRInputError UpdateScalarComponent( VRInputComponentHandle_t ulComponent, float fNewValue, double fTimeOffset )`
 
 idem pour les scalaires/continus/analogiques, pas besoin de détails ici...
