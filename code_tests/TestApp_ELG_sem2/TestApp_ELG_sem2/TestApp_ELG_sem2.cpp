@@ -10,7 +10,8 @@ int main()
     NumberComparator nc = NumberComparator();
     std::cout << "X vaut " << x << std::endl;
     std::printf("X vaut %d\n", x);
-    std::cout << nc.getMax(5, 6) << " est le resultat donne par " << __func__;
+    std::cout << nc.getMax(5, 6) << " est le resultat donne par " << __func__ << std::endl;
+    std::cout << "est-ce que ca fonctionne meme archive ? " << std::endl;
     return 0;
 }
 
