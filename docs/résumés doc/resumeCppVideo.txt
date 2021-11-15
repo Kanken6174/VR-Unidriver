@@ -1,0 +1,127 @@
+C++ is awesome
+Close to the c language
+texte editor -> (an) Id for microsoft => Code::Blocks
+codeblocks-16.01mingw-settup.exe
+cpp reference -> for a doc
+
+Comment:
+// comment for a row
+/* comment for each row between this */
+Basis:
+; -> at the end of each ligne
+
+For the main:
+return 0; at the end
+
+Systeme fonction:
+cout << " " << variable << "" << -> for printing out texte
+endl or "\n" -> for the end of a ligne
+
+variable:
+String
+int
+float < double
+bool
+variable nom[i] = {} -> create an array
+
+For a String:
+.length() -> give the length of a string
+[i] -> print the char at the pos i (0 to n-1)
+' ' -> for a single caractere
+.find(" ", 0) -> find if the caractere is in the String
+.substr(i, x) -> find a caractere in the String and the x after
+
+For int or float:
+the operator are the same whith the c
+the code part is alike to the c
+#include <cmath> -> for the library to use math function
+pow(i, x) -> i raise power x
+sqrt(i) -> for the "racine carré"
+ceil(i) -> raise the number to the next full number
+floor(i) -> lower to the previous full number
+fmax(i, x) -> find the max
+fmin(i, x) -W find the min
+
+interaction with the user:
+cin >> variable; -> take a variable that the user put in
+if a String is use:
+getline(cin, variable);
+
+return statement -> like in C 
+int function(x){return x;}
+
+if statement -> like in c
+if / else /else if
+
+switch statment:
+switch(values){
+	case 1stValue :
+		operator;
+	 	break;
+	default:
+}
+
+while loop -> like in C
+while(cond){}
+do{}while(); -> the code is before the condition
+
+for loop -> like in C
+for( int i = x; i < y; i++){}
+
+Exponent function:
+for( int i = 0; i < powNum; i++){
+	result = result * baseNum;
+}
+
+2d array:
+int variable[3][2]={{x,i}{x,i}{x,i}} -> matrice 3 array who have 2 value in it
+
+nested loops -> for loop in a for loop
+
+Pointers:
+&variable -> the name of the adresse of the variable
+int *pointer = &variable; -> creation of a pointer
+*pointer -> get the value at the adresse of the pointer
+
+Classes & Objects:
+class Name{
+	public:/private:
+		variable declaration;
+};
+
+creation in the main:
+Name Namevariable; -> declaration if a variable
+Name.variable; -> specifique variable in the class
+
+Constuctor functions:
+In the class
+Name(string Var){
+	variable = Var
+}
+
+creation in the main:
+Name(Var);
+
+Object functions:
+In the class:
+bool nameFunction(){code}
+
+In the main:
+Name.nameFunction() -> to call the function in the classe
+
+Getters:
+setName(string Var){
+	variable = Var;
+}
+In the constructor -> setName(Var)
+
+Setters:
+string getName(){
+	return variable;
+}
+
+Inheritance:
+class Name : public parent {};
+
+In the main:
+Name.parentFunction() -> it work
