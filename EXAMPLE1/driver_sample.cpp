@@ -1,14 +1,14 @@
 //============ Copyright (c) Valve Corporation, All rights reserved. ============
 
-#include <openvr_driver.h>
-#include "driverlog.h"
+#include <openvr_driver.h>	//on inclut 
+#include "driverlog.h"	//dédié aux logs
 
-#include <vector>
-#include <thread>
-#include <chrono>
+#include <vector>	//prend la lib des vecteurs
+#include <thread>	//multithreading
+#include <chrono>	//heure/temps
 
 #if defined( _WINDOWS )
-#include <windows.h>
+#include <windows.h>	//si sur windows, on inclut le header du système windows
 #endif
 
 using namespace vr;
@@ -17,14 +17,14 @@ using namespace vr;
 #if defined(_WIN32)
 #define HMD_DLL_EXPORT extern "C" __declspec( dllexport )
 #define HMD_DLL_IMPORT extern "C" __declspec( dllimport )
-#elif defined(__GNUC__) || defined(COMPILER_GCC) || defined(__APPLE__)
+#elif defined(__GNUC__) || defined(COMPILER_GCC) || defined(__APPLE__)	//cas apple / linux
 #define HMD_DLL_EXPORT extern "C" __attribute__((visibility("default")))
 #define HMD_DLL_IMPORT extern "C" 
 #else
 #error "Unsupported Platform."
 #endif
 
-inline HmdQuaternion_t HmdQuaternion_Init( double w, double x, double y, double z )
+inline HmdQuaternion_t HmdQuaternion_Init( double w, double x, double y, double z )	//on définit une fonction pour init un quaternion (pq? jsp lol)
 {
 	HmdQuaternion_t quat;
 	quat.w = w;
@@ -34,7 +34,7 @@ inline HmdQuaternion_t HmdQuaternion_Init( double w, double x, double y, double 
 	return quat;
 }
 
-inline void HmdMatrix_SetIdentity( HmdMatrix34_t *pMatrix )
+inline void HmdMatrix_SetIdentity( HmdMatrix34_t *pMatrix ) // décrit une matrice de vecteurs de 3x4 et la place au centre??
 {
 	pMatrix->m[0][0] = 1.f;
 	pMatrix->m[0][1] = 0.f;
@@ -369,8 +369,8 @@ private:
 	vr::TrackedDeviceIndex_t m_unObjectId;
 	vr::PropertyContainerHandle_t m_ulPropertyContainer;
 
-	std::string m_sSerialNumber;
-	std::string m_sModelNumber;
+	std::string m_sSerialNumber = "CTRL_2087";
+	std::string m_sModelNumber = "MyExample";
 
 	int32_t m_nWindowX;
 	int32_t m_nWindowY;
