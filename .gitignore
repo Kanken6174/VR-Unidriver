@@ -1,2 +1,9 @@
+################################################################################
+# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
+################################################################################
+
+/EXAMPLE1/.vs/driver_sample/v16/Browse.VC.opendb
+/EXAMPLE1/.vs/driver_sample/v16/Browse.VC.db-wal
+/EXAMPLE1/.vs/driver_sample/v16/Browse.VC.db-shm
 .DS_Store
 .vs
