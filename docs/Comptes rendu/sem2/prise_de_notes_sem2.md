@@ -60,6 +60,8 @@ Suivre le fichier [ci-joint](https://gitlab.iut-clermont.uca.fr/elleguehen/domoc
  
  - composant pour compiler du c++ en dll
 
+ - Module linguistique Anglais pour visual studio 2019 (requis pour VCPKG)
+
   
 
 ## Machines C21
