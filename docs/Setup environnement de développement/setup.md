@@ -47,7 +47,19 @@
 - dans les barres en haut mettre:
 	- Configuration -> Une config de votre choix (pas toutes ce serait chiant d'ouvrir steamVR à chaque build...)
 	- Platform -> All Platforms (windows mais bon, c'est pas important)
-- Dans la cellule Command Line mettre:
+- Dans la cellule Command Line mettre: [PAR DEFAUT]
+```
+"C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe" removedriver "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)"
+rmdir "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)" /S /Q
+
+echo D | xcopy  /E /H /C /I /F "C:\Users\ASUS\source\repos\domocap\EXAMPLE1\sample\" "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\sample\"
+md "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)\bin\win64"
+copy /Y "$(TargetDir)$(TargetName).dll"  "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)\bin\win64\driver_$(TargetName).dll"
+"C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe" adddriver "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)"
+"C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrmonitor.exe"
+"C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrserver.exe"
+```
+[MA MACHINE]
 ```
 F:\steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe removedriver "F:\steam\steamapps\common\SteamVR\drivers\$(TargetName)"
 rmdir "F:\steam\steamapps\common\SteamVR\drivers\$(TargetName)" /S /Q
@@ -58,6 +70,7 @@ F:\steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe adddriver "F:\steam\st
 F:\steam\steamapps\common\SteamVR\bin\win64\vrmonitor.exe
 F:\steam\steamapps\common\SteamVR\bin\win64\vrserver.exe
 ```
+
 [C'est juste une commande batch windows]
 Cette commande nettoie les vieux fichiers et copie les nouveaux. Tous les chemins sont absolus car il n'est pas simple d'utiliser
 des variables d'utilisateur dans les events post-build de VS (il faudrait les définir dans le fichier XML de le solution...)
