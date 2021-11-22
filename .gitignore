@@ -7,3 +7,7 @@
 /EXAMPLE1/.vs/driver_sample/v16/Browse.VC.db-shm
 .DS_Store
 .vs
+source/elliott_drafts/ElliottCppTests/.vs
+source/elliott_drafts/ElliottCppTests/Debug
+source/elliott_drafts/ElliottCppTests/ElliottCppTests/Debug
+source/elliott_drafts/ElliottCppTests/ElliottCppTests/ElliottCppTests.vcxproj.user
