@@ -62,6 +62,8 @@ Suivre le fichier [ci-joint](https://gitlab.iut-clermont.uca.fr/elleguehen/domoc
 
  - Module linguistique Anglais pour visual studio 2019 (requis pour VCPKG)
 
+ - package C++ pour visual studio
+
   
 
 ## Machines C21
