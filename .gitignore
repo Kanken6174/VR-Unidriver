@@ -2,9 +2,15 @@
 # Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
 
-/EXAMPLE1/.vs/driver_sample/v16/Browse.VC.opendb
-/EXAMPLE1/.vs/driver_sample/v16/Browse.VC.db-wal
-/EXAMPLE1/.vs/driver_sample/v16/Browse.VC.db-shm
+/EXAMPLE1/.vs/
+/EXAMPLE1/bin/
+/EXAMPLE1/Debug/
+/EXAMPLE1/x64/
+
+/EXAMPLE2/.vs/
+/EXAMPLE2/bin/
+/EXAMPLE2/Debug/
+/EXAMPLE2/x64/
 .DS_Store
 .vs
 source/elliott_drafts/ElliottCppTests/.vs
