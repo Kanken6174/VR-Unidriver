@@ -1,18 +1,10 @@
 //============ Copyright (c) Valve Corporation, All rights reserved. ============
 
-#include <openvr_driver.h>	//on inclut 
 #include "driverlog.h"	//dédié aux logs
-
-#include <vector>	//prend la lib des vecteurs
-#include <thread>	//multithreading
-#include <chrono>	//heure/temps
-
-#if defined( _WINDOWS )
-#include <windows.h>	//si sur windows, on inclut le header du système windows
-#endif
 
 using namespace vr;
 
+double roll,pitch,yaw = 0;
 
 #if defined(_WIN32)
 #define HMD_DLL_EXPORT extern "C" __declspec( dllexport )
@@ -88,14 +80,16 @@ CWatchdogDriver_Sample g_watchdogDriverNull;
 
 bool g_bExiting = false;
 
-void WatchdogThreadFunction(  )
+void WatchdogThreadFunction()
 {
 	while ( !g_bExiting )
 	{
+		DriverLog("driver-sample : Waiting for keyboard Y input!\n");
 #if defined( _WINDOWS )
 		// on windows send the event when the Y key is pressed.
 		if ( (0x01 & GetAsyncKeyState( 'Y' )) != 0 )
 		{
+			DriverLog("driver-sample : Y input FOUND! Waking driver\n");
 			// Y key was pressed. 
 			vr::VRWatchdogHost()->WatchdogWakeUp( vr::TrackedDeviceClass_HMD );
 		}
@@ -112,6 +106,7 @@ EVRInitError CWatchdogDriver_Sample::Init( vr::IVRDriverContext *pDriverContext 
 {
 	VR_INIT_WATCHDOG_DRIVER_CONTEXT( pDriverContext );
 	InitDriverLog( vr::VRDriverLog() );
+	DriverLog("driver-sample : SAMPLE1 has started the driver logging!!!\n");
 
 	// Watchdog mode on Windows starts a thread that listens for the 'Y' key on the keyboard to 
 	// be pressed. A real driver should wait for a system button event or something else from the 
@@ -130,6 +125,7 @@ EVRInitError CWatchdogDriver_Sample::Init( vr::IVRDriverContext *pDriverContext 
 
 void CWatchdogDriver_Sample::Cleanup()
 {
+	DriverLog("driver-sample : Cleaning up before leaving!\n");
 	g_bExiting = true;
 	if ( m_pWatchdogThread )
 	{
@@ -150,6 +146,7 @@ class CSampleDeviceDriver : public vr::ITrackedDeviceServerDriver, public vr::IV
 public:
 	CSampleDeviceDriver(  )
 	{
+		DriverLog("driver-sample : Construction du CSampleDeviceDriver en cours!\n");
 		m_unObjectId = vr::k_unTrackedDeviceIndexInvalid;
 		m_ulPropertyContainer = vr::k_ulInvalidPropertyContainer;
 
@@ -179,6 +176,7 @@ public:
 		DriverLog( "driver_null: Seconds from Vsync to Photons: %f\n", m_flSecondsFromVsyncToPhotons );
 		DriverLog( "driver_null: Display Frequency: %f\n", m_flDisplayFrequency );
 		DriverLog( "driver_null: IPD: %f\n", m_flIPD );
+		DriverLog("driver-sample : \nFait!\n");
 	}
 
 	virtual ~CSampleDeviceDriver()
@@ -188,6 +186,7 @@ public:
 
 	virtual EVRInitError Activate( vr::TrackedDeviceIndex_t unObjectId ) 
 	{
+		DriverLog("driver-sample : \nActivation\n");
 		m_unObjectId = unObjectId;
 		m_ulPropertyContainer = vr::VRProperties()->TrackedDeviceToPropertyContainer( m_unObjectId );
 
@@ -242,12 +241,13 @@ public:
 			vr::VRProperties()->SetStringProperty( m_ulPropertyContainer, vr::Prop_NamedIconPathDeviceStandby_String, "{sample}/icons/headset_sample_status_standby.png" );
 			vr::VRProperties()->SetStringProperty( m_ulPropertyContainer, vr::Prop_NamedIconPathDeviceAlertLow_String, "{sample}/icons/headset_sample_status_ready_low.png" );
 		}
-
+		DriverLog("driver-sample : \nFait!\n");
 		return VRInitError_None;
 	}
 
 	virtual void Deactivate() 
 	{
+		DriverLog("driver-sample : \nDésactivé!\n");
 		m_unObjectId = vr::k_unTrackedDeviceIndexInvalid;
 	}
 
@@ -257,6 +257,7 @@ public:
 
 	void *GetComponent( const char *pchComponentNameAndVersion )
 	{
+		DriverLog("driver-sample : \nGetComponent\n");
 		if ( !_stricmp( pchComponentNameAndVersion, vr::IVRDisplayComponent_Version ) )
 		{
 			return (vr::IVRDisplayComponent*)this;
@@ -337,22 +338,50 @@ public:
 		return coordinates;
 	}
 
-	virtual DriverPose_t GetPose() 
+	virtual DriverPose_t GetPose()//appelé à chaque frame | C'EST LE CASQUE
 	{
+		if ((0x8000 & GetAsyncKeyState(VK_LEFT)) != 0) {
+			if (yaw > 360 || yaw < 0)
+				yaw = 0;
+			else
+				yaw += 0.01;
+		}
+		if ((0x8000 & GetAsyncKeyState(VK_UP)) != 0) {
+			if (pitch > 360 || pitch < 0)
+				pitch = 0;
+			else
+				pitch += 0.01;
+		}
+		if ((0x8000 & GetAsyncKeyState(VK_RIGHT)) != 0) {
+			if (yaw > 360 || yaw < 0)
+				yaw = 360;
+			else
+				yaw -= 0.01;
+		}
+		if ((0x8000 & GetAsyncKeyState(VK_DOWN)) != 0) {
+			if (pitch > 360 || pitch < 0)
+				pitch = 360;
+			else
+				pitch -= 0.01;
+		}
+
+			
 		DriverPose_t pose = { 0 };
 		pose.poseIsValid = true;
 		pose.result = TrackingResult_Running_OK;
 		pose.deviceIsConnected = true;
 
-		pose.qWorldFromDriverRotation = HmdQuaternion_Init( 1, 0, 0, 0 );
-		pose.qDriverFromHeadRotation = HmdQuaternion_Init( 1, 0, 0, 0 );
+
+		pose.qWorldFromDriverRotation = ToQuaternion(0, 0, 0);
+		pose.qDriverFromHeadRotation = ToQuaternion(0, 0, 0);
 		
+		pose.qRotation = ToQuaternion(0, yaw, pitch);
 
 		return pose;
 	}
 	
 
-	void RunFrame()
+	void RunFrame()	//Aussi appellé à chaque frame
 	{
 		// In a real driver, this should happen from some pose tracking thread.
 		// The RunFrame interval is unspecified and can be very irregular if some other
@@ -391,6 +420,7 @@ class CSampleControllerDriver : public vr::ITrackedDeviceServerDriver
 public:
 	CSampleControllerDriver()
 	{
+		DriverLog("driver-sample : Constructeur de CSampleControllerDriver\n");
 		m_unObjectId = vr::k_unTrackedDeviceIndexInvalid;
 		m_ulPropertyContainer = vr::k_ulInvalidPropertyContainer;
 
@@ -406,6 +436,7 @@ public:
 
 	virtual EVRInitError Activate( vr::TrackedDeviceIndex_t unObjectId )
 	{
+		DriverLog("driver-sample : Activation de CSampleControllerDriver\n");
 		m_unObjectId = unObjectId;
 		m_ulPropertyContainer = vr::VRProperties()->TrackedDeviceToPropertyContainer( m_unObjectId );
 
@@ -465,21 +496,23 @@ public:
 			pchResponseBuffer[0] = 0;
 	}
 
-	virtual DriverPose_t GetPose()
+	virtual DriverPose_t GetPose()	//aussi appelé à chaque frame | C'est la MANETTE
 	{
 		DriverPose_t pose = { 0 };
 		pose.poseIsValid = false;
 		pose.result = TrackingResult_Calibrating_OutOfRange;
 		pose.deviceIsConnected = true;
 
-		pose.qWorldFromDriverRotation = HmdQuaternion_Init( 1, 0, 0, 0 );
-		pose.qDriverFromHeadRotation = HmdQuaternion_Init( 1, 0, 0, 0 );
+		pose.qWorldFromDriverRotation = ToQuaternion(0, 0, 0);	//i have no idea what i'm doing
+		pose.qDriverFromHeadRotation = ToQuaternion(0, 0, 0);
+
+		pose.qRotation = ToQuaternion(0, 0, 0);
 
 		return pose;
 	}
 
 
-	void RunFrame()
+	void RunFrame()//se passe à chaque frame
 	{
 #if defined( _WINDOWS )
 		// Your driver would read whatever hardware state is associated with its input components and pass that
