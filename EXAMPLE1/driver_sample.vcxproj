@@ -223,14 +223,14 @@ F:\steam\steamapps\common\SteamVR\bin\win64\vrserver.exe</Command>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>F:\steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe removedriver "F:\steam\steamapps\common\SteamVR\drivers\$(TargetName)"
-rmdir "F:\steam\steamapps\common\SteamVR\drivers\$(TargetName)" /S /Q
-xcopy Y:\DoMoCap\EXAMPLE1\sample F:\steam\steamapps\common\SteamVR\drivers\sample\ /E /H /C /I
-md "F:\steam\steamapps\common\SteamVR\drivers\$(TargetName)\bin\win64"
-copy /Y "$(TargetDir)$(TargetName).dll"  "F:\steam\steamapps\common\SteamVR\drivers\$(TargetName)\bin\win64\driver_$(TargetName).dll"
-F:\steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe adddriver "F:\steam\steamapps\common\SteamVR\drivers\$(TargetName)"
-F:\steam\steamapps\common\SteamVR\bin\win64\vrmonitor.exe
-F:\steam\steamapps\common\SteamVR\bin\win64\vrserver.exe</Command>
+      <Command>C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe removedriver "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)"
+rmdir "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)" /S /Q
+xcopy Y:\DoMoCap\EXAMPLE1\sample C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\sample\ /E /H /C /I
+md "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)\bin\win64"
+copy /Y "$(TargetDir)$(TargetName).dll"  "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)\bin\win64\driver_$(TargetName).dll"
+C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe adddriver "F:\steam\steamapps\common\SteamVR\drivers\$(TargetName)"
+C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrmonitor.exe
+C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrserver.exe</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -274,7 +274,7 @@ F:\steam\steamapps\common\SteamVR\bin\win64\vrserver.exe</Command>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DRIVER_SAMPLE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\vcpkg\installed\x86-windows\include;..\..\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>

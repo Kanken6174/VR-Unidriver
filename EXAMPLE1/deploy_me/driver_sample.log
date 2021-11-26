@@ -1,0 +1,29 @@
+﻿  Vcpkg is unable to link because we cannot decide between Release and Debug libraries. Please define the property VcpkgConfiguration to be 'Release' or 'Debug' (currently 'deploy_me').
+  driverlog.cpp
+  driver_sample.cpp
+     Création de la bibliothèque C:\Users\ASUS\Documents\2A\projet\domocap\EXAMPLE1\\bin\drivers\sample\bin\win32\driver_sample.lib et de l'objet C:\Users\ASUS\Documents\2A\projet\domocap\EXAMPLE1\\bin\drivers\sample\bin\win32\driver_sample.exp
+  Génération de code en cours
+  Previous IPDB not found, fall back to full compilation.
+  All 246 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  driver_sample.vcxproj -> C:\Users\ASUS\Documents\2A\projet\domocap\EXAMPLE1\bin\drivers\sample\bin\win32\driver_sample.dll
+  'C:\Program' n'est pas reconnu en tant que commande interne
+  ou externe, un programme exécutable ou un fichier de commandes.
+  Le fichier spécifié est introuvable.
+  Nombre de paramÞtres non valide
+          1 fichier(s) copié(s).
+  'C:\Program' n'est pas reconnu en tant que commande interne
+  ou externe, un programme exécutable ou un fichier de commandes.
+  'C:\Program' n'est pas reconnu en tant que commande interne
+  ou externe, un programme exécutable ou un fichier de commandes.
+  'C:\Program' n'est pas reconnu en tant que commande interne
+  ou externe, un programme exécutable ou un fichier de commandes.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: La commande "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe removedriver "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\driver_sample"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: rmdir "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\driver_sample" /S /Q
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: xcopy Y:\DoMoCap\EXAMPLE1\sample C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\sample\ /E /H /C /I
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: md "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\driver_sample\bin\win64"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: copy /Y "C:\Users\ASUS\Documents\2A\projet\domocap\EXAMPLE1\bin\drivers\sample\bin\win32\driver_sample.dll"  "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\driver_sample\bin\win64\driver_driver_sample.dll"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe adddriver "F:\steam\steamapps\common\SteamVR\drivers\driver_sample"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrmonitor.exe
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrserver.exe
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: :VCEnd" s'est arrêtée avec le code 9009.
