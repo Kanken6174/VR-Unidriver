@@ -5,8 +5,8 @@ public:
 	SerialPort();
 	~SerialPort();
 
-	
-	bool open(const char* portname, int baudrate, char parity, char databit, char stopbit);
+
+	bool open(const char* portname, int baudrate, char databit);
 
 
 	void close();

@@ -1,18 +1,24 @@
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include "serialPort.h"
 
 using namespace std;
 
 void sendDemo()
 {
-	SerialPort w;
-	if (w.open("COM1", 74880, 0, 8, 1))
+	SerialPort w; //(const char* portname, int baudrate, char databit);
+	if (w.open("COM1", 74880, 8))
 	{
-		for (int i = 0; i < 10; i++)
-		{
-			w.send("send...", 7);
+		ifstream file("data.txt");
+		if (file.is_open()) {
+			string line;
+			while (getline(file, line)) {
+				w.send(line.c_str(), line.length());
+
+			}
+			file.close();
 		}
-		cout << "send demo finished...";
 	}
 	else
 	{
@@ -23,7 +29,7 @@ void sendDemo()
 void receiveDemo()
 {
 	SerialPort w;
-	if (w.open("COM2", 74880, 0, 8, 1))
+	if (w.open("COM2", 74880, 8))
 	{
 		char buf[1024];
 		while (true)
@@ -37,10 +43,11 @@ void receiveDemo()
 
 int main(int argumentCount, const char* argumentValues[])
 {
+	//receiveDemo();
 
 	sendDemo();
 
-	//receiveDemo();
+
 
 	getchar();
 
