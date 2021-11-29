@@ -47,7 +47,26 @@
 - dans les barres en haut mettre:
 	- Configuration -> Une config de votre choix (pas toutes ce serait chiant d'ouvrir steamVR à chaque build...)
 	- Platform -> All Platforms (windows mais bon, c'est pas important)
-- Dans la cellule Command Line mettre: [PAR DEFAUT]
+- Dans la cellule Command Line mettre: 
+[MACHINES IUT]
+```
+"C:\src\SteamVR\bin\win64\vrpathreg.exe" removedriver "C:\src\SteamVR\drivers\$(TargetName)"
+echo 1
+rmdir "C:\src\SteamVR\drivers\$(TargetName)" /S /Q
+echo2
+echo D | xcopy  /E /H /C /I /F "U:\DoMoCap\domocap\EXAMPLE2\sample\" "C:\src\SteamVR\drivers\sample\"
+echo 3
+md "C:\src\SteamVR\drivers\$(TargetName)\bin\win64"
+echo 4
+copy /Y "$(TargetDir)$(TargetName).dll"  "C:\src\SteamVR\drivers\$(TargetName)\bin\win64\$(TargetName).dll"
+echo 5
+"C:\src\SteamVR\bin\win64\vrpathreg.exe" adddriver "C:\src\SteamVR\drivers\$(TargetName)"
+"C:\src\SteamVR\bin\win64\vrmonitor.exe"
+"C:\src\SteamVR\bin\win64\vrserver.exe"
+```
+
+
+[PAR DEFAUT]
 ```
 "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe" removedriver "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)"
 rmdir "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)" /S /Q
