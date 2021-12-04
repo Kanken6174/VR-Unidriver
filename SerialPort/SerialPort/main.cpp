@@ -29,7 +29,7 @@ void sendDemo()
 void receiveDemo()
 {
 	SerialPort w;
-	if (w.open("COM2", 74880, 8))
+	if (w.open("COM3", 74880, 8))
 	{
 		char buf[1024];
 		while (true)
@@ -41,11 +41,87 @@ void receiveDemo()
 	}
 }
 
+
+void Gant() {
+
+	SerialPort w;
+	if (w.open("COM3", 74880, 8))
+	{
+		char buf[1024];
+		string ask = "!";
+		w.send(ask.c_str(), ask.length());
+
+		while (true)
+		{
+			memset(buf, 0, 1024);
+			w.receive(buf, 1024);
+			cout << buf;
+		}
+
+	}
+}
+
+void requestTram(SerialPort w, float result[]) {
+
+	char buf[1024];
+
+	string ask = "#";							//symbole envoyé a l arduino
+	w.send(ask.c_str(), ask.length());
+
+
+	memset(buf, NULL, 1024);					//mise a NULL tout les éléments du buffeur
+	w.receive(buf, 1024);						//reception des données arduino
+
+	cout << buf << endl;
+
+	string conc;								//string pour la concatenation
+	//float result[10];								// tableau a renvoyer (11) pour la trame 
+	int i = 0;
+	buf[0] = NULL;								//on retire le premier element pour eviter les problemes
+
+	for (char s : buf) {
+		if (s != NULL) {
+			if (s >= '0' && s <= '9' || s == '-') {				// tout chiffre et '-' en evitant toute lettre ou tout élément NULL
+				conc += s;													// concatenation
+			}
+			else {															//arrivée a une nouvelle lettre
+
+				int val;
+				istringstream iss(conc);									//transformation du string en int 
+				iss >> val;
+
+				result[i] = val;
+				
+				conc = "";													//remise a 0 de la concatenation
+				i = i + 1;
+			}
+		}
+	}
+
+
+}
+
+SerialPort connect() {
+	SerialPort w; //(const char* portname, int baudrate, char databit);
+	if (w.open("COM3", 74880, 8))
+	{
+		return w;
+	}
+	else {
+		cout << "Not Connected";
+	}
+}
+
 int main(int argumentCount, const char* argumentValues[])
 {
-	//receiveDemo();
+	float response [10];
+	SerialPort w = connect();
+	
+	requestTram(w, response);
 
-	sendDemo();
+	for (float s : response) {
+		cout << s << endl;
+	}
 
 
 
