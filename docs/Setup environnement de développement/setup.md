@@ -8,7 +8,7 @@
 	git clone https://github.com/Microsoft/vcpkg.git
 	cd <le dossier où vcpkg a été cloné>
 	bootstrap-vcpkg.bat
-	vcpkg.exe integrate installer
+	vcpkg.exe integrate install
 	
 	mettez à jour votre variable d'environnement HOME pour inclure le dossier où le .exe de vcpkg est situé
 	redémarrez tous vos IDE et lignes de commandes (voire pc)
