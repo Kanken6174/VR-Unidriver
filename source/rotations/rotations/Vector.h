@@ -2,20 +2,20 @@
 
 #include "rotations.h";
 
-struct rotations::Vector {
+struct madgwickRotations::Vector {
 public: //constructor
-	Vector(float x, float y, float z) : x(x), y(y), z(z) {}
+	Vector(double x, double y, double z) : x(x), y(y), z(z) {}
 	
 public: //methods defined in Vector.cpp
 	Quaternion toQuaternion(); //converts vector to a quaternion
 
 private: //coordinates of a vector
-	float x;
-	float y;
-	float z;
+	double x;
+	double y;
+	double z;
 
 public: //getters fpr the coordinates
-	float getX() { return x; }
-	float getY() { return y; }
-	float getZ() { return z; }
+	double getX() { return x; }
+	double getY() { return y; }
+	double getZ() { return z; }
 };

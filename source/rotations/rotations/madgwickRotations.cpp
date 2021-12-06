@@ -1,15 +1,15 @@
 #include "Quaternion.h"
 #include "Vector.h"
-#include "rotations.h"
+#include "madgwickRotations.h"
 
-using namespace rotations;
+using namespace madgwickRotations;
 
-Quaternion rotations::rotate(Quaternion q, Vector v) {
+Quaternion madgwickRotations::rotate(Quaternion q, Vector v) {
 	Quaternion tmp = multiplyQuaternions(q, v.toQuaternion());
 	return multiplyQuaternions(tmp, q.reciprocal());
 }
 
-Quaternion rotations::multiplyQuaternions(Quaternion q1, Quaternion q2) {
+Quaternion madgwickRotations::multiplyQuaternions(Quaternion q1, Quaternion q2) {
 	return Quaternion(
 		q1.getX() * q2.getX() - q1.getY() * q2.getY() - q1.getZ() * q2.getZ() - q1.getW() * q2.getW(),
 		q1.getY() * q2.getX() + q1.getX() * q2.getY() + q1.getZ() * q2.getW() - q1.getW() * q2.getZ(),
@@ -18,7 +18,7 @@ Quaternion rotations::multiplyQuaternions(Quaternion q1, Quaternion q2) {
 	);
 }
 
-Quaternion rotations::addQuaternions(Quaternion q1, Quaternion q2) {
+Quaternion madgwickRotations::addQuaternions(Quaternion q1, Quaternion q2) {
 	return Quaternion(
 		q1.getX() + q2.getX(),
 		q1.getY() + q2.getY(),
@@ -27,16 +27,16 @@ Quaternion rotations::addQuaternions(Quaternion q1, Quaternion q2) {
 	);
 }
 
-Quaternion rotations::currentOrientation(Quaternion previousOrientation, Quaternion change, float duration) {
+Quaternion madgwickRotations::currentOrientation(Quaternion previousOrientation, Quaternion change, time_t duration) {
 	return addQuaternions(previousOrientation, change).multiplyByReal(duration);
 }
 
-Quaternion rotations::changeSincePrevious(Quaternion previousOrientation, Vector angularVelocity /*float stepSize, gradient*/ ) {
+Quaternion madgwickRotations::changeSincePrevious(Quaternion previousOrientation, Vector angularVelocity /*double stepSize, gradient*/ ) {
 	Quaternion tmp = multiplyQuaternions(previousOrientation, angularVelocity.toQuaternion());
 	return multiplyQuaternions(tmp, previousOrientation.reciprocal());
 }
 
-Quaternion updateOrentation(Quaternion previousOrientation, Vector angularVelocity, float duration) {
+Quaternion updateOrentation(Quaternion previousOrientation, Vector angularVelocity, time_t duration) {
 	Quaternion change = changeSincePrevious(previousOrientation, angularVelocity);
 	return currentOrientation(previousOrientation, change, duration);	
 }

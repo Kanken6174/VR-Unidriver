@@ -154,7 +154,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Quaternion.h" />
-    <ClInclude Include="rotations.h" />
+    <ClInclude Include="madgwickRotations.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +165,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Quaternion.cpp" />
-    <ClCompile Include="rotations.cpp" />
+    <ClCompile Include="madgwickRotations.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

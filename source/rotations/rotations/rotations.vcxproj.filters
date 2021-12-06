@@ -27,12 +27,12 @@
     <ClInclude Include="Quaternion.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="rotations.h">
+    <ClInclude Include="madgwickRotations.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="rotations.cpp">
+    <ClCompile Include="madgwickRotations.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
