@@ -1,5 +1,4 @@
 #include "Quaternion.h"
-#include "madgwickRotations.h"
 
 using namespace madgwickRotations;
 

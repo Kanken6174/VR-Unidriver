@@ -1,6 +1,6 @@
 #pragma once
 
-#include "rotations.h";
+#include "madgwickRotations.h"
 
 struct madgwickRotations::Vector {
 public: //constructor
