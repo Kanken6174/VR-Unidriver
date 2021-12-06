@@ -1,0 +1,11 @@
+﻿  DoMoDriver.cpp
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.cpp(4,1): warning C4005: 'ABSOLUTE' : redéfinition de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\wingdi.h(1903): message : voir la définition précédente de 'ABSOLUTE'
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.cpp(58,5): warning C4102: 'vr' : étiquette non référencée
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.cpp(102,14): warning C4101: 'rotationQuat' : variable locale non référencée
+     Création de la bibliothèque C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\x64\Release\controller_sim.lib et de l'objet C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\x64\Release\controller_sim.exp
+  Génération de code en cours
+  Previous IPDB not found, fall back to full compilation.
+  All 140 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  controller_sim.vcxproj -> C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\x64\Release\controller_sim.dll
