@@ -48,17 +48,19 @@ Suivre le fichier [ci-joint](https://gitlab.iut-clermont.uca.fr/elleguehen/domoc
 
 ## Ressource nécessaire au projet :
 
- - List item
+ - OpenVR (paquet VCPKG pour pouvoir inclure openvr.h)
 
- - OpenVR
+ - SteamVR (Application steam)
 
- - SteamVR (Steam )
+ - Cmake (devrait être auto-installé par Cmake)
 
- - Cmake
-
- - vcpkg
+ - vcpkg (pour télécharger openVR.h et autres packages)
  
  - composant pour compiler du c++ en dll
+
+ - Module linguistique Anglais pour visual studio 2019 (requis pour VCPKG)
+
+ - package C++ pour visual studio
 
   
 

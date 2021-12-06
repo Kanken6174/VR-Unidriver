@@ -1,0 +1,57 @@
+Compte rendu semaine 3:
+
+Réunion scéance: -> 30min
+	Ce qu'on as fait:
+		Erwan
+			Recherche C++
+			Pas marcher -> Vidéo trop longue pour des bases
+			Marcher -> Une documentation et un cours complet
+		Eliott
+			C++ recherche
+			pas marcher -> certaine ressource qui recapitule les base (perte de temps)
+					cpp rephrence trop avancé
+					Pb sur le char en C++
+			ce qui a marcher -> Petit projet avec classe log et tp1
+		Yorick
+			Doc OpenVR
+			zone de dev pour OpenVR
+			pas marcher -> Comprendre et boucher les trou de la doc OpenVR (git->main)
+			marcher -> lancement de openVR avec la solution (Exemple) ->(ProjectDIR)
+				   Doc pour tout installer
+				   Carge et génére une démo
+		Jordan
+			Recherche C++ (vidéo 4h)
+			marcher -> Création d'un programme -> Calculatrice (basic) (Pas encore sur le git)
+			Pas marcher -> Vidéo trop longue et doc trop difficile.
+					Trouver les différences sur le code
+		Mattéo
+			Doc sur comment faire les test (Steam VR suffisant)
+			Documentation
+			pas marcher -> Setup de StemVR (pas reussi)
+			Marcher -> Aide a la Doc
+	Ce que l'on vas faire:
+		Tout le monde
+			Installer l'espace d'environnement 
+		Yorick
+			Code OpenVR (finir la Doc)
+			Comprende les bases pour créer un driver (Pour tout le monde)
+		Mattéo
+			Port sérial
+		Eliott
+			Trouver les librairies C++ que l'on a besoin (Plus des fonctions)
+			Cahier des charges
+			Ce mettre a jour sur SteamVR
+		Jordan
+			Coder en C++ (classe + serial)
+		Erwan
+			cahier des charges
+			Uml
+			coder en C++
+Ouverture ticket:
+	Port sérial : Création d'un logiciel de lecture et d'envoie du prot sérial à l'aide d'un fichier pour le lecture
+	Unity : Création d'une démo de base comme prise en main de ce logiciel.
+	Démo de steamVR avec un outil existant (Kinekt) //pb initialisation du terrain imposible
+	Quaternion: Documentation trouvée et en cours d'acquisition, maitrise déja des formules simple et recherche des formule plus compliquer
+	Simuler un casque VR: Création d'une application qui simule un casque pour steamVR
+
+Cahier des charges -> finition.
