@@ -61,9 +61,9 @@ bool SerialPort::open(const char* portname, int baudrate, char databit)
 	//Traitement du délai d'attente, unité : millisecondes
 	//Timeout total = facteur de temps × nombre de caractères lus ou écrits + constante de temps
 	COMMTIMEOUTS TimeOuts;
-	TimeOuts.ReadIntervalTimeout = 1000; //Délai d'expiration de l'intervalle de lecture
-	TimeOuts.ReadTotalTimeoutMultiplier = 500; //Facteur de temps de lecture
-	TimeOuts.ReadTotalTimeoutConstant = 5000; //Constante de temps de lecture
+	TimeOuts.ReadIntervalTimeout = 10; //Délai d'expiration de l'intervalle de lecture
+	TimeOuts.ReadTotalTimeoutMultiplier = 50; //Facteur de temps de lecture
+	TimeOuts.ReadTotalTimeoutConstant = 60; //Constante de temps de lecture
 	TimeOuts.WriteTotalTimeoutMultiplier = 500; // Écrire le facteur temps
 	TimeOuts.WriteTotalTimeoutConstant = 2000; //Écrire la constante de temps
 	SetCommTimeouts(hCom, &TimeOuts);

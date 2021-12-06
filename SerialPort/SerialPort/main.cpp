@@ -72,11 +72,14 @@ void requestTram(SerialPort w, float result[]) {
 	memset(buf, NULL, 1024);					//mise a NULL tout les éléments du buffeur
 	w.receive(buf, 1024);						//reception des données arduino
 
+	if (buf[0] != 'A')
+		return;
+
 	cout << buf << endl;
 
 	string conc;								//string pour la concatenation
-	//float result[10];								// tableau a renvoyer (11) pour la trame 
 	int i = 0;
+
 	buf[0] = NULL;								//on retire le premier element pour eviter les problemes
 
 	for (char s : buf) {
@@ -85,13 +88,13 @@ void requestTram(SerialPort w, float result[]) {
 				conc += s;													// concatenation
 			}
 			else {															//arrivée a une nouvelle lettre
-
-				int val;
+				float val=0;
 				istringstream iss(conc);									//transformation du string en int 
 				iss >> val;
 
-				result[i] = val;
-				
+				if(val != 0)
+					result[i] = val;
+
 				conc = "";													//remise a 0 de la concatenation
 				i = i + 1;
 			}
@@ -114,15 +117,33 @@ SerialPort connect() {
 
 int main(int argumentCount, const char* argumentValues[])
 {
-	float response [10];
-	SerialPort w = connect();
-	
-	requestTram(w, response);
+	float response [9];					//a mettre fichier setup
+	SerialPort w = connect();			//fichier setup port
+	/*
+	for (int i = 0; i < 100; i++)
+	{
+		requestTram(w, response);
+	}
+	*/
 
-	for (float s : response) {
-		cout << s << endl;
+	while (true) {
+		requestTram(w, response);
+		system("cls");
+		for (float s : response) {
+			cout << s << endl;
+		}
 	}
 
+
+
+	//giro x y z	
+	//accele x y z	
+	//magneto x y z
+	// 3 vector a faire
+	// 
+	// try catch
+	//verifier si message de connection
+	//rapidité de serie
 
 
 	getchar();
