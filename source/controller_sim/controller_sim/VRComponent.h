@@ -1,5 +1,5 @@
-#ifndef VRCOMPONENT // include guard - assure une inclusion unique
-#define VRCOMPONENT
+#include "driverlog.h"
+#include <openvr_driver.h>
 
 #define ABSOLUTE_T 0	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick
 #define DIGITAL 2
@@ -23,13 +23,12 @@ private:
 	int sclType;
 
 public:
-	VRcomponent(std::string inputPath, vr::PropertyContainerHandle_t parentHandle);	//constructeur
-	VRInputComponentHandle_t GetHandle();
-	EVRInputError registerSelf();
-	EVRInputError UpdateSelf(bool value);
-	EVRInputError UpdateSelf(float value);
+	VRcomponent();
+	VRcomponent(std::string inputPath, vr::PropertyContainerHandle_t parentHandle, int sclType);	//constructeur
+	virtual vr::VRInputComponentHandle_t GetHandle();
+	virtual vr::EVRInputError registerSelf();
+	virtual vr::EVRInputError UpdateSelf(bool value);
+	virtual vr::EVRInputError UpdateSelf(float value);
 
 	//les méthodes liées aux composants d'entrée skelette seront ajoutés plus tard.
 };
-
-#endif VRCOMPONENT

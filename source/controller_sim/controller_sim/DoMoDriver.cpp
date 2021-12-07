@@ -20,17 +20,9 @@ using namespace vr;
 		deviceContainer = vr::k_ulInvalidPropertyContainer;	//mise à valeur par défaut, seront changées
 
 		int i = 0;
-		inputPathDictionnary[i] = "/input/system/click";	//digital
-		inputPathDictionnary[i++] = "/input/a/click";		//digital
-		inputPathDictionnary[i++] = "/input/b/click";		//digital
-		inputPathDictionnary[i++] = "/input/trackpad/x";	//analog
-		inputPathDictionnary[i++] = "/input/trackpad/y";	//analog
-		inputPathDictionnary[i++] = "/input/trackpad/touch";//digital
-		inputPathDictionnary[i++] = "/input/trigger/click";	//digital
-		inputPathDictionnary[i++] = "/input/trigger/value";	//analog
-		inputPathDictionnary[i++] = "/input/thumbstick/x";	//analog
-		inputPathDictionnary[i++] = "/input/thumbstick/y";	//analog
-		inputPathDictionnary[i++] = "/output/haptic";	//haptic
+		inputPathDictionnary[i] = "/input/system/click";
+		componentType[i] = 2;	//digital
+
 		DictionnaryIndex = i;
 	}
 
@@ -39,27 +31,40 @@ using namespace vr;
 		//C'est le destructeur de la classe, vide pour le moment.
 	}
 
+	void DoMoDriver::setStrProperty(vr::ETrackedDeviceProperty SVRproperty, std::string value)
+	{
+		vr::VRProperties()->SetStringProperty(deviceContainer, SVRproperty, value.c_str());
+	}
+
+	void DoMoDriver::setInt32Property(vr::ETrackedDeviceProperty SVRproperty, int32_t value)
+	{
+		vr::VRProperties()->SetInt32Property(deviceContainer, SVRproperty, value);
+	}
+
+	void DoMoDriver::setUInt64Property(vr::ETrackedDeviceProperty SVRproperty, uint64_t value)
+	{
+		vr::VRProperties()->SetUint64Property(deviceContainer, SVRproperty, value);
+	}
+
+	void DoMoDriver::setBoolProperty(vr::ETrackedDeviceProperty SVRproperty, bool value)
+	{
+		vr::VRProperties()->SetBoolProperty(deviceContainer, SVRproperty, value);
+	}
+
 	EVRInitError DoMoDriver::Activate(vr::TrackedDeviceIndex_t unObjectId)
 	{
 		deviceID = unObjectId;	//on assigne l'id de cet appareil à partir de celui donné par le système OVR
-		deviceContainer = vr::VRProperties()->TrackedDeviceToPropertyContainer(deviceID);
+		deviceContainer = vr::VRProperties()->TrackedDeviceToPropertyContainer(deviceID);	//on récupère le handle de notre appareil
 
-		vr::VRProperties()->SetStringProperty(deviceContainer, Prop_ModelNumber_String, NombreDeModele.c_str());
-		vr::VRProperties()->SetStringProperty(deviceContainer, Prop_RenderModelName_String, NombreDeModele.c_str());
-		vr:VRProperties()->SetUint64Property(deviceContainer, Prop_CurrentUniverseId_Uint64, 3);	//on doit en donner un différent de 0 (invalide) ou 1 (oculus)
-		//valeurs liées au tracking
-		vr::VRProperties()->SetBoolProperty(deviceContainer, Prop_IsOnDesktop_Bool, false);	//Ignore les warnings liés à l'écran
-		vr::VRProperties()->SetBoolProperty(deviceContainer, Prop_NeverTracked_Bool, true); //Pas encore tracké donc on valide ça
-		vr::VRProperties()->SetInt32Property(deviceContainer, Prop_ControllerRoleHint_Int32, TrackedControllerRole_RightHand);	//on se fait passer pour la main droite
-		//chemin vers les profils d'input
-		vr::VRProperties()->SetStringProperty(deviceContainer, Prop_InputProfilePath_String, ("{DoMoCap}/input/mycontroller_profile.json"));
-		
-		/**
-		* Création des composants d'input, cela se fait avec une méthode de la forme suivante:
-		* vr::VRDriverInput()->CreateBooleanComponent( Container de l'appareil, Chemin d'action SVR, handle de ce composant (retour pointeur) );
-		*/
-		int d = 0;
-		int i = 0;
+		setStrProperty(Prop_ModelNumber_String, NombreDeModele);							//numéro de série de l'appareil
+		setStrProperty(Prop_RenderModelName_String, NombreDeModele);						//chemin modèle 3D à render
+		setStrProperty(Prop_InputProfilePath_String, "{DoMoCap}/input/mycontroller_profile.json");	//chemin vers profils d'input
+		setUInt64Property(Prop_CurrentUniverseId_Uint64, 3);								//on doit en donner un différent de 0 (invalide) ou 1 (oculus)
+		setBoolProperty(Prop_IsOnDesktop_Bool, false);										//Ignore les warnings liés à l'écran
+		setBoolProperty(Prop_NeverTracked_Bool, true);										//Pas encore tracké donc on valide ça
+
+		setInt32Property(Prop_ControllerRoleHint_Int32, TrackedControllerRole_RightHand);	//on se fait passer pour la main droite
+
 		return EVRInitError::VRInitError_None;
 	}
 
@@ -107,7 +112,11 @@ using namespace vr;
 	*/
 	void DoMoDriver::RunFrame()
 	{
-		//vr::VRDriverInput()->UpdateBooleanComponent(m_compA, (0x8000 & GetAsyncKeyState('A')) != 0, 0);
+		int i = 0;
+		for(int i = 0; i < DictionnaryIndex; i++)
+		{
+			DoMoDriver::components[i].UpdateSelf((0x8000 & GetAsyncKeyState('A')) != 0);
+		}
 	}
 
 	std::string DoMoDriver::GetSerialNumber() {
