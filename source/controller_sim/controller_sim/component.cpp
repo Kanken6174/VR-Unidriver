@@ -3,6 +3,8 @@
 using namespace vr;
 
 	VRcomponent::VRcomponent() {
+		this->parentHandle = 999999;	//error
+		this->inputPath = "";
 	}
 
 	VRcomponent::VRcomponent(std::string inputPath, vr::PropertyContainerHandle_t parentHandle, int sclType) {

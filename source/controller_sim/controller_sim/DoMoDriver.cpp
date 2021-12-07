@@ -1,17 +1,6 @@
 #include "driverlog.h"
 #include "controller_sim.h"
 
-#define ABSOLUTE vr::VRScalarType_Absolute	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick
-
-#define TRIGGER vr::VRScalarUnits_NormalizedOneSided	//0 à 1
-#define JOYSTICK vr::VRScalarUnits_NormalizedTwoSided	// -1 à 1
-#define makeDigital CreateBooleanComponent
-#define makeAnalog CreateScalarComponent
-#define makeHaptic CreateHapticComponent
-#define updateAn UpdateScalarComponent
-#define updateBool UpdateBooleanComponent
-#define updatehapt UpdatehapticComponent
-
 using namespace vr;
 
 	DoMoDriver::DoMoDriver() {
@@ -35,17 +24,14 @@ using namespace vr;
 	{
 		vr::VRProperties()->SetStringProperty(deviceContainer, SVRproperty, value.c_str());
 	}
-
 	void DoMoDriver::setInt32Property(vr::ETrackedDeviceProperty SVRproperty, int32_t value)
 	{
 		vr::VRProperties()->SetInt32Property(deviceContainer, SVRproperty, value);
 	}
-
 	void DoMoDriver::setUInt64Property(vr::ETrackedDeviceProperty SVRproperty, uint64_t value)
 	{
 		vr::VRProperties()->SetUint64Property(deviceContainer, SVRproperty, value);
 	}
-
 	void DoMoDriver::setBoolProperty(vr::ETrackedDeviceProperty SVRproperty, bool value)
 	{
 		vr::VRProperties()->SetBoolProperty(deviceContainer, SVRproperty, value);
@@ -92,7 +78,6 @@ using namespace vr;
 	DriverPose_t DoMoDriver::GetPose()
 	{
 		double posVect[3] = { 0 };
-		Quaternion rotationQuat;
 		DriverPose_t pose = { 0 };
 		pose.poseIsValid = false;
 		pose.result = TrackingResult_Calibrating_OutOfRange;

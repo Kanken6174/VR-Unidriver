@@ -948,7 +948,7 @@
        Remplacement de la cible "GetNativeManifest" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" par la cible "GetNativeManifest" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets".
        Remplacement de la cible "GetTargetPathWithTargetPlatformMoniker" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" par la cible "GetTargetPathWithTargetPlatformMoniker" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.DesignTime.targets".
        La cible "CopyLocalFilesOutputGroup" répertoriée dans un attribut BeforeTargets à "Y:\vcpkg\scripts\buildsystems\msbuild\vcpkg.targets (168,82)" n'existe pas dans le projet et sera ignorée.
-La génération a démarré 07/12/2021 18:49:12.
+La génération a démarré 07/12/2021 19:26:03.
 La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" sur le nœud 2 (Rebuild cible(s)).
      1>Génération à l'aide des outils version "Current".
        Cible "EnableIntermediateOutputPathMismatchWarning" ignorée en raison d'une fausse condition ; ('$(RestoreProjectStyle)' == 'PackageReference') a été évaluée comme ('' == 'PackageReference').
@@ -975,7 +975,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
          VSTEL_SolutionSessionID={7DC39548-1059-410E-9F93-C3F5E6EBB1A6}
        Exécution de la tâche "SetEnv" terminée.
        Tâche "SetEnv"
-         VSTEL_CurrentSolutionBuildID=2516812288
+         VSTEL_CurrentSolutionBuildID=2519023159
        Exécution de la tâche "SetEnv" terminée.
        Tâche "SetEnv"
          VSTEL_ProjectID={59c0d373-72b6-4dd9-9499-dd37a2636ff7}
@@ -1216,7 +1216,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Exécution de la tâche "WriteLinesToFile" terminée.
        Utilisation de la tâche "Touch" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Tâche "Touch"
-         Mise à jour de l'horodatage "x64\Release\controller_sim.tlog\unsuccessfulbuild".
+         Création de "x64\Release\controller_sim.tlog\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
        Exécution de la tâche "Touch" terminée.
      1>Génération de la cible "InitializeBuildStatus" terminée dans le projet "controller_sim.vcxproj".
        Cible "PrepareProjectReferences" ignorée. Elle a été générée.
@@ -1359,23 +1359,14 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Tâche "CL"
          Recompilation forcée de tous les fichiers sources en raison d'un fichier PDB "x64\Release\vc142.pdb" manquant.
          Variables d'environnement passées à l'outil :
-           VS_UNICODE_OUTPUT=1580
+           VS_UNICODE_OUTPUT=1976
          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /diagnostics:column /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /Gd /TP /FC /errorReport:prompt DoMoDriver.cpp ctrlSimServer.cpp driverlog.cpp maths.cpp component.cpp
          Commande de suivi :
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\COMPONENT.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CTRLSIMSERVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DRIVERLOG.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\MATHS.CPP" /b MSBuildConsole_CancelEventf307681a7d8a47dda640cae279fefaf5  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe"  /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /diagnostics:column /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /Gd /TP /FC /errorReport:prompt DoMoDriver.cpp ctrlSimServer.cpp driverlog.cpp maths.cpp component.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\COMPONENT.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CTRLSIMSERVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DRIVERLOG.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\MATHS.CPP" /b MSBuildConsole_CancelEvent2e9880c542af486e81e3145e5f26f96a  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe"  /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /diagnostics:column /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /Gd /TP /FC /errorReport:prompt DoMoDriver.cpp ctrlSimServer.cpp driverlog.cpp maths.cpp component.cpp
          DoMoDriver.cpp
-     1>Y:\domocap\source\controller_sim\controller_sim\controller_sim.h(46,14): warning C4200: extension non standard utilisée : tableau de taille zéro dans un struct/union
-       Y:\domocap\source\controller_sim\controller_sim\controller_sim.h(46,14): message : Ce membre va être ignoré par un constructeur par défaut, ou par un opérateur d'assignation de copie/déplacement
-     1>Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.cpp(4,1): warning C4005: 'ABSOLUTE' : redéfinition de macro
-       C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\wingdi.h(1903): message : voir la définition précédente de 'ABSOLUTE'
-     1>Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.cpp(95,14): warning C4101: 'rotationQuat' : variable locale non référencée
          ctrlSimServer.cpp
-     1>Y:\domocap\source\controller_sim\controller_sim\controller_sim.h(46,14): warning C4200: extension non standard utilisée : tableau de taille zéro dans un struct/union
-       Y:\domocap\source\controller_sim\controller_sim\controller_sim.h(46,14): message : Ce membre va être ignoré par un constructeur par défaut, ou par un opérateur d'assignation de copie/déplacement
          driverlog.cpp
          maths.cpp
-     1>Y:\domocap\source\controller_sim\controller_sim\controller_sim.h(46,14): warning C4200: extension non standard utilisée : tableau de taille zéro dans un struct/union
-       Y:\domocap\source\controller_sim\controller_sim\controller_sim.h(46,14): message : Ce membre va être ignoré par un constructeur par défaut, ou par un opérateur d'assignation de copie/déplacement
          component.cpp
        Exécution de la tâche "CL" terminée.
      1>Génération de la cible "ClCompile" terminée dans le projet "controller_sim.vcxproj".
@@ -1491,14 +1482,14 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Utilisation de la tâche "Link" à partir de l'assembly "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Build.CppTasks.Common.dll".
        Tâche "Link"
          Variables d'environnement passées à l'outil :
-           VS_UNICODE_OUTPUT=1604
+           VS_UNICODE_OUTPUT=1444
          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\domocap\source\controller_sim\x64\Release\controller_sim.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib" /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Y:\vcpkg\installed\\x64-windows\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Y:\domocap\source\controller_sim\x64\Release\controller_sim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\controller_sim.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\domocap\source\controller_sim\x64\Release\controller_sim.lib" /MACHINE:X64 /DLL x64\Release\DoMoDriver.obj
          x64\Release\ctrlSimServer.obj
          x64\Release\driverlog.obj
          x64\Release\maths.obj
          x64\Release\component.obj
          Commande de suivi :
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ" /b MSBuildConsole_CancelEvent051c4ee57d2b48eeae1f8866919563f7  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"Y:\domocap\source\controller_sim\x64\Release\controller_sim.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib" /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Y:\vcpkg\installed\\x64-windows\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Y:\domocap\source\controller_sim\x64\Release\controller_sim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\controller_sim.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\domocap\source\controller_sim\x64\Release\controller_sim.lib" /MACHINE:X64 /DLL x64\Release\DoMoDriver.obj
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ" /b MSBuildConsole_CancelEvent05fb0ba8842f48839dccce0f757974c9  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"Y:\domocap\source\controller_sim\x64\Release\controller_sim.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib" /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Y:\vcpkg\installed\\x64-windows\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Y:\domocap\source\controller_sim\x64\Release\controller_sim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\controller_sim.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\domocap\source\controller_sim\x64\Release\controller_sim.lib" /MACHINE:X64 /DLL x64\Release\DoMoDriver.obj
          x64\Release\ctrlSimServer.obj
          x64\Release\driverlog.obj
          x64\Release\maths.obj
@@ -1506,7 +1497,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
             Création de la bibliothèque Y:\domocap\source\controller_sim\x64\Release\controller_sim.lib et de l'objet Y:\domocap\source\controller_sim\x64\Release\controller_sim.exp
          Génération de code en cours
          Previous IPDB not found, fall back to full compilation.
-         All 144 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+         All 145 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
          Fin de la génération du code
        Exécution de la tâche "Link" terminée.
        Tâche "Message"
@@ -1753,16 +1744,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
      1>Génération du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" terminée (Rebuild cible(s)).
 
 La génération a réussi.
-
-       "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (Rebuild cible) (1) ->
-       (ClCompile cible) -> 
-         Y:\domocap\source\controller_sim\controller_sim\controller_sim.h(46,14): warning C4200: extension non standard utilisée : tableau de taille zéro dans un struct/union
-         Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.cpp(4,1): warning C4005: 'ABSOLUTE' : redéfinition de macro
-         Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.cpp(95,14): warning C4101: 'rotationQuat' : variable locale non référencée
-         Y:\domocap\source\controller_sim\controller_sim\controller_sim.h(46,14): warning C4200: extension non standard utilisée : tableau de taille zéro dans un struct/union
-         Y:\domocap\source\controller_sim\controller_sim\controller_sim.h(46,14): warning C4200: extension non standard utilisée : tableau de taille zéro dans un struct/union
-
-    5 Avertissement(s)
+    0 Avertissement(s)
     0 Erreur(s)
 
-Temps écoulé 00:00:05.14
+Temps écoulé 00:00:05.05

@@ -11,6 +11,17 @@
 #include <windows.h>	//si sur windows, on inclut le header du système windows
 #include <WinUser.h> //requis pour les hooks de clavier
 
+#define ABSOLUTE_S vr::VRScalarType_Absolute	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick
+
+#define TRIGGER vr::VRScalarUnits_NormalizedOneSided	//0 à 1
+#define JOYSTICK vr::VRScalarUnits_NormalizedTwoSided	// -1 à 1
+#define makeDigital CreateBooleanComponent
+#define makeAnalog CreateScalarComponent
+#define makeHaptic CreateHapticComponent
+#define updateAn UpdateScalarComponent
+#define updateBool UpdateBooleanComponent
+#define updatehapt UpdatehapticComponent
+
 using namespace vr;
 
 /**
@@ -43,7 +54,7 @@ private:
 	std::string inputPathDictionnary[12] = {""};	//un tableau de chemins SVR, type /input/machin/truc
 	int componentType[12] = {0};
 	int DictionnaryIndex = 0;
-	VRcomponent components[];
+	VRcomponent* components = nullptr;
 
 public:
 	DoMoDriver();
