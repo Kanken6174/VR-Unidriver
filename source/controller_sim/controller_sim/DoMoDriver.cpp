@@ -3,13 +3,31 @@
 
 using namespace vr;
 
-	DoMoDriver::DoMoDriver() {
+	DoMoDriver::DoMoDriver(int arraySize) {
+		components = (VRcomponent*)malloc(sizeof(VRcomponent) * arraySize);
+		if (components == nullptr)
+			DriverLog("DoMoDriver: Malloc error\n");
 		DriverLog("DoMoDriver: Construction du DoMoDriver débutée\n");
 		deviceID = vr::k_unTrackedDeviceIndexInvalid;	//vaut 0xFFFFFFFF
 		deviceContainer = vr::k_ulInvalidPropertyContainer;	//mise à valeur par défaut, seront changées
 
 		int i = 0;
-		inputPathDictionnary[i] = "/input/system/click";
+		inputPathDictionnary[i] = "/input/system/click";	//pour l'instant on a que le clic de menu, pour tester
+		componentType[i] = 2;	//digital
+
+		DictionnaryIndex = i;
+	}
+
+	DoMoDriver::DoMoDriver() {
+		components = (VRcomponent*)malloc(sizeof(VRcomponent)*10);
+		if (components == nullptr)
+			DriverLog("DoMoDriver: Malloc error\n");
+		DriverLog("DoMoDriver: Construction du DoMoDriver débutée\n");
+		deviceID = vr::k_unTrackedDeviceIndexInvalid;	//vaut 0xFFFFFFFF
+		deviceContainer = vr::k_ulInvalidPropertyContainer;	//mise à valeur par défaut, seront changées
+
+		int i = 0;
+		inputPathDictionnary[i] = "/input/system/click";	//pour l'instant on a que le clic de menu, pour tester
 		componentType[i] = 2;	//digital
 
 		DictionnaryIndex = i;
@@ -41,6 +59,8 @@ using namespace vr;
 	{
 		deviceID = unObjectId;	//on assigne l'id de cet appareil à partir de celui donné par le système OVR
 		deviceContainer = vr::VRProperties()->TrackedDeviceToPropertyContainer(deviceID);	//on récupère le handle de notre appareil
+
+		components = new VRcomponent(inputPathDictionnary[0], deviceContainer, DIGITAL);
 
 		setStrProperty(Prop_ModelNumber_String, NombreDeModele);							//numéro de série de l'appareil
 		setStrProperty(Prop_RenderModelName_String, NombreDeModele);						//chemin modèle 3D à render

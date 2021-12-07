@@ -14,7 +14,8 @@ using namespace vr;
 		VR_INIT_SERVER_DRIVER_CONTEXT(pDriverContext);	//une fonction définie dans openvr_driver.h
 		InitDriverLog(vr::VRDriverLog());	//initialise le logging d'informations visible sur la console web
 		DriverLog("ctrl_sim: log inited\n");
-		DoMoDriver *doMoDriver = new DoMoDriver();	//initialise no(s)[tre] driver(s)
+		int nombreComposantsSurDriver = 3;
+		DoMoDriver *doMoDriver = new DoMoDriver(nombreComposantsSurDriver);	//initialise no(s)[tre] driver(s)
 		DriverLog("ctrl_sim: driver inited\n");
 		//register ce driver auprès de SVR
 		vr::VRServerDriverHost()->TrackedDeviceAdded(Controller_simDriverServer::doMoDriver.GetSerialNumber().c_str(), vr::TrackedDeviceClass_GenericTracker, doMoDriver);
@@ -46,8 +47,11 @@ using namespace vr;
 	void Controller_simDriverServer::EnterStandby() {/*standby code for the gloves here??*/}
 	void Controller_simDriverServer::LeaveStandby() {/*Wake up for the gloves here?*/}
 
-	Controller_simDriverServer controller_simServer;	//c'est global, c'est moche, c'est SteamVR
+	Controller_simDriverServer::Controller_simDriverServer() {
 
+	}
+
+	Controller_simDriverServer controller_simServer;	//c'est global, c'est moche, c'est SteamVR
 
 /**
 * La fonction qui sera exportée vers OpenVR, il s'agit de

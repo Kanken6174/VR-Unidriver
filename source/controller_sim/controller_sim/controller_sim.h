@@ -58,6 +58,7 @@ private:
 
 public:
 	DoMoDriver();
+	DoMoDriver(int arraySize);
 	virtual ~DoMoDriver();
 	//Ces 4 fonctions servent juste à factoriser celles données par openVR pour modifier des valeurs
 	virtual void setStrProperty(vr::ETrackedDeviceProperty SVRproperty, std::string value);
@@ -94,6 +95,7 @@ private:
 	DoMoDriver doMoDriver;
 
 public:
+	Controller_simDriverServer();
 	virtual EVRInitError Init(vr::IVRDriverContext* pDriverContext);
 	virtual void Cleanup();
 
