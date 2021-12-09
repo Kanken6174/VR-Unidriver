@@ -1,14 +1,16 @@
-#include "driverlog.h"
-#include "controller_sim.h"
 #include "VRComponent.h"
 
 using namespace vr;
 
+	VRcomponent::VRcomponent() {
+		this->parentHandle = 999999;	//error
+		this->inputPath = "";
+	}
 
-
-	VRcomponent::VRcomponent(std::string inputPath, vr::PropertyContainerHandle_t parentHandle) {
-		this->parentHandle = parentHandle;
-		this->inputPath = inputPath;
+	VRcomponent::VRcomponent(std::string inputPath, vr::PropertyContainerHandle_t parentHandle, int sclType) {
+		this->parentHandle = parentHandle;	//handle du parent (uint)
+		this->inputPath = inputPath;//input path
+		this->sclType = sclType;	//type d'input
 		DriverLog("VR component has been created");
 	}
 
@@ -17,7 +19,7 @@ using namespace vr;
 	}
 
 	EVRInputError VRcomponent::registerSelf() {
-		EVRInputError ER = EVRInputError::VRInputError_None;
+		EVRInputError ER = vr::EVRInputError::VRInputError_None;
 		switch (sclType)
 		{
 		case ABSOLUTE_T:
@@ -36,7 +38,6 @@ using namespace vr;
 		default:
 			break;
 		}
-
 		return ER;
 	}
 

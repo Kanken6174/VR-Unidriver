@@ -55,5 +55,3 @@ void DebugDriverLog(const char* pMsgFormat, ...)
 	va_end(args);
 #endif
 }
-
-
