@@ -49,12 +49,14 @@ private:
 	vr::PropertyContainerHandle_t deviceContainer;	//m_ulpropertyContainer dans la doc
 
 	std::string m_sSerialNumber = "DoMoDriver";	//le nom de l'appareil
-	std::string NombreDeModele = "V0.1";	//le numéro de série du driver (ici de version)
+	std::string DeviceRender = "oculus_cv1_controller_right";	//à la fois le "modèle" de l'appareil, mais aussi son modèle 3d (rendermodels)
+																//ici on vole le modèle 3d de la manette d'oculus
 
 	std::string inputPathDictionnary[12] = {""};	//un tableau de chemins SVR, type /input/machin/truc
 	int componentType[12] = {0};
 	int DictionnaryIndex = 0;
 	VRcomponent* components = nullptr;
+	double yaw = 0, pitch = 0, roll = 0, X = 1, Y = 0;
 
 public:
 	DoMoDriver();
@@ -76,6 +78,7 @@ public:
 	/*Cette fonction gère la position (rotation quaternionique et position par vecteur) de l'objet,
 	* qrotation est responsable de l'angle et Vecposition[3] de la position.
 	*/
+	virtual void GetKeypresses();
 	virtual DriverPose_t GetPose();
 	/**
 	*Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
@@ -92,7 +95,7 @@ public:
 class Controller_simDriverServer : public IServerTrackedDeviceProvider
 {
 private:
-	DoMoDriver doMoDriver;
+	DoMoDriver* doMoDriver;
 
 public:
 	Controller_simDriverServer();

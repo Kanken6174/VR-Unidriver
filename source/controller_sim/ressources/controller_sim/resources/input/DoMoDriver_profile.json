@@ -1,7 +1,7 @@
 {
     "jsonid": "input_profile",
     "legacy_binding": "{controller_sim}/input/legacy_binding_mycontroller.json",
-    "controller_type": "controller_sim_tracker",
+    "controller_type": "DoMoDriver",
     "input_bindingui_mode": "controller_handed",
     "input_bindingui_left": {
         "transform": "scale(-1,1)",

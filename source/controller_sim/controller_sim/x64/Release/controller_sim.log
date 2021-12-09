@@ -951,8 +951,8 @@
        Remplacement de la cible "GetNativeManifest" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" par la cible "GetNativeManifest" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets".
        Remplacement de la cible "GetTargetPathWithTargetPlatformMoniker" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" par la cible "GetTargetPathWithTargetPlatformMoniker" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.DesignTime.targets".
        La cible "CopyLocalFilesOutputGroup" répertoriée dans un attribut BeforeTargets à "Y:\vcpkg\scripts\buildsystems\msbuild\vcpkg.targets (168,82)" n'existe pas dans le projet et sera ignorée.
-La génération a démarré 09/12/2021 19:33:11.
-La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" sur le nœud 2 (Rebuild cible(s)).
+La génération a démarré 09/12/2021 22:38:53.
+La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" sur le nœud 2 (Build cible(s)).
      1>Génération à l'aide des outils version "Current".
        Cible "EnableIntermediateOutputPathMismatchWarning" ignorée en raison d'une fausse condition ; ('$(RestoreProjectStyle)' == 'PackageReference') a été évaluée comme ('' == 'PackageReference').
      1>Cible "_CheckForInvalidConfigurationAndPlatform" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "SetTelemetryEnvironmentVariables" en dépend) :
@@ -972,67 +972,33 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Tâche "Warning" ignorée en raison d'une fausse condition ; ( '$(EnableBaseIntermediateOutputPathMismatchWarning)' == 'true' And '$(_InitialBaseIntermediateOutputPath)' != '$(BaseIntermediateOutputPath)' And '$(BaseIntermediateOutputPath)' != '$(MSBuildProjectExtensionsPath)' ) a été évaluée comme ( '' == 'true' And 'obj\' != 'obj\' And 'obj\' != 'Y:\domocap\source\controller_sim\controller_sim\obj\' ).
      1>Génération de la cible "_CheckForInvalidConfigurationAndPlatform" terminée dans le projet "controller_sim.vcxproj".
        Cible "_CheckForInvalidConfigurationAndPlatform" ignorée. Elle a été générée.
-     1>Cible "SetTelemetryEnvironmentVariables" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.DesignTime.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Rebuild" en dépend) :
+     1>Cible "SetTelemetryEnvironmentVariables" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.DesignTime.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Build" en dépend) :
        Utilisation de la tâche "SetEnv" à partir de l'assembly "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Build.CppTasks.Common.dll".
        Tâche "SetEnv"
          VSTEL_SolutionSessionID={AEF4FA9E-E87C-40BF-9C4D-2894BE098400}
        Exécution de la tâche "SetEnv" terminée.
        Tâche "SetEnv"
-         VSTEL_CurrentSolutionBuildID=2692251340
+         VSTEL_CurrentSolutionBuildID=2703393639
        Exécution de la tâche "SetEnv" terminée.
        Tâche "SetEnv"
          VSTEL_ProjectID={59c0d373-72b6-4dd9-9499-dd37a2636ff7}
        Exécution de la tâche "SetEnv" terminée.
      1>Génération de la cible "SetTelemetryEnvironmentVariables" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "_PrepareForRebuild" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.BuildSteps.Targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Rebuild" en dépend) :
-     1>Génération de la cible "_PrepareForRebuild" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "BeforeRebuild" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Rebuild" en dépend) :
-     1>Génération de la cible "BeforeRebuild" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "_PrepareForClean" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.BuildSteps.Targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Clean" en dépend) :
-       Utilisation de la tâche "Delete" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-       Tâche "Delete"
-         Suppression du fichier "x64\Release\controller_sim.tlog\controller_sim.lastbuildstate".
-       Exécution de la tâche "Delete" terminée.
-     1>Génération de la cible "_PrepareForClean" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "BeforeClean" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Clean" en dépend) :
-     1>Génération de la cible "BeforeClean" terminée dans le projet "controller_sim.vcxproj".
-       Cible "UnmanagedUnregistration" ignorée en raison d'une fausse condition ; ((('$(_AssemblyTimestampBeforeCompile)' != '$(_AssemblyTimestampAfterCompile)' or '$(RegisterForComInterop)' != 'true' or '$(OutputType)' != 'library') or
-                           ('$(_AssemblyTimestampBeforeCompile)' == '')) and
-                          Exists('@(_UnmanagedRegistrationCache)')) a été évaluée comme ((('' != '' or '' != 'true' or 'library' != 'library') or
-                           ('' == '')) and
-                          Exists('obj\controller_sim.vcxproj.UnmanagedRegistration.cache')).
-     1>Cible "CoreClean" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Clean" en dépend) :
-       Tâche "Delete"
-         Le fichier "x64\Release\\TempCA\driver_controller_sim.pdb" n'existe pas. Opération ignorée.
-         Le fichier "x64\Release\\TempCA\driver_controller_sim.dll" n'existe pas. Opération ignorée.
-       Exécution de la tâche "Delete" terminée.
-       Utilisation de la tâche "ReadLinesFromFile" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-       Tâche "ReadLinesFromFile"
-       Exécution de la tâche "ReadLinesFromFile" terminée.
-       Utilisation de la tâche "FindUnderPath" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-       Tâche "FindUnderPath"
-         Le chemin de comparaison est "Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\".
-       Exécution de la tâche "FindUnderPath" terminée.
-       Tâche "FindUnderPath"
-         Le chemin de comparaison est "x64\Release\".
-       Exécution de la tâche "FindUnderPath" terminée.
-       Tâche "Delete"
-       Exécution de la tâche "Delete" terminée.
-       Utilisation de la tâche "RemoveDuplicates" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-       Tâche "RemoveDuplicates"
-       Exécution de la tâche "RemoveDuplicates" terminée.
-       Utilisation de la tâche "MakeDir" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-       Tâche "MakeDir"
-       Exécution de la tâche "MakeDir" terminée.
-       Utilisation de la tâche "WriteLinesToFile" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-       Tâche "WriteLinesToFile"
-       Exécution de la tâche "WriteLinesToFile" terminée.
-     1>Génération de la cible "CoreClean" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "AssignProjectConfiguration" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "PrepareProjectReferences" en dépend) :
+     1>Cible "_PrepareForBuild" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.BuildSteps.Targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Build" en dépend) :
+       Tâche "CreateItem" ignorée en raison d'une fausse condition ; ('%(CustomBuild.IncludeFileToTool)'!='') a été évaluée comme (''!='').
+     1>Génération de la cible "_PrepareForBuild" terminée dans le projet "controller_sim.vcxproj".
+     1>Cible "_PrepareForReferenceResolution" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveReferences" en dépend) :
+       Tâche "Message" ignorée en raison d'une fausse condition ; ('$(_REFERENCE_DEBUG)'=='true') a été évaluée comme (''=='true').
+     1>Génération de la cible "_PrepareForReferenceResolution" terminée dans le projet "controller_sim.vcxproj".
+       Cible "ComputeCrtSDKReference" ignorée en raison d'une fausse condition ; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') a été évaluée comme ('DoMoDriver.cpp;ctrlSimServer.cpp;driverlog.cpp;...'!='' and 'false'=='true' and '' != 'false').
+     1>Cible "BeforeResolveReferences" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveReferences" en dépend) :
+     1>Génération de la cible "BeforeResolveReferences" terminée dans le projet "controller_sim.vcxproj".
+     1>Cible "AssignProjectConfiguration" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveReferences" en dépend) :
        Utilisation de la tâche "AssignProjectConfiguration" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Tâche "AssignProjectConfiguration"
        Exécution de la tâche "AssignProjectConfiguration" terminée.
      1>Génération de la cible "AssignProjectConfiguration" terminée dans le projet "controller_sim.vcxproj".
+       Cible "AssignProjectConfiguration" ignorée. Elle a été générée.
      1>Cible "_SplitProjectReferencesByFileExistence" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "PrepareProjectReferences" en dépend) :
        Tâche "ResolveNonMSBuildProjectOutput" ignorée en raison d'une fausse condition ; ('$(BuildingInsideVisualStudio)'=='true' and '@(ProjectReferenceWithConfiguration)'!='') a été évaluée comme ('true'=='true' and ''!='').
      1>Génération de la cible "_SplitProjectReferencesByFileExistence" terminée dans le projet "controller_sim.vcxproj".
@@ -1049,50 +1015,8 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
                                                                And '$(GetReferenceNearestTargetFrameworkTaskSupportsTargetPlatformParameter)' != 'true') a été évaluée comme ('0' != '0' and '.NETFramework,Version=v4.0' != ''
                                                                And 'true' != 'true').
      1>Génération de la cible "_GetProjectReferenceTargetFrameworkProperties" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "PrepareProjectReferences" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "CleanReferencedProjects" en dépend) :
+     1>Cible "PrepareProjectReferences" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveProjectReferences" en dépend) :
      1>Génération de la cible "PrepareProjectReferences" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "CleanReferencedProjects" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Clean" en dépend) :
-       Tâche "MSBuild" ignorée en raison d'une fausse condition ; ('$(BuildingInsideVisualStudio)' != 'true' and '$(BuildProjectReferences)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') a été évaluée comme ('true' != 'true' and 'true' == 'true' and '' != '').
-     1>Génération de la cible "CleanReferencedProjects" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "CleanPublishFolder" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Clean" en dépend) :
-       Tâche "RemoveDir" ignorée en raison d'une fausse condition ; ('$(PublishDir)'=='$(OutputPath)app.publish\' and Exists('$(PublishDir)')) a été évaluée comme ('Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\app.publish\'=='Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\app.publish\' and Exists('Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\app.publish\')).
-     1>Génération de la cible "CleanPublishFolder" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "AfterClean" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Clean" en dépend) :
-     1>Génération de la cible "AfterClean" terminée dans le projet "controller_sim.vcxproj".
-       Cible "EntityClean" ignorée en raison d'une fausse condition ; ('@(EntityDeploy)' != '') a été évaluée comme ('' != '').
-     1>Cible "BeforeCppClean" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "CppClean" en dépend) :
-     1>Génération de la cible "BeforeCppClean" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "CoreCppClean" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "CppClean" en dépend) :
-       Tâche "MakeDir"
-       Exécution de la tâche "MakeDir" terminée.
-       Utilisation de la tâche "CppClean" à partir de l'assembly "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Build.CppTasks.Common.dll".
-       Tâche "CppClean"
-       Exécution de la tâche "CppClean" terminée.
-       Tâche "WriteLinesToFile"
-       Exécution de la tâche "WriteLinesToFile" terminée.
-     1>Génération de la cible "CoreCppClean" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "AfterCppClean" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "CppClean" en dépend) :
-     1>Génération de la cible "AfterCppClean" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "PGInstrumentedClean" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "CppClean" en dépend) :
-       Tâche "Delete"
-       Exécution de la tâche "Delete" terminée.
-     1>Génération de la cible "PGInstrumentedClean" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "CppClean" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Clean" en dépend) :
-     1>Génération de la cible "CppClean" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "Clean" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Rebuild" en dépend) :
-     1>Génération de la cible "Clean" terminée dans le projet "controller_sim.vcxproj".
-       Cible "SetTelemetryEnvironmentVariables" ignorée. Elle a été générée.
-     1>Cible "_PrepareForBuild" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.BuildSteps.Targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Build" en dépend) :
-       Tâche "CreateItem" ignorée en raison d'une fausse condition ; ('%(CustomBuild.IncludeFileToTool)'!='') a été évaluée comme (''!='').
-     1>Génération de la cible "_PrepareForBuild" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "_PrepareForReferenceResolution" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveReferences" en dépend) :
-       Tâche "Message" ignorée en raison d'une fausse condition ; ('$(_REFERENCE_DEBUG)'=='true') a été évaluée comme (''=='true').
-     1>Génération de la cible "_PrepareForReferenceResolution" terminée dans le projet "controller_sim.vcxproj".
-       Cible "ComputeCrtSDKReference" ignorée en raison d'une fausse condition ; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') a été évaluée comme ('DoMoDriver.cpp;ctrlSimServer.cpp;driverlog.cpp;...'!='' and 'false'=='true' and '' != 'false').
-     1>Cible "BeforeResolveReferences" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveReferences" en dépend) :
-     1>Génération de la cible "BeforeResolveReferences" terminée dans le projet "controller_sim.vcxproj".
-       Cible "AssignProjectConfiguration" ignorée. Elle a été générée.
-       Cible "PrepareProjectReferences" ignorée. Elle a été générée.
        Cible "_RemoveNameMetadataFromProjectReferenceItems" ignorée en raison d'une fausse condition ; ('@(ProjectReference)'!='') a été évaluée comme (''!='').
      1>Cible "ResolveProjectReferences" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveReferences" en dépend) :
        Tâche "MSBuild" ignorée en raison d'une fausse condition ; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' != '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') a été évaluée comme ('' == 'true' and '' != '' and ('true' == 'true' or 'true' != 'true') and '16.0' != '10.0' and '' != '').
@@ -1147,6 +1071,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
      1>Cible "PrepareForBuild" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveAssemblyReferences" en dépend) :
        Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('$(DesignTimeBuild)' != 'true' and '$(ConfigurationPlatformExists)' != 'true') a été évaluée comme ('' != 'true' and 'true' != 'true').
        Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('$(DesignTimeBuild)' != 'true' and '$(_ToolsetFound)' != 'true') a été évaluée comme ('' != 'true' and 'true' != 'true').
+       Utilisation de la tâche "MakeDir" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Tâche "MakeDir"
        Exécution de la tâche "MakeDir" terminée.
        Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('$(DesignTimeBuild)'!='true' and '$(WindowsAppContainer)'=='true' and '$(ConfigurationType)'!='Application' and '$(ConfigurationType)'!='DynamicLibrary' and '$(ConfigurationType)'!='StaticLibrary') a été évaluée comme (''!='true' and 'false'=='true' and 'DynamicLibrary'!='Application' and 'DynamicLibrary'!='DynamicLibrary' and 'DynamicLibrary'!='StaticLibrary').
@@ -1216,8 +1141,10 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Cible "PrepareForBuild" ignorée. Elle a été générée.
        Cible "PrepareForBuild" ignorée. Elle a été générée.
      1>Cible "InitializeBuildStatus" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Build" en dépend) :
+       Utilisation de la tâche "ReadLinesFromFile" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Tâche "ReadLinesFromFile"
        Exécution de la tâche "ReadLinesFromFile" terminée.
+       Utilisation de la tâche "WriteLinesToFile" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Tâche "WriteLinesToFile"
        Exécution de la tâche "WriteLinesToFile" terminée.
        Utilisation de la tâche "Touch" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
@@ -1356,24 +1283,32 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Tâche "Message" ignorée en raison d'une fausse condition ; ('$(VcpkgEnableManifest)' != 'true' and '$(_ZVcpkgManifestRoot)' != '') a été évaluée comme ('false' != 'true' and '' != '').
      1>Génération de la cible "VcpkgCheckManifestRoot" terminée dans le projet "controller_sim.vcxproj".
      1>Cible "ClCompile" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "_ClCompile" en dépend) :
-       Tâche "Delete"
-       Exécution de la tâche "Delete" terminée.
+       Tâche "Delete" ignorée en raison d'une fausse condition ; ('%(ClCompile.DebugInformationFormat)' != '' and '%(ClCompile.DebugInformationFormat)' != 'None' and '%(ClCompile.DebugInformationFormat)' != 'OldStyle' and '%(ClCompile.ProgramDataBaseFileName)' != '' and !Exists(%(ClCompile.ProgramDataBaseFileName))) a été évaluée comme ('ProgramDatabase' != '' and 'ProgramDatabase' != 'None' and 'ProgramDatabase' != 'OldStyle' and 'x64\Release\vc142.pdb' != '' and !Exists(x64\Release\vc142.pdb)).
        Tâche "MultiToolTask" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(ClCompile.CompilerIteration)' == 'Modules') a été évaluée comme ('' != 'true' and '' == 'Modules').
        Tâche "MultiToolTask" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(ClCompile.CompilerIteration)' == '' and '$(MultiProcCL)' == 'true') a été évaluée comme ('' != 'true' and '' == '' and 'false' == 'true').
        Tâche "CL" ignorée en raison d'une fausse condition ; ('%(ClCompile.PrecompiledHeader)' == 'Create' and '%(ClCompile.ExcludedFromBuild)'!='true' and '%(ClCompile.CompilerIteration)' == '' and '$(MultiProcCL)' != 'true') a été évaluée comme ('NotUsing' == 'Create' and ''!='true' and '' == '' and 'false' != 'true').
        Utilisation de la tâche "CL" à partir de l'assembly "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Build.CppTasks.Common.dll".
        Tâche "CL"
-         Recompilation forcée de tous les fichiers sources en raison d'un fichier PDB "x64\Release\vc142.pdb" manquant.
+         Journaux de suivi de lecture :
+         	x64\Release\controller_sim.tlog\CL.read.1.tlog
+         Sorties pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\COMPONENT.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CTRLSIMSERVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DRIVERLOG.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\MATHS.CPP :
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ
+         DoMoDriver.cpp sera compilé, car Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.cpp a été modifié à 09/12/2021 22:38:47.
+         ctrlSimServer.cpp sera compilé, car Y:\domocap\source\controller_sim\controller_sim\ctrlSimServer.cpp a été modifié à 09/12/2021 22:38:17.
+         Aucune sortie pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CTRLSIMSERVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP n'a été trouvée dans le journal de suivi ; compilation source requise.
+         Journaux de suivi d'écriture :
+         	x64\Release\controller_sim.tlog\CL.write.1.tlog
          Variables d'environnement passées à l'outil :
-           VS_UNICODE_OUTPUT=1576
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /Gd /TP /FC /errorReport:prompt DoMoDriver.cpp ctrlSimServer.cpp driverlog.cpp maths.cpp component.cpp
+           VS_UNICODE_OUTPUT=1960
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /Gd /TP /FC /errorReport:prompt DoMoDriver.cpp ctrlSimServer.cpp
          Commande de suivi :
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\COMPONENT.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CTRLSIMSERVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DRIVERLOG.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\MATHS.CPP" /b MSBuildConsole_CancelEventb5467cda282149128ad28977221956a8  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe"  /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /Gd /TP /FC /errorReport:prompt DoMoDriver.cpp ctrlSimServer.cpp driverlog.cpp maths.cpp component.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CTRLSIMSERVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP" /b MSBuildConsole_CancelEvent9f8e87db3718425dad845ccd4409b3f5  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe"  /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /Gd /TP /FC /errorReport:prompt DoMoDriver.cpp ctrlSimServer.cpp
          DoMoDriver.cpp
          ctrlSimServer.cpp
-         driverlog.cpp
-         maths.cpp
-         component.cpp
        Exécution de la tâche "CL" terminée.
      1>Génération de la cible "ClCompile" terminée dans le projet "controller_sim.vcxproj".
        Cible "RunSelectedFileNativeCodeAnalysis" ignorée en raison d'une fausse condition ; ('$(RunMsvcAnalysis)'=='true' and '$(SelectedFiles)'!='') a été évaluée comme ('false'=='true' and ''!='').
@@ -1487,24 +1422,62 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
      1>Cible "Link" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "_Link" en dépend) :
        Utilisation de la tâche "Link" à partir de l'assembly "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Build.CppTasks.Common.dll".
        Tâche "Link"
-         Tous les fichiers sources ne sont pas à jour : commande TLog manquante "Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog\link.command.1.tlog".
+         Journaux de suivi d'écriture :
+         	x64\Release\controller_sim.tlog\link.write.1.tlog
+         Journaux de suivi de lecture :
+         	x64\Release\controller_sim.tlog\link.read.1.tlog
+         Sorties pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ :
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\RESSOURCES\CONTROLLER_SIM\BIN\WIN64\DRIVER_CONTROLLER_SIM.DLL
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVER_CONTROLLER_SIM.IPDB
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVER_CONTROLLER_SIM.IOBJ
+         Entrées pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ :
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\KERNEL32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\USER32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\GDI32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\WINSPOOL.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\COMDLG32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\ADVAPI32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\SHELL32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\OLE32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\OLEAUT32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\UUID.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\ODBC32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\ODBCCP32.LIB
+         	Y:\VCPKG\INSTALLED\X64-WINDOWS\LIB\OPENVR_API.LIB
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ
+         	C:\WINDOWS\GLOBALIZATION\SORTING\SORTDEFAULT.NLS
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\BIN\HOSTX86\X64\C2.DLL
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\LIB\X64\MSVCPRT.LIB
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\LIB\X64\MSVCRT.LIB
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\LIB\X64\OLDNAMES.LIB
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\LIB\X64\VCRUNTIME.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UCRT\X64\UCRT.LIB
+         	C:\WINDOWS\SYSTEM32\TZRES.DLL
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\BIN\HOSTX86\X64\1036\LINKUI.DLL
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\BIN\HOSTX86\X64\CVTRES.EXE
+         Compilation source requise : l'entrée Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ est plus récente que la sortie Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVER_CONTROLLER_SIM.IPDB.
          Variables d'environnement passées à l'outil :
-           VS_UNICODE_OUTPUT=1680
+           VS_UNICODE_OUTPUT=1980
          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib" /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Y:\vcpkg\installed\\x64-windows\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\driver_controller_sim.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib" /MACHINE:X64 /DLL x64\Release\DoMoDriver.obj
          x64\Release\ctrlSimServer.obj
          x64\Release\driverlog.obj
          x64\Release\maths.obj
          x64\Release\component.obj
          Commande de suivi :
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ" /b MSBuildConsole_CancelEventdd8d3978227448b49ee2e3adfdad5fd7  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib" /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Y:\vcpkg\installed\\x64-windows\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\driver_controller_sim.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib" /MACHINE:X64 /DLL x64\Release\DoMoDriver.obj
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ" /b MSBuildConsole_CancelEvent41ee01e1268c49d58111e354b1baafc2  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib" /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Y:\vcpkg\installed\\x64-windows\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\driver_controller_sim.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib" /MACHINE:X64 /DLL x64\Release\DoMoDriver.obj
          x64\Release\ctrlSimServer.obj
          x64\Release\driverlog.obj
          x64\Release\maths.obj
          x64\Release\component.obj
             Création de la bibliothèque Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib et de l'objet Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.exp
          Génération de code en cours
-         Previous IPDB not found, fall back to full compilation.
-         All 157 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+         14 of 190 functions ( 7.4%) were compiled, the rest were copied from previous compilation.
+           0 functions were new in current compilation
+           34 functions had inline decision re-evaluated but remain unchanged
          Fin de la génération du code
        Exécution de la tâche "Link" terminée.
        Tâche "Message"
@@ -1708,6 +1681,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Utilisation de la tâche "ConvertToAbsolutePath" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Tâche "ConvertToAbsolutePath"
        Exécution de la tâche "ConvertToAbsolutePath" terminée.
+       Utilisation de la tâche "FindUnderPath" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Tâche "FindUnderPath"
          Le chemin de comparaison est "Y:\domocap\source\controller_sim\controller_sim".
        Exécution de la tâche "FindUnderPath" terminée.
@@ -1717,6 +1691,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Tâche "FindUnderPath"
          Le chemin de comparaison est "x64\Release\".
        Exécution de la tâche "FindUnderPath" terminée.
+       Utilisation de la tâche "RemoveDuplicates" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Tâche "RemoveDuplicates"
        Exécution de la tâche "RemoveDuplicates" terminée.
      1>Génération de la cible "_CleanGetCurrentAndPriorFileWrites" terminée dans le projet "controller_sim.vcxproj".
@@ -1727,6 +1702,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Tâche "FindUnderPath"
          Le chemin de comparaison est "x64\Release\".
        Exécution de la tâche "FindUnderPath" terminée.
+       Utilisation de la tâche "Delete" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Tâche "Delete"
        Exécution de la tâche "Delete" terminée.
        Tâche "RemoveDuplicates"
@@ -1741,22 +1717,19 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
          Mise à jour de l'horodatage "x64\Release\controller_sim.tlog\controller_sim.lastbuildstate".
        Exécution de la tâche "Touch" terminée.
      1>Génération de la cible "FinalizeBuildStatus" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "Build" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.BuildSteps.Targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Rebuild" en dépend) :
-     1>Génération de la cible "Build" terminée dans le projet "controller_sim.vcxproj".
-     1>Cible "AfterRebuild" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Rebuild" en dépend) :
-     1>Génération de la cible "AfterRebuild" terminée dans le projet "controller_sim.vcxproj".
        Cible "_CheckForInvalidConfigurationAndPlatform" ignorée. Elle a été générée.
-     1>Cible "Rebuild" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.BuildSteps.Targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (point d'entrée) :
-     1>Génération de la cible "Rebuild" terminée dans le projet "controller_sim.vcxproj".
-     1>Génération du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" terminée (Rebuild cible(s)).
+       Cible "_CheckForInvalidConfigurationAndPlatform" ignorée. Elle a été générée.
+     1>Cible "Build" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.BuildSteps.Targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (point d'entrée) :
+     1>Génération de la cible "Build" terminée dans le projet "controller_sim.vcxproj".
+     1>Génération du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" terminée (Build cible(s)).
 
 La génération a réussi.
 
-       "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (Rebuild cible) (1) ->
+       "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (Build cible) (1) ->
        (PrepareForBuild cible) -> 
          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(505,5): warning MSB8004: Le répertoire Output ne se termine pas par une barre oblique finale. Cette instance de build ajoutera une barre oblique, comme requis, pour permettre l'évaluation correcte du répertoire Output.
 
     1 Avertissement(s)
     0 Erreur(s)
 
-Temps écoulé 00:00:10.86
+Temps écoulé 00:00:03.79
