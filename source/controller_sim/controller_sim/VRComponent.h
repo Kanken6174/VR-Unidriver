@@ -20,8 +20,8 @@ private:
 	std::string inputPath = "";
 	vr::VRInputComponentHandle_t handle;
 	vr::PropertyContainerHandle_t parentHandle;
-	int sclType;
-
+	int sclType = 0;
+	bool state = false;
 public:
 	VRcomponent();
 	VRcomponent(std::string inputPath, vr::PropertyContainerHandle_t parentHandle, int sclType);	//constructeur
@@ -29,6 +29,5 @@ public:
 	virtual vr::EVRInputError registerSelf();
 	virtual vr::EVRInputError UpdateSelf(bool value);
 	virtual vr::EVRInputError UpdateSelf(float value);
-
-	//les méthodes liées aux composants d'entrée skelette seront ajoutés plus tard.
+	virtual vr::EVRInputError UpdateSelf(vr::VRBoneTransform_t* hand, int size);	//size est mis à 31 si non-précisé
 };

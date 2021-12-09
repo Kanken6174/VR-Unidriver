@@ -2,7 +2,8 @@
 
 using namespace vr;
 
-	VRcomponent::VRcomponent() {
+	VRcomponent::VRcomponent() {		//ne devrait jamais être appellé
+		DriverLog("BAD_COMPONENT_CALL\n");
 		this->parentHandle = 999999;	//error
 		this->inputPath = "";
 	}
@@ -44,13 +45,21 @@ using namespace vr;
 	EVRInputError VRcomponent::UpdateSelf(bool value) {
 		if (sclType != DIGITAL)
 			return vr::EVRInputError::VRInputError_WrongType;
-		if(value)
-			DriverLog("Key pressed!\n");
-		return vr::VRDriverInput()->UpdateBooleanComponent(handle, value, 0);
+		if (state != value) {
+			state = !state;
+			DriverLog("Key state changed!");
+			return vr::VRDriverInput()->UpdateBooleanComponent(handle, value, 0);
+		}
+		else
+			return EVRInputError::VRInputError_None;
 	}
 
 	EVRInputError VRcomponent::UpdateSelf(float value) {
 		if (sclType != ABSOLUTE_T || value > 1 || value <-1)
 			return vr::VRInputError_WrongType;
 		return vr::VRDriverInput()->UpdateScalarComponent(handle, value, 0);
+	}
+
+	EVRInputError VRcomponent::UpdateSelf(vr::VRBoneTransform_t* hand, int size = 31) {
+		return vr::VRDriverInput()->UpdateSkeletonComponent(handle,vr::EVRSkeletalMotionRange::VRSkeletalMotionRange_WithoutController, hand, size);
 	}

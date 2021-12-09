@@ -127,23 +127,24 @@ using namespace vr;
 			else
 				pitch -= 0.01;
 		}
-		if ((0x8000 & GetAsyncKeyState(70)) != 0) {
+		if ((0x8000 & GetAsyncKeyState(70)) != 0) {	//F
+			
 			X -= 0.01;
 		}
-		if ((0x8000 & GetAsyncKeyState(86)) != 0) {
+		if ((0x8000 & GetAsyncKeyState(86)) != 0) {	//B
 			X += 0.01;
 		}
-		if ((0x8000 & GetAsyncKeyState(67)) != 0) {
+		if ((0x8000 & GetAsyncKeyState(67)) != 0) { //C
 			Y -= 0.01;
 		}
-		if ((0x8000 & GetAsyncKeyState(66)) != 0) {
+		if ((0x8000 & GetAsyncKeyState(66)) != 0) {	//V
 			Y += 0.01;
 		}
 	}
 
 	DriverPose_t DoMoDriver::GetPose()
 	{
-		GetKeypresses();
+		//GetKeypresses();	//on le laisse statique dans l'espace pour l'instant
 		DriverPose_t pose = { 0 };
 		double vectortr[2] = { 0 };
 		pose.poseIsValid = true;
@@ -170,12 +171,11 @@ using namespace vr;
 			vr::VRServerDriverHost()->TrackedDevicePoseUpdated(deviceID, GetPose(), sizeof(DriverPose_t));
 			//DriverLog((std::string("Updating position: ") + std::to_string(X) +" "+std::to_string(Y)).c_str());
 		}
-		//DoMoDriver::components[0].UpdateSelf((0x8000 & GetAsyncKeyState('N')) != 0);
 		
 		int i = 0;
 		for (int i = 0; i < DictionnaryIndex; i++)
 		{
-			DoMoDriver::components[i].UpdateSelf((0x8000 & GetAsyncKeyState('N')) != 0);
+			DoMoDriver::components[i].UpdateSelf((0x8000 & GetAsyncKeyState(78)) != 0);	//N
 		}
 		
 	}
