@@ -120,7 +120,7 @@ using namespace vr;
 		int i = 0;
 		for(int i = 0; i < DictionnaryIndex; i++)
 		{
-			DoMoDriver::components[i].UpdateSelf((0x8000 & GetAsyncKeyState('A')) != 0);
+			DoMoDriver::components[i].UpdateSelf((0x8000 & GetAsyncKeyState('N')) != 0);
 		}
 	}
 
