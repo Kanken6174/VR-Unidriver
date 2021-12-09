@@ -44,6 +44,8 @@ using namespace vr;
 	EVRInputError VRcomponent::UpdateSelf(bool value) {
 		if (sclType != DIGITAL)
 			return vr::EVRInputError::VRInputError_WrongType;
+		if(value)
+			DriverLog("Key pressed!\n");
 		return vr::VRDriverInput()->UpdateBooleanComponent(handle, value, 0);
 	}
 

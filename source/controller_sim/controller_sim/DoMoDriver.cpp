@@ -7,7 +7,7 @@ using namespace vr;
 		components = (VRcomponent*)malloc(sizeof(VRcomponent) * arraySize);
 		if (components == nullptr)
 			DriverLog("DoMoDriver: Malloc error\n");
-		DriverLog("DoMoDriver: Construction du DoMoDriver débutée\n");
+		DriverLog("DoMoDriver: Construction du DoMoDriver débutée (mode avec arguments)\n");
 		deviceID = vr::k_unTrackedDeviceIndexInvalid;	//vaut 0xFFFFFFFF
 		deviceContainer = vr::k_ulInvalidPropertyContainer;	//mise à valeur par défaut, seront changées
 
@@ -22,7 +22,7 @@ using namespace vr;
 		components = (VRcomponent*)malloc(sizeof(VRcomponent)*10);
 		if (components == nullptr)
 			DriverLog("DoMoDriver: Malloc error\n");
-		DriverLog("DoMoDriver: Construction du DoMoDriver débutée\n");
+		DriverLog("DoMoDriver: Construction du DoMoDriver débutée (mode sans arguments)\n");
 		deviceID = vr::k_unTrackedDeviceIndexInvalid;	//vaut 0xFFFFFFFF
 		deviceContainer = vr::k_ulInvalidPropertyContainer;	//mise à valeur par défaut, seront changées
 

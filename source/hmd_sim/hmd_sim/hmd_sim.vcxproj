@@ -82,7 +82,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>Y:\vcpkg\installed\x64-windows\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
-    <OutDir>out</OutDir>
+    <OutDir>.\hmd_sim\bin\win64</OutDir>
+    <TargetName>driver_$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg">
     <VcpkgEnableManifest>false</VcpkgEnableManifest>
@@ -147,19 +148,8 @@
       <IncrementalLinkDatabaseFile>$(IntDir)$(TargetName).ilk</IncrementalLinkDatabaseFile>
     </Link>
     <PostBuildEvent>
-      <Command>"C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe" removedriver "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\hmd_sim"
-echo "0"
-rmdir "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)" /S /Q
-echo "1"
-mkdir "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\hmd_sim"
-echo D | xcopy  /E /H /C /I /F "C:\Users\ASUS\Documents\2A\projet\domocap\source\hmd_sim\hmd_sim\hmd_sim" "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\hmd_sim"
-echo "2"
-copy "C:\Users\ASUS\Documents\2A\projet\domocap\source\hmd_sim\hmd_sim\out\$(TargetName).dll" "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\hmd_sim\bin\win64\driver_hmd_sim.dll"
-echo "3"
-"C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrpathreg.exe" adddriver "C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\$(TargetName)"
-echo "4"
-"C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrmonitor.exe"
-"C:\Program Files (x86)\Steam\steamapps\common\SteamVR\bin\win64\vrserver.exe"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

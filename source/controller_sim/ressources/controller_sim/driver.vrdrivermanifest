@@ -1,9 +1,8 @@
 {
-	"alwaysActivate": true,
-	"name" : "controller_sim",
-	"directory" : "",
-	"resourceOnly" : false,
-
-	"hmd_presence" : ["28DE.2000"],
-	"other_presence" : ["*.*"]
+    "alwaysActivate": true,
+    "name": "controller_sim",
+    "directory": "",
+    "resourceOnly": false,
+    "prefersUpperDeviceIndices": false,
+    "hmd_presence": []
 }
