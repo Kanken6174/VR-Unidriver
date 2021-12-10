@@ -3,34 +3,13 @@
 
 using namespace vr;
 
-	DoMoDriver::DoMoDriver(int arraySize) {
-		components = (VRcomponent*)malloc(sizeof(VRcomponent) * arraySize);
-		if (components == nullptr)
-			DriverLog("DoMoDriver: Malloc error\n");
-		DriverLog("Started building DoMoDriver with arguments\n");
-		deviceID = vr::k_unTrackedDeviceIndexInvalid;	//vaut 0xFFFFFFFF
-		deviceContainer = vr::k_ulInvalidPropertyContainer;	//mise à valeur par défaut, seront changées
-
-		int i = arraySize;
-		inputPathDictionnary[i] = "/input/system/click";	//pour l'instant on a que le clic de menu, pour tester
-		componentType[i] = 2;	//digital
-
-		DictionnaryIndex = i;
-	}
-
 	DoMoDriver::DoMoDriver() {
-		components = (VRcomponent*)malloc(sizeof(VRcomponent)*10);
-		if (components == nullptr)
-			DriverLog("DoMoDriver: Malloc error\n");
 		DriverLog("Started building DoMoDriver without arguments\n");
-		deviceID = vr::k_unTrackedDeviceIndexInvalid;	//vaut 0xFFFFFFFF
-		deviceContainer = vr::k_ulInvalidPropertyContainer;	//mise à valeur par défaut, seront changées
 
-		int i = 1;
-		inputPathDictionnary[i] = "/input/system/click";	//pour l'instant on a que le clic de menu, pour tester
-		componentType[i] = 2;	//digital
+		inputPathDictionnary.push_back("/input/a/click");
+		inputPathDictionnary.push_back("/input/b/click");
+		inputPathDictionnary.push_back("/input/c/click");
 
-		DictionnaryIndex = i;
 	}
 
 	DoMoDriver::~DoMoDriver() {
@@ -62,7 +41,23 @@ using namespace vr;
 		DriverLog(("DoMoCap has been assigned the DeviceIndex: "+std::to_string((uint32_t)unObjectId)+"\n").c_str()); // je sais, c'est horrible
 		DoMoDriver::deviceContainer = vr::VRProperties()->TrackedDeviceToPropertyContainer(deviceID);	//on récupère le handle de notre appareil
 		DriverLog(("DoMoCap has been assigned the propertyContainer: " + std::to_string((uint64_t)deviceID) + "\n").c_str());
-		DoMoDriver::components = new VRcomponent(inputPathDictionnary[0], deviceContainer, DIGITAL);
+
+		for (std::string inputPath : DoMoDriver::inputPathDictionnary) {
+			VRcomponent* addme = new VRcomponent(inputPath, deviceContainer, DIGITAL);
+			DoMoDriver::components.push_back(addme);
+			DriverLog("Added DIGITAL component to device");
+		}
+
+
+		DriverLog((std::string("Post-activation, registering components...")).c_str());
+
+		for (VRcomponent* component : DoMoDriver::components)	//foreach
+			component->registerSelf();
+
+		return EVRInitError::VRInitError_None;
+	}
+
+	void DoMoDriver::registerProperties(vr::TrackedDeviceIndex_t unObjectId) {
 		std::string pathProfile = "{controller_sim}/input/DoMoDriver_profile.json";
 		setStrProperty(Prop_ModelNumber_String, DeviceRender);							//numéro de série de l'appareil
 		setStrProperty(Prop_RenderModelName_String, DeviceRender);						//chemin modèle 3D à render
@@ -72,13 +67,11 @@ using namespace vr;
 
 		setInt32Property(Prop_ControllerRoleHint_Int32, TrackedControllerRole_RightHand);	//on se fait passer pour la main droite
 
-		DriverLog(("Prop_ModelNumber_String : "+DeviceRender+"\n").c_str());
+		DriverLog(("Prop_ModelNumber_String : " + DeviceRender + "\n").c_str());
 		DriverLog(("Prop_RenderModelName_String : " + DeviceRender + "\n").c_str());
 		DriverLog(("Prop_ModelNumber_String : " + pathProfile + "\n").c_str());
 		DriverLog((std::string("Prop_CurrentUniverseId_Uint64 : 2\n")).c_str());
 		DriverLog((std::string("Prop_NeverTracked_Bool : false\n")).c_str());
-
-		return EVRInitError::VRInitError_None;
 	}
 
 	void DoMoDriver::Deactivate(){deviceID = vr::k_unTrackedDeviceIndexInvalid;}
@@ -159,7 +152,6 @@ using namespace vr;
 		pose.qRotation = ToQuaternion(0, yaw, pitch);
 		pose.vecPosition[2] = X;
 		pose.vecPosition[0] = Y;
-		DriverLog("UpdatedPose\n");
 		return pose;
 	}
 	/**
@@ -172,12 +164,13 @@ using namespace vr;
 		{
 			vr::VRServerDriverHost()->TrackedDevicePoseUpdated(DoMoDriver::deviceID, GetPose(), sizeof(DriverPose_t));
 		}
-		
-		int i = 0;
-		for (int i = 0; i < DictionnaryIndex; i++)
-		{
-			DoMoDriver::components[i].UpdateSelf((0x8000 & GetAsyncKeyState(78)) != 0);	//N
-		}
+		if (components.size() <= 0) { DriverLog("Error, empty component vector..."); return; }
+		//for (int i = 0; i < DictionnaryIndex; i++)
+		//{
+			DoMoDriver::components[0]->UpdateSelf((0x8000 & GetAsyncKeyState(78)) != 0);	//N
+			DoMoDriver::components[1]->UpdateSelf((0x8000 & GetAsyncKeyState(72)) != 0);	//H
+			DoMoDriver::components[2]->UpdateSelf((0x8000 & GetAsyncKeyState(74)) != 0);	//J
+		//}
 		
 	}
 

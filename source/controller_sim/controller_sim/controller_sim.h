@@ -45,22 +45,20 @@ vr::HmdQuaternion_t ToQuaternion(double yaw, double pitch, double roll);
 class DoMoDriver : public vr::ITrackedDeviceServerDriver
 {
 private:
-	vr::TrackedDeviceIndex_t deviceID;	//m_unObjectId dans la doc
-	vr::PropertyContainerHandle_t deviceContainer;	//m_ulpropertyContainer dans la doc
+	vr::TrackedDeviceIndex_t deviceID = vr::k_unTrackedDeviceIndexInvalid;	//m_unObjectId dans la doc
+	vr::PropertyContainerHandle_t deviceContainer = vr::k_ulInvalidPropertyContainer;	//m_ulpropertyContainer dans la doc
 
 	std::string m_sSerialNumber = "DoMoDriver";	//le nom de l'appareil
 	std::string DeviceRender = "oculus_cv1_controller_right";	//à la fois le "modèle" de l'appareil, mais aussi son modèle 3d (rendermodels)
 																//ici on vole le modèle 3d de la manette d'oculus
 
-	std::string inputPathDictionnary[12] = {""};	//un tableau de chemins SVR, type /input/machin/truc
-	int componentType[12] = {0};
-	int DictionnaryIndex = 0;
-	VRcomponent* components = nullptr;
+	std::vector <int> componentType;
+	std::vector <VRcomponent*> components;	//un vecteur de pointeurs vers des VRcomponent
+	std::vector <std::string> inputPathDictionnary;//un tableau de chemins SVR, type /input/machin/truc
 	double yaw = 0, pitch = 0, roll = 0, X = 0, Y = 0;
 
 public:
 	DoMoDriver();
-	DoMoDriver(int arraySize);
 	virtual ~DoMoDriver();
 	//Ces 4 fonctions servent juste à factoriser celles données par openVR pour modifier des valeurs
 	virtual void setStrProperty(vr::ETrackedDeviceProperty SVRproperty, std::string value);
@@ -70,6 +68,7 @@ public:
 
 	//fonctions requises par l'interface ITrackedDeviceServerDriver, commes données dans le sample
 	virtual EVRInitError Activate(vr::TrackedDeviceIndex_t unObjectId);
+	virtual void registerProperties(vr::TrackedDeviceIndex_t unObjectId);
 	virtual void Deactivate();
 	virtual void EnterStandby();
 	virtual void* GetComponent(const char* pchComponentNameAndVersion);
@@ -96,9 +95,9 @@ class Controller_simDriverServer : public IServerTrackedDeviceProvider
 {
 private:
 	DoMoDriver* doMoDriver;
+	bool inited = false;
 
 public:
-	Controller_simDriverServer();
 	virtual EVRInitError Init(vr::IVRDriverContext* pDriverContext);
 	virtual void Cleanup();
 

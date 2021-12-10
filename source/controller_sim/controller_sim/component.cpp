@@ -27,8 +27,16 @@ using namespace vr;
 			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, JOYSTICK);
 			DriverLog("Scalar component has been registered");
 		case DIGITAL:
-			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &handle);
-			DriverLog("Boolean component has been registered");
+			/*DriverLog((std::string("Registering boolean component with parent handle: ") +
+				std::to_string((uint64_t)parentHandle) +
+				std::string(" and handle ") +
+				std::to_string(VRcomponent::handle) +
+				std::string(" and path ") +
+				VRcomponent::inputPath).c_str());*/
+
+			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &(VRcomponent::handle));
+
+			DriverLog((std::string("Done, returned error is : ") + std::to_string((int)ER)).c_str());
 			break;
 		case HAPTIC:	//haptic components can't be updated, they will produce an event on haptic output
 			ER = vr::VRDriverInput()->CreateHapticComponent(parentHandle, inputPath.c_str(), &handle);
@@ -47,8 +55,10 @@ using namespace vr;
 			return vr::EVRInputError::VRInputError_WrongType;
 		if (state != value) {
 			state = !state;
-			DriverLog("Key state changed!");
-			return vr::VRDriverInput()->UpdateBooleanComponent(handle, value, 0);
+			EVRInputError ER =vr::VRDriverInput()->UpdateBooleanComponent(handle, value, 0);
+
+			DriverLog((std::string("Key state changed! handle = ") + std::to_string((uint32_t)handle) + std::string(" error code = ")+ std::to_string((int)ER)).c_str());
+			return ER;
 		}
 		else
 			return EVRInputError::VRInputError_None;

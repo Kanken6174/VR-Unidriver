@@ -85,7 +85,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Y:\vcpkg\installed\x64-windows\include;</IncludePath>
-    <OutDir>$(SolutionDir)ressources\controller_sim\bin\win64</OutDir>
+    <OutDir>$(SolutionDir)ressources\controller_sim\bin\win64\</OutDir>
     <TargetName>driver_$(ProjectName)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
