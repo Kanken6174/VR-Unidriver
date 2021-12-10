@@ -10,7 +10,7 @@ public: //methods defined in Quaternion.cpp
 	Quaternion conjuguate();			//self's conjugate
 	double magnitude();					//self's magnitude
 	Quaternion reciprocal();			//self's reciprocal
-	Quaternion multiplyByReal(double f);	//self multiplied by double
+	Quaternion multiplyByReal(double f);//self multiplied by double
 
 private: //coordinates of a quaternion
 	double x; //real
