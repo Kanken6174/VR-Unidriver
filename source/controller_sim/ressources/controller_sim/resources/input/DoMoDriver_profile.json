@@ -5,22 +5,15 @@
     "input_bindingui_mode": "controller_handed",
     "input_bindingui_left": {
         "transform": "scale(-1,1)",
-        "image": "{controller_sim}/icons/controller_status_ready.svg"
+        "image": "{controller_sim}/icons/controller_status_ready.png"
     },
     "input_bindingui_right": {
-        "image": "{controller_sim}/icons/controller_status_ready.svg"
+        "image": "{controller_sim}/icons/controller_status_ready.png"
     },
     "input_source": {
         "/input/system": {
             "type": "button",
-            "click": true,
-            "touch": true,
-            "binding_image_point": [34, 45],
             "order": 1
         }
-    },
-    "/pose/raw": {
-        "type": "pose",
-        "binding_image_point": [5, 35]
     }
 }

@@ -103,31 +103,31 @@ using namespace vr;
 	* qrotation est responsable de l'angle et Vecposition[3] de la position.
 	*/
 	void DoMoDriver::GetKeypresses() {
-		if ((0x8000 & GetAsyncKeyState(VK_LEFT)) != 0) {
+		if ((0x8000 & GetAsyncKeyState(VK_NUMPAD1)) != 0) {
 			if (yaw > 360 || yaw < 0)
 				yaw = 0;
 			else
 				yaw += 0.01;
 		}
-		if ((0x8000 & GetAsyncKeyState(VK_UP)) != 0) {
+		if ((0x8000 & GetAsyncKeyState(VK_NUMPAD5)) != 0) {
 			if (pitch > 360 || pitch < 0)
 				pitch = 0;
 			else
 				pitch += 0.01;
 		}
-		if ((0x8000 & GetAsyncKeyState(VK_RIGHT)) != 0) {
+		if ((0x8000 & GetAsyncKeyState(VK_NUMPAD3)) != 0) {
 			if (yaw > 360 || yaw < 0)
 				yaw = 360;
 			else
 				yaw -= 0.01;
 		}
-		if ((0x8000 & GetAsyncKeyState(VK_DOWN)) != 0) {
+		if ((0x8000 & GetAsyncKeyState(VK_NUMPAD2)) != 0) {
 			if (pitch > 360 || pitch < 0)
 				pitch = 360;
 			else
 				pitch -= 0.01;
 		}
-		if ((0x8000 & GetAsyncKeyState(70)) != 0) {	//F
+		/*if ((0x8000 & GetAsyncKeyState(70)) != 0) {	//F
 			
 			X -= 0.01;
 		}
@@ -139,25 +139,27 @@ using namespace vr;
 		}
 		if ((0x8000 & GetAsyncKeyState(66)) != 0) {	//V
 			Y += 0.01;
-		}
+		}*/
 	}
 
 	DriverPose_t DoMoDriver::GetPose()
 	{
-		//GetKeypresses();	//on le laisse statique dans l'espace pour l'instant
+		GetKeypresses();	//on le laisse statique dans l'espace pour l'instant
 		DriverPose_t pose = { 0 };
-		double vectortr[2] = { 0 };
 		pose.poseIsValid = true;
 		pose.result = TrackingResult_Running_OK;
 		pose.deviceIsConnected = true;
 
 		pose.qWorldFromDriverRotation = ToQuaternion(0, 0, 0);
 		pose.qDriverFromHeadRotation = ToQuaternion(0, 0, 0);
-		pose.vecDriverFromHeadTranslation[2] = 0.5;
+		pose.vecDriverFromHeadTranslation[2] = -0.5;	//on met la manette juste devant la caméra par défaut (la caméra est en -1, car l'axe X est inversé)
+		pose.vecDriverFromHeadTranslation[1] = -0.25;
+		pose.vecDriverFromHeadTranslation[0] = 0.25;
 
 		pose.qRotation = ToQuaternion(0, yaw, pitch);
 		pose.vecPosition[2] = X;
 		pose.vecPosition[0] = Y;
+		DriverLog("UpdatedPose\n");
 		return pose;
 	}
 	/**
@@ -166,10 +168,9 @@ using namespace vr;
 	void DoMoDriver::RunFrame()
 	{
 		//DriverLog((std::string("Running frame : ") + std::to_string((uint32_t)deviceID) + "\n").c_str());
-		if (deviceID != vr::k_unTrackedDeviceIndexInvalid)
+		if (DoMoDriver::deviceID != vr::k_unTrackedDeviceIndexInvalid)
 		{
-			vr::VRServerDriverHost()->TrackedDevicePoseUpdated(deviceID, GetPose(), sizeof(DriverPose_t));
-			//DriverLog((std::string("Updating position: ") + std::to_string(X) +" "+std::to_string(Y)).c_str());
+			vr::VRServerDriverHost()->TrackedDevicePoseUpdated(DoMoDriver::deviceID, GetPose(), sizeof(DriverPose_t));
 		}
 		
 		int i = 0;

@@ -56,7 +56,7 @@ private:
 	int componentType[12] = {0};
 	int DictionnaryIndex = 0;
 	VRcomponent* components = nullptr;
-	double yaw = 0, pitch = 0, roll = 0, X = 1, Y = 0;
+	double yaw = 0, pitch = 0, roll = 0, X = 0, Y = 0;
 
 public:
 	DoMoDriver();
