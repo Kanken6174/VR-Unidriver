@@ -1,15 +1,39 @@
-#include "driverlog.h"
 #include "controller_sim.h"
 
 using namespace vr;
 
-	DoMoDriver::DoMoDriver() {
-		DriverLog("Started building DoMoDriver without arguments\n");
+	DoMoDriver::DoMoDriver(DriverDataTemplate ddt) {
+		DriverLog("Started building %s by DriverDataTemplate", ddt.name.c_str());
+		ObsoleteMode = false;
+		localData = ddt;
+		m_sSerialNumber = ddt.name;
+		DeviceRender = ddt.renderModel;
+
+		DriverLog("Done");
+	}
+
+	DoMoDriver::DoMoDriver(std::string name) {
+		DriverLog("Started building DoMoDriver by name, stub_mode enabled\n");
+		m_sSerialNumber = name;
 
 		inputPathDictionnary.push_back("/input/a/click");
 		inputPathDictionnary.push_back("/input/b/click");
-		inputPathDictionnary.push_back("/input/c/click");
+		inputPathDictionnary.push_back("/input/system/click");
+		//en mode stub, le type d'entrée est supérieur à 5, le composant se met donc en mode stub et observe la touche de clavier correspondante.
+		//ce mode ne nécessite aucun argument en update()
+		componentType.push_back(78); //N key
+		componentType.push_back(72); //H key
+		componentType.push_back(74); //J key
 
+		DriverLog("Created 3 keyboard-based stub components\n");
+	}
+
+	DoMoDriver::DoMoDriver(std::string name, std::vector<int> compoTypes, std::vector<std::string> compoPaths) {
+		DriverLog("Started building DoMoDriver with all arguments\n");
+
+		m_sSerialNumber = name;
+		inputPathDictionnary = compoPaths;
+		componentType = compoTypes;
 	}
 
 	DoMoDriver::~DoMoDriver() {
@@ -36,40 +60,68 @@ using namespace vr;
 
 	EVRInitError DoMoDriver::Activate(vr::TrackedDeviceIndex_t unObjectId)
 	{
-		DriverLog("Activate method called...\n");
+		if (ObsoleteMode) {
+			ObsoleteActivation(unObjectId);
+		}
+		else {
+			ModernActivation(unObjectId);
+		}
+
+		for (VRcomponent* component : DoMoDriver::components)	//foreach
+			component->registerSelf();
+		return EVRInitError::VRInitError_None;
+	}
+
+	EVRInitError DoMoDriver::ModernActivation(vr::TrackedDeviceIndex_t unObjectId) {
+		DriverLog("Modern activate method called...");
+		deviceID = unObjectId;
+		DriverLog("%s has been assigned the DeviceIndex: %d",localData.name.c_str(), unObjectId);
+		deviceContainer = vr::VRProperties()->TrackedDeviceToPropertyContainer(deviceID);
+
+		for (ComponentDataTemplate* componentData : localData.components) {
+			VRcomponent* newcomponent = new VRcomponent(unObjectId,(*componentData));
+			DoMoDriver::components.push_back(newcomponent);
+			DriverLog("Added DIGITAL component to device");
+		}
+
+		registerProperties(unObjectId);
+		return EVRInitError::VRInitError_None;
+	}
+
+	EVRInitError DoMoDriver::ObsoleteActivation(vr::TrackedDeviceIndex_t unObjectId) {
+		DriverLog("Obsolete activate method called...\n");
 		DoMoDriver::deviceID = unObjectId;	//on assigne l'id de cet appareil à partir de celui donné par le système OVR
-		DriverLog(("DoMoCap has been assigned the DeviceIndex: "+std::to_string((uint32_t)unObjectId)+"\n").c_str()); // je sais, c'est horrible
+		DriverLog(("DoMoCap has been assigned the DeviceIndex: " + std::to_string((uint32_t)unObjectId) + "\n").c_str()); // je sais, c'est horrible
 		DoMoDriver::deviceContainer = vr::VRProperties()->TrackedDeviceToPropertyContainer(deviceID);	//on récupère le handle de notre appareil
 		DriverLog(("DoMoCap has been assigned the propertyContainer: " + std::to_string((uint64_t)deviceID) + "\n").c_str());
 
-		for (std::string inputPath : DoMoDriver::inputPathDictionnary) {
-			VRcomponent* addme = new VRcomponent(inputPath, deviceContainer, DIGITAL);
-			DoMoDriver::components.push_back(addme);
-			DriverLog("Added DIGITAL component to device");
+		if (inputPathDictionnary.size() == componentType.size()) {
+			for (int i = 0; i != inputPathDictionnary.size(); i++) {	//std::string inputPath : DoMoDriver::inputPathDictionnary
+				VRcomponent* addme = new VRcomponent(inputPathDictionnary[i], deviceContainer, componentType[i]);
+				DoMoDriver::components.push_back(addme);
+				DriverLog("Added DIGITAL component to device");
+			}
+		}
+		else {
+			DriverLog("Error, input path and component type vector sizes mismatched, skipping component creation...");
+			return EVRInitError::VRInitError_Init_MismatchedRuntimes;
 		}
 
 
 		DriverLog((std::string("Post-activation, registering components...")).c_str());
-
-		for (VRcomponent* component : DoMoDriver::components)	//foreach
-			component->registerSelf();
-
 		return EVRInitError::VRInitError_None;
 	}
 
 	void DoMoDriver::registerProperties(vr::TrackedDeviceIndex_t unObjectId) {
-		std::string pathProfile = "{controller_sim}/input/DoMoDriver_profile.json";
 		setStrProperty(Prop_ModelNumber_String, DeviceRender);							//numéro de série de l'appareil
 		setStrProperty(Prop_RenderModelName_String, DeviceRender);						//chemin modèle 3D à render
-		setStrProperty(Prop_InputProfilePath_String, pathProfile);						//chemin vers profils d'input
 		setUInt64Property(Prop_CurrentUniverseId_Uint64, 2);							//on doit en donner un différent de 0 (invalide) ou 1 (oculus)
 		setBoolProperty(Prop_NeverTracked_Bool, false);									//Sera tracké, on met à false
-
 		setInt32Property(Prop_ControllerRoleHint_Int32, TrackedControllerRole_RightHand);	//on se fait passer pour la main droite
 
 		DriverLog(("Prop_ModelNumber_String : " + DeviceRender + "\n").c_str());
 		DriverLog(("Prop_RenderModelName_String : " + DeviceRender + "\n").c_str());
-		DriverLog(("Prop_ModelNumber_String : " + pathProfile + "\n").c_str());
+		//DriverLog(("Prop_ModelNumber_String : " + pathProfile + "\n").c_str());
 		DriverLog((std::string("Prop_CurrentUniverseId_Uint64 : 2\n")).c_str());
 		DriverLog((std::string("Prop_NeverTracked_Bool : false\n")).c_str());
 	}
@@ -159,19 +211,25 @@ using namespace vr;
 	*/
 	void DoMoDriver::RunFrame()
 	{
-		//DriverLog((std::string("Running frame : ") + std::to_string((uint32_t)deviceID) + "\n").c_str());
+		bool stubmode = true;
 		if (DoMoDriver::deviceID != vr::k_unTrackedDeviceIndexInvalid)
 		{
 			vr::VRServerDriverHost()->TrackedDevicePoseUpdated(DoMoDriver::deviceID, GetPose(), sizeof(DriverPose_t));
 		}
-		if (components.size() <= 0) { DriverLog("Error, empty component vector..."); return; }
-		//for (int i = 0; i < DictionnaryIndex; i++)
-		//{
-			DoMoDriver::components[0]->UpdateSelf((0x8000 & GetAsyncKeyState(78)) != 0);	//N
-			DoMoDriver::components[1]->UpdateSelf((0x8000 & GetAsyncKeyState(72)) != 0);	//H
-			DoMoDriver::components[2]->UpdateSelf((0x8000 & GetAsyncKeyState(74)) != 0);	//J
-		//}
+		if (components.size() <= 0) { return; }
 		
+		if (stubmode) {
+			for (VRcomponent* component : DoMoDriver::components)
+				component->UpdateSelf();
+		}
+		else {
+			std::string responsabilityChain = "";
+			for (VRcomponent* component : DoMoDriver::components)
+				if (!(component->UpdateSelf(&responsabilityChain))) {	//on a un pattern de chaîne de repsonsabilité ici, chanque composant prend sa part de string
+					DriverLog("An error has occured in the responsability chain of the components, string may be missing parts.");
+					return;	//si une erreur a eu lieu (typique: le string n'a plus de ressources disponibles), on renvoie à steamvr sans planter.
+				}
+		}
 	}
 
 	std::string DoMoDriver::GetSerialNumber() {

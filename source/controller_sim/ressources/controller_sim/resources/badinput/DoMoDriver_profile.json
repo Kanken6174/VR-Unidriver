@@ -2,7 +2,11 @@
     "jsonid": "input_profile",
     "legacy_binding": "{controller_sim}/input/legacy_binding_mycontroller.json",
     "controller_type": "DoMoDriver",
-    "input_bindingui_mode": "single_device",
+    "input_bindingui_mode": "controller_handed",
+    "input_bindingui_left": {
+        "transform": "scale(-1,1)",
+        "image": "{controller_sim}/icons/controller_status_ready.png"
+    },
     "input_bindingui_right": {
         "image": "{controller_sim}/icons/controller_status_ready.png"
     },
@@ -12,15 +16,5 @@
             "type": "button",
             "order": 1
         }
-    },
-    "/input/b": {
-        "binding_image_point": [250, 60],
-        "type": "button",
-        "order": 2
-    },
-    "/input/c": {
-        "binding_image_point": [450, 60],
-        "type": "button",
-        "order": 3
     }
 }

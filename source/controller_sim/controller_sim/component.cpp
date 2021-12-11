@@ -8,6 +8,14 @@ using namespace vr;
 		this->inputPath = "";
 	}
 
+	VRcomponent::VRcomponent(vr::PropertyContainerHandle_t parentHandle,ComponentDataTemplate componentData) {
+		this->parentHandle = parentHandle;	//handle du parent (uint)
+		this->localData = componentData;
+		this->inputPath = componentData.inputPath;
+		this->sclType = componentData.inputType;
+		DriverLog("VR component has been created");
+	}
+
 	VRcomponent::VRcomponent(std::string inputPath, vr::PropertyContainerHandle_t parentHandle, int sclType) {
 		this->parentHandle = parentHandle;	//handle du parent (uint)
 		this->inputPath = inputPath;//input path
@@ -27,12 +35,6 @@ using namespace vr;
 			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, JOYSTICK);
 			DriverLog("Scalar component has been registered");
 		case DIGITAL:
-			/*DriverLog((std::string("Registering boolean component with parent handle: ") +
-				std::to_string((uint64_t)parentHandle) +
-				std::string(" and handle ") +
-				std::to_string(VRcomponent::handle) +
-				std::string(" and path ") +
-				VRcomponent::inputPath).c_str());*/
 
 			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &(VRcomponent::handle));
 
@@ -44,10 +46,28 @@ using namespace vr;
 		case SKELETAL:
 			ER = vr::VRDriverInput()->CreateSkeletonComponent(parentHandle, inputPath.c_str(), "/skeleton/hand/right", "", vr::VRSkeletalTracking_Full,NULL,0,&handle);//bad
 			break;
-		default:
+		default:	//stub mode
+
+			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &(VRcomponent::handle));
+			DriverLog("Registered stub boolean component");
 			break;
 		}
 		return ER;
+	}
+
+	EVRInputError VRcomponent::UpdateSelf() {	//mode stub clavier
+		bool value = (0x8000 & GetAsyncKeyState(sclType)) != 0;
+		if (sclType != DIGITAL)
+			return vr::EVRInputError::VRInputError_WrongType;
+		if (state != value) {
+			state = !state;
+			EVRInputError ER = vr::VRDriverInput()->UpdateBooleanComponent(handle, value, 0);
+
+			DriverLog((std::string("Key state changed! handle = ") + std::to_string((uint32_t)handle) + std::string(" error code = ") + std::to_string((int)ER)).c_str());
+			return ER;
+		}
+		else
+			return EVRInputError::VRInputError_None;
 	}
 
 	EVRInputError VRcomponent::UpdateSelf(bool value) {
