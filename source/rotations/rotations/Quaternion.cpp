@@ -17,3 +17,7 @@ Quaternion Quaternion::reciprocal() {
 Quaternion Quaternion::multiplyByReal(double f) {
 	return Quaternion(x * f, y * f, z * f, w * f);
 }
+
+Quaternion Quaternion::negative() {
+	return Quaternion(-x, -y, -z, -w);
+}

@@ -26,17 +26,3 @@ Quaternion madgwickRotations::addQuaternions(Quaternion q1, Quaternion q2) {
 		q1.getW() + q2.getW()
 	);
 }
-
-Quaternion madgwickRotations::currentOrientation(Quaternion previousOrientation, Quaternion change, time_t duration) {
-	return addQuaternions(previousOrientation, change).multiplyByReal(duration);
-}
-
-Quaternion madgwickRotations::changeSincePrevious(Quaternion previousOrientation, Vector angularVelocity /*double stepSize, gradient*/ ) {
-	Quaternion tmp = multiplyQuaternions(previousOrientation, angularVelocity.toQuaternion());
-	return multiplyQuaternions(tmp, previousOrientation.reciprocal());
-}
-
-Quaternion updateOrentation(Quaternion previousOrientation, Vector angularVelocity, time_t duration) {
-	Quaternion change = changeSincePrevious(previousOrientation, angularVelocity);
-	return currentOrientation(previousOrientation, change, duration);	
-}

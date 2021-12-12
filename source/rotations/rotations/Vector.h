@@ -3,8 +3,9 @@
 #include "madgwickRotations.h"
 
 struct madgwickRotations::Vector {
-public: //constructor
+public: //constructors
 	Vector(double x, double y, double z) : x(x), y(y), z(z) {}
+	Vector() : x(0), y(0), z(0) {}
 	
 public: //methods defined in Vector.cpp
 	Quaternion toQuaternion(); //converts vector to a quaternion
