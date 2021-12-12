@@ -66,16 +66,17 @@ void requestTram(SerialPort w, float result[]) {
 	char buf[1024];
 
 	string ask = "#";							//symbole envoyé a l arduino
-	w.send(ask.c_str(), ask.length());
+
+	if(!w.send(ask.c_str(), ask.length()))
+		throw runtime_error("Erreur send Packet !");
 
 
 	memset(buf, NULL, 1024);					//mise a NULL tout les éléments du buffeur
-	w.receive(buf, 1024);						//reception des données arduino
+	if(!w.receive(buf, 1024))						//reception des données arduino
+		throw runtime_error("Erreur receive Packet!");
 
 	if (buf[0] != 'A')
 		return;
-
-	cout << buf << endl;
 
 	string conc;								//string pour la concatenation
 	int i = 0;
@@ -100,8 +101,6 @@ void requestTram(SerialPort w, float result[]) {
 			}
 		}
 	}
-
-
 }
 
 SerialPort connect() {
@@ -111,20 +110,24 @@ SerialPort connect() {
 		return w;
 	}
 	else {
-		cout << "Not Connected";
+		throw runtime_error("Port connection erreur !");
 	}
 }
 
 int main(int argumentCount, const char* argumentValues[])
 {
 	float response [9];					//a mettre fichier setup
-	SerialPort w = connect();			//fichier setup port
-	/*
-	for (int i = 0; i < 100; i++)
+	SerialPort w;
+
+	try
 	{
-		requestTram(w, response);
+		 w = connect();			//fichier setup port
 	}
-	*/
+	catch (const runtime_error& e)
+	{
+		cout << e.what() << endl;
+	}
+	
 
 	while (true) {
 		requestTram(w, response);
@@ -142,11 +145,9 @@ int main(int argumentCount, const char* argumentValues[])
 	// 3 vector a faire
 	// 
 	// try catch
-	//verifier si message de connection
-	//rapidité de serie
 
 
-	getchar();
+	 char c = getchar();
 
 	return 0;
 }
