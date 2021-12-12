@@ -1,0 +1,6 @@
+[{
+    "language_tag": "en_US",
+    "mycontroller": "Generic DoMoCap Controller",
+
+    "/input/system": "bouton systeme"
+}]

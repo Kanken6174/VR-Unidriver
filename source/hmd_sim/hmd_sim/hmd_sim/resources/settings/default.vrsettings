@@ -1,0 +1,15 @@
+{
+   "hmd_sim" : {
+      "enable" : true,
+      "serialNumber" : "CTRL_HMD_2008",
+      "modelNumber" : "PhantomHMD",
+      "windowX" : 20,
+      "windowY" : 20,
+      "windowWidth" : 800,
+      "windowHeight" : 600,
+      "renderWidth" : 400,
+      "renderHeight" : 300,
+      "secondsFromVsyncToPhotons" : 0.011,
+      "displayFrequency" : 0
+   }
+}
