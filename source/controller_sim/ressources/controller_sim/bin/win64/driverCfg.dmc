@@ -4,24 +4,9 @@ $DoMoDriver_right
 >oculus_cv1_controller_right
 #on définit le rôle du driver (1 = main gauche, 2 = droite, 3 = pas applicable,...)
 <2
-#
 #on définit désormais les composants de ce driver
-@this will be displayed in the log
 =/input/a/click
 :78
 =/input/b/click
 :72
-#-----------------------------------------------------
-$DoMoDriver_left
-#on donne le modèle 3d à utiliser pour le driver
->oculus_cv1_controller_left
-#on définit le rôle du driver (1 = main gauche, 2 = droite, 3 = pas applicable,...)
-<1
-#
-#on définit désormais les composants de ce driver
-@this will be displayed in the log
-=/input/c/click
-:70
-=/input/d/click
-:71
 @done, file successfully loaded

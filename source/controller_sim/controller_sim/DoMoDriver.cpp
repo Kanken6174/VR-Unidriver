@@ -66,9 +66,12 @@ using namespace vr;
 		else {
 			ModernActivation(unObjectId);
 		}
+		DriverLog("________________________Registering components_______________");
+		for (VRcomponent* component : DoMoDriver::components) {	//foreach
+			EVRInputError ER = component->registerSelf();
+			DriverLog("Component registered with return code %d",ER);
+		}
 
-		for (VRcomponent* component : DoMoDriver::components)	//foreach
-			component->registerSelf();
 		return EVRInitError::VRInitError_None;
 	}
 
@@ -78,13 +81,13 @@ using namespace vr;
 		DriverLog("%s has been assigned the DeviceIndex: %d",localData.name.c_str(), unObjectId);
 		deviceContainer = vr::VRProperties()->TrackedDeviceToPropertyContainer(deviceID);
 
+		registerProperties(unObjectId);
+
 		for (ComponentDataTemplate* componentData : localData.components) {
-			VRcomponent* newcomponent = new VRcomponent(unObjectId,(*componentData));
+			VRcomponent* newcomponent = new VRcomponent(deviceContainer,(*componentData));
 			DoMoDriver::components.push_back(newcomponent);
-			DriverLog("Added DIGITAL component to device");
 		}
 
-		registerProperties(unObjectId);
 		return EVRInitError::VRInitError_None;
 	}
 
@@ -113,15 +116,16 @@ using namespace vr;
 	}
 
 	void DoMoDriver::registerProperties(vr::TrackedDeviceIndex_t unObjectId) {
-		setStrProperty(Prop_ModelNumber_String, DeviceRender);							//numéro de série de l'appareil
+		setStrProperty(Prop_InputProfilePath_String, "{controller_sim}/input/" + m_sSerialNumber + "_profile.json");
+		setStrProperty(Prop_ModelNumber_String, m_sSerialNumber);							//numéro de série de l'appareil
 		setStrProperty(Prop_RenderModelName_String, DeviceRender);						//chemin modèle 3D à render
 		setUInt64Property(Prop_CurrentUniverseId_Uint64, 2);							//on doit en donner un différent de 0 (invalide) ou 1 (oculus)
 		setBoolProperty(Prop_NeverTracked_Bool, false);									//Sera tracké, on met à false
 		setInt32Property(Prop_ControllerRoleHint_Int32, TrackedControllerRole_RightHand);	//on se fait passer pour la main droite
 
+		DriverLog("______________________Registering device properties_____________________");
 		DriverLog(("Prop_ModelNumber_String : " + DeviceRender + "\n").c_str());
 		DriverLog(("Prop_RenderModelName_String : " + DeviceRender + "\n").c_str());
-		//DriverLog(("Prop_ModelNumber_String : " + pathProfile + "\n").c_str());
 		DriverLog((std::string("Prop_CurrentUniverseId_Uint64 : 2\n")).c_str());
 		DriverLog((std::string("Prop_NeverTracked_Bool : false\n")).c_str());
 	}
@@ -216,7 +220,10 @@ using namespace vr;
 		{
 			vr::VRServerDriverHost()->TrackedDevicePoseUpdated(DoMoDriver::deviceID, GetPose(), sizeof(DriverPose_t));
 		}
-		if (components.size() <= 0) { return; }
+		else {
+			DriverLog("Invalid DeviceID, skipping pose update...");
+		}
+		if (components.size() <= 0) { DriverLog("No components on device, skipping..."); return; }
 		
 		if (stubmode) {
 			for (VRcomponent* component : DoMoDriver::components)

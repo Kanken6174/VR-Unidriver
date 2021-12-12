@@ -94,6 +94,7 @@ void Controller_simDriverServer::ReadConfigAndBuildDrivers() {
 			break;
 		}
 	}
+	driverCfgFile.close();
 	DriverLog("Found %d drivers", DriverTemplates.size());
 	DriverLog("============================================");
 	for (DriverDataTemplate* dtemp : DriverTemplates) {
@@ -141,6 +142,9 @@ void Controller_simDriverServer::RunFrame()
 	if (inited) {
 		for (DoMoDriver* driver : Controller_simDriverServer::Drivers)
 			driver->RunFrame();
+	}
+	else {
+		DriverLog("Not inited yet!");
 	}
 
 	vr::VREvent_t vrEvent;

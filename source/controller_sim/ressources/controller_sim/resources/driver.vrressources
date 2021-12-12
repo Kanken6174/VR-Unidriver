@@ -1,7 +1,7 @@
 {
     "jsonid": "vrresources",
     "statusicons": {
-        "DoMoDriver": {
+        "DoMoDriver_right": {
             "Prop_NamedIconPathDeviceOff_String": "{controller_sim}/icons/controller_status_off.png",
             "Prop_NamedIconPathDeviceSearching_String": "{controller_sim}/icons/controller_status_searching.gif",
             "Prop_NamedIconPathDeviceSearchingAlert_String": "{controller_sim}/icons/controller_status_searching_alert.gif",
