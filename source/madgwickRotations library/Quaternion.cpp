@@ -1,3 +1,10 @@
+/**
+ * @file Quaternion.cpp
+ * @author Elliott Le Guéhennec (elliott.le_guehennec@etu.uca.fr)
+ * @brief Defines the methods of struct Quaternion. For doc regarding them see Quaternion.h
+ * @version 0.1
+ * @date 2021-12-13
+ */
 #include "Quaternion.h"
 
 using namespace madgwickRotations;
