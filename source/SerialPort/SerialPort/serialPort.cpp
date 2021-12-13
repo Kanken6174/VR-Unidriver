@@ -5,6 +5,11 @@
 #include <iostream>
 #include <WinSock2.h>
 #include <windows.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+
+using namespace std;
 
 SerialPort::SerialPort()
 {
