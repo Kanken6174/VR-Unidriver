@@ -66,11 +66,12 @@ public:
 	virtual void setUInt64Property(vr::ETrackedDeviceProperty SVRproperty, uint64_t value);
 	virtual void setBoolProperty(vr::ETrackedDeviceProperty SVRproperty, bool value);
 
-	//fonctions requises par l'interface ITrackedDeviceServerDriver, commes données dans le sample
-	virtual EVRInitError Activate(vr::TrackedDeviceIndex_t unObjectId);
 	virtual EVRInitError ModernActivation(vr::TrackedDeviceIndex_t unObjectId);
 	virtual EVRInitError ObsoleteActivation(vr::TrackedDeviceIndex_t unObjectId);
 	virtual void registerProperties(vr::TrackedDeviceIndex_t unObjectId);
+
+	//fonctions requises par l'interface ITrackedDeviceServerDriver, commes données dans le sample
+	virtual EVRInitError Activate(vr::TrackedDeviceIndex_t unObjectId);
 	virtual void Deactivate();
 	virtual void EnterStandby();
 	virtual void* GetComponent(const char* pchComponentNameAndVersion);
