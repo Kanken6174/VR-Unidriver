@@ -9,5 +9,9 @@
 
 // ajouter les en-têtes à précompiler ici
 #include "framework.h"
+#include "Vector.h"
+#include "Quaternion.h"
+#include "MadgwickRotator.h"
+#include "madgwickRotations.h"
 
 #endif //PCH_H
