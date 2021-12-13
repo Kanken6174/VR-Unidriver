@@ -33,7 +33,7 @@ std::wstring ExePath() {
 
 void Controller_simDriverServer::ReadConfigAndBuildDrivers() {
 	std::ifstream driverCfgFile;	//create readonly stream
-	driverCfgFile.open("Y:\\domocap\\source\\controller_sim\\ressources\\controller_sim\\bin\\win64\\driverCfg.dmc");	//proprietary config file -> .doMoCap -> .dmc
+	driverCfgFile.open("C:\\Users\\ASUS\\Documents\\2A\\projet\\domocap\\source\\controller_sim\\ressources\\controller_sim\\bin\\win64\\driverCfg.dmc");	//proprietary config file -> .doMoCap -> .dmc
 
 	if (!driverCfgFile) {
 		//on récupère le chemin courant et on le convertit en string
