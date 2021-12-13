@@ -1,5 +1,11 @@
+/**
+ * @file MadgwickRotator.cpp
+ * @author Elliot Le Guéhennec (elliott.le_guehennec@etu.uca.fr)
+ * @brief Definitions of MadgwickRotator class methods. For documentation see MadgwickRotator.h
+ * @version 0.1
+ * @date 2021-12-13
+ */
 #include "pch.h"
-#include "MadgwickRotator.h"
 
 void MadgwickRotator::init(Vector zGyro, Vector zAccel, Vector zMagneto) {
 	this->zGyro = zGyro;
