@@ -40,14 +40,21 @@ $mess
 ## opérateurs
 
 `$` définit le nom d'un nouvel appareil (nouveau "driver" dans le driver, nouvel appareil à connecter sur un port série).
+
 `>` donne le modèle 3d à utiliser pour cet appareil (partie driver uniquement).
+
 `<` définit l'indice de role du driver, `0` pour non applicable, `1` pour main gauche, `2` pour main droite (openVR uniquement)
+
 `=` définit un nouveau chemin d'action steamVR et correspond à un nouveau composant d'un appareil (bouton, joystick...),
 il faut noter que cela est lu de 2 façon différentes, le driver créé un nouveau composant pour un appareil si il commence
 par /input car il ne reconnait pas les /pose, qui sont eux lus par la moulinette, pour définir les composants liés à la
 position de l'appareil (la moulinette lit à la fois les /input et /pose).
+
 `:` définit le type de composant (0-5) ou la touche de clavier à surveiller (5+) en mode simulation clavier
+
 `~` définit la lettre qui correspond à la valeur de ce composant dans la trame sérial de l'appareil (index A-Z), ignoré par le driver,
 uniquement lu par la moulinette
+
 `@` est un commentaire "bruyant", il sera affiché dans le log de steamVR.
+
 `#` et n'importe quel autre symbole correspond à un commentaire, et sera ignoré par le driver et la moulinette.
