@@ -1,5 +1,5 @@
 #on donne le nom du driver, cela en créé un nouveau à chaque $
-$DoMoDriver_right
+$mess
 #on donne le modèle 3d à utiliser pour le driver
 >oculus_cv1_controller_right
 #on définit le rôle du driver (1 = main gauche, 2 = droite, 3 = pas applicable,...)
@@ -7,6 +7,41 @@ $DoMoDriver_right
 #on définit désormais les composants de ce driver
 =/input/a/click
 :78
+~J
 =/input/b/click
 :72
+~K
+=/input/system/click
+:74
+~L
+=input/x/click
+:75
+~M
+=pose/mag/x
+:1
+~A
+=pose/mag/y
+:99
+~B
+=pose/mag/z
+:99
+~C
+=pose/acc/x
+:99
+~D
+=pose/acc/y
+:99
+~E
+=pose/acc/z
+:99
+~F
+=pose/gyro/x
+:99
+~G
+=pose/gyro/y
+:99
+~H
+=pose/gyro/z
+:99
+~I
 @done, file successfully loaded
