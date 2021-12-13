@@ -1,0 +1,11 @@
+#Fichier setup communication série
+
+
+
+
+
+
+port
+baudrate
+format TRAME	
+				-bouton
