@@ -2,15 +2,6 @@
 #include "driverlog.h"  //inclut aussi openvr.h
 #include "VRComponent.h"
 
-#include <string>
-#include <vector>	//prend la lib des vecteurs
-#include <thread>	//multithreading
-#include <chrono>	//heure/temps
-#include <stdio.h>
-#include <stdarg.h>
-#include <windows.h>	//si sur windows, on inclut le header du système windows
-#include <WinUser.h> //requis pour les hooks de clavier
-
 #define ABSOLUTE_S vr::VRScalarType_Absolute	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick
 
 #define TRIGGER vr::VRScalarUnits_NormalizedOneSided	//0 à 1
@@ -45,23 +36,30 @@ vr::HmdQuaternion_t ToQuaternion(double yaw, double pitch, double roll);
 class DoMoDriver : public vr::ITrackedDeviceServerDriver
 {
 private:
-	vr::TrackedDeviceIndex_t deviceID;	//m_unObjectId dans la doc
-	vr::PropertyContainerHandle_t deviceContainer;	//m_ulpropertyContainer dans la doc
+	vr::TrackedDeviceIndex_t deviceID = vr::k_unTrackedDeviceIndexInvalid;	//m_unObjectId dans la doc
+	vr::PropertyContainerHandle_t deviceContainer = vr::k_ulInvalidPropertyContainer;	//m_ulpropertyContainer dans la doc
 
 	std::string m_sSerialNumber = "DoMoDriver";	//le nom de l'appareil
 	std::string DeviceRender = "oculus_cv1_controller_right";	//à la fois le "modèle" de l'appareil, mais aussi son modèle 3d (rendermodels)
 																//ici on vole le modèle 3d de la manette d'oculus
 
-	std::string inputPathDictionnary[12] = {""};	//un tableau de chemins SVR, type /input/machin/truc
-	int componentType[12] = {0};
-	int DictionnaryIndex = 0;
-	VRcomponent* components = nullptr;
+	DriverDataTemplate localData;	//version moderne
+
+	std::vector <VRcomponent*> components;	//un vecteur de pointeurs vers des VRcomponent
 	double yaw = 0, pitch = 0, roll = 0, X = 0, Y = 0;
 
+	bool ObsoleteMode = true;	//définit la version de la méthode d'activation à utiliser
+	//Obsolètes, sauf si utilisation du driver sans les dataTemplates
+	std::vector <std::string> inputPathDictionnary;//un tableau de chemins SVR, type /input/machin/truc
+	std::vector <int> componentType;
+
 public:
-	DoMoDriver();
-	DoMoDriver(int arraySize);
+	DoMoDriver(DriverDataTemplate ddt);
+	DoMoDriver(std::string name);
+	DoMoDriver(std::string name, std::vector<int> compoTypes, std::vector<std::string> compoPaths);
+
 	virtual ~DoMoDriver();
+
 	//Ces 4 fonctions servent juste à factoriser celles données par openVR pour modifier des valeurs
 	virtual void setStrProperty(vr::ETrackedDeviceProperty SVRproperty, std::string value);
 	virtual void setInt32Property(vr::ETrackedDeviceProperty SVRproperty, int32_t value);
@@ -70,6 +68,9 @@ public:
 
 	//fonctions requises par l'interface ITrackedDeviceServerDriver, commes données dans le sample
 	virtual EVRInitError Activate(vr::TrackedDeviceIndex_t unObjectId);
+	virtual EVRInitError ModernActivation(vr::TrackedDeviceIndex_t unObjectId);
+	virtual EVRInitError ObsoleteActivation(vr::TrackedDeviceIndex_t unObjectId);
+	virtual void registerProperties(vr::TrackedDeviceIndex_t unObjectId);
 	virtual void Deactivate();
 	virtual void EnterStandby();
 	virtual void* GetComponent(const char* pchComponentNameAndVersion);
@@ -95,10 +96,12 @@ public:
 class Controller_simDriverServer : public IServerTrackedDeviceProvider
 {
 private:
-	DoMoDriver* doMoDriver;
+	std::vector<DoMoDriver*> Drivers;
+	bool inited = false;
+	virtual void ReadConfigAndBuildDrivers();
+	virtual void RegisterInternalDrivers();
 
 public:
-	Controller_simDriverServer();
 	virtual EVRInitError Init(vr::IVRDriverContext* pDriverContext);
 	virtual void Cleanup();
 

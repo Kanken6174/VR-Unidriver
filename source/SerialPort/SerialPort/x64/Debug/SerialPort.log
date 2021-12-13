@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\matto\Desktop\ProjetIUT\domocap\source\SerialPort\SerialPort\main.cpp(17,39): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\matto\Desktop\ProjetIUT\domocap\source\SerialPort\SerialPort\main.cpp(52,35): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\matto\Desktop\ProjetIUT\domocap\source\SerialPort\SerialPort\main.cpp(69,34): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+  SerialPort.vcxproj -> C:\Users\matto\Desktop\ProjetIUT\domocap\source\SerialPort\x64\Debug\SerialPort.exe

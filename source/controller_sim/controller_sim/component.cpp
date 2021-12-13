@@ -8,6 +8,15 @@ using namespace vr;
 		this->inputPath = "";
 	}
 
+	VRcomponent::VRcomponent(vr::PropertyContainerHandle_t parentHandle, ComponentDataTemplate componentData) {
+		this->parentHandle = parentHandle;	//handle du parent (uint)
+		DriverLog("Passed parent handle is %d", parentHandle);
+		this->localData = componentData;
+		this->inputPath = componentData.inputPath;
+		this->sclType = componentData.inputType;
+		DriverLog("VR component has been created");
+	}
+
 	VRcomponent::VRcomponent(std::string inputPath, vr::PropertyContainerHandle_t parentHandle, int sclType) {
 		this->parentHandle = parentHandle;	//handle du parent (uint)
 		this->inputPath = inputPath;//input path
@@ -27,8 +36,10 @@ using namespace vr;
 			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, JOYSTICK);
 			DriverLog("Scalar component has been registered");
 		case DIGITAL:
-			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &handle);
-			DriverLog("Boolean component has been registered");
+
+			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &(VRcomponent::handle));
+
+			DriverLog((std::string("Done, returned error is : ") + std::to_string((int)ER)).c_str());
 			break;
 		case HAPTIC:	//haptic components can't be updated, they will produce an event on haptic output
 			ER = vr::VRDriverInput()->CreateHapticComponent(parentHandle, inputPath.c_str(), &handle);
@@ -36,10 +47,28 @@ using namespace vr;
 		case SKELETAL:
 			ER = vr::VRDriverInput()->CreateSkeletonComponent(parentHandle, inputPath.c_str(), "/skeleton/hand/right", "", vr::VRSkeletalTracking_Full,NULL,0,&handle);//bad
 			break;
-		default:
+		default:	//stub mode
+			VRInputComponentHandle_t localhandle = -1;
+			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &localhandle);
+			handle = localhandle;
+			DriverLog("Registered stub boolean component with parent handle %d, inPath %s, got handle %d from default %d",parentHandle, inputPath.c_str(), handle, localhandle);
 			break;
 		}
 		return ER;
+	}
+
+	EVRInputError VRcomponent::UpdateSelf() {	//mode stub clavier
+		bool value = ((0x8000 & GetAsyncKeyState(sclType)) != 0);
+
+		if (state != value) {
+			state = !state;
+			EVRInputError ER = vr::VRDriverInput()->UpdateBooleanComponent(handle, value, 0);
+
+			DriverLog((std::string("Key state changed! handle = ") + std::to_string((uint32_t)handle) + std::string(" error code = ") + std::to_string((int)ER)).c_str());
+			return ER;
+		}
+		else
+			return EVRInputError::VRInputError_None;
 	}
 
 	EVRInputError VRcomponent::UpdateSelf(bool value) {
@@ -47,8 +76,10 @@ using namespace vr;
 			return vr::EVRInputError::VRInputError_WrongType;
 		if (state != value) {
 			state = !state;
-			DriverLog("Key state changed!");
-			return vr::VRDriverInput()->UpdateBooleanComponent(handle, value, 0);
+			EVRInputError ER =vr::VRDriverInput()->UpdateBooleanComponent(handle, value, 0);
+
+			DriverLog((std::string("Key state changed! handle = ") + std::to_string((uint32_t)handle) + std::string(" error code = ")+ std::to_string((int)ER)).c_str());
+			return ER;
 		}
 		else
 			return EVRInputError::VRInputError_None;

@@ -9,51 +9,155 @@ using namespace vr;
 * Il s'agit du serveur qui va contrôler les différents appareils, car il peut y en avoir plusieurs par
 * serveur.
 */
-	EVRInitError Controller_simDriverServer::Init(vr::IVRDriverContext* pDriverContext)
-	{
-		VR_INIT_SERVER_DRIVER_CONTEXT(pDriverContext);	//une fonction définie dans openvr_driver.h
-		InitDriverLog(vr::VRDriverLog());	//initialise le logging d'informations visible sur la console web
+EVRInitError Controller_simDriverServer::Init(vr::IVRDriverContext* pDriverContext)
+{
+	VR_INIT_SERVER_DRIVER_CONTEXT(pDriverContext);	//une fonction définie dans openvr_driver.h
+	InitDriverLog(vr::VRDriverLog());	//initialise le logging d'informations visible sur la console web
 
-		//on devrait lire les infos du fichier de config ici et appeller en fonction
+	DriverLog("log inited\n");
+	ReadConfigAndBuildDrivers();
+	DriverLog("driver(s) inited\n");
+	RegisterInternalDrivers();
+	DriverLog("driver(s) registered");
+	inited = true;
 
-		DriverLog("ctrl_sim: log inited\n");
-		Controller_simDriverServer::doMoDriver = new DoMoDriver();
-			DriverLog("ctrl_sim: driver inited\n");
-			//register ce driver auprès de SVR
-			vr::VRServerDriverHost()->TrackedDeviceAdded(Controller_simDriverServer::doMoDriver->GetSerialNumber().c_str(), vr::TrackedDeviceClass_Controller, doMoDriver);
-			DriverLog("ctrl_sim: driver registered\n");
-		return VRInitError_None;
+	return VRInitError_None;
+}
+
+std::wstring ExePath() {
+	TCHAR buffer[MAX_PATH] = { 0 };
+	GetModuleFileName(NULL, buffer, MAX_PATH);
+	std::wstring::size_type pos = std::wstring(buffer).find_last_of(L"\\/");
+	return std::wstring(buffer).substr(0, pos);
+}
+
+void Controller_simDriverServer::ReadConfigAndBuildDrivers() {
+	std::ifstream driverCfgFile;	//create readonly stream
+	driverCfgFile.open("Y:\\domocap\\source\\controller_sim\\ressources\\controller_sim\\bin\\win64\\driverCfg.dmc");	//proprietary config file -> .doMoCap -> .dmc
+
+	if (!driverCfgFile) {
+		//on récupère le chemin courant et on le convertit en string
+		DriverLog("Unable to open driver config file from path: %s",ExePath().c_str());
+		return;
 	}
 
-	void Controller_simDriverServer::Cleanup()
-	{
-		CleanupDriverLog();
-		Controller_simDriverServer::doMoDriver->~DoMoDriver();
-	}
+	std::vector<DriverDataTemplate*> DriverTemplates;
 
-	const char* const* Controller_simDriverServer::GetInterfaceVersions() 
-	{ 
-		return vr::k_InterfaceVersions; 
-	}
+	int activeDriverVector = -1;
+	int activeCompomentVector = -1;
 
-	void Controller_simDriverServer::RunFrame()
-	{
-		Controller_simDriverServer::doMoDriver->RunFrame();
+	//la déclaration des variables (même intermédiaires), doit se faire avant le switch/case en c++, d'où ces 3 déclarations:
+	DriverDataTemplate* DriverTemp = nullptr;
+	ComponentDataTemplate* CompoTemp = nullptr;
+	int intBuf = 99;
+	std::string buf = "";
 
-		vr::VREvent_t vrEvent;
-		while (vr::VRServerDriverHost()->PollNextEvent(&vrEvent, sizeof(vrEvent)))
-		{
+	while (std::getline(driverCfgFile, buf)) {
+		char id = buf[0];
+		buf = buf.erase(0, 1);
+		buf.erase(std::remove(buf.begin(), buf.end(), '\n'), buf.end()); //on enlève les \n parasites
+		switch (id) {
+		case '$':	//nouveau driver
+			activeDriverVector++;
+			activeCompomentVector = -1;
+
+			DriverTemp = new DriverDataTemplate;
+			DriverTemplates.push_back(DriverTemp);
+			DriverTemplates[activeDriverVector]->name = buf;
+
+			DriverLog(("Discovered driver named : " + buf).c_str());
+			break;
+		case '>':	//modèle 3d du driver
+			DriverTemplates[activeDriverVector]->renderModel = buf;
+			break;
+		case '<':	//nature du driver (quelle main entre autres)
+			intBuf = std::stoi(buf);
+			DriverTemplates[activeDriverVector]->role = intBuf;
+			break;
+		case '=':	//nouveau composant pour le driver, la ligne commençant par = contient le chemin d'input du driver, ex: /input/a/click
+			activeCompomentVector++;
+			CompoTemp = new ComponentDataTemplate;
+			DriverTemplates[activeDriverVector]->components.push_back(CompoTemp);
+			DriverTemplates[activeDriverVector]->components[activeCompomentVector]->inputPath = buf;
+			break;
+		case ':':	//le type d'input du driver (0-5 pour digital, analog, ect...; 5+ pour bool stub mode)
+			intBuf = std::stoi(buf);
+			DriverTemplates[activeDriverVector]->components[activeCompomentVector]->inputType = intBuf;
+			break;
+		case '#': 
+					//this is a .dmc comment line, it will be ignored
+			break;
+		case '@':	// this is a "noisy" comment, it will be displayed in the driver log, useful for debugging
+			DriverLog(buf.c_str());
+			break;
+		default:
+			break;
 		}
 	}
-	bool Controller_simDriverServer::ShouldBlockStandbyMode() { return false; }
-	void Controller_simDriverServer::EnterStandby() {/*standby code for the gloves here??*/}
-	void Controller_simDriverServer::LeaveStandby() {/*Wake up for the gloves here?*/}
+	driverCfgFile.close();
+	DriverLog("Found %d drivers", DriverTemplates.size());
+	DriverLog("============================================");
+	for (DriverDataTemplate* dtemp : DriverTemplates) {
+		DriverLog("Driver named : %s has %d components with role %d", dtemp->name.c_str(), dtemp->components.size(), dtemp->role);
 
-	Controller_simDriverServer::Controller_simDriverServer() {
+		for (ComponentDataTemplate* ctemp : dtemp->components) {
+			DriverLog("Component with type : %d at path %s", ctemp->inputType, ctemp->inputPath.c_str());
+		}
+		DriverLog("------------------------------------------");
+		DoMoDriver* driver = new DoMoDriver(*dtemp);
+		Controller_simDriverServer::Drivers.push_back(driver);
+		DriverLog("============================================");
+	}
+	DriverLog("Created %d drivers", Drivers.size());
+}
 
+
+
+void Controller_simDriverServer::RegisterInternalDrivers() {
+	for (DoMoDriver* driver : Controller_simDriverServer::Drivers) {
+		bool success = vr::VRServerDriverHost()->TrackedDeviceAdded(driver->GetSerialNumber().c_str(), vr::TrackedDeviceClass_Controller, driver);
+		if (success)
+			DriverLog("driver registered successfully\n");
+		else
+			DriverLog("Failed to register driver");
+	}
+}
+
+void Controller_simDriverServer::Cleanup()
+{
+	inited = false;
+	CleanupDriverLog();
+
+	for (DoMoDriver* driver : Controller_simDriverServer::Drivers)
+		driver->~DoMoDriver();	//appel de destructeur
+}
+
+const char* const* Controller_simDriverServer::GetInterfaceVersions()
+{
+	return vr::k_InterfaceVersions;
+}
+
+void Controller_simDriverServer::RunFrame()
+{
+	if (inited) {
+		for (DoMoDriver* driver : Controller_simDriverServer::Drivers)
+			driver->RunFrame();
+	}
+	else {
+		DriverLog("Not inited yet!");
 	}
 
-	Controller_simDriverServer controller_simServer;	//c'est global, c'est moche, c'est SteamVR
+	vr::VREvent_t vrEvent;
+	while (vr::VRServerDriverHost()->PollNextEvent(&vrEvent, sizeof(vrEvent)))
+	{
+	}
+}
+bool Controller_simDriverServer::ShouldBlockStandbyMode() { return false; }
+void Controller_simDriverServer::EnterStandby() {/*standby code for the gloves here??*/ }
+void Controller_simDriverServer::LeaveStandby() {/*Wake up for the gloves here?*/ }
+
+
+Controller_simDriverServer controller_simServer;	//c'est global, c'est moche, c'est SteamVR
 
 /**
 * La fonction qui sera exportée vers OpenVR, il s'agit de
