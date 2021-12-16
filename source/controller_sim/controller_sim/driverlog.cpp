@@ -1,5 +1,9 @@
-//========= Copyright Valve Corporation ============//
-
+/**
+* @author Valve corporation
+* @brief this file holds the declaration of the driver logging related functions
+* @version 0.1
+* @date 16/12/2021
+*/
 #include"driverlog.h"
 #include <stdarg.h>
 

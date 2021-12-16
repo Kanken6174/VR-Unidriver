@@ -1,3 +1,10 @@
+/**
+* @author Yorick Geoffre
+* @brief this file holds the declaration of both the device driver and the server driver (server has one or more devices which has one or more components)
+* @version 0.5
+* @date 16/12/2021
+*/
+
 #include "entry_point.h"
 #include "driverlog.h"  //inclut aussi openvr.h
 #include "VRComponent.h"

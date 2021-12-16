@@ -1,3 +1,10 @@
+/**
+* @author Yorick Geoffre
+* @brief this file holds the declaration of the main server driver, which possesses all other devices and subsequent components, and passes the pointers to SteamVR
+* @version 0.7
+* @date 16/12/2021
+*/
+
 #include "controller_sim.h"
 
 using namespace vr;

@@ -1,3 +1,10 @@
+/**
+* @author Yorick Geoffre
+* @brief this file holds the declaration of the dataObjects, which contain the info required to create a device driver and some components
+* @version 0.1
+* @date 16/12/2021
+*/
+
 #include <openvr_driver.h>
 #include <fstream>
 #include <iostream>

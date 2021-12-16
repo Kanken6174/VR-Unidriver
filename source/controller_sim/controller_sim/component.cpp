@@ -1,3 +1,10 @@
+/**
+* @author Yorick Geoffre
+* @brief defines a single component, like a joystick or a button on a device
+* @version 0.3 - added dataTemplate based constructors
+* @date 30/11/2021
+*/
+
 #include "VRComponent.h"
 
 using namespace vr;
