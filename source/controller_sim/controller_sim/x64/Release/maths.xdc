@@ -6,6 +6,18 @@
 @version 0.3 - added dataTemplate based constructors
 @date 30/11/2021
 
+@author Valve corporation
+@brief this file holds the declaration of the driver logging related functions
+@version 0.1
+@date 16/12/2021
+
+</member>
+<member name="M:acos(System.Single)" decl="false" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\dataObjects.h" line="1">
+@author Yorick Geoffre
+@brief this file holds the declaration of the dataObjects, which contain the info required to create a device driver and some components
+@version 0.1
+@date 16/12/2021
+
 </member>
 <member name="T:Quaternion" decl="false" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\controller_sim.h" line="25">
 maths.h functions and definitions

@@ -1,7 +1,8 @@
 #pragma once
 #include<stdio.h>
-#include<openvr_driver.h>
 #include <Windows.h>
+#include "controller_sim.h"
+#include<winnt.h>
 
 using namespace std;
 using namespace vr;
@@ -15,7 +16,7 @@ namespace dispatchers {
 		string pipeName = "\\\\.\\domocap\\DriverPipe";
 
 		HANDLE hPipe = nullptr;
-		DWORD dwRead = NULL;
+		DWORD dwRead = 0;
 
 	public:
 		DataDispatcher();
