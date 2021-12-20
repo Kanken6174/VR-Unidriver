@@ -48,7 +48,7 @@ namespace dispatchers{
 	}
 
 	bool DataDispatcher::disconnectPipe() {
-		return false;
+		return DisconnectNamedPipe(this->hPipe);
 	}
 
 	bool DataDispatcher::feedPipeDataToDrivers() {

@@ -40,6 +40,9 @@
 		case ABSOLUTE_T:
 			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, JOYSTICK);
 			DriverLog("Scalar component has been registered");
+		case RELATIVE_T:
+			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, TRIGGER);
+			DriverLog("Scalar component has been registered");
 		case DIGITAL:
 
 			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &(VRcomponent::handle));
@@ -91,9 +94,10 @@
 	}
 
 	EVRInputError VRcomponent::UpdateSelf(float value) {
-		if (sclType != ABSOLUTE_T || value > 1 || value <-1)
+		if (sclType == ABSOLUTE_T || sclType == RELATIVE_T || value > 1 || value <-1)
 			return vr::VRInputError_WrongType;
-		return vr::VRDriverInput()->UpdateScalarComponent(handle, value, 0);
+
+			return vr::VRDriverInput()->UpdateScalarComponent(handle, value, 0);
 	}
 
 	EVRInputError VRcomponent::UpdateSelf(vr::VRBoneTransform_t* hand, int size = 31) {
