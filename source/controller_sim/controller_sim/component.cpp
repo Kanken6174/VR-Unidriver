@@ -40,9 +40,11 @@
 		case ABSOLUTE_T:
 			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, JOYSTICK);
 			DriverLog("Scalar component has been registered");
+			break;
 		case RELATIVE_T:
 			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, TRIGGER);
 			DriverLog("Scalar component has been registered");
+			break;
 		case DIGITAL:
 
 			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &(VRcomponent::handle));
