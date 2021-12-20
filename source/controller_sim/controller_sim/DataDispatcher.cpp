@@ -6,6 +6,12 @@ namespace dispatchers{
 
 	}
 
+	DataDispatcher::~DataDispatcher() {
+		if (this->isPipeConnnected() && this->hPipe != nullptr) {
+			DisconnectNamedPipe(this->hPipe);
+		}
+	}
+
 	bool DataDispatcher::isPipeConnnected() {
 		return false;
 	}
@@ -17,7 +23,7 @@ namespace dispatchers{
 		if (!success) {
 			DriverLog("Error, couldn't read pipe, named pipe may be broken");
 		}
-		return string("no");
+		return data;
 	}
 
 	bool DataDispatcher::connectPipe() {
@@ -27,13 +33,12 @@ namespace dispatchers{
 			throw new exception("malloc error in dataDispatcher");
 			exit(1);
 		}
-		size_t test1 = 10;
-		size_t* pReturnValue;
-		wchar_t* wcstr;
-		size_t sizeInWords;
-		const char* mbstr = "test";
-		size_t count;
-		errno_t errorCode;
+		size_t* pReturnValue = 0;
+		wchar_t* wcstr = new wchar_t();
+		size_t sizeInWords = 0;
+		const char* mbstr = "tests multiples";
+		size_t count = 10;
+		errno_t errorCode = 0;
 		errorCode =	mbstowcs_s(pReturnValue, wcstr, sizeInWords, mbstr, count);
 		LPWSTR ptr = wname;
 		this->hPipe = CreateFileW(ptr, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);

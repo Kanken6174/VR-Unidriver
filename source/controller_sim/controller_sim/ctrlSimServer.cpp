@@ -23,7 +23,7 @@ EVRInitError Controller_simDriverServer::Init(vr::IVRDriverContext* pDriverConte
 
 	DriverLog("log inited\n");;
 	DriverTemplates = utilities::ReadConfigAndBuildDrivers();
-
+	Drivers = utilities::makeDriversFromTemplates(DriverTemplates);
 	DriverLog("driver(s) inited\n");
 	RegisterInternalDrivers();
 	DriverLog("driver(s) registered");
