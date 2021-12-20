@@ -2,6 +2,8 @@
 #include <fstream>
 #include <sstream>
 #include "serialPort.h"
+#include "Device.h"
+
 
 using namespace std;
 
@@ -116,6 +118,7 @@ SerialPort connect() {
 
 int main(int argumentCount, const char* argumentValues[])
 {
+	/*
 	float response [9];					//a mettre fichier setup
 	SerialPort w;
 
@@ -145,7 +148,11 @@ int main(int argumentCount, const char* argumentValues[])
 	// 3 vector a faire
 	// 
 	// try catch
+	*/
 
+
+	Device gant;
+	gant.ReadConfigAndBuildDrivers();
 
 	 char c = getchar();
 
