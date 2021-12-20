@@ -38,4 +38,9 @@
       <Filter>Fichiers de ressources</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Texte.txt">
+      <Filter>Fichiers de ressources</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
