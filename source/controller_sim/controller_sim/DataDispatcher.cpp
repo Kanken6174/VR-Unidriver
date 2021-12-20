@@ -42,8 +42,7 @@ namespace dispatchers{
 		errorCode =	mbstowcs_s(pReturnValue, wcstr, sizeInWords, mbstr, count);
 		LPWSTR ptr = wname;
 		this->hPipe = CreateFileW(ptr, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
-		ConnectNamedPipe(this->hPipe, NULL);
-		return false;
+		return ConnectNamedPipe(this->hPipe, NULL);
 	}
 
 	bool DataDispatcher::disconnectPipe() {
