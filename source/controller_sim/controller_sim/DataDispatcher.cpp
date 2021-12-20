@@ -27,6 +27,7 @@ namespace dispatchers{
 	}
 
 	bool DataDispatcher::connectPipe() {
+		/*
 		wchar_t* wname = (wchar_t*)malloc(sizeof(wchar_t)* this->pipeName.length());
 		if (wname == NULL) {
 			cerr << "malloc error in dataDispatcher";
@@ -40,8 +41,9 @@ namespace dispatchers{
 		size_t count = 10;
 		errno_t errorCode = 0;
 		errorCode =	mbstowcs_s(pReturnValue, wcstr, sizeInWords, mbstr, count);
-		LPWSTR ptr = wname;
-		this->hPipe = CreateFileW(ptr, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
+		*/
+		LPCSTR ptr = this->pipeName.c_str();
+		this->hPipe = CreateFileA(ptr, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
 		return ConnectNamedPipe(this->hPipe, NULL);
 	}
 
