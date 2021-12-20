@@ -21,8 +21,9 @@ EVRInitError Controller_simDriverServer::Init(vr::IVRDriverContext* pDriverConte
 	VR_INIT_SERVER_DRIVER_CONTEXT(pDriverContext);	//une fonction définie dans openvr_driver.h
 	InitDriverLog(vr::VRDriverLog());	//initialise le logging d'informations visible sur la console web
 
-	DriverLog("log inited\n");
-	utilities::ReadConfigAndBuildDrivers();
+	DriverLog("log inited\n");;
+	DriverTemplates = utilities::ReadConfigAndBuildDrivers();
+
 	DriverLog("driver(s) inited\n");
 	RegisterInternalDrivers();
 	DriverLog("driver(s) registered");
@@ -30,8 +31,6 @@ EVRInitError Controller_simDriverServer::Init(vr::IVRDriverContext* pDriverConte
 
 	return VRInitError_None;
 }
-
-
 
 
 void Controller_simDriverServer::RegisterInternalDrivers() {

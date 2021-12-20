@@ -101,7 +101,8 @@ public:
 class Controller_simDriverServer : public IServerTrackedDeviceProvider
 {
 private:
-	std::vector<DoMoDriver*> Drivers;
+	vector<DriverDataTemplate*> DriverTemplates;
+	vector<DoMoDriver*> Drivers;
 	bool inited = false;
 	virtual void RegisterInternalDrivers();
 
@@ -121,5 +122,5 @@ public:
 namespace utilities {
 	vector<DriverDataTemplate*> ReadConfigAndBuildDrivers();
 	wstring ExePath();
-	vector<DoMoDriver*>* makeDriversFromTemplates(vector<DriverDataTemplate*>* DriverTemplates);
+	vector<DoMoDriver*> makeDriversFromTemplates(vector<DriverDataTemplate*> DriverTemplates);
 }
