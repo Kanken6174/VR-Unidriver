@@ -7,8 +7,6 @@
 
 #include "VRComponent.h"
 
-using namespace vr;
-
 	VRcomponent::VRcomponent() {		//ne devrait jamais être appellé
 		DriverLog("BAD_COMPONENT_CALL\n");
 		this->parentHandle = 999999;	//error

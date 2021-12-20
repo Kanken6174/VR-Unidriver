@@ -4,9 +4,8 @@
 * @version 0.5
 * @date 16/12/2021
 */
+#pragma once
 
-#include "entry_point.h"
-#include "driverlog.h"  //inclut aussi openvr.h
 #include "VRComponent.h"
 
 #define ABSOLUTE_S vr::VRScalarType_Absolute	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick
@@ -19,8 +18,6 @@
 #define updateAn UpdateScalarComponent
 #define updateBool UpdateBooleanComponent
 #define updatehapt UpdatehapticComponent
-
-using namespace vr;
 
 /**
 * maths.h functions and definitions
@@ -106,7 +103,6 @@ class Controller_simDriverServer : public IServerTrackedDeviceProvider
 private:
 	std::vector<DoMoDriver*> Drivers;
 	bool inited = false;
-	virtual void ReadConfigAndBuildDrivers();
 	virtual void RegisterInternalDrivers();
 
 public:
@@ -119,3 +115,11 @@ public:
 	virtual void EnterStandby();
 	virtual void LeaveStandby();
 };
+
+//-----------------------------------------Utilitaires---------------------------------------------
+
+namespace utilities {
+	vector<DriverDataTemplate*> ReadConfigAndBuildDrivers();
+	wstring ExePath();
+	vector<DoMoDriver*>* makeDriversFromTemplates(vector<DriverDataTemplate*>* DriverTemplates);
+}

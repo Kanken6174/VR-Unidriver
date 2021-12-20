@@ -5,7 +5,6 @@
 * @date 30/11/2021
 */
 
-#include "driverlog.h"
 #include "dataObjects.h"
 
 #define ABSOLUTE_T 0	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick

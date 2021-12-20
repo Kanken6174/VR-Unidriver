@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="configLoader.cpp" />
     <ClCompile Include="DataDispatcher.cpp" />
     <ClCompile Include="dataObjects.h" />
     <ClCompile Include="DoMoDriver.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="DataDispatcher.h" />
     <ClInclude Include="driverlog.h" />
     <ClInclude Include="entry_point.h" />
+    <ClInclude Include="includes.hpp" />
     <ClInclude Include="VRComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

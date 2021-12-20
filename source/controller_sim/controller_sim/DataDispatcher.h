@@ -1,8 +1,10 @@
 #pragma once
-#include<stdio.h>
-#include <Windows.h>
+
+#ifndef DISPATCHER
+#define DISPATCHER
+
+
 #include "controller_sim.h"
-#include<winnt.h>
 
 using namespace std;
 using namespace vr;
@@ -30,3 +32,5 @@ namespace dispatchers {
 		virtual bool feedPipeDataToDrivers();
 	};
 }
+
+#endif

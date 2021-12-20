@@ -13,25 +13,43 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\utilities">
+      <UniqueIdentifier>{2f57d3e0-3b7d-4995-a23d-a7e821ca5502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vr">
+      <UniqueIdentifier>{595680b8-2cec-4e4b-8afb-2d897384dce2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\logging">
+      <UniqueIdentifier>{958c9fb5-2fcd-4243-91b9-3c2303539f17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dependances">
+      <UniqueIdentifier>{df1a508d-d779-4d54-a18a-c2cc642258a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="driverlog.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="maths.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ctrlSimServer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DoMoDriver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="component.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dataObjects.h">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="component.cpp">
+      <Filter>Source Files\vr</Filter>
+    </ClCompile>
+    <ClCompile Include="ctrlSimServer.cpp">
+      <Filter>Source Files\vr</Filter>
+    </ClCompile>
+    <ClCompile Include="DoMoDriver.cpp">
+      <Filter>Source Files\vr</Filter>
+    </ClCompile>
+    <ClCompile Include="driverlog.cpp">
+      <Filter>Source Files\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="maths.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="configLoader.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="DataDispatcher.cpp">
+      <Filter>Source Files\utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +64,12 @@
     </ClInclude>
     <ClInclude Include="VRComponent.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataDispatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes.hpp">
+      <Filter>Header Files\dependances</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

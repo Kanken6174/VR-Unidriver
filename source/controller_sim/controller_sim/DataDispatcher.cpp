@@ -27,8 +27,14 @@ namespace dispatchers{
 			throw new exception("malloc error in dataDispatcher");
 			exit(1);
 		}
-
-		mbstowcs(wname, this->pipeName.c_str(), this->pipeName.length());//includes null
+		size_t test1 = 10;
+		size_t* pReturnValue;
+		wchar_t* wcstr;
+		size_t sizeInWords;
+		const char* mbstr = "test";
+		size_t count;
+		errno_t errorCode;
+		errorCode =	mbstowcs_s(pReturnValue, wcstr, sizeInWords, mbstr, count);
 		LPWSTR ptr = wname;
 		this->hPipe = CreateFileW(ptr, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
 		ConnectNamedPipe(this->hPipe, NULL);
