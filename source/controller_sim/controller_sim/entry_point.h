@@ -1,7 +1,8 @@
 /**
-* Définitions du point d'entrée, steamVR attend à ce que
-* la fonction ayant le type de retour HMD_DLL_EXPORT soit
-* la fonction HmdDriverFactory, qui sert donc de point d'entrée
+* @author Valve corporation
+* @brief defines the HMD_DLL_EXPORT/IMPORT types which serve as entry points for the DLL
+* @version 0.1
+* @date 16/12/2021
 */
 
 #if defined(_WIN32)

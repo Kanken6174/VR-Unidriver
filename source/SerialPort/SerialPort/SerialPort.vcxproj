@@ -141,14 +141,12 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="serialPort.cpp" />
-    <ClCompile Include="Device.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Device.h" />
     <ClInclude Include="serialPort.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="config.txt" />
+    <Text Include="Texte.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

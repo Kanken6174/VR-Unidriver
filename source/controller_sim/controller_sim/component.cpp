@@ -1,6 +1,11 @@
-#include "VRComponent.h"
+/**
+* @author Yorick Geoffre
+* @brief defines a single component, like a joystick or a button on a device
+* @version 0.3 - added dataTemplate based constructors
+* @date 30/11/2021
+*/
 
-using namespace vr;
+#include "VRComponent.h"
 
 	VRcomponent::VRcomponent() {		//ne devrait jamais être appellé
 		DriverLog("BAD_COMPONENT_CALL\n");
@@ -8,8 +13,9 @@ using namespace vr;
 		this->inputPath = "";
 	}
 
-	VRcomponent::VRcomponent(vr::PropertyContainerHandle_t parentHandle,ComponentDataTemplate componentData) {
+	VRcomponent::VRcomponent(vr::PropertyContainerHandle_t parentHandle, ComponentDataTemplate componentData) {
 		this->parentHandle = parentHandle;	//handle du parent (uint)
+		DriverLog("Passed parent handle is %d", parentHandle);
 		this->localData = componentData;
 		this->inputPath = componentData.inputPath;
 		this->sclType = componentData.inputType;
@@ -34,6 +40,11 @@ using namespace vr;
 		case ABSOLUTE_T:
 			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, JOYSTICK);
 			DriverLog("Scalar component has been registered");
+			break;
+		case RELATIVE_T:
+			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, TRIGGER);
+			DriverLog("Scalar component has been registered");
+			break;
 		case DIGITAL:
 
 			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &(VRcomponent::handle));
@@ -47,18 +58,18 @@ using namespace vr;
 			ER = vr::VRDriverInput()->CreateSkeletonComponent(parentHandle, inputPath.c_str(), "/skeleton/hand/right", "", vr::VRSkeletalTracking_Full,NULL,0,&handle);//bad
 			break;
 		default:	//stub mode
-
-			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &(VRcomponent::handle));
-			DriverLog("Registered stub boolean component");
+			VRInputComponentHandle_t localhandle = -1;
+			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &localhandle);
+			handle = localhandle;
+			DriverLog("Registered stub boolean component with parent handle %d, inPath %s, got handle %d from default %d",parentHandle, inputPath.c_str(), handle, localhandle);
 			break;
 		}
 		return ER;
 	}
 
 	EVRInputError VRcomponent::UpdateSelf() {	//mode stub clavier
-		bool value = (0x8000 & GetAsyncKeyState(sclType)) != 0;
-		if (sclType != DIGITAL)
-			return vr::EVRInputError::VRInputError_WrongType;
+		bool value = ((0x8000 & GetAsyncKeyState(sclType)) != 0);
+
 		if (state != value) {
 			state = !state;
 			EVRInputError ER = vr::VRDriverInput()->UpdateBooleanComponent(handle, value, 0);
@@ -85,9 +96,10 @@ using namespace vr;
 	}
 
 	EVRInputError VRcomponent::UpdateSelf(float value) {
-		if (sclType != ABSOLUTE_T || value > 1 || value <-1)
+		if (sclType == ABSOLUTE_T || sclType == RELATIVE_T || value > 1 || value <-1)
 			return vr::VRInputError_WrongType;
-		return vr::VRDriverInput()->UpdateScalarComponent(handle, value, 0);
+
+			return vr::VRDriverInput()->UpdateScalarComponent(handle, value, 0);
 	}
 
 	EVRInputError VRcomponent::UpdateSelf(vr::VRBoneTransform_t* hand, int size = 31) {

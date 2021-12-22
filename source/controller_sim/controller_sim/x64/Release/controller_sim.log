@@ -37,6 +37,7 @@
        Réassignation de propriété : $(IncludePath)="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include;;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\atlmfc\include;;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt;;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um;Y:\vcpkg\installed\x64-windows\include;" (valeur précédente : "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include;;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\atlmfc\include;;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt;;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\Include\um;") à Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj (87,5)
        Réassignation de propriété : $(OutDir)="Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\" (valeur précédente : "Y:\domocap\source\controller_sim\x64\Release\") à Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj (88,5)
        Réassignation de propriété : $(TargetName)="driver_controller_sim" (valeur précédente : "controller_sim") à Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj (89,5)
+       Réassignation de propriété : $(EnableClangTidyCodeAnalysis)="true" (valeur précédente : "false") à Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj (90,5)
        La propriété "SolutionExt" est une propriété globale et elle ne peut pas être modifiée.
        Réassignation de propriété : $(ExtensionsToDeleteOnClean)="*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi;Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll.manifest;Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.tlb;Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.pdb;Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll;Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.bsc;Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.ilk;Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll.intermediate.manifest;" (valeur précédente : "*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi") à C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (38,5)
        Les chemins de recherche utilisés pour $(MSBuildExtensionsPath) sont C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild;$(MSBuildProgramFiles32)\MSBuild
@@ -951,7 +952,7 @@
        Remplacement de la cible "GetNativeManifest" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" par la cible "GetNativeManifest" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets".
        Remplacement de la cible "GetTargetPathWithTargetPlatformMoniker" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" par la cible "GetTargetPathWithTargetPlatformMoniker" du projet "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.DesignTime.targets".
        La cible "CopyLocalFilesOutputGroup" répertoriée dans un attribut BeforeTargets à "Y:\vcpkg\scripts\buildsystems\msbuild\vcpkg.targets (168,82)" n'existe pas dans le projet et sera ignorée.
-La génération a démarré 12/12/2021 11:32:21.
+La génération a démarré 20/12/2021 14:06:57.
 La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" sur le nœud 2 (Build cible(s)).
      1>Génération à l'aide des outils version "Current".
        Cible "EnableIntermediateOutputPathMismatchWarning" ignorée en raison d'une fausse condition ; ('$(RestoreProjectStyle)' == 'PackageReference') a été évaluée comme ('' == 'PackageReference').
@@ -975,10 +976,10 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
      1>Cible "SetTelemetryEnvironmentVariables" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.DesignTime.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "Build" en dépend) :
        Utilisation de la tâche "SetEnv" à partir de l'assembly "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Build.CppTasks.Common.dll".
        Tâche "SetEnv"
-         VSTEL_SolutionSessionID={138D16C6-D760-4204-9727-803AFCF8F07F}
+         VSTEL_SolutionSessionID={8AD05685-4F51-47D5-B8C6-C813FBCDCFDA}
        Exécution de la tâche "SetEnv" terminée.
        Tâche "SetEnv"
-         VSTEL_CurrentSolutionBuildID=2922599643
+         VSTEL_CurrentSolutionBuildID=3623076504
        Exécution de la tâche "SetEnv" terminée.
        Tâche "SetEnv"
          VSTEL_ProjectID={59c0d373-72b6-4dd9-9499-dd37a2636ff7}
@@ -990,7 +991,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
      1>Cible "_PrepareForReferenceResolution" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveReferences" en dépend) :
        Tâche "Message" ignorée en raison d'une fausse condition ; ('$(_REFERENCE_DEBUG)'=='true') a été évaluée comme (''=='true').
      1>Génération de la cible "_PrepareForReferenceResolution" terminée dans le projet "controller_sim.vcxproj".
-       Cible "ComputeCrtSDKReference" ignorée en raison d'une fausse condition ; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') a été évaluée comme ('dataObjects.h;DoMoDriver.cpp;ctrlSimServer.cpp;...'!='' and 'false'=='true' and '' != 'false').
+       Cible "ComputeCrtSDKReference" ignorée en raison d'une fausse condition ; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') a été évaluée comme ('configLoader.cpp;DataDispatcher.cpp;dataObjects.h;...'!='' and 'false'=='true' and '' != 'false').
      1>Cible "BeforeResolveReferences" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveReferences" en dépend) :
      1>Génération de la cible "BeforeResolveReferences" terminée dans le projet "controller_sim.vcxproj".
      1>Cible "AssignProjectConfiguration" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveReferences" en dépend) :
@@ -1109,7 +1110,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Exécution de la tâche "MakeDir" terminée.
      1>Génération de la cible "PrepareForBuild" terminée dans le projet "controller_sim.vcxproj".
        Cible "_PrepareForReferenceResolution" ignorée. Elle a été générée.
-       Cible "ComputeCrtSDKReference" ignorée en raison d'une fausse condition ; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') a été évaluée comme ('dataObjects.h;DoMoDriver.cpp;ctrlSimServer.cpp;...'!='' and 'false'=='true' and '' != 'false').
+       Cible "ComputeCrtSDKReference" ignorée en raison d'une fausse condition ; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') a été évaluée comme ('configLoader.cpp;DataDispatcher.cpp;dataObjects.h;...'!='' and 'false'=='true' and '' != 'false').
        Cible "GetInstalledSDKLocations" ignorée en raison d'une fausse condition ; ('@(SDKReference)' != '') a été évaluée comme ('' != '').
      1>Cible "ResolveSDKReferences" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ResolveAssemblyReferences" en dépend) :
        Tâche "ResolveSDKReference" ignorée en raison d'une fausse condition ; ('@(SDKReference)'!='') a été évaluée comme (''!='').
@@ -1146,7 +1147,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Exécution de la tâche "WriteLinesToFile" terminée.
        Utilisation de la tâche "Touch" à partir de l'assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Tâche "Touch"
-         Création de "x64\Release\controller_sim.tlog\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+         Mise à jour de l'horodatage "x64\Release\controller_sim.tlog\unsuccessfulbuild".
        Exécution de la tâche "Touch" terminée.
      1>Génération de la cible "InitializeBuildStatus" terminée dans le projet "controller_sim.vcxproj".
        Cible "PrepareProjectReferences" ignorée. Elle a été générée.
@@ -1242,12 +1243,15 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Tâche "Message" ignorée en raison d'une fausse condition ; ('$(_REFERENCE_DEBUG)'=='true') a été évaluée comme (''=='true').
      1>Génération de la cible "ComputeReferenceCLInput" terminée dans le projet "controller_sim.vcxproj".
      1>Cible "WarnCompileDuplicatedFilename" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "_ClCompile" en dépend) :
+       Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') a été évaluée comme ('' != 'true' and 'configLoader.cpp' != 'configLoader.cpp' and 'x64\Release\' == 'x64\Release\').
+       Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') a été évaluée comme ('' != 'true' and 'DataDispatcher.cpp' != 'DataDispatcher.cpp' and 'x64\Release\' == 'x64\Release\').
        Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') a été évaluée comme ('' != 'true' and 'dataObjects.h' != 'dataObjects.h' and 'x64\Release\' == 'x64\Release\').
        Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') a été évaluée comme ('' != 'true' and 'DoMoDriver.cpp' != 'DoMoDriver.cpp' and 'x64\Release\' == 'x64\Release\').
        Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') a été évaluée comme ('' != 'true' and 'ctrlSimServer.cpp' != 'ctrlSimServer.cpp' and 'x64\Release\' == 'x64\Release\').
        Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') a été évaluée comme ('' != 'true' and 'driverlog.cpp' != 'driverlog.cpp' and 'x64\Release\' == 'x64\Release\').
        Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') a été évaluée comme ('' != 'true' and 'maths.cpp' != 'maths.cpp' and 'x64\Release\' == 'x64\Release\').
        Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') a été évaluée comme ('' != 'true' and 'component.cpp' != 'component.cpp' and 'x64\Release\' == 'x64\Release\').
+       Tâche "VCMessage" ignorée en raison d'une fausse condition ; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') a été évaluée comme ('' != 'true' and 'typeConverters.cpp' != 'typeConverters.cpp' and 'x64\Release\' == 'x64\Release\').
      1>Génération de la cible "WarnCompileDuplicatedFilename" terminée dans le projet "controller_sim.vcxproj".
      1>Cible "FixupCLCompileOptions" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "_ClCompile" en dépend) :
      1>Génération de la cible "FixupCLCompileOptions" terminée dans le projet "controller_sim.vcxproj".
@@ -1267,7 +1271,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
      1>Cible "SelectClCompile" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ClCompile" en dépend) :
      1>Génération de la cible "SelectClCompile" terminée dans le projet "controller_sim.vcxproj".
        Cible "SelectAnalysisManifest" ignorée en raison d'une fausse condition ; ('$(RunMsvcAnalysis)'=='true' and '$(SelectedFiles)'!='') a été évaluée comme ('false'=='true' and ''!='').
-       Cible "ManagedIncrementalBuildPreProcessDependencyGraph" ignorée en raison d'une fausse condition ; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') a été évaluée comme ('dataObjects.h;DoMoDriver.cpp;ctrlSimServer.cpp;...' != '' and 'false' == 'True').
+       Cible "ManagedIncrementalBuildPreProcessDependencyGraph" ignorée en raison d'une fausse condition ; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') a été évaluée comme ('configLoader.cpp;DataDispatcher.cpp;dataObjects.h;...' != '' and 'false' == 'True').
      1>Cible "VcpkgTripletSelection" dans le fichier "Y:\vcpkg\scripts\buildsystems\msbuild\vcpkg.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "ClCompile" en dépend) :
        Tâche "Message"
          Using triplet "x64-windows" from "Y:\vcpkg\installed\\x64-windows\"
@@ -1287,32 +1291,65 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Tâche "CL" ignorée en raison d'une fausse condition ; ('%(ClCompile.PrecompiledHeader)' == 'Create' and '%(ClCompile.ExcludedFromBuild)'!='true' and '%(ClCompile.CompilerIteration)' == '' and '$(MultiProcCL)' != 'true') a été évaluée comme ('NotUsing' == 'Create' and ''!='true' and '' == '' and 'false' != 'true').
        Utilisation de la tâche "CL" à partir de l'assembly "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Build.CppTasks.Common.dll".
        Tâche "CL"
-         Journaux de suivi de lecture :
-         	x64\Release\controller_sim.tlog\CL.read.1.tlog
-         Sorties pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\COMPONENT.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CTRLSIMSERVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DATAOBJECTS.H|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DRIVERLOG.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\MATHS.CPP :
+         Sorties pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\COMPONENT.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CONFIGLOADER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CTRLSIMSERVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DATADISPATCHER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DATAOBJECTS.H|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DRIVERLOG.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\MATHS.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\TYPECONVERTERS.CPP :
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.XDC
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATADISPATCHER.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATADISPATCHER.XDC
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.XDC
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.XDC
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.XDC
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.XDC
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.XDC
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ
-         DoMoDriver.cpp sera compilé, car Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.cpp a été modifié à 12/12/2021 11:05:09.
-         Sorties pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP :
-         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.XDC
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.XDC
+         DataDispatcher.cpp sera compilé, car le journal de suivi n'est pas disponible.
+         DoMoDriver.cpp sera compilé, car le journal de suivi n'est pas disponible.
+         component.cpp sera compilé, car le journal de suivi n'est pas disponible.
+         configLoader.cpp sera compilé, car le journal de suivi n'est pas disponible.
+         ctrlSimServer.cpp sera compilé, car le journal de suivi n'est pas disponible.
+         dataObjects.h sera compilé, car le journal de suivi n'est pas disponible.
+         driverlog.cpp sera compilé, car le journal de suivi n'est pas disponible.
+         maths.cpp sera compilé, car le journal de suivi n'est pas disponible.
+         typeConverters.cpp sera compilé, car le journal de suivi n'est pas disponible.
+         Aucune sortie pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\COMPONENT.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CONFIGLOADER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CTRLSIMSERVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DATADISPATCHER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DATAOBJECTS.H|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DRIVERLOG.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\MATHS.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\TYPECONVERTERS.CPP n'a été trouvée dans le journal de suivi ; compilation source requise.
          Journaux de suivi d'écriture :
          	x64\Release\controller_sim.tlog\CL.write.1.tlog
          Variables d'environnement passées à l'outil :
-           VS_UNICODE_OUTPUT=1212
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /Gd /TP /FC /errorReport:prompt DoMoDriver.cpp
+           VS_UNICODE_OUTPUT=1628
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /doc"x64\Release\\" /Gd /TP /FC /errorReport:prompt configLoader.cpp DataDispatcher.cpp dataObjects.h DoMoDriver.cpp ctrlSimServer.cpp driverlog.cpp maths.cpp component.cpp typeConverters.cpp
          Commande de suivi :
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP /b MSBuildConsole_CancelEvent5990640fe1e94d2f9de1c91f62a6a82f  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe"  /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /Gd /TP /FC /errorReport:prompt DoMoDriver.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\COMPONENT.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CONFIGLOADER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\CTRLSIMSERVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DATADISPATCHER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DATAOBJECTS.H|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DOMODRIVER.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\DRIVERLOG.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\MATHS.CPP|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\TYPECONVERTERS.CPP" /b MSBuildConsole_CancelEvent0228f9653694419c8121a70c271688fc  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\CL.exe"  /c /I"Y:\vcpkg\installed\\x64-windows\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /doc"x64\Release\\" /Gd /TP /FC /errorReport:prompt configLoader.cpp DataDispatcher.cpp dataObjects.h DoMoDriver.cpp ctrlSimServer.cpp driverlog.cpp maths.cpp component.cpp typeConverters.cpp
+         configLoader.cpp
+         The contents of <filesystem> are available only with C++17 or later.
+         DataDispatcher.cpp
+         The contents of <filesystem> are available only with C++17 or later.
+         dataObjects.h
+         The contents of <filesystem> are available only with C++17 or later.
          DoMoDriver.cpp
+         The contents of <filesystem> are available only with C++17 or later.
+         ctrlSimServer.cpp
+         The contents of <filesystem> are available only with C++17 or later.
+         driverlog.cpp
+         The contents of <filesystem> are available only with C++17 or later.
+         maths.cpp
+         The contents of <filesystem> are available only with C++17 or later.
+         component.cpp
+         The contents of <filesystem> are available only with C++17 or later.
+         typeConverters.cpp
          The contents of <filesystem> are available only with C++17 or later.
        Exécution de la tâche "CL" terminée.
      1>Génération de la cible "ClCompile" terminée dans le projet "controller_sim.vcxproj".
        Cible "RunSelectedFileNativeCodeAnalysis" ignorée en raison d'une fausse condition ; ('$(RunMsvcAnalysis)'=='true' and '$(SelectedFiles)'!='') a été évaluée comme ('false'=='true' and ''!='').
-       Cible "ManagedIncrementalBuildPostProcessDependencyGraph" ignorée en raison d'une fausse condition ; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') a été évaluée comme ('dataObjects.h;DoMoDriver.cpp;ctrlSimServer.cpp;...' != '' and 'false' == 'True').
-       Cible "NoAnalysisToolEnabledWarning" ignorée en raison d'une fausse condition ; ('$(RunCppAnalysis)'=='true' AND '$(EnableMicrosoftCodeAnalysis)'=='false' AND '$(EnableClangTidyCodeAnalysis)'=='false') a été évaluée comme ('false'=='true' AND 'true'=='false' AND 'false'=='false').
+       Cible "ManagedIncrementalBuildPostProcessDependencyGraph" ignorée en raison d'une fausse condition ; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') a été évaluée comme ('configLoader.cpp;DataDispatcher.cpp;dataObjects.h;...' != '' and 'false' == 'True').
+       Cible "NoAnalysisToolEnabledWarning" ignorée en raison d'une fausse condition ; ('$(RunCppAnalysis)'=='true' AND '$(EnableMicrosoftCodeAnalysis)'=='false' AND '$(EnableClangTidyCodeAnalysis)'=='false') a été évaluée comme ('false'=='true' AND 'true'=='false' AND 'true'=='false').
        Cible "RunSelectedFileClangTidy" ignorée en raison d'une fausse condition ; ('$(RunClangCppAnalysis)'=='true' AND '$(SelectedFiles)'!='') a été évaluée comme ('false'=='true' AND ''!='').
        Cible "MicrosoftAnalysisIncompatiableWithClangCl" ignorée en raison d'une fausse condition ; ('$(RunCppAnalysis)'=='true' AND '$(EnableMicrosoftCodeAnalysis)'=='true' AND '$(UseClangCl)'=='true') a été évaluée comme ('false'=='true' AND 'true'=='true' AND ''=='true').
      1>Cible "AfterClCompile" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "_ClCompile" en dépend) :
@@ -1425,10 +1462,10 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
          	x64\Release\controller_sim.tlog\link.write.1.tlog
          Journaux de suivi de lecture :
          	x64\Release\controller_sim.tlog\link.read.1.tlog
-         Sorties pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ :
+         Sorties pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATADISPATCHER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.OBJ :
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\RESSOURCES\CONTROLLER_SIM\BIN\WIN64\DRIVER_CONTROLLER_SIM.DLL
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVER_CONTROLLER_SIM.IOBJ
-         Entrées pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ :
+         Entrées pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATADISPATCHER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.OBJ :
          	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\KERNEL32.LIB
          	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\USER32.LIB
          	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\GDI32.LIB
@@ -1442,15 +1479,20 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
          	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\ODBC32.LIB
          	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\ODBCCP32.LIB
          	Y:\VCPKG\INSTALLED\X64-WINDOWS\LIB\OPENVR_API.LIB
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATADISPATCHER.OBJ
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.OBJ
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.OBJ
          	C:\WINDOWS\GLOBALIZATION\SORTING\SORTDEFAULT.NLS
          	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\BIN\HOSTX86\X64\C2.DLL
          	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\LIB\X64\MSVCPRT.LIB
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\ATLMFC\LIB\X64\ATLS.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.19041.0\UM\X64\SHLWAPI.LIB
          	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\LIB\X64\MSVCRT.LIB
          	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\LIB\X64\OLDNAMES.LIB
          	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\LIB\X64\VCRUNTIME.LIB
@@ -1459,26 +1501,32 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
          	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\BIN\HOSTX86\X64\1036\LINKUI.DLL
          	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVER_CONTROLLER_SIM.IPDB
          	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\BIN\HOSTX86\X64\CVTRES.EXE
-         Compilation source requise : l'entrée Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ est plus récente que la sortie Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVER_CONTROLLER_SIM.IOBJ.
+         Compilation source requise : l'entrée Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.OBJ est plus récente que la sortie Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVER_CONTROLLER_SIM.IOBJ.
          Variables d'environnement passées à l'outil :
-           VS_UNICODE_OUTPUT=1764
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib" /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Y:\vcpkg\installed\\x64-windows\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\driver_controller_sim.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib" /MACHINE:X64 /DLL x64\Release\dataObjects.obj
+           VS_UNICODE_OUTPUT=1560
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib" /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Y:\vcpkg\installed\\x64-windows\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\driver_controller_sim.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib" /MACHINE:X64 /DLL x64\Release\configLoader.obj
+         x64\Release\DataDispatcher.obj
+         x64\Release\dataObjects.obj
          x64\Release\DoMoDriver.obj
          x64\Release\ctrlSimServer.obj
          x64\Release\driverlog.obj
          x64\Release\maths.obj
          x64\Release\component.obj
+         x64\Release\typeConverters.obj
          Commande de suivi :
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ" /b MSBuildConsole_CancelEvent7811ce72b57b4cc59878d5adb34237c2  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib" /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Y:\vcpkg\installed\\x64-windows\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\driver_controller_sim.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib" /MACHINE:X64 /DLL x64\Release\dataObjects.obj
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATADISPATCHER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.OBJ|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.OBJ" /b MSBuildConsole_CancelEvent99fad078181d4853ad001b07dc44eda9  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib" /LIBPATH:"Y:\vcpkg\installed\\x64-windows\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Y:\vcpkg\installed\\x64-windows\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\driver_controller_sim.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib" /MACHINE:X64 /DLL x64\Release\configLoader.obj
+         x64\Release\DataDispatcher.obj
+         x64\Release\dataObjects.obj
          x64\Release\DoMoDriver.obj
          x64\Release\ctrlSimServer.obj
          x64\Release\driverlog.obj
          x64\Release\maths.obj
          x64\Release\component.obj
+         x64\Release\typeConverters.obj
             Création de la bibliothèque Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib et de l'objet Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.exp
          Génération de code en cours
          Previous IPDB and IOBJ mismatch, fall back to full compilation.
-         All 583 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+         All 673 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
          Fin de la génération du code
        Exécution de la tâche "Link" terminée.
        Tâche "Message"
@@ -1541,7 +1589,7 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Cible "PrepareForBuild" ignorée. Elle a été générée.
        Cible "ResolveReferences" ignorée. Elle a été générée.
      1>Cible "ResolvedXDCMake" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "_XdcMake" en dépend) :
-       Tâche "MSBuild" ignorée en raison d'une fausse condition ; ('%(_MSBuildProjectReferenceExistent.Extension)' == '.vcxproj' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '$(_ClCompileGenerateXMLDocumentationFiles)' == 'true') a été évaluée comme ('' == '.vcxproj' and '' != '' and '' != '' and '' == 'true').
+       Tâche "MSBuild" ignorée en raison d'une fausse condition ; ('%(_MSBuildProjectReferenceExistent.Extension)' == '.vcxproj' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '$(_ClCompileGenerateXMLDocumentationFiles)' == 'true') a été évaluée comme ('' == '.vcxproj' and '' != '' and '' != '' and 'true' == 'true').
      1>Génération de la cible "ResolvedXDCMake" terminée dans le projet "controller_sim.vcxproj".
      1>Cible "ComputeCLCompileGeneratedXDCFiles" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "_XdcMake" en dépend) :
      1>Génération de la cible "ComputeCLCompileGeneratedXDCFiles" terminée dans le projet "controller_sim.vcxproj".
@@ -1549,7 +1597,41 @@ La verbosité de la journalisation a la valeur Detailed.     1>Projet "Y:\domoca
        Tâche "MakeDir"
        Exécution de la tâche "MakeDir" terminée.
      1>Génération de la cible "MakeDirsForXdcMake" terminée dans le projet "controller_sim.vcxproj".
-       Cible "XdcMake" ignorée en raison d'une fausse condition ; ('@(XdcMake)' != '') a été évaluée comme ('' != '').
+     1>Cible "XdcMake" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "_XdcMake" en dépend) :
+       Utilisation de la tâche "XDCMake" à partir de l'assembly "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Build.CppTasks.Common.dll".
+       Tâche "XDCMake"
+         Journaux de suivi d'écriture :
+         	x64\Release\controller_sim.tlog\xdcmake.write.1.tlog
+         Journaux de suivi de lecture :
+         	x64\Release\controller_sim.tlog\xdcmake.read.1.tlog
+         Sorties pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATADISPATCHER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.XDC :
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\RESSOURCES\CONTROLLER_SIM\BIN\WIN64\DRIVER_CONTROLLER_SIM.XML
+         Entrées pour Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATADISPATCHER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.XDC :
+         	C:\WINDOWS\MICROSOFT.NET\FRAMEWORK64\V2.0.50727\MSCORWKS.DLL
+         	C:\WINDOWS\MICROSOFT.NET\FRAMEWORK64\V4.0.30319\CLR.DLL
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\BIN\HOSTX86\X64\XDCMAKE.EXE.CONFIG
+         	C:\WINDOWS\MICROSOFT.NET\FRAMEWORK64\V4.0.30319\CONFIG\MACHINE.CONFIG
+         	C:\WINDOWS\GLOBALIZATION\SORTING\SORTDEFAULT.NLS
+         	C:\WINDOWS\ASSEMBLY\NATIVEIMAGES_V4.0.30319_64\MSCORLIB\26A845B249AEFCA961715129E3E55539\MSCORLIB.NI.DLL.AUX
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29910\BIN\HOSTX86\X64\XDCMAKE.EXE
+         	C:\WINDOWS\ASSEMBLY\PUBPOL207.DAT
+         	C:\WINDOWS\ASSEMBLY\NATIVEIMAGES_V4.0.30319_64\SYSTEM\EFFC2B39025F26D0341F563F65C9BFB6\SYSTEM.NI.DLL.AUX
+         	C:\WINDOWS\ASSEMBLY\NATIVEIMAGES_V4.0.30319_64\SYSTEM.XML\BD6D70F643D197E1BC2E357CD828CFDC\SYSTEM.XML.NI.DLL.AUX
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATADISPATCHER.XDC
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.XDC
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.XDC
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.XDC
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.XDC
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.XDC
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.XDC
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.XDC
+         	Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.XDC
+         Compilation source requise : l'entrée Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.XDC est plus récente que la sortie Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\RESSOURCES\CONTROLLER_SIM\BIN\WIN64\DRIVER_CONTROLLER_SIM.XML.
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\xdcmake.exe /old "controller_sim" /nologo /Fo"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.xml" /Fsx64\Release\configLoader.xdc /Fsx64\Release\DataDispatcher.xdc /Fsx64\Release\dataObjects.xdc /Fsx64\Release\DoMoDriver.xdc /Fsx64\Release\ctrlSimServer.xdc /Fsx64\Release\driverlog.xdc /Fsx64\Release\maths.xdc /Fsx64\Release\component.xdc /Fsx64\Release\typeConverters.xdc
+         Commande de suivi :
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i Y:\domocap\source\controller_sim\controller_sim\x64\Release\controller_sim.tlog /r "Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\COMPONENT.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CONFIGLOADER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\CTRLSIMSERVER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATADISPATCHER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DATAOBJECTS.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DOMODRIVER.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\DRIVERLOG.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\MATHS.XDC|Y:\DOMOCAP\SOURCE\CONTROLLER_SIM\CONTROLLER_SIM\X64\RELEASE\TYPECONVERTERS.XDC" /b MSBuildConsole_CancelEvent6602b7f2ec6045a9bc8d54f3b208ed78  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x64\xdcmake.exe"  /old "controller_sim" /nologo /Fo"Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.xml" /Fsx64\Release\configLoader.xdc /Fsx64\Release\DataDispatcher.xdc /Fsx64\Release\dataObjects.xdc /Fsx64\Release\DoMoDriver.xdc /Fsx64\Release\ctrlSimServer.xdc /Fsx64\Release\driverlog.xdc /Fsx64\Release\maths.xdc /Fsx64\Release\component.xdc /Fsx64\Release\typeConverters.xdc
+       Exécution de la tâche "XDCMake" terminée.
+     1>Génération de la cible "XdcMake" terminée dans le projet "controller_sim.vcxproj".
      1>Cible "_XdcMake" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "_BuildLinkAction" en dépend) :
      1>Génération de la cible "_XdcMake" terminée dans le projet "controller_sim.vcxproj".
      1>Cible "ComputeCLCompileGeneratedSbrFiles" dans le fichier "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets" du projet "Y:\domocap\source\controller_sim\controller_sim\controller_sim.vcxproj" (la cible "_BscMake" en dépend) :
@@ -1728,4 +1810,4 @@ La génération a réussi.
     0 Avertissement(s)
     0 Erreur(s)
 
-Temps écoulé 00:00:07.23
+Temps écoulé 00:00:17.40

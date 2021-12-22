@@ -1,3 +1,10 @@
+/**
+* @author Yorick Geoffre
+* @brief this file holds the declaration of the euler to quaternion conversions. It does suffer from the gimble lock issue so it shouldn't be used in final prod
+* @version 0.1
+* @date 16/12/2021
+*/
+
 #include "controller_sim.h"
 
 

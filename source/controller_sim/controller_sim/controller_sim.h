@@ -1,5 +1,11 @@
-#include "entry_point.h"
-#include "driverlog.h"  //inclut aussi openvr.h
+/**
+* @author Yorick Geoffre
+* @brief this file holds the declaration of both the device driver and the server driver (server has one or more devices which has one or more components)
+* @version 0.5
+* @date 16/12/2021
+*/
+#pragma once
+
 #include "VRComponent.h"
 
 #define ABSOLUTE_S vr::VRScalarType_Absolute	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick
@@ -12,8 +18,6 @@
 #define updateAn UpdateScalarComponent
 #define updateBool UpdateBooleanComponent
 #define updatehapt UpdatehapticComponent
-
-using namespace vr;
 
 /**
 * maths.h functions and definitions
@@ -66,11 +70,12 @@ public:
 	virtual void setUInt64Property(vr::ETrackedDeviceProperty SVRproperty, uint64_t value);
 	virtual void setBoolProperty(vr::ETrackedDeviceProperty SVRproperty, bool value);
 
-	//fonctions requises par l'interface ITrackedDeviceServerDriver, commes données dans le sample
-	virtual EVRInitError Activate(vr::TrackedDeviceIndex_t unObjectId);
 	virtual EVRInitError ModernActivation(vr::TrackedDeviceIndex_t unObjectId);
 	virtual EVRInitError ObsoleteActivation(vr::TrackedDeviceIndex_t unObjectId);
 	virtual void registerProperties(vr::TrackedDeviceIndex_t unObjectId);
+
+	//fonctions requises par l'interface ITrackedDeviceServerDriver, commes données dans le sample
+	virtual EVRInitError Activate(vr::TrackedDeviceIndex_t unObjectId);
 	virtual void Deactivate();
 	virtual void EnterStandby();
 	virtual void* GetComponent(const char* pchComponentNameAndVersion);
@@ -96,9 +101,9 @@ public:
 class Controller_simDriverServer : public IServerTrackedDeviceProvider
 {
 private:
-	std::vector<DoMoDriver*> Drivers;
+	vector<DriverDataTemplate*> DriverTemplates;
+	vector<DoMoDriver*> Drivers;
 	bool inited = false;
-	virtual void ReadConfigAndBuildDrivers();
 	virtual void RegisterInternalDrivers();
 
 public:
@@ -111,3 +116,11 @@ public:
 	virtual void EnterStandby();
 	virtual void LeaveStandby();
 };
+
+//-----------------------------------------Utilitaires---------------------------------------------
+
+namespace utilities {
+	vector<DriverDataTemplate*> ReadConfigAndBuildDrivers();
+	wstring ExePath();
+	vector<DoMoDriver*> makeDriversFromTemplates(vector<DriverDataTemplate*> DriverTemplates);
+}
