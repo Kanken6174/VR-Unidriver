@@ -61,7 +61,7 @@ void Controller_simDriverServer::RunFrame()
 {
 	if (inited) {
 		for (DoMoDriver* driver : Controller_simDriverServer::Drivers)
-			driver->RunFrame();
+			driver->RunFrameStub();
 	}
 	else {
 		DriverLog("Not inited yet!");

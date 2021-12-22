@@ -85,11 +85,14 @@ public:
 	* qrotation est responsable de l'angle et Vecposition[3] de la position.
 	*/
 	virtual void GetKeypresses();
+	virtual DriverPose_t GetPoseStubmode();
+	virtual DriverPose_t GetPoseProvided(HmdQuaternion_t poseRotation, vector<double> posePosition);
 	virtual DriverPose_t GetPose();
 	/**
 	*Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
 	*/
-	virtual void RunFrame();
+	virtual void RunFrameStub();
+	virtual void RunFrameProvided(HmdQuaternion_t poseRotation, vector<double> posePosition, vector<string> Componentdata);
 	virtual std::string GetSerialNumber();
 };
 
@@ -123,4 +126,5 @@ namespace utilities {
 	vector<DriverDataTemplate*> ReadConfigAndBuildDrivers();
 	wstring ExePath();
 	vector<DoMoDriver*> makeDriversFromTemplates(vector<DriverDataTemplate*> DriverTemplates);
+	vector<string> split(string input, char splitter);
 }

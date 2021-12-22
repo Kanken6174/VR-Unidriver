@@ -157,6 +157,7 @@
     <ClCompile Include="driverlog.cpp" />
     <ClCompile Include="maths.cpp" />
     <ClCompile Include="component.cpp" />
+    <ClCompile Include="stringUtilities.cpp" />
     <ClCompile Include="typeConverters.cpp" />
   </ItemGroup>
   <ItemGroup>

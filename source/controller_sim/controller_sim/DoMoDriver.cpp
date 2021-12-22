@@ -198,7 +198,7 @@ using namespace vr;
 		}*/
 	}
 
-	DriverPose_t DoMoDriver::GetPose()
+	DriverPose_t DoMoDriver::GetPoseStubmode()
 	{
 		GetKeypresses();	//on le laisse statique dans l'espace pour l'instant
 		DriverPose_t pose = { 0 };
@@ -217,25 +217,50 @@ using namespace vr;
 		pose.vecPosition[0] = Y;
 		return pose;
 	}
+
+	DriverPose_t DoMoDriver::GetPoseProvided(HmdQuaternion_t poseRotation, vector<double> posePosition) {
+		DriverPose_t pose = { 0 };
+		pose.poseIsValid = true;
+		pose.result = TrackingResult_Running_OK;
+
+
+
+		return pose;
+	}
+
+	DriverPose_t DoMoDriver::GetPose() {
+		DriverPose_t err = DriverPose_t();
+		return err;
+	}
+
 	/**
 	*Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
 	*/
-	void DoMoDriver::RunFrame()
+	void DoMoDriver::RunFrameStub()
 	{
-		bool stubmode = true;
 		if (DoMoDriver::deviceID != vr::k_unTrackedDeviceIndexInvalid)
 		{
-			vr::VRServerDriverHost()->TrackedDevicePoseUpdated(DoMoDriver::deviceID, GetPose(), sizeof(DriverPose_t));
+			vr::VRServerDriverHost()->TrackedDevicePoseUpdated(DoMoDriver::deviceID, GetPoseStubmode(), sizeof(DriverPose_t));
 		}
 		else {
 			DriverLog("Invalid DeviceID, skipping pose update...");
 		}
 		if (components.size() <= 0) { DriverLog("No components on device, skipping..."); return; }
 		
-		if (stubmode) {
-			for (VRcomponent* component : DoMoDriver::components)
-				component->UpdateSelf();
+		for (VRcomponent* component : DoMoDriver::components)
+			component->UpdateSelf();
+	}
+
+	void DoMoDriver::RunFrameProvided(HmdQuaternion_t poseRotation, vector<double> posePosition, vector<string> Componentdata) {
+		if (DoMoDriver::deviceID != vr::k_unTrackedDeviceIndexInvalid)
+		{
+			vr::VRServerDriverHost()->TrackedDevicePoseUpdated(DoMoDriver::deviceID, GetPoseStubmode(), sizeof(DriverPose_t));
 		}
+		else {
+			DriverLog("Invalid DeviceID, skipping pose update...");
+		}
+		if (components.size() <= 0) { DriverLog("No components on device, skipping..."); return; }
+
 		else {
 			std::string responsabilityChain = "";
 			for (VRcomponent* component : DoMoDriver::components)

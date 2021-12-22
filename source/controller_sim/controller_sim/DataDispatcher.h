@@ -14,7 +14,7 @@ namespace dispatchers {
 	{
 	private:
 		vector<string> splitData;
-		vector<string>* splitPipeData(string RawPipeData);
+		vector<string>* getPipeData(string RawPipeData);
 		string pipeName = "\\\\.\\domocap\\DriverPipe";
 
 		HANDLE hPipe = nullptr;
@@ -29,7 +29,7 @@ namespace dispatchers {
 		virtual bool disconnectPipe();
 		virtual string readPipe();
 
-		virtual bool feedPipeDataToDrivers();
+		virtual bool feedPipeDataToDrivers(vector<DoMoDriver*> drivers);
 	};
 }
 

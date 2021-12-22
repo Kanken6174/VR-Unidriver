@@ -51,11 +51,14 @@ namespace dispatchers{
 		return DisconnectNamedPipe(this->hPipe);
 	}
 
-	bool DataDispatcher::feedPipeDataToDrivers() {
+	bool DataDispatcher::feedPipeDataToDrivers(vector<DoMoDriver*> drivers) {
+		for (DoMoDriver* driver : drivers) {
+			driver->RunFrameStub();
+		}
 		return false;
 	}
 
-	vector<string>* DataDispatcher::splitPipeData(string raw) {
+	vector<string>* DataDispatcher::getPipeData(string raw) {
 		vector<string>* toReturn = new vector<string>();
 		if (!isPipeConnnected()) {
 			throw exception("broken pipe");
@@ -63,8 +66,8 @@ namespace dispatchers{
 		}
 
 		string rawData = readPipe();
-		
-		
+
+		*toReturn = utilities::split(rawData, '|');
 
 		return toReturn;
 	}
