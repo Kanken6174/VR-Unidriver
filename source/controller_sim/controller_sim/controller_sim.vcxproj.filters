@@ -34,6 +34,9 @@
     <Filter Include="Source Files\vr\Serveur">
       <UniqueIdentifier>{bfb169d3-6e67-4ecd-a9a6-33dd2ec11202}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\vr\Drivers\pas_important">
+      <UniqueIdentifier>{8f01fbef-fed2-4712-b0d9-9f1fddccb4b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dataObjects.h">
@@ -66,6 +69,27 @@
     <ClCompile Include="DoMoDriver.cpp">
       <Filter>Source Files\vr\Drivers</Filter>
     </ClCompile>
+    <ClCompile Include="Pose.cpp">
+      <Filter>Source Files\vr\Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="Obsolete.cpp">
+      <Filter>Source Files\vr\Drivers\pas_important</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceRequires.cpp">
+      <Filter>Source Files\vr\Drivers\pas_important</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertyUtilities.cpp">
+      <Filter>Source Files\vr\Drivers\pas_important</Filter>
+    </ClCompile>
+    <ClCompile Include="RunFrame.cpp">
+      <Filter>Source Files\vr\Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="Update.cpp">
+      <Filter>Source Files\vr\Composants</Filter>
+    </ClCompile>
+    <ClCompile Include="Register.cpp">
+      <Filter>Source Files\vr\Composants</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="driverlog.h">
@@ -85,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="includes.hpp">
       <Filter>Header Files\dependances</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

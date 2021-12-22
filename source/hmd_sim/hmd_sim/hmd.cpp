@@ -285,28 +285,16 @@ public:
 
 	virtual void GetKeypresses() {
 		if ((0x8000 & GetAsyncKeyState(VK_LEFT)) != 0) {
-			if (yaw > 360 || yaw < 0)
-				yaw = 0;
-			else
-				yaw += 0.01;
+			yaw += 0.01;
 		}
 		if ((0x8000 & GetAsyncKeyState(VK_UP)) != 0) {
-			if (pitch > 360 || pitch < 0)
-				pitch = 0;
-			else
-				pitch += 0.01;
+			pitch += 0.01;
 		}
 		if ((0x8000 & GetAsyncKeyState(VK_RIGHT)) != 0) {
-			if (yaw > 360 || yaw < 0)
-				yaw = 360;
-			else
-				yaw -= 0.01;
+			yaw -= 0.01;
 		}
 		if ((0x8000 & GetAsyncKeyState(VK_DOWN)) != 0) {
-			if (pitch > 360 || pitch < 0)
-				pitch = 360;
-			else
-				pitch -= 0.01;
+			pitch -= 0.01;
 		}
 		if ((0x8000 & GetAsyncKeyState(70)) != 0) {
 			X -= 0.01;

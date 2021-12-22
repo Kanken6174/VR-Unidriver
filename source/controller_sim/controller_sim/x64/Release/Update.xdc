@@ -16,14 +16,5 @@ Pointer to CAtlTransactionManager object</summary>
 @date 16/12/2021
 
 </member>
-<member name="T:Quaternion" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\controller_sim.h" line="22">
-maths.h functions and definitions
-used mainly for mathematic angle conversions
-
-</member>
-<member name="M:DoMoDriver.RunFrameStub" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\controller_sim.h" line="91">
-Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
-
-</member>
 </members>
 </doc>

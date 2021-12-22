@@ -25,5 +25,9 @@ used mainly for mathematic angle conversions
 Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
 
 </member>
+<member name="M:DoMoDriver.RunFrameStub" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\RunFrame.cpp" line="3">
+Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
+
+</member>
 </members>
 </doc>

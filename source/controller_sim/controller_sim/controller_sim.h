@@ -119,12 +119,8 @@ public:
 	virtual void EnterStandby();
 	virtual void LeaveStandby();
 };
-
-//-----------------------------------------Utilitaires---------------------------------------------
-
 namespace utilities {
 	vector<DriverDataTemplate*> ReadConfigAndBuildDrivers();
 	wstring ExePath();
 	vector<DoMoDriver*> makeDriversFromTemplates(vector<DriverDataTemplate*> DriverTemplates);
-	vector<string> split(string input, char splitter);
 }

@@ -6,6 +6,7 @@
 */
 
 #include "dataObjects.h"
+#include "utilities.h"
 
 #define ABSOLUTE_T 0	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick
 #define RELATIVE_T 1
@@ -25,21 +26,26 @@ class VRcomponent
 {
 private:
 
-	ComponentDataTemplate localData;
+	ComponentDataTemplate localData;	//utilisé uniquement par le constructeur du driver
 
 	std::string inputPath = "";
 	vr::VRInputComponentHandle_t handle;
 	vr::PropertyContainerHandle_t parentHandle;
 	int sclType = 0;
-	bool state = false;
+
+	bool keyState = false;//utilisé par le stub uniquement
 public:
 	VRcomponent();
 	VRcomponent(vr::PropertyContainerHandle_t parentHandle, ComponentDataTemplate componentData);	//constructeur moderne
 	VRcomponent(std::string inputPath, vr::PropertyContainerHandle_t parentHandle, int sclType);	//constructeur	obsolète
 	virtual vr::VRInputComponentHandle_t GetHandle();
 	virtual vr::EVRInputError registerSelf();
+
 	virtual vr::EVRInputError UpdateSelf();	//mode stub, update sur sa propre valeur
+
 	virtual vr::EVRInputError UpdateSelf(bool value);
 	virtual vr::EVRInputError UpdateSelf(float value);
 	virtual vr::EVRInputError UpdateSelf(vr::VRBoneTransform_t* hand, int size);	//size est mis à 31 si non-précisé
+
+	virtual vr::EVRInputError UpdateSelf(string providedValue);
 };
