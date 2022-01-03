@@ -12,7 +12,7 @@ public:
     string name = "default_name";    //le nom de l'appareil qui sera ajouté
     string renderModel = "";        //le modèle 3d de l'appareil (optionnel)
     string serialNumber = "";        //le numéro de série (révision) de l'appareil
-    int role = TrackedControllerRole_Invalid;    //défaut à invalid (0), de 0 à 5 (1 main droite, 2 main gauche)
+    int role = 0;    //défaut à invalid (0), de 0 à 5 (1 main droite, 2 main gauche)
     vector<ComponentDataTemplate*> components;    //les divers composants du driver (boutons, joysticks, entrées squelette...)
 };
 
@@ -38,7 +38,7 @@ public:
     int posZ;
     char indexZ;
     double valZ;
-}
+};
 
 class Gyro { // gyrométre avec les valeures x/y/z
 public:
@@ -53,7 +53,7 @@ public:
     int posZ;
     char indexZ;
     double valY;
-}
+};
 
 class Accel { // accelérométre avec les valeures x/y/z
 public:
@@ -68,7 +68,7 @@ public:
     int posZ;
     char indexZ;
     double valY;
-}
+};
 
 class AllTrigger {
 public:
@@ -81,7 +81,7 @@ public:
     int pos = 99;
     char index = "";
     double thumbXVal = 99;
-}
+};
 
 class AllBouton {
 public:
