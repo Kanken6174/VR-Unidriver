@@ -1,34 +1,15 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-
+#include "Device.h"
 #include "serialPort.h"
 
 using namespace std;
 
 
-void Gant() {
-
-	SerialPort w;
-	if (w.open("COM3", 74880, 8))
-	{
-		char buf[1024];
-		string ask = "!";
-		w.send(ask.c_str(), ask.length());
-
-		while (true)
-		{
-			memset(buf, 0, 1024);
-			w.receive(buf, 1024);
-			cout << buf;
-		}
-
-	}
-}
-
-SerialPort connect(void) {
+SerialPort connect(char* p, int b) {
 	SerialPort w; //(const char* portname, int baudrate, char databit);
-	if (w.open("COM3", 74880, 8))
+	if (w.open(p, b, 8))
 	{
 		return w;
 	}
@@ -37,8 +18,8 @@ SerialPort connect(void) {
 	}
 }
 
-void requestTram(SerialPort w, float result[]) {
 
+void requestTramDevice(SerialPort w, Device periph) {
 	char buf[1024];
 
 	string ask = "#";							//symbole envoyé a l arduino
@@ -54,29 +35,39 @@ void requestTram(SerialPort w, float result[]) {
 	if (buf[0] != 'A')
 		return;
 
+	cout << buf << endl;
+
 	string conc;								//string pour la concatenation
-	int i = 0;
-
-	buf[0] = NULL;								//on retire le premier element pour eviter les problemes
-
+	list<Device::Prop>::iterator it;
+	bool sw = false;
 	for (char s : buf) {
-		if (s != NULL) {
-			if (s >= '0' && s <= '9' || s == '-') {				// tout chiffre et '-' en evitant toute lettre ou tout élément NULL
-				conc += s;													// concatenation
-			}
-			else {															//arrivée a une nouvelle lettre
-				float val = 0;
-				istringstream iss(conc);									//transformation du string en int 
-				iss >> val;
 
-				if (val != 0)
-					result[i] = val;
-
-				conc = "";													//remise a 0 de la concatenation
-				i = i + 1;
+			if (s >= 'A' && s <= 'Z' || s == NULL) {										// en présence d'une lettre
+				if (sw) {
+					float val = 0;
+					istringstream iss(conc);									//transformation du string en int 
+					iss >> val;
+					it->valeur = val;
+					sw = false;
+					conc = "";
+				}
+				sw = true;
+				it = periph.listProp.begin();
+				while (it != periph.listProp.end()) {
+					string tmp_string(1, s);
+					if (it->flag == tmp_string) {
+						break;
+					}
+					it++;
+				}
+			} else if(s >= '0' && s <= '9' || s == '-') {
+				conc += s;
 			}
+		
+			if (s == NULL)
+				break;
 		}
-	}
+	//periph.affichageList();
 }
 
 int main(int argumentCount, const char* argumentValues[])
@@ -84,9 +75,16 @@ int main(int argumentCount, const char* argumentValues[])
 	float response [9];					//a mettre fichier setup
 	SerialPort w;
 
+	Device gant;
+	gant.ReadConfigAndBuildDrivers();
+
 	try
 	{
-		 w = connect();			//fichier setup port
+		// a mettre dans une fonction
+		char* src = new char[gant.port.length() + 1];
+		strcpy_s(src, gant.port.length() + 1,gant.port.c_str());
+
+		w = connect(src,gant.baudrate);			
 	}
 	catch (const runtime_error& e)
 	{
@@ -95,23 +93,12 @@ int main(int argumentCount, const char* argumentValues[])
 	}
 	
 
+	//requestTramDevice(w, gant);
 
-	requestTram(w, response);
 
-	for (float s : response) {
-		cout << s << endl;
+	for (int i = 0; i < 100; i++) {
+		requestTramDevice(w, gant);
 	}
-
-
-
-
-	//giro x y z	
-	//accele x y z	
-	//magneto x y z
-	// 3 vector a faire
-	// 
-	// try catch
-
 
 	 char c = getchar();
 

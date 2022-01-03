@@ -1,7 +1,14 @@
-#include "driverlog.h"
+/**
+* @author Yorick Geoffre
+* @brief defines a single component, like a joystick or a button on a device
+* @version 0.3 - added dataTemplate based constructors
+* @date 30/11/2021
+*/
+
 #include "dataObjects.h"
 
 #define ABSOLUTE_T 0	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick
+#define RELATIVE_T 1
 #define DIGITAL 2
 #define HAPTIC 3
 #define SKELETAL 4

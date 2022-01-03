@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -87,6 +87,7 @@
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Y:\vcpkg\installed\x64-windows\include;</IncludePath>
     <OutDir>$(SolutionDir)ressources\controller_sim\bin\win64\</OutDir>
     <TargetName>driver_$(ProjectName)</TargetName>
+    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -137,6 +138,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <DiagnosticsFormat />
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,17 +149,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="configLoader.cpp" />
+    <ClCompile Include="DataDispatcher.cpp" />
     <ClCompile Include="dataObjects.h" />
     <ClCompile Include="DoMoDriver.cpp" />
     <ClCompile Include="ctrlSimServer.cpp" />
     <ClCompile Include="driverlog.cpp" />
     <ClCompile Include="maths.cpp" />
     <ClCompile Include="component.cpp" />
+    <ClCompile Include="typeConverters.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller_sim.h" />
+    <ClInclude Include="DataDispatcher.h" />
     <ClInclude Include="driverlog.h" />
     <ClInclude Include="entry_point.h" />
+    <ClInclude Include="includes.hpp" />
     <ClInclude Include="VRComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

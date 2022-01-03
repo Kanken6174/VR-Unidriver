@@ -1,6 +1,11 @@
-#include "VRComponent.h"
+/**
+* @author Yorick Geoffre
+* @brief defines a single component, like a joystick or a button on a device
+* @version 0.3 - added dataTemplate based constructors
+* @date 30/11/2021
+*/
 
-using namespace vr;
+#include "VRComponent.h"
 
 	VRcomponent::VRcomponent() {		//ne devrait jamais être appellé
 		DriverLog("BAD_COMPONENT_CALL\n");
@@ -35,6 +40,11 @@ using namespace vr;
 		case ABSOLUTE_T:
 			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, JOYSTICK);
 			DriverLog("Scalar component has been registered");
+			break;
+		case RELATIVE_T:
+			ER = vr::VRDriverInput()->CreateScalarComponent(parentHandle, inputPath.c_str(), &handle, EVRScalarType::VRScalarType_Absolute, TRIGGER);
+			DriverLog("Scalar component has been registered");
+			break;
 		case DIGITAL:
 
 			ER = vr::VRDriverInput()->CreateBooleanComponent(parentHandle, inputPath.c_str(), &(VRcomponent::handle));
@@ -86,9 +96,10 @@ using namespace vr;
 	}
 
 	EVRInputError VRcomponent::UpdateSelf(float value) {
-		if (sclType != ABSOLUTE_T || value > 1 || value <-1)
+		if (sclType == ABSOLUTE_T || sclType == RELATIVE_T || value > 1 || value <-1)
 			return vr::VRInputError_WrongType;
-		return vr::VRDriverInput()->UpdateScalarComponent(handle, value, 0);
+
+			return vr::VRDriverInput()->UpdateScalarComponent(handle, value, 0);
 	}
 
 	EVRInputError VRcomponent::UpdateSelf(vr::VRBoneTransform_t* hand, int size = 31) {

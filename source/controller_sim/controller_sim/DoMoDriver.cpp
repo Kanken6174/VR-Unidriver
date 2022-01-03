@@ -1,3 +1,10 @@
+/**
+* @author Yorick Geoffre
+* @brief defines a single device, which can be host to multiple component and has a pose (rotation + position) in 3d space
+* @version 0.5
+* @date 16/12/2021
+*/
+
 #include "controller_sim.h"
 
 using namespace vr;
