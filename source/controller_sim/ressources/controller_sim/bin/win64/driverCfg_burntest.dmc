@@ -1,0 +1,81 @@
+#on donne le nom du driver, cela en créé un nouveau à chaque $
+$DoMoDriver_right
+#on donne le modèle 3d à utiliser pour le driver
+>oculus_cv1_controller_right
+#on définit le rôle du driver (1 = main gauche, 2 = droite, 3 = pas applicable,...)
+<2
+#
+#on définit désormais les composants de ce driver
+@this will be displayed in the log
+=/input/a/click
+:78
+=/input/b/click
+:72
+#-----------------------------------------------------
+$DoMoDriver_left
+#on donne le modèle 3d à utiliser pour le driver
+>oculus_cv1_controller_left
+#on définit le rôle du driver (1 = main gauche, 2 = droite, 3 = pas applicable,...)
+<1
+#
+#on définit désormais les composants de ce driver
+@this will be displayed in the log
+=/input/c/click
+:70
+=/input/d/click
+:71
+@done, file successfully loaded
+$DoMoDriver_right1
+$DoMoDriver_right2
+$DoMoDriver_right3
+$DoMoDriver_right4
+$DoMoDriver_right5
+$DoMoDriver_right6
+$DoMoDriver_right7
+$DoMoDriver_right8
+$DoMoDriver_right9
+$DoMoDriver_right10
+$DoMoDriver_right11
+$DoMoDriver_right12
+$DoMoDriver_right13
+$DoMoDriver_right14
+$DoMoDriver_right15
+$DoMoDriver_right16
+$DoMoDriver_right17
+$DoMoDriver_right18
+$DoMoDriver_right19
+$DoMoDriver_right20
+$DoMoDriver_right21
+$DoMoDriver_right22
+$DoMoDriver_right23
+$DoMoDriver_right24
+$DoMoDriver_right25
+$DoMoDriver_right26
+$DoMoDriver_right27
+$DoMoDriver_right1a
+$DoMoDriver_right2a
+$DoMoDriver_right3a
+$DoMoDriver_right4a
+$DoMoDriver_right5a
+$DoMoDriver_right6a
+$DoMoDriver_right7a
+$DoMoDriver_right8a
+$DoMoDriver_right9a
+$DoMoDriver_right10a
+$DoMoDriver_right11a
+$DoMoDriver_right12a
+$DoMoDriver_right13a
+$DoMoDriver_right14a
+$DoMoDriver_right15a
+$DoMoDriver_right16a
+$DoMoDriver_right17a
+$DoMoDriver_right18a
+$DoMoDriver_right19a
+$DoMoDriver_right20a
+$DoMoDriver_right21a
+$DoMoDriver_right22a
+$DoMoDriver_right23a
+$DoMoDriver_right24a
+$DoMoDriver_right25a
+$DoMoDriver_right26a
+$DoMoDriver_right27a

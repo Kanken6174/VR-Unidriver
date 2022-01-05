@@ -17,7 +17,7 @@ Il s'agit du serveur qui va contrôler les différents appareils, car il peut y 
 serveur.
 
 </member>
-        <member name="M:DoMoDriver.RunFrame">
+        <member name="M:DoMoDriver.RunFrameStub">
 Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
 
 
