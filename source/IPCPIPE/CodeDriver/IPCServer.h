@@ -11,11 +11,13 @@ string GetLastErrorAsString();
 
 class PipeServer {
 private:
-    HANDLE hPipe = nullptr;
+    HANDLE hPipe = INVALID_HANDLE_VALUE;
+    HANDLE externPipe = INVALID_HANDLE_VALUE;
     char buffer[1024];
     std::string pipeName;
     DWORD dwRead = 0;
     bool connected = false;
+    bool isExternConnected = false;
 
 public:
     PipeServer(string pipeName);

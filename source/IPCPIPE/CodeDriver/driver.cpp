@@ -4,12 +4,13 @@ using namespace std;
 
 int main() {
 
-	PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeOfDriver");
+	PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeD");
 
 	while (true) {
 		cout << "writing to pipe\n";
-		ps->WriteToPipe("REQUEST", "\\\\.\\pipe\\pipeOfMoulinette");
+		while (!ps->WriteToPipe("REQUEST", "\\\\.\\pipe\\pipeM")) { Sleep(100); }
 		cout << "getting answer\n";
 		cout << ps->ReadPipe();
+		Sleep(100);
 	}
 }

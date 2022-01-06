@@ -11,7 +11,7 @@ using namespace std;
 Device::Device() {}
 
 void Device::ReadConfigAndBuildDrivers() {
-    ifstream fichier("config.txt", ios::in);
+    ifstream fichier("C:/Users/ASUS/Documents/2A/projet/domocap/source/SerialPort/SerialPort/config.txt", ios::in);
 
     if (fichier)
     {

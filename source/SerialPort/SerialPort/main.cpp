@@ -67,7 +67,7 @@ void requestTramDevice(SerialPort w, Device periph) {
 			if (s == NULL)
 				break;
 		}
-	//periph.affichageList();
+	periph.affichageList();
 }
 
 int main(int argumentCount, const char* argumentValues[])
@@ -93,13 +93,13 @@ int main(int argumentCount, const char* argumentValues[])
 	}
 	
 
-	//requestTramDevice(w, gant);
+	requestTramDevice(w, gant);
 
-
+	/*
 	for (int i = 0; i < 100; i++) {
 		requestTramDevice(w, gant);
 	}
-
+	*/
 	 char c = getchar();
 
 	return 0;

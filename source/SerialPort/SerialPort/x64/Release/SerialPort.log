@@ -1,10 +1,9 @@
 ﻿  main.cpp
-C:\Users\matto\Desktop\ProjetIUT\domocap\source\SerialPort\SerialPort\main.cpp(17,39): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\matto\Desktop\ProjetIUT\domocap\source\SerialPort\SerialPort\main.cpp(52,35): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\matto\Desktop\ProjetIUT\domocap\source\SerialPort\SerialPort\main.cpp(70,4): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\ASUS\Documents\2A\projet\domocap\source\SerialPort\SerialPort\main.cpp(27,5): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\ASUS\Documents\2A\projet\domocap\source\SerialPort\SerialPort\main.cpp(75,8): warning C4101: 'response' : variable locale non référencée
   Génération de code en cours
-  1 of 182 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+  0 of 339 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
-  SerialPort.vcxproj -> C:\Users\matto\Desktop\ProjetIUT\domocap\source\SerialPort\x64\Release\SerialPort.exe
+  SerialPort.vcxproj -> C:\Users\ASUS\Documents\2A\projet\domocap\source\SerialPort\x64\Release\SerialPort.exe
