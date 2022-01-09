@@ -21,7 +21,7 @@ maths.h functions and definitions
 used mainly for mathematic angle conversions
 
 </member>
-<member name="M:DoMoDriver.RunFrame" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\controller_sim.h" line="89">
+<member name="M:DoMoDriver.RunFrameStub" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\controller_sim.h" line="91">
 Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
 
 </member>

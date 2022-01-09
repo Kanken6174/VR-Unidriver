@@ -1,5 +1,6 @@
 #include "controller_sim.h"
 
+//Ces 3 méthodes ne seront pas utilisées car on utilise les fonctions win32 FooA et pas FooW
 namespace utilities {
 	//Convertit un string en LPWSTR
 	LPWSTR strToLPW(string toConvert) {
