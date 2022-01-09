@@ -1,5 +1,13 @@
-#include "Mapping.h"
-#include "vectorClass.h"
+#include "Filtre.h"
+#include "Bouton.h"
+#include "Accel.h"
+#include "ComponentDataTemplate.h"
+#include "DriverDataTemplate.h"
+#include "Joystick.h"
+#include "Element.h"
+#include "Gyro.h"
+#include "Magneto.h"
+#include "Trigger.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -12,89 +20,30 @@
 
 using namespace std;
 
-Mapping::Mapping()
+Filtre::Filtre()
 {
 
 }
 
-Mapping::~Mapping()
+Filtre::~Filtre()
 {
 
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-vector<DriverDataTemplate*> ReadConfig() {
-    ifstream driverCfgFile;    //create readonly stream
-    string filePath = "Y:\\domocap\\source\\controller_sim\\ressources\\controller_sim\\bin\\win64\\driverCfg.dmc";
-    driverCfgFile.open(filePath);    //proprietary config file -> .doMoCap -> .dmc
-
-    if (!driverCfgFile) {
-        //on récupère le chemin courant et on le convertit en string
-        DriverLog("Unable to open driver config file from path: %s", filePath.c_str());
-        return vector<DriverDataTemplate*>();
-    }
-
-    vector<DriverDataTemplate*> DriverTemplates = vector<DriverDataTemplate*>();
-
-    int activeDriverVector = -1;
-    int activeCompomentVector = -1;
-
-    //la déclaration des variables (même intermédiaires), doit se faire avant le switch/case en c++, d'où ces 3 déclarations:
-    DriverDataTemplate* DriverTemp = nullptr;
-    ComponentDataTemplate* CompoTemp = nullptr;
-    int intBuf = 99;
-    std::string buf = "";
-
-    while (std::getline(driverCfgFile, buf)) {
-        char id = buf[0];
-        buf = buf.erase(0, 1);
-        buf.erase(std::remove(buf.begin(), buf.end(), '\n'), buf.end()); //on enlève les \n parasites
-        switch (id) {
-        case '$':    //nouveau driver
-            activeDriverVector++;
-            activeCompomentVector = -1;
-
-            DriverTemp = new DriverDataTemplate;
-            DriverTemp->name = buf;
-            DriverTemplates.push_back(DriverTemp);
-
-            DriverLog(("Discovered driver named : " + buf).c_str());
-            break;
-        case '=':    //nouveau composant pour le driver, la ligne commençant par = contient le chemin d'input du driver, ex: /input/a/click
-            activeCompomentVector++;
-            CompoTemp = new ComponentDataTemplate;
-            DriverTemplates.at(activeDriverVector)->components.push_back(CompoTemp);
-            DriverTemplates.at(activeDriverVector)->components[activeCompomentVector]->inputPath = buf;
-            break;
-        case ':':    //le type d'input du driver (0-5 pour digital, analog, ect...; 5+ pour bool stub mode)
-            intBuf = stoi(buf);
-            DriverTemplates.at(activeDriverVector)->components[activeCompomentVector]->inputType = intBuf;
-            break;
-        case '~': //L'emplacement de la donnée
-            intBuf = stoi(buf);
-            DriverTemplates.at(activeDriverVector)->components[activeCompomentVector]->valuePath = intBuf;
-            break;
-        default:
-            break;
-        }
-    }
-    driverCfgFile.close();
-
-    return DriverTemplates;
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void Mapping::initClass(void)
+void Filtre::initClass(void)
 {
     int i = 0;
     vector<DriverDataTemplate*> DriverTemplates = vector<DriverDataTemplate*>();
     vector<AllTrigger*> trigg = vector<AllTrigger*>();
     vector<AllBouton*> bout = vector<AllBouton*>();
     vector<AllJoystick*> joy = vector<AllJoystick*>();
-    string chaine = ""
-        vector<Element*> element = vector<Element*>();
+    string chaine = "";
+    vector<Element*> element = vector<Element*>();
     DriverTemplates = ReadConfig();
 
     while (DriverTemplates[i] != NULL)
