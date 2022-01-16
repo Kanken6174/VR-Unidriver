@@ -5,7 +5,7 @@
 * @date 16/12/2021
 */
 
-#include "DoMoDriver.h"
+#include "MathOps.h"
 
 vr::HmdQuaternion_t ToQuaternion(double yaw, double pitch, double roll) // yaw (Z), pitch (Y), roll (X)
 {

@@ -1,7 +1,11 @@
-#pragma once
+/**
+* @author Yorick Geoffre
+* @brief this files contains the declaration of the DataDispatcher type, used to wrap around the IPCServer type for named pipe communication
+* @version 0.1
+* @date 16/01/2022
+*/
 
-#ifndef DISPATCHER
-#define DISPATCHER
+#pragma once
 
 
 #include "controller_sim.h"
@@ -11,20 +15,34 @@ using namespace std;
 using namespace vr;
 
 namespace dispatchers {
+	/// <summary>
+	/// La classe DataDispatcher est un wrapper autour de la classe IPCServer et permet d'intéragir avec les tunnels nommés.
+	/// </summary>
 	class DataDispatcher
 	{
 	private:
+		/// Un vecteur contenant les données séparées de la trame d'arrivée, produite en interne en appellant <code>Split()</code> sur la trame brute.
 		vector<string> splitData;
+		/// Le nom du tunnel nommé local
 		string pipeName = "\\\\.\\pipe\\DriverPipe";
+		/// Le nom du tunnel nommé distant (de la moulinette dans ce cas)
 		string targetName = "\\\\.\\pipe\\MoulinettePipe";
+		/// Le pointeur vers le PipeServer que cette class enrobe
 		PipeServer* localServer;
 
 	public:
+		/// <summary>
+		/// Le constructeur de la classe DataDispatcher, il créé également le tunnel nommé interne
+		/// </summary>
 		DataDispatcher();
+		/// <summary>
+		/// Le destructeur de la classe DataDispatcher, il déconnecte également le tunnel nommé interne
+		/// </summary>
 		~DataDispatcher();
-
-		virtual bool feedPipeDataToDrivers(vector<DoMoDriver*> drivers);
+		/// <summary>
+		/// permet de faire passer les données reçues par le tunnel nommé aux drivers correspondants (ordre naturel)
+		/// </summary>
+		/// <param name="drivers"> une collection de drivers (vecteur)</param>
+		virtual void feedPipeDataToDrivers(vector<DoMoDriver*> drivers);
 	};
 }
-
-#endif

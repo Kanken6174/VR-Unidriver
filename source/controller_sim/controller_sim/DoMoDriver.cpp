@@ -50,7 +50,7 @@
 	EVRInitError DoMoDriver::Activate(vr::TrackedDeviceIndex_t unObjectId)
 	{
 		if (ObsoleteMode) {
-			ObsoleteActivation(unObjectId);
+			//ObsoleteActivation(unObjectId);
 		}
 		else {
 			ModernActivation(unObjectId);

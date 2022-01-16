@@ -10,7 +10,7 @@ namespace dispatchers{
 		delete this->localServer;
 	}
 
-	bool DataDispatcher::feedPipeDataToDrivers(vector<DoMoDriver*> drivers) {
+	void DataDispatcher::feedPipeDataToDrivers(vector<DoMoDriver*> drivers) {
 		this->localServer->WriteToPipe("REQUEST", this->targetName);
 		string answer = this->localServer->ReadPipe();
 		vector<string> splitDriverData = utilities::split(answer, ';');			//à cette étape, on split les trames des différents drivers
@@ -22,7 +22,5 @@ namespace dispatchers{
 			if (i > splitDriverData.size())	//ne devrait arriver que si la trame envoyée contient trop peu de trames
 				break;
 		}
-
-		return false;
 	}
 }

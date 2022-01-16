@@ -134,5 +134,8 @@
     <ClInclude Include="DoMoDriver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MathOps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

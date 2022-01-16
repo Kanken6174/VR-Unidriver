@@ -37,11 +37,14 @@ y:\domocap\source\controller_sim\controller_sim\x64\release\domodriver.obj
 y:\domocap\source\controller_sim\controller_sim\x64\release\dataobjects.obj
 y:\domocap\source\controller_sim\controller_sim\x64\release\datadispatcher.obj
 y:\domocap\source\controller_sim\controller_sim\x64\release\configloader.obj
+y:\domocap\source\controller_sim\controller_sim\x64\release\updatevalues.xdc
+y:\domocap\source\controller_sim\controller_sim\x64\release\updatevalues.obj
 y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib
 y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.exp
+y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll
+y:\domocap\source\controller_sim\controller_sim\x64\release\driver_controller_sim.iobj
 y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.xml
 y:\domocap\source\controller_sim\controller_sim\x64\release\driver_controller_sim.ipdb
-y:\domocap\source\controller_sim\controller_sim\x64\release\driver_controller_sim.iobj
 y:\domocap\source\controller_sim\controller_sim\x64\release\controller_sim.tlog\cl.command.1.tlog
 y:\domocap\source\controller_sim\controller_sim\x64\release\controller_sim.tlog\cl.read.1.tlog
 y:\domocap\source\controller_sim\controller_sim\x64\release\controller_sim.tlog\cl.write.1.tlog
