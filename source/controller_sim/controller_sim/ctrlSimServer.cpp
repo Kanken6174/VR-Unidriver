@@ -22,6 +22,10 @@ EVRInitError Controller_simDriverServer::Init(vr::IVRDriverContext* pDriverConte
 	InitDriverLog(vr::VRDriverLog());	//initialise le logging d'informations visible sur la console web
 
 	DriverLog("log inited\n");;
+	DriverLog("Connecting to named pipe...");
+	this->serverDispatcher = new DataDispatcher();
+	DriverLog("Successfully connected!");
+
 	DriverTemplates = utilities::ReadConfigAndBuildDrivers();
 	Drivers = utilities::makeDriversFromTemplates(DriverTemplates);
 	DriverLog("driver(s) inited\n");
@@ -47,7 +51,6 @@ void Controller_simDriverServer::Cleanup()
 {
 	inited = false;
 	CleanupDriverLog();
-
 	for (DoMoDriver* driver : Controller_simDriverServer::Drivers)
 		driver->~DoMoDriver();	//appel de destructeur
 }

@@ -6,7 +6,7 @@
 */
 #pragma once
 
-#include "DoMoDriver.h"
+#include "DataDispatcher.h"
 
 #define ABSOLUTE_S vr::VRScalarType_Absolute	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick
 
@@ -19,7 +19,6 @@
 #define updateBool UpdateBooleanComponent
 #define updatehapt UpdatehapticComponent
 
-#include "DoMoDriver.h"
 
 /*
 -------------------------------------------------------CLASSE SERVEUR---------------------------------------------------
@@ -32,6 +31,8 @@ private:
 	vector<DriverDataTemplate*> DriverTemplates;
 	vector<DoMoDriver*> Drivers;
 	bool inited = false;
+	DataDispatcher* serverDispatcher = nullptr;	//sera bloquant tant que la communication ne sera pas établie
+
 	virtual void RegisterInternalDrivers();
 
 public:

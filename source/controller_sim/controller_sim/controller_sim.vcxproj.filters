@@ -110,9 +110,6 @@
     <ClInclude Include="driverlog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="controller_sim.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="entry_point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -135,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MathOps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller_sim.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

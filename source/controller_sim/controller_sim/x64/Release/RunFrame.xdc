@@ -31,6 +31,9 @@ Va prendre le premier string d'un vecteur de string, le retirer de ce vecteur, e
 <param name="source">le vecteur de strings à traiter</param>
 <returns>le premier string du vecteur</returns>
 </member>
+<member name="T:VRcomponent" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\VRComponent.h" line="19">
+Redéfinitions de noms de méthodes de SteamVR (pour raccourcir)
+</member>
 <member name="M:ToQuaternion(System.Double,System.Double,System.Double)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\MathOps.h" line="1">
 @author Yorick Geoffre
 @brief this file holds the declaration of maths-related functions

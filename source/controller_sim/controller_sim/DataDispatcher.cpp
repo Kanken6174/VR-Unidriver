@@ -1,6 +1,5 @@
 #include"DataDispatcher.h"
 
-namespace dispatchers{
 
 	DataDispatcher::DataDispatcher() {
 		this->localServer = new PipeServer(this->pipeName);
@@ -23,4 +22,3 @@ namespace dispatchers{
 				break;
 		}
 	}
-}

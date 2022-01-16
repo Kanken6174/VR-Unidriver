@@ -5,21 +5,17 @@
 * @date 16/01/2022
 */
 
-#pragma once
-
-
-#include "controller_sim.h"
+#include "DoMoDriver.h"
 #include "IPCIPE/IPCServer.h"
 
 using namespace std;
 using namespace vr;
 
-namespace dispatchers {
 	/// <summary>
 	/// La classe DataDispatcher est un wrapper autour de la classe IPCServer et permet d'intéragir avec les tunnels nommés.
 	/// </summary>
-	class DataDispatcher
-	{
+class DataDispatcher
+{
 	private:
 		/// Un vecteur contenant les données séparées de la trame d'arrivée, produite en interne en appellant <code>Split()</code> sur la trame brute.
 		vector<string> splitData;
@@ -44,5 +40,4 @@ namespace dispatchers {
 		/// </summary>
 		/// <param name="drivers"> une collection de drivers (vecteur)</param>
 		virtual void feedPipeDataToDrivers(vector<DoMoDriver*> drivers);
-	};
-}
+};
