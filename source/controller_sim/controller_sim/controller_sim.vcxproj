@@ -156,6 +156,8 @@
     <ClCompile Include="ctrlSimServer.cpp" />
     <ClCompile Include="driverlog.cpp" />
     <ClCompile Include="InterfaceRequires.cpp" />
+    <ClCompile Include="IPCIPE\IPCServer.cpp" />
+    <ClCompile Include="IPCIPE\utilities.cpp" />
     <ClCompile Include="maths.cpp" />
     <ClCompile Include="component.cpp" />
     <ClCompile Include="Obsolete.cpp" />
@@ -173,6 +175,7 @@
     <ClInclude Include="driverlog.h" />
     <ClInclude Include="entry_point.h" />
     <ClInclude Include="includes.hpp" />
+    <ClInclude Include="IPCIPE\IPCServer.h" />
     <ClInclude Include="utilities.h" />
     <ClInclude Include="VRComponent.h" />
   </ItemGroup>
