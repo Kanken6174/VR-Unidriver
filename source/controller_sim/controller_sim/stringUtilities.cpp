@@ -1,4 +1,4 @@
-#include"controller_sim.h"
+#include"utilities.h"
 
 namespace utilities {
 
@@ -13,6 +13,33 @@ namespace utilities {
 		}
 
 		return toreturn;
+	}
+
+	string getFirstAndRemoveFromVector(vector<string> source) {
+		string toReturn = source[0];
+		source.erase(std::next(source.begin()));	//on supprime le premier élément (correspond à un comportement de dépilage)
+		return toReturn;
+	}
+
+	HmdQuaternion_t* stringToQuaternion(string input, char splitter) {
+		vector<string> values = split(input, splitter);
+		if (values.size() < 4)
+			return new HmdQuaternion_t();	//0,0,0,0 si on a une erreur
+		
+		HmdQuaternion_t* quat = new HmdQuaternion_t();
+		
+		quat->x = stringToDouble(values[0]);
+		quat->y = stringToDouble(values[1]);
+		quat->z = stringToDouble(values[2]);
+		quat->w = stringToDouble(values[3]);
+
+		return quat;
+	}
+
+	int stringToInt(string input) {
+		int toReturn = 0;
+		toReturn = stoi(input);
+		return toReturn;
 	}
 
 	bool stringToBool(string input) {

@@ -168,10 +168,12 @@
     <ClCompile Include="stringUtilities.cpp" />
     <ClCompile Include="typeConverters.cpp" />
     <ClCompile Include="Update.cpp" />
+    <ClCompile Include="UpdateValues.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller_sim.h" />
     <ClInclude Include="DataDispatcher.h" />
+    <ClInclude Include="DoMoDriver.h" />
     <ClInclude Include="driverlog.h" />
     <ClInclude Include="entry_point.h" />
     <ClInclude Include="includes.hpp" />

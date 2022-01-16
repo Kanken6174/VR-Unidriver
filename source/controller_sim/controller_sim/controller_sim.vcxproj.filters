@@ -102,6 +102,9 @@
     <ClCompile Include="IPCIPE\utilities.cpp">
       <Filter>Source Files\IPCPIPE</Filter>
     </ClCompile>
+    <ClCompile Include="UpdateValues.cpp">
+      <Filter>Source Files\vr\Drivers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="driverlog.h">
@@ -127,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="IPCIPE\IPCServer.h">
       <Filter>Header Files\IPCPIPE</Filter>
+    </ClInclude>
+    <ClInclude Include="DoMoDriver.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@
 * @date 22/12/2021
 */
 
-#include "controller_sim.h"
+#include "DoMoDriver.h"
 
 
 void DoMoDriver::setStrProperty(vr::ETrackedDeviceProperty SVRproperty, std::string value)

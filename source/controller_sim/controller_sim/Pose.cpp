@@ -1,12 +1,24 @@
-#include "controller_sim.h"
+#include "DoMoDriver.h"
 
 /*Cette fonction gère la position (rotation quaternionique et position par vecteur) de l'objet,
 * qrotation est responsable de l'angle et Vecposition[3] de la position.
 */
-DriverPose_t DoMoDriver::GetPoseProvided(HmdQuaternion_t poseRotation, vector<double> posePosition) {
+DriverPose_t DoMoDriver::GetPoseProvided() {
 	DriverPose_t pose = { 0 };
 	pose.poseIsValid = true;
 	pose.result = TrackingResult_Running_OK;
+	pose.deviceIsConnected = true;
+
+	pose.qWorldFromDriverRotation = ToQuaternion(0, 0, 0);
+	pose.qDriverFromHeadRotation = ToQuaternion(0, 0, 0);
+	pose.vecDriverFromHeadTranslation[2] = -0.5;	//on met la manette juste devant la caméra par défaut (la caméra est en -1, car l'axe X est inversé)
+	pose.vecDriverFromHeadTranslation[1] = -0.25;
+	pose.vecDriverFromHeadTranslation[0] = 0.25;
+
+	pose.qRotation = ToQuaternion(roll, yaw, pitch);
+	pose.vecPosition[2] = X;
+	pose.vecPosition[1] = Z;
+	pose.vecPosition[0] = Y;
 
 	return pose;
 }
@@ -15,7 +27,7 @@ DriverPose_t DoMoDriver::GetPoseProvided(HmdQuaternion_t poseRotation, vector<do
 
 DriverPose_t DoMoDriver::GetPoseStubmode()
 {
-	GetKeypresses();	//on le laisse statique dans l'espace pour l'instant
+	GetKeypresses();	//on le laisse statique dans l'espace pour l'instant, rotation seulement
 	DriverPose_t pose = { 0 };
 	pose.poseIsValid = true;
 	pose.result = TrackingResult_Running_OK;

@@ -1,4 +1,4 @@
-#include "controller_sim.h"
+#include "DoMoDriver.h"
 
 /**
 	*Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
@@ -12,6 +12,16 @@ void DoMoDriver::RunFrameStub()
 	else {
 		DriverLog("Invalid DeviceID, skipping pose update...");
 	}
+	if (components.size() <= 0) { DriverLog("No components on device, skipping..."); return; }
+
+	for (VRcomponent* component : DoMoDriver::components)
+		component->UpdateSelf();
+}
+
+void DoMoDriver::RunFrameRaw(string raw)
+{
+ 	vector<string> componentData = this->UpdateInternalValuesFromPipedData(raw);
+
 	if (components.size() <= 0) { DriverLog("No components on device, skipping..."); return; }
 
 	for (VRcomponent* component : DoMoDriver::components)

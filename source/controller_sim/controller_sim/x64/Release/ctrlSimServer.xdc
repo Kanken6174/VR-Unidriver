@@ -16,13 +16,17 @@ Pointer to CAtlTransactionManager object</summary>
 @date 16/12/2021
 
 </member>
-<member name="T:Quaternion" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\controller_sim.h" line="22">
+<member name="T:Quaternion" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="3">
 maths.h functions and definitions
 used mainly for mathematic angle conversions
 
 </member>
-<member name="M:DoMoDriver.RunFrameStub" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\controller_sim.h" line="91">
+<member name="M:DoMoDriver.RunFrameStub" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="78">
 Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
+
+</member>
+<member name="M:DoMoDriver.UpdateInternalValuesFromPipedData(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="85">
+Cette fonction gère la mise à jour de valeurs par celles reçues du tunnel nommé
 
 </member>
 <member name="M:Controller_simDriverServer.Init(vr.IVRDriverContext*)" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\ctrlSimServer.cpp" line="14">

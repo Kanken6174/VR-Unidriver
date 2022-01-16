@@ -29,5 +29,9 @@ Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du je
 Cette fonction gère la mise à jour de valeurs par celles reçues du tunnel nommé
 
 </member>
+<member name="M:DoMoDriver.UpdateInternalValuesFromPipedData(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\UpdateValues.cpp" line="3">
+Met à jour les valeurs de position, de rotation et de latence d'un driver (appareil), et renvoie les valeurs inutilisées
+
+</member>
 </members>
 </doc>

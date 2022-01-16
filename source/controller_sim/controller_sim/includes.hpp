@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <Windows.h>
 #include <winnt.h>
+#include <list>
 #include "atlbase.h"
 #include "atlstr.h"
 #include "comutil.h"
