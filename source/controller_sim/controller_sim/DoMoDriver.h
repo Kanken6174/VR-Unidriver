@@ -80,7 +80,6 @@ public:
 	*/
 	virtual void RunFrameStub();
 	virtual void RunFrameRaw(string raw);
-	virtual void RunFrameProvided(HmdQuaternion_t poseRotation, vector<double> posePosition, vector<string> Componentdata);
 	virtual std::string GetSerialNumber();
 	/**
 	* Cette fonction gère la mise à jour de valeurs par celles reçues du tunnel nommé
