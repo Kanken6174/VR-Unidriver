@@ -152,6 +152,7 @@
     <ClInclude Include="Manage.h" />
     <ClInclude Include="Filtre.h" />
     <ClInclude Include="serialPort.h" />
+    <ClInclude Include="StructData.h" />
     <ClInclude Include="Trigger.h" />
   </ItemGroup>
   <ItemGroup>

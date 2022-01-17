@@ -4,10 +4,7 @@ using namespace std;
 
 class Trigger { // potentiometre avec la valeure pour un doigts
 public:
-    string name = "";
-    int pos = 99;
-    char index = "";
-    double thumbXVal = 99;
+    list<dataStructIDK> trig;
 };
 
 //class AllTrigger {

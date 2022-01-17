@@ -1,8 +1,6 @@
 class Joystick { // joystique avec sa valeure
 public:
-    int pos = 99;
-    char index = "";
-    double valeur = 99;
+    list<dataStructIDK> joystick;
 };
 
 

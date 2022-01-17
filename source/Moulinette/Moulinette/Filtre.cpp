@@ -8,6 +8,8 @@
 #include "Gyro.h"
 #include "Magneto.h"
 #include "Trigger.h"
+#include "Device.h"
+#include "StructData.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -35,114 +37,149 @@ Filtre::~Filtre()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void Filtre::initClass(void)
+void Filtre::initClass(list<Prop> listProp)
 {
     int i = 0;
-    vector<DriverDataTemplate*> DriverTemplates = vector<DriverDataTemplate*>();
-    vector<AllTrigger*> trigg = vector<AllTrigger*>();
-    vector<AllBouton*> bout = vector<AllBouton*>();
-    vector<AllJoystick*> joy = vector<AllJoystick*>();
     string chaine = "";
     vector<Element*> element = vector<Element*>();
-    DriverTemplates = ReadConfig();
 
-    while (DriverTemplates[i] != NULL)
+    while (listProp != NULL)
     {
         // si c'est bien un composant
 
-        chaine = DriverTemplates->components->inputPath;
-        element = split(chaine, delimiteur, elements);
+        chaine = listProp->nom;
+        element = split(chaine, '|', element);
         switch (element[1]) // input,pos,hand
         {
         case 'input':
             switch element[3]
             {
-            case 'clisk':
-                button = new Bouton;
-                bout->components.push_back(button);
-                bout->components->pos = DriverTemplates[i]->components->inputType;
-                bout->components->index = DriverTemplates[i]->components->valuePath;
+            case 'click':
+                
+                this.button->bout->name = listProp->name;
+                this.button->bout->pos = listProp->type; //Type a véridier
+                this.button->bout->index = listProp->flag;
+                this.button->bout->val = listProp->valeur;
+                this.button++;
+                listprop++;
+                break;
             case '': //pour gachette
-                trigger = new Trigger;
-                trigg->components.push_back(trigger);
-                trigg->components->name = element[3];
-                trigg->components->pos = DriverTemplates[i]->components->inputType;
-                trigg->components->index = DriverTemplates[i]->components->valuePath;
+               
+                this->trigger->trig->name = listProp->name;
+                this->trigger->trig->pos = listProp->type; //Type a véridier
+                this->trigger->trig->index = listProp->flag;
+                this->trigger->trig->val = listProp->valeur;
+                this->trigger++;
+                listprop++;
+                break;
             case '': //pour joystick
-                joyst = new Joystick;
-                joy->components.push_back(trigger);
-                joy->components->pos = DriverTemplates[i]->components->inputType;
-                joy->components->index = DriverTemplates[i]->components->valuePath;
+                
+                this->joyst->joystick->name = listProp->name;
+                this->joyst->joystick->pos = listProp->type; //Type a véridier
+                this->joyst->joystick->index = listProp->flag;
+                this->joyst->joystick->val = listProp->valeur;
+                this->joyst++;
+                listprop++;
+                break;
             default:
                 break;
             }
         case 'pose':
-            switch element[2]
+            switch (element[2])
             {
             case 'mag':
-                mag = new Magneto;
+                
                 switch (element[3])
                 {
                 case 'x':
-                    mag->posX = DriverTemplates[i]->components->inputType;
-                    mag->indexX = DriverTemplates[i]->components->valuePath;
+                    this->mag->X->name = listProp->name;
+                    this->mag->X->pos = listProp->type; //Type a véridier
+                    this->mag->X->index = listProp->flag;
+                    this->mag->X->val = listProp->valeur;
+                    listprop++;
                     break;
                 case 'y':
-                    mag->posY = DriverTemplates[i]->components->inputType;
-                    mag->indexY = DriverTemplates[i]->components->valuePath;
+                    this->mag->Y->name = listProp->name;
+                    this->mag->Y->pos = listProp->type; //Type a véridier
+                    this->mag->Y->index = listProp->flag;
+                    this->mag->Y->val = listProp->valeur;
+                    listprop++;
                     break;
                 case 'z':
-                    mag->posZ = DriverTemplates[i]->components->inputType;
-                    mag->indexZ = DriverTemplates[i]->components->valuePath;
+                    this->mag->Z->name = listProp->name;
+                    this->mag->Z->pos = listProp->type; //Type a véridier
+                    this->mag->Z->index = listProp->flag;
+                    this->mag->Z->val = listProp->valeur;
+                    listprop++;
                     break;
                 default:
                     break;
                 }
             case 'acc':
-                acc = new Accel;
+                
                 switch (element[3])
                 {
                 case 'x':
-                    acc->posX = DriverTemplates[i]->components->inputType;
-                    acc->indexX = DriverTemplates[i]->components->valuePath;
+                    this->acc->X->name = listProp->name;
+                    this->acc->X->pos = listProp->type; //Type a véridier
+                    this->acc->X->index = listProp->flag;
+                    this->acc->X->val = listProp->valeur;
+                    listprop++;
                     break;
                 case 'y':
-                    acc->posY = DriverTemplates[i]->components->inputType;
-                    acc->indexY = DriverTemplates[i]->components->valuePath;
+                    this->acc->Y->name = listProp->name;
+                    this->acc->Y->pos = listProp->type; //Type a véridier
+                    this->acc->Y->index = listProp->flag;
+                    this->acc->Y->val = listProp->valeur;
+                    listprop++;
                     break;
                 case 'z':
-                    acc->posZ = DriverTemplates[i]->components->inputType;
-                    acc->indexZ = DriverTemplates[i]->components->valuePath;
+                    this->acc->Z->name = listProp->name;
+                    this->acc->Z->pos = listProp->type; //Type a véridier
+                    this->acc->Z->index = listProp->flag;
+                    this->acc->Z->val = listProp->valeur;
+                    listprop++;
                     break;
                 default:
                     break;
                 }
             case 'gyro':
-                gyro = new Gyro;
+                
                 switch (element[3])
                 {
                 case 'x':
-                    gyro->posX = DriverTemplates[i]->components->inputType;
-                    gyro->indexX = DriverTemplates[i]->components->valuePath;
+                    this->gyro->X->name = listProp->name;
+                    this->gyro->X->pos = listProp->type; //Type a véridier
+                    this->gyro->X->index = listProp->flag;
+                    this->gyro->X->val = listProp->valeur;
+                    listprop++;
                     break;
                 case 'y':
-                    gyro->posY = DriverTemplates[i]->components->inputType;
-                    gyro->indexY = DriverTemplates[i]->components->valuePath;
+                    this->gyro->Y->name = listProp->name;
+                    this->gyro->Y->pos = listProp->type; //Type a véridier
+                    this->gyro->Y->index = listProp->flag;
+                    this->gyro->Y->val = listProp->valeur;
+                    listprop++;
                     break;
                 case 'z':
-                    gyro->posZ = DriverTemplates[i]->components->inputType;
-                    gyro->indexZ = DriverTemplates[i]->components->valuePath;
+                    this->gyro->Z->name = listProp->name;
+                    this->gyro->Z->pos = listProp->type; //Type a véridier
+                    this->gyro->Z->index = listProp->flag;
+                    this->gyro->Z->val = listProp->valeur;
+                    listprop++;
                     break;
                 default:
                     break;
                 }
             }
         case 'hand':
-            trigger = new Trigger;
-            trigg->components.push_back(trigger);
-            trigg->components->name = element[3];
-            trigg->components->pos = DriverTemplates[i]->components->inputType;
-            trigg->components->index = DriverTemplates[i]->components->valuePath;
+            
+            this->trigger->trig->name = listProp->name;
+            this->trigger->trig->pos = listProp->type; //Type a véridier
+            this->trigger->trig->index = listProp->flag;
+            this->trigger->trig->val = listProp->valeur;
+            this->trigger++;
+            listprop++;
             break;
         default:
             break;

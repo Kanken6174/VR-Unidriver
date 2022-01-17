@@ -1,7 +1,8 @@
 #include <string>
 struct dataStructIDK {
 private:
-	int position;
-	std::string touche;
+	string name;
+	int pos;
+	std::string index;
 	double val;
 };
