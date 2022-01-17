@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include "Device.h"
+#include "IPCServer.cpp"
 
 
 
@@ -59,4 +60,13 @@ void Manage::requestTrame(SerialPort w, Device periph)
 			break;
 	}
 	periph.affichageList();
+}
+
+void Manage::envoieString(Quaternion quat, int delais, list<Bouton> lBouton, list<Trigger> lTrigger)
+{
+	Formater f =  Formater();
+	f.FormaterDonnées(quat, delais, lBouton, lTrigger);
+
+	this->moul.WriteToPipe(f->format, "\\\\.\\pipe\\driverPipe");
+
 }
