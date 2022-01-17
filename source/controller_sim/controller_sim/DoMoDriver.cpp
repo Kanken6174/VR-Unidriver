@@ -10,6 +10,9 @@
 
 	DoMoDriver::DoMoDriver(DriverDataTemplate ddt) {
 		DriverLog("Started building %s by DriverDataTemplate", ddt.name.c_str());
+		this->PosOffsets[0] = rand() % (3 - -3 + 1) + -3; // Generate the number, assign to variable. 0-2
+		this->PosOffsets[1] = rand() % (3 - -3 + 1) + -3; // Generate the number, assign to variable.
+		this->PosOffsets[2] = rand() % (3 - -3 + 1) + -3; // Generate the number, assign to variable.
 		ObsoleteMode = false;
 		localData = ddt;
 		m_sSerialNumber = ddt.name;

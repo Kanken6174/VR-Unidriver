@@ -28,7 +28,7 @@ private:
 
 	double	yaw = 0,	pitch = 0,	roll = 0,	//composants utilisés par le stub uniquement (rotation)
 			X = 0,		Y = 0,		Z = 0;		//composants utilisés par les 2 versions (position)
-
+	double PosOffsets[3];
 	HmdQuaternion_t* DeviceRotation = new HmdQuaternion_t();	//composant de rotation de la version poseProvided() (non-stub)
 
 	bool ObsoleteMode = false;	//définit la version de la méthode d'activation à utiliser, faux par défaut pour utiliser la version moderne

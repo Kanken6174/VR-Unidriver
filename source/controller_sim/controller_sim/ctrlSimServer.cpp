@@ -18,6 +18,7 @@ using namespace vr;
 */
 EVRInitError Controller_simDriverServer::Init(vr::IVRDriverContext* pDriverContext)
 {
+	srand(time(NULL)); // Seed the time
 	VR_INIT_SERVER_DRIVER_CONTEXT(pDriverContext);	//une fonction définie dans openvr_driver.h
 	InitDriverLog(vr::VRDriverLog());	//initialise le logging d'informations visible sur la console web
 
