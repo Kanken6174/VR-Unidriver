@@ -1,14 +1,9 @@
+#include "StructData.h"
 class Gyro { // gyrométre avec les valeures x/y/z
 public:
-    int posX;
-    char indexX;
-    double valX;
+    struct dataStructIDK X;
 
-    int posY;
-    char indexY;
-    double valY;
+    struct dataStructIDK Y;
 
-    int posZ;
-    char indexZ;
-    double valY;
+    struct dataStructIDK Z;
 };

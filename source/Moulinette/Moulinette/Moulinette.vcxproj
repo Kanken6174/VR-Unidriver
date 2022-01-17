@@ -139,7 +139,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Accel.h" />
+    <ClInclude Include="Bouton.h" />
+    <ClInclude Include="ComponentDataTemplate.h" />
+    <ClInclude Include="Device.h" />
+    <ClInclude Include="DriverDataTemplate.h" />
+    <ClInclude Include="Element.h" />
+    <ClInclude Include="Gyro.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Joystick.h" />
+    <ClInclude Include="Magneto.h" />
+    <ClInclude Include="Manage.h" />
+    <ClInclude Include="Filtre.h" />
+    <ClInclude Include="serialPort.h" />
+    <ClInclude Include="Trigger.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Device.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Manage.cpp" />
+    <ClCompile Include="Filtre.cpp" />
+    <ClCompile Include="serialPort.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

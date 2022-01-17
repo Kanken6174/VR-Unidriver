@@ -1,14 +1,12 @@
+#include "StructData.h"
+
+
 class Accel { // accelérométre avec les valeures x/y/z
 public:
-    int posX;
-    char indexX;
-    double valX;
 
-    int posY;
-    char indexY;
-    double valY;
+    struct dataStructIDK X;
 
-    int posZ;
-    char indexZ;
-    double valY;
+    struct dataStructIDK Y;
+
+    struct dataStructIDK Z;
 };
