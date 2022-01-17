@@ -7,23 +7,16 @@
 using namespace std;
 
 
-SerialPort connect(char* p, int b) {
-	SerialPort w; //(const char* portname, int baudrate, char databit);
-	if (w.open(p, b, 8))
-	{
-		return w;
-	}
-	else {
-		throw runtime_error("Port connection erreur !");
-	}
-}
+
 
 
 void requestTramDevice(SerialPort w, Device periph) {
+	clock_t t;
+	
 	char buf[1024];
 
 	string ask = "#";							//symbole envoyé a l arduino
-
+	t=clock();
 	if (!w.send(ask.c_str(), ask.length()))
 		throw runtime_error("Erreur send Packet !");
 
@@ -31,6 +24,8 @@ void requestTramDevice(SerialPort w, Device periph) {
 	memset(buf, NULL, 1024);					//mise a NULL tout les éléments du buffeur
 	if (!w.receive(buf, 1024))						//reception des données arduino
 		throw runtime_error("Erreur receive Packet!");
+	t = clock() - t;
+	periph.ping = ((float)t) / CLOCKS_PER_SEC;
 
 	if (buf[0] != 'A')
 		return;
@@ -67,6 +62,7 @@ void requestTramDevice(SerialPort w, Device periph) {
 			if (s == NULL)
 				break;
 		}
+	
 	periph.affichageList();
 }
 
@@ -84,7 +80,7 @@ int main(int argumentCount, const char* argumentValues[])
 		char* src = new char[gant.port.length() + 1];
 		strcpy_s(src, gant.port.length() + 1,gant.port.c_str());
 
-		w = connect(src,gant.baudrate);			
+		w=w.connect(src,gant.baudrate);			
 	}
 	catch (const runtime_error& e)
 	{

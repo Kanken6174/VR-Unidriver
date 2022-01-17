@@ -11,7 +11,7 @@ using namespace std;
 Device::Device() {}
 
 void Device::ReadConfigAndBuildDrivers() {
-    ifstream fichier("C:/Users/ASUS/Documents/2A/projet/domocap/source/SerialPort/SerialPort/config.txt", ios::in);
+    ifstream fichier("config.txt", ios::in);
 
     if (fichier)
     {
@@ -101,4 +101,5 @@ void Device::affichageList() {
         cout << "Valeur: " << it->valeur << " Flag: " << it->flag << endl;
         it++;
     }
+    cout << "Ping : " << this->ping << endl;
 }

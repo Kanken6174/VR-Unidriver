@@ -17,6 +17,8 @@ public:
 
 	int receive(void* buf, int maxlen);
 
+	SerialPort connect(char* p, int b);
+
 private:
 	int pHandle[16];
 };

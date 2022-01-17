@@ -24,4 +24,5 @@ public:
 	string port;
 	int baudrate;
 	list<Prop> listProp;
+	float ping = 0;
 };

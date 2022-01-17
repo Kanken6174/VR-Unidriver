@@ -122,3 +122,14 @@ int SerialPort::receive(void* buf, int maxlen)
 
 
 }
+
+SerialPort SerialPort::connect(char* p, int b) {
+	SerialPort w; //(const char* portname, int baudrate, char databit);
+	if (w.open(p, b, 8))
+	{
+		return w;
+	}
+	else {
+		throw runtime_error("Port connection erreur !");
+	}
+}
