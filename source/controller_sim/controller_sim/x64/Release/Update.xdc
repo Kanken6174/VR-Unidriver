@@ -16,5 +16,23 @@ Pointer to CAtlTransactionManager object</summary>
 @date 16/12/2021
 
 </member>
+<member name="M:utilities.split(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\utilities.h" line="14">
+<summary>
+permet de séparer un string selon un délilimteur précisé
+</summary>
+<param name="input"> le string à séparer</param>
+<param name="splitter"> le caractère de séparation</param>
+<returns>un vecteur contenant les différentes parties du string d'origine</returns>
+</member>
+<member name="M:utilities.getFirstAndRemoveFromVector(std.vector&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,std.allocator&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\utilities.h" line="21">
+<summary>
+Va prendre le premier string d'un vecteur de string, le retirer de ce vecteur, et le retourner
+</summary>
+<param name="source">le vecteur de strings à traiter</param>
+<returns>le premier string du vecteur</returns>
+</member>
+<member name="T:VRcomponent" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\VRComponent.h" line="19">
+Redéfinitions de noms de méthodes de SteamVR (pour raccourcir)
+</member>
 </members>
 </doc>

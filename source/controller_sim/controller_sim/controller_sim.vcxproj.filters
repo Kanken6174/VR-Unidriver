@@ -37,6 +37,12 @@
     <Filter Include="Source Files\vr\Drivers\pas_important">
       <UniqueIdentifier>{8f01fbef-fed2-4712-b0d9-9f1fddccb4b6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\IPCPIPE">
+      <UniqueIdentifier>{a6ac593f-5192-420f-9b8d-28b01b8c31db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IPCPIPE">
+      <UniqueIdentifier>{ef28171a-0113-4a5e-a768-89750654983b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dataObjects.h">
@@ -90,12 +96,18 @@
     <ClCompile Include="Register.cpp">
       <Filter>Source Files\vr\Composants</Filter>
     </ClCompile>
+    <ClCompile Include="IPCIPE\IPCServer.cpp">
+      <Filter>Source Files\IPCPIPE</Filter>
+    </ClCompile>
+    <ClCompile Include="IPCIPE\utilities.cpp">
+      <Filter>Source Files\IPCPIPE</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateValues.cpp">
+      <Filter>Source Files\vr\Drivers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="driverlog.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="controller_sim.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="entry_point.h">
@@ -111,6 +123,18 @@
       <Filter>Header Files\dependances</Filter>
     </ClInclude>
     <ClInclude Include="utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IPCIPE\IPCServer.h">
+      <Filter>Header Files\IPCPIPE</Filter>
+    </ClInclude>
+    <ClInclude Include="DoMoDriver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathOps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller_sim.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -9,12 +9,14 @@
 #include "utilities.h"
 
 #define ABSOLUTE_T 0	//input qui n'est pas relative, donc pas une souris ou trackball, plus joystick
-#define RELATIVE_T 1
-#define DIGITAL 2
-#define HAPTIC 3
-#define SKELETAL 4
+#define RELATIVE_T 1	// une trackball ou souris, pas implémenté
+#define DIGITAL 2		//une input digitale, type bouton
+#define HAPTIC 3		//une *sortie* haptique, pas encore implémenté
+#define SKELETAL 4		//une entrée squelette à 31 quaternions
 #define TRIGGER vr::VRScalarUnits_NormalizedOneSided	//0 à 1
 #define JOYSTICK vr::VRScalarUnits_NormalizedTwoSided	// -1 à 1
+
+///Redéfinitions de noms de méthodes de SteamVR (pour raccourcir)
 #define makeDigital CreateBooleanComponent
 #define makeAnalog CreateScalarComponent
 #define makeHaptic CreateHapticComponent

@@ -5,7 +5,7 @@
 * @date 22/12/2021
 */
 
-#include "controller_sim.h"
+#include "DoMoDriver.h"
 
 EVRInitError DoMoDriver::ObsoleteActivation(vr::TrackedDeviceIndex_t unObjectId) {
 	DriverLog("Obsolete activate method called...\n");

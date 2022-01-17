@@ -5,7 +5,7 @@
 * @date 16/12/2021
 */
 
-#include "controller_sim.h"
+#include "DoMoDriver.h"
 
 
 	DoMoDriver::DoMoDriver(DriverDataTemplate ddt) {
@@ -50,7 +50,7 @@
 	EVRInitError DoMoDriver::Activate(vr::TrackedDeviceIndex_t unObjectId)
 	{
 		if (ObsoleteMode) {
-			ObsoleteActivation(unObjectId);
+			//ObsoleteActivation(unObjectId);
 		}
 		else {
 			ModernActivation(unObjectId);

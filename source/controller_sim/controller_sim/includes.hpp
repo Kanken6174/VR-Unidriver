@@ -1,3 +1,10 @@
+/**
+* @author Yorick geoffre
+* @brief this files has every external dependcy this project needs, this way it's easier to keep track of what is included and stay clear of circular includes
+* @version 0.1
+* @date 16/12/2021
+*/
+
 #pragma once
 
 #include <openvr_driver.h>
@@ -7,22 +14,23 @@
 #include <locale>
 #include <codecvt>
 #include <string>
-#include <vector>	//prend la lib des vecteurs
-#include <thread>	//multithreading
-#include <chrono>	//heure/temps
+#include <vector>		//prend la lib des vecteurs
+#include <thread>		//multithreading
+#include <chrono>		//heure/temps
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <windows.h>	//si sur windows, on inclut le header du système windows
-#include <WinUser.h> //requis pour les hooks de clavier
+#include <WinUser.h>	//requis pour les hooks de clavier
 #include <stdio.h>
 #include <Windows.h>
 #include <winnt.h>
+#include <list>
 #include "atlbase.h"
 #include "atlstr.h"
 #include "comutil.h"
 
-using namespace vr;
-using namespace std;
+using namespace vr;		//on utilise l'espace de noms d'openVR à travers tout le projet
+using namespace std;	//idem pour l'espace de noms standard
 
-#include "entry_point.h"
+#include "entry_point.h"	//le point d'entrée du DLL, chargé par SteamVR

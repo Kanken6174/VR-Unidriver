@@ -139,6 +139,7 @@
       <ConformanceMode>true</ConformanceMode>
       <DiagnosticsFormat />
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -156,6 +157,8 @@
     <ClCompile Include="ctrlSimServer.cpp" />
     <ClCompile Include="driverlog.cpp" />
     <ClCompile Include="InterfaceRequires.cpp" />
+    <ClCompile Include="IPCIPE\IPCServer.cpp" />
+    <ClCompile Include="IPCIPE\utilities.cpp" />
     <ClCompile Include="maths.cpp" />
     <ClCompile Include="component.cpp" />
     <ClCompile Include="Obsolete.cpp" />
@@ -166,13 +169,17 @@
     <ClCompile Include="stringUtilities.cpp" />
     <ClCompile Include="typeConverters.cpp" />
     <ClCompile Include="Update.cpp" />
+    <ClCompile Include="UpdateValues.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller_sim.h" />
+    <ClInclude Include="MathOps.h" />
     <ClInclude Include="DataDispatcher.h" />
+    <ClInclude Include="DoMoDriver.h" />
     <ClInclude Include="driverlog.h" />
     <ClInclude Include="entry_point.h" />
     <ClInclude Include="includes.hpp" />
+    <ClInclude Include="IPCIPE\IPCServer.h" />
     <ClInclude Include="utilities.h" />
     <ClInclude Include="VRComponent.h" />
   </ItemGroup>
