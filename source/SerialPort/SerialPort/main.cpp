@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <thread>
 #include "Device.h"
 #include "serialPort.h"
 
@@ -8,15 +9,13 @@ using namespace std;
 
 
 
-
-
 void requestTramDevice(SerialPort w, Device periph) {
 	clock_t t;
-	
+
 	char buf[1024];
 
 	string ask = "#";							//symbole envoyé a l arduino
-	t=clock();
+	t = clock();
 	if (!w.send(ask.c_str(), ask.length()))
 		throw runtime_error("Erreur send Packet !");
 
@@ -37,66 +36,93 @@ void requestTramDevice(SerialPort w, Device periph) {
 	bool sw = false;
 	for (char s : buf) {
 
-			if (s >= 'A' && s <= 'Z' || s == NULL) {										// en présence d'une lettre
-				if (sw) {
-					float val = 0;
-					istringstream iss(conc);									//transformation du string en int 
-					iss >> val;
-					it->valeur = val;
-					sw = false;
-					conc = "";
-				}
-				sw = true;
-				it = periph.listProp.begin();
-				while (it != periph.listProp.end()) {
-					string tmp_string(1, s);
-					if (it->flag == tmp_string) {
-						break;
-					}
-					it++;
-				}
-			} else if(s >= '0' && s <= '9' || s == '-') {
-				conc += s;
+		if (s >= 'A' && s <= 'Z' || s == NULL) {										// en présence d'une lettre
+			if (sw) {
+				float val = 0;
+				istringstream iss(conc);									//transformation du string en int 
+				iss >> val;
+				it->valeur = val;
+				sw = false;
+				conc = "";
 			}
-		
-			if (s == NULL)
-				break;
+			sw = true;
+			it = periph.listProp.begin();
+			while (it != periph.listProp.end()) {
+				string tmp_string(1, s);
+				if (it->flag == tmp_string) {
+					break;
+				}
+				it++;
+			}
 		}
-	
+		else if (s >= '0' && s <= '9' || s == '-') {
+			conc += s;
+		}
+
+		if (s == NULL)
+			break;
+	}
+
 	periph.affichageList();
 }
 
-int main(int argumentCount, const char* argumentValues[])
-{
-	float response [9];					//a mettre fichier setup
-	SerialPort w;
+char* portName(Device U) {
+	char* src = new char[U.port.length() + 1];
+	strcpy_s(src, U.port.length() + 1, U.port.c_str());
+	return src;
+}
 
+void GANT() {
+	SerialPort w;
 	Device gant;
-	gant.ReadConfigAndBuildDrivers();
+	gant.ReadConfigAndBuildDrivers("gant.dmc");
 
 	try
 	{
-		// a mettre dans une fonction
-		char* src = new char[gant.port.length() + 1];
-		strcpy_s(src, gant.port.length() + 1,gant.port.c_str());
-
-		w=w.connect(src,gant.baudrate);			
+		w = w.connect(portName(gant), gant.baudrate);
 	}
 	catch (const runtime_error& e)
 	{
 		cout << e.what() << endl;
 		getchar();
 	}
-	
 
 	requestTramDevice(w, gant);
+}
 
-	/*
-	for (int i = 0; i < 100; i++) {
-		requestTramDevice(w, gant);
+void SABRE() {
+	SerialPort y;
+	Device sabre;
+	sabre.ReadConfigAndBuildDrivers("sabre.dmc");
+
+	try
+	{
+		y = y.connect(portName(sabre), sabre.baudrate);
 	}
-	*/
-	 char c = getchar();
+	catch (const runtime_error& e)
+	{
+		cout << e.what() << endl;
+		getchar();
+	}
+
+	requestTramDevice(y, sabre);
+}
+
+int main(int argumentCount, const char* argumentValues[])
+{
+
+	thread th1(SABRE);
+
+	thread th2(GANT);
+
+
+
+	th1.join();
+	th2.join();
+
+
+
+	char c = getchar();
 
 	return 0;
 }

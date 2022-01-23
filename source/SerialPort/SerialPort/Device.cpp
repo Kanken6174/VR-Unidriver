@@ -10,8 +10,8 @@ using namespace std;
 
 Device::Device() {}
 
-void Device::ReadConfigAndBuildDrivers() {
-    ifstream fichier("config.txt", ios::in);
+void Device::ReadConfigAndBuildDrivers(string file) {
+    ifstream fichier(file, ios::in);
 
     if (fichier)
     {

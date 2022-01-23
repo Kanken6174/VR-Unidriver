@@ -6,7 +6,7 @@ using namespace std;
 class Device {
 public:
 	Device();
-	void ReadConfigAndBuildDrivers();
+	void ReadConfigAndBuildDrivers(string file);
 
 
 

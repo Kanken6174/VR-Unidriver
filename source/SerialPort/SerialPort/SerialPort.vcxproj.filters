@@ -34,7 +34,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="config.txt">
+    <Text Include="gant.dmc">
+      <Filter>Fichiers de ressources</Filter>
+    </Text>
+    <Text Include="sabre.dmc">
       <Filter>Fichiers de ressources</Filter>
     </Text>
   </ItemGroup>
