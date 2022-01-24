@@ -4,6 +4,7 @@
 #include <thread>
 #include "Device.h"
 #include "serialPort.h"
+#include "IPCServer.h"
 
 using namespace std;
 using namespace serialport;
@@ -23,7 +24,7 @@ using namespace serialport;
 		if (!w.receive(buf, 1024))						//reception des données arduino
 			throw runtime_error("Erreur receive Packet!");
 		t = clock() - t;
-		periph->ping = (((float)t) / CLOCKS_PER_SEC)*1000;
+		periph->ping = (((float)t) / CLOCKS_PER_SEC);
 
 		if (buf[0] != 'A')
 			return;
@@ -85,7 +86,7 @@ using namespace serialport;
 		}
 
 		requestTramDevice(w, &gant);
-		gant.affichageList();
+		//gant.affichageList();
 	}
 
 	void SABRE() {
@@ -108,15 +109,39 @@ using namespace serialport;
 
 	int main(int argumentCount, const char* argumentValues[])
 	{
-
 		//thread th1(SABRE);
-
-		thread th2(GANT);
-
-
-
+		//thread th2(GANT);
 		//th1.join();
-		th2.join();
+		//th2.join();
+
+		SerialPort w;
+		Device gant;
+		gant.ReadConfigAndBuildDrivers("gant.dmc");
+
+		try
+		{
+			w = w.connect(portName(gant), gant.baudrate);
+		}
+		catch (const runtime_error& e)
+		{
+			cout << e.what() << endl;
+			getchar();
+		}
+
+		string piperoot = "\\\\.\\pipe\\";
+		string pipenameReceive = piperoot + "pipeMoulinette";
+		string pipenameSend = piperoot + "pipeMoulinette";
+		PipeServer* psR = new PipeServer(pipenameReceive);
+		PipeServer* psS = new PipeServer(pipenameSend);
+
+		while (psR->ReadPipe() != "NULL") {
+			requestTramDevice(w, &gant);
+
+			cout << ((psS->WriteToPipe("String donnee pour Driver", pipenameSend)) ? "wrote to pipe\n" : "Error occured\n");
+
+		}
+		
+
 
 
 
