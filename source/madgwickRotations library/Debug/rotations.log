@@ -1,0 +1,11 @@
+﻿  MadgwickRotator.cpp
+D:\Documents\repos\domocap\source\madgwickRotations library\MadgwickRotator.cpp(8,10): fatal error C1083: Impossible d'ouvrir le fichier en-tête précompilé : 'Debug\rotations.pch' : No such file or directory
+  pch.cpp
+c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : 'pch.cpp' : No such file or directory
+  Quaternion.cpp
+D:\Documents\repos\domocap\source\madgwickRotations library\Quaternion.cpp(31,1): fatal error C1010: fin de fichier inattendue lors de la recherche d'un en-tête précompilé. N'auriez-vous pas oublié d'ajouter '#include "pch.h"' à votre source ?
+  madgwickRotations.cpp
+D:\Documents\repos\domocap\source\madgwickRotations library\madgwickRotations.cpp(8,10): fatal error C1083: Impossible d'ouvrir le fichier en-tête précompilé : 'Debug\rotations.pch' : No such file or directory
+  Vector.cpp
+D:\Documents\repos\domocap\source\madgwickRotations library\Vector.cpp(18,1): fatal error C1010: fin de fichier inattendue lors de la recherche d'un en-tête précompilé. N'auriez-vous pas oublié d'ajouter '#include "pch.h"' à votre source ?
+  Génération de code en cours...

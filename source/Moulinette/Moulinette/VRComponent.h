@@ -9,6 +9,7 @@ private:
 	int position;
 
 public:
+	VRComponent(int position);
 	int getPosition();
 	virtual std::string to_string() = 0;
 };
