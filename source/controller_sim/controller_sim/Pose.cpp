@@ -35,13 +35,13 @@ DriverPose_t DoMoDriver::GetPoseStubmode()
 
 	pose.qWorldFromDriverRotation = ToQuaternion(0, 0, 0);
 	pose.qDriverFromHeadRotation = ToQuaternion(0, 0, 0);
-	//pose.vecDriverFromHeadTranslation[2] = -0.5;	//on met la manette juste devant la caméra par défaut (la caméra est en -1, car l'axe X est inversé)
-	//pose.vecDriverFromHeadTranslation[1] = -0.25;
-	//pose.vecDriverFromHeadTranslation[0] = 0.25;
+	pose.vecDriverFromHeadTranslation[2] = -0.5;	//on met la manette juste devant la caméra par défaut (la caméra est en -1, car l'axe X est inversé)
+	pose.vecDriverFromHeadTranslation[1] = -0.25;
+	pose.vecDriverFromHeadTranslation[0] = 0.25;
 
-	pose.vecDriverFromHeadTranslation[2] = -this->PosOffsets[2];	//on met la manette juste devant la caméra par défaut (la caméra est en -1, car l'axe X est inversé)
-	pose.vecDriverFromHeadTranslation[1] = this->PosOffsets[1];
-	pose.vecDriverFromHeadTranslation[0] = this->PosOffsets[0];
+	//pose.vecDriverFromHeadTranslation[2] = -this->PosOffsets[2];	//on met la manette juste devant la caméra par défaut (la caméra est en -1, car l'axe X est inversé)
+	//pose.vecDriverFromHeadTranslation[1] = this->PosOffsets[1];
+	//pose.vecDriverFromHeadTranslation[0] = this->PosOffsets[0];
 
 	pose.qRotation = ToQuaternion(0, yaw, pitch);
 	pose.vecPosition[2] = X;
