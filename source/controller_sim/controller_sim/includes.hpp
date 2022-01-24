@@ -29,6 +29,7 @@
 #include "atlbase.h"
 #include "atlstr.h"
 #include "comutil.h"
+#include <sstream>
 
 using namespace vr;		//on utilise l'espace de noms d'openVR à travers tout le projet
 using namespace std;	//idem pour l'espace de noms standard
