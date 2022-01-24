@@ -14,7 +14,7 @@ namespace utilities {
 
 	vector<DriverDataTemplate*> ReadConfigAndBuildDrivers() {
 		ifstream driverCfgFile;	//create readonly stream
-		string filePath = "Y:\\domocap\\source\\controller_sim\\ressources\\controller_sim\\bin\\win64\\driverCfg.dmc";
+		string filePath = "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\ressources\\controller_sim\\bin\\win64\\driverCfg.dmc";
 		driverCfgFile.open(filePath);	//proprietary config file -> .doMoCap -> .dmc
 
 		if (!driverCfgFile) {
@@ -50,7 +50,13 @@ namespace utilities {
 				DriverLog(("Discovered driver named : " + buf).c_str());
 				break;
 			case '>':	//modèle 3d du driver
-				DriverTemplates.at(activeDriverVector)->renderModel = buf;
+				if (DriverTemplates.at(activeDriverVector)->role == 2) {
+					DriverLog("Switched to hardcoded render path");
+					DriverTemplates.at(activeDriverVector)->renderModel = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SteamVR\\resources\\rendermodels\\vr_glove\\vr_glove_left_model.glb";
+				}
+				else {
+					DriverTemplates.at(activeDriverVector)->renderModel = buf;
+				}
 				break;
 			case '<':	//nature du driver (quelle main entre autres)
 				intBuf = stoi(buf);

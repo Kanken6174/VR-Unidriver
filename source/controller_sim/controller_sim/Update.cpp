@@ -10,6 +10,7 @@ EVRInputError VRcomponent::UpdateSelf(string providedValue) {
 		toReturn = UpdateSelf(utilities::stringToBool(providedValue));
 		break;
 	case SKELETAL:
+		//toReturn + UpdateSelf();
 		break;
 	case HAPTIC:
 		break;// HAPTIC est un composant de sortie et pas d'entrée, on l'ignore
