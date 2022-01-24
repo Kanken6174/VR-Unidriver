@@ -1,4 +1,5 @@
-﻿
+﻿namespace serialport
+{
 class SerialPort
 {
 public:
@@ -23,3 +24,4 @@ private:
 	int pHandle[16];
 };
 
+}
