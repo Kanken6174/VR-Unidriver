@@ -33,6 +33,7 @@ std::string PipeServer::ReadPipe() {
 			buf[dwRead] = '\0';
 			toReturn += buf;
 		}
+		cout << buf <<endl;
 
 		memset(buf, 0, sizeof(buf));  //un peu overkill mais on efface le buffer complètement et de force (on le remplit de 0)
 	}

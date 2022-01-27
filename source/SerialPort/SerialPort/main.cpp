@@ -29,7 +29,7 @@ using namespace serialport;
 		if (buf[0] != 'A')
 			return;
 
-		cout << buf << endl;
+		//cout << buf << endl;
 
 		string conc;								//string pour la concatenation
 		list<Device::Prop>::iterator it;
@@ -109,13 +109,33 @@ using namespace serialport;
 
 	int main(int argumentCount, const char* argumentValues[])
 	{
-		thread th1(SABRE);
-		thread th2(GANT);
 
-		th1.join();
-		th2.join();
+		SerialPort w;
+		Device gant;
+		gant.ReadConfigAndBuildDrivers("C:/Users/matto/Desktop/ProjetIUT/domocap/source/SerialPort/SerialPort/gant.dmc");
 
-		
+		try
+		{
+			w = w.connect(portName(gant), gant.baudrate);
+		}
+		catch (const runtime_error& e)
+		{
+			cout << e.what() << endl;
+			getchar();
+		}
+
+		string piperoot = "\\\\.\\pipe\\";
+		string pipenameReceive = piperoot + "pipeMoulinette";
+		string pipenameSend = piperoot + "pipeDriver";
+		PipeServer* psR = new PipeServer(pipenameReceive);
+		PipeServer* psS = new PipeServer(pipenameSend);
+
+		if (psR->ReadPipe() != "NULL") {
+			requestTramDevice(w, &gant);
+
+			cout << ((psS->WriteToPipe("Donnée envoyé de Ping : " +  gant.nom, pipenameSend)) ? "wrote to pipe\n" : "Error occured SEND\n");
+
+		}
 		
 
 

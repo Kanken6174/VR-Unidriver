@@ -12,9 +12,10 @@ namespace serialport
     Device::Device() {}
 
     void Device::ReadConfigAndBuildDrivers(string file) {
-        ifstream fichier(file, ios::in);
+        ifstream fichier; 
+        fichier.open(file);
 
-        if (fichier)
+        if (fichier.is_open())
         {
             string ligne;
             while (getline(fichier, ligne))
