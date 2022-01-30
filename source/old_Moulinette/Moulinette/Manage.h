@@ -6,11 +6,10 @@
 class Manage {
 public:
 
-	PipeServer moul = PipeServer("\\\\.\\pipe\\moulinette");
+	PipeServer moul = PipeServer("\\\\.\\pipe\\moulinette");	
 	
-
-	void requestTrame(SerialPort w, Device periph) {};
-		
+	void requesteTrame();
 	void envoieString(Quaternion quat, int delais, list<Bouton> lBouton, list<Trigger> lTrigger);
+	void manage();
 
 };

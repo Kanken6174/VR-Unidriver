@@ -1,67 +1,29 @@
 #include "Manage.h"
+#include "Device.h"
+#include "IPCServer.cpp"
+#include "main.cpp"
+#include "Filtre.h"
+#include "Filtre.cpp"
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "Device.h"
-#include "IPCServer.cpp"
+
+
 
 
 
 using namespace std;
 
-void Manage::requestTrame(SerialPort w, Device periph)
+
+void Manage::requesteTrame() 
 {
-	char buf[1024];
+	int argumentCount = 0;
+	const char* argumentValues{};
 
-	string ask = "#";							//symbole envoyé a l arduino
+	main(argumentCount, argumentValues[]);
 
-	if (!w.send(ask.c_str(), ask.length()))
-		throw runtime_error("Erreur send Packet !");
-
-
-	memset(buf, NULL, 1024);					//mise a NULL tout les éléments du buffeur
-	if (!w.receive(buf, 1024))						//reception des données arduino
-		throw runtime_error("Erreur receive Packet!");
-
-	if (buf[0] != 'A')
-		return;
-
-	cout << buf << endl;
-
-	string conc;								//string pour la concatenation
-	list<Device::Prop>::iterator it;
-	bool sw = false;
-	for (char s : buf) {
-
-		if (s >= 'A' && s <= 'Z' || s == NULL) {										// en présence d'une lettre
-			if (sw) {
-				float val = 0;
-				istringstream iss(conc);									//transformation du string en int 
-				iss >> val;
-				it->valeur = val;
-				sw = false;
-				conc = "";
-			}
-			sw = true;
-			it = periph.listProp.begin();
-			while (it != periph.listProp.end()) {
-				string tmp_string(1, s);
-				if (it->flag == tmp_string) {
-					break;
-				}
-				it++;
-			}
-		}
-		else if (s >= '0' && s <= '9' || s == '-') {
-			conc += s;
-		}
-
-		if (s == NULL)
-			break;
-	}
-	periph.affichageList();
 }
-
 void Manage::envoieString(Quaternion quat, int delais, list<Bouton> lBouton, list<Trigger> lTrigger)
 {
 	Formater f =  Formater();
@@ -70,3 +32,14 @@ void Manage::envoieString(Quaternion quat, int delais, list<Bouton> lBouton, lis
 	this->moul.WriteToPipe(f->format, "\\\\.\\pipe\\driverPipe");
 
 }
+
+void Manage::manage()
+{
+	Filtre fil;
+	Device periph;
+	Manage::requesteTrame();
+	fil.initClass(Device::listProp);
+
+
+}
+

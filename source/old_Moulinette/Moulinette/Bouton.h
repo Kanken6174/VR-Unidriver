@@ -1,10 +1,14 @@
-class Bouton { // button avec sa valeure
+#include <string>
+#include"VRComponent.h"
+using namespace std;
+
+class Bouton: public VRComponent { // button avec sa valeure
+private:
+    double value;
+
 public:
-    list<dataStructIDK> bout;
+    bool isPressed();
 };
 
 
-//class AllBouton {
-//public:
-//    vector<Bouton*> components; // Les diverts boutons
-//};
+

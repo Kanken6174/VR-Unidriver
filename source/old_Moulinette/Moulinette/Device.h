@@ -23,5 +23,7 @@ public:
 	string nom;
 	string port;
 	int baudrate;
+
+static
 	list<Prop> listProp;
 };
