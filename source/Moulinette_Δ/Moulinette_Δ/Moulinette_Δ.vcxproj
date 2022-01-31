@@ -144,10 +144,10 @@
     <ClCompile Include="..\SerialPort\Device.cpp" />
     <ClCompile Include="..\SerialPort\serialPort.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Manager.cpp" />
     <ClCompile Include="VRAnalog.cpp" />
+    <ClCompile Include="VRBoolean.cpp" />
     <ClCompile Include="VRComponent.cpp" />
-    <ClCompile Include="VRDevice.cpp" />
+    <ClCompile Include="VRQuaternion.cpp" />
     <ClCompile Include="VRRelative.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,7 +157,7 @@
     <ClInclude Include="includes.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="VRAnalog.h" />
-    <ClInclude Include="VRButton.h" />
+    <ClInclude Include="VRBoolean.h" />
     <ClInclude Include="VRComponent.h" />
     <ClInclude Include="VRDevice.h" />
     <ClInclude Include="VRQuaternion.h" />

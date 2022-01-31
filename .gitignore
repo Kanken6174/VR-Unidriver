@@ -9,3 +9,5 @@ source/hmd_sim/hmd_sim/x64/
 .vs
 *.ipch
 *.obj
+
+*.vs

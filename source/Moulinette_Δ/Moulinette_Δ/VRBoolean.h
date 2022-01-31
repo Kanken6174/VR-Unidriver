@@ -6,7 +6,7 @@
 /// </summary>
 class VRBoolean : VRComponent {
 private:
-	bool value;
+	bool value = false;
 public:
 	//va changer la valeur du composant (true ou false)
 	void setValue(bool value);

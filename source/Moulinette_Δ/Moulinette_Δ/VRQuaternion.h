@@ -10,9 +10,9 @@
 class VRQuaternion : public VRComponent {
 private:
 	//Le quaternion de rotation du composant
-	Quaternion value;
+	Quaternion value = Quaternion();
 	//l'instance de MadgwickRotator qui s'occupe de créer le quaternion value
-	MadgwickRotator transformator;
+	MadgwickRotator transformator = MadgwickRotator();
 public:
 	void setValue(madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro);
 	string to_string();

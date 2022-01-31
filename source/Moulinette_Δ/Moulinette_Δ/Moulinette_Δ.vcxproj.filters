@@ -37,6 +37,12 @@
     <Filter Include="Fichiers d%27en-tête\managers">
       <UniqueIdentifier>{3ca96d69-2ef0-471f-a85d-5c668b5d2976}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\components\abstract">
+      <UniqueIdentifier>{dac667fc-e74a-468d-99a3-e9b7718d53bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\components\abstract">
+      <UniqueIdentifier>{1775bc0d-6ff0-4614-b894-0a61d30585e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\IPCPIPE\utilities.cpp">
@@ -54,28 +60,25 @@
     <ClCompile Include="..\SerialPort\serialPort.cpp">
       <Filter>SerialPort</Filter>
     </ClCompile>
-    <ClCompile Include="VRComponent.cpp">
-      <Filter>Fichiers sources\components</Filter>
-    </ClCompile>
     <ClCompile Include="VRAnalog.cpp">
       <Filter>Fichiers sources\components</Filter>
     </ClCompile>
     <ClCompile Include="VRRelative.cpp">
       <Filter>Fichiers sources\components</Filter>
     </ClCompile>
-    <ClCompile Include="Manager.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="VRBoolean.cpp">
+      <Filter>Fichiers sources\components</Filter>
     </ClCompile>
-    <ClCompile Include="VRDevice.cpp">
+    <ClCompile Include="VRComponent.cpp">
+      <Filter>Fichiers sources\components\abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="VRQuaternion.cpp">
       <Filter>Fichiers sources\components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\IPCPIPE\IPCServer.h">
       <Filter>IPCPIPE</Filter>
-    </ClInclude>
-    <ClInclude Include="VRComponent.h">
-      <Filter>Fichiers d%27en-tête\components</Filter>
     </ClInclude>
     <ClInclude Include="..\SerialPort\Device.h">
       <Filter>SerialPort</Filter>
@@ -86,7 +89,7 @@
     <ClInclude Include="VRAnalog.h">
       <Filter>Fichiers d%27en-tête\components</Filter>
     </ClInclude>
-    <ClInclude Include="VRButton.h">
+    <ClInclude Include="VRBoolean.h">
       <Filter>Fichiers d%27en-tête\components</Filter>
     </ClInclude>
     <ClInclude Include="VRQuaternion.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="Manager.h">
       <Filter>Fichiers d%27en-tête\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="VRComponent.h">
+      <Filter>Fichiers d%27en-tête\components\abstract</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
