@@ -107,40 +107,17 @@ using namespace serialport;
 		requestTramDevice(y, &sabre);
 	}
 
+	/**
+	* Fonctionnement Serial with 2 Device, 2 thread (introduction)
+	* AND sort Prop of Device 
+	**/
 	int main(int argumentCount, const char* argumentValues[])
 	{
-		//thread th1(SABRE);
-		//thread th2(GANT);
-		//th1.join();
-		//th2.join();
 
-		SerialPort w;
-		Device gant;
-		gant.ReadConfigAndBuildDrivers("gant.dmc");
-
-		try
-		{
-			w = w.connect(portName(gant), gant.baudrate);
-		}
-		catch (const runtime_error& e)
-		{
-			cout << e.what() << endl;
-			getchar();
-		}
-
-		string piperoot = "\\\\.\\pipe\\";
-		string pipenameReceive = piperoot + "pipeMoulinette";
-		string pipenameSend = piperoot + "pipeMoulinette";
-		PipeServer* psR = new PipeServer(pipenameReceive);
-		PipeServer* psS = new PipeServer(pipenameSend);
-
-		while (psR->ReadPipe() != "NULL") {
-			requestTramDevice(w, &gant);
-
-			cout << ((psS->WriteToPipe("String donnee pour Driver", pipenameSend)) ? "wrote to pipe\n" : "Error occured\n");
-
-		}
-		
+		thread th1(SABRE);
+		thread th2(GANT);
+		th1.join();
+		th2.join();
 
 
 
