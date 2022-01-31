@@ -144,14 +144,20 @@
     <ClCompile Include="..\SerialPort\Device.cpp" />
     <ClCompile Include="..\SerialPort\serialPort.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="VRAnalog.cpp" />
+    <ClCompile Include="VRComponent.cpp" />
+    <ClCompile Include="VRRelative.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\IPCPIPE\IPCServer.h" />
     <ClInclude Include="..\SerialPort\Device.h" />
     <ClInclude Include="..\SerialPort\serialPort.h" />
+    <ClInclude Include="includes.h" />
+    <ClInclude Include="Manager.h" />
     <ClInclude Include="VRAnalog.h" />
     <ClInclude Include="VRButton.h" />
     <ClInclude Include="VRComponent.h" />
+    <ClInclude Include="VRDevice.h" />
     <ClInclude Include="VRQuaternion.h" />
     <ClInclude Include="VRRelative.h" />
   </ItemGroup>

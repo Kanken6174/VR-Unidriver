@@ -1,6 +1,5 @@
-﻿  IPCServer.cpp
-C:\Users\ASUS\Documents\2A\domocap\source\Moulinette_Δ\IPCPIPE\IPCServer.cpp(56,6): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
-  utilities.cpp
+﻿  Device.cpp
+  serialPort.cpp
   main.cpp
   Génération de code en cours...
   Moulinette_Δ.vcxproj -> C:\Users\ASUS\Documents\2A\domocap\source\Moulinette_Δ\x64\Debug\Moulinette_Δ.exe
