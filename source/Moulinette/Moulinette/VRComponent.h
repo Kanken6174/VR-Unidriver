@@ -1,5 +1,3 @@
-#pragma once
-
 #include "moulinette_components.h"
 #include <string>
 

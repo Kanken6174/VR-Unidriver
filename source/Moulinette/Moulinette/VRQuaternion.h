@@ -1,4 +1,4 @@
-#pragma once
+
 
 #include "VRComponent.h"
 #include "moulinette_components.h"
@@ -9,6 +9,7 @@ using namespace moulinette_components;
 
 class VRQuaternion : public VRComponent
 {
+public:
 	Quaternion quaternion;
 
 	std::string to_string() override;

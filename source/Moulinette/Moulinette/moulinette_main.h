@@ -6,6 +6,7 @@
 #include "../../SerialPort/SerialPort/Device.h"
 
 namespace moulinette_main {
+
 	class Manager;
 
 	class Transformer;
