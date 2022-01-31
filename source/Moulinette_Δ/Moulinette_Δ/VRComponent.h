@@ -2,12 +2,14 @@
 #include"includes.h"
 
 /// <summary>
-/// représente un composant abstraitc
+/// représente un composant abstrait
 /// </summary>
 class VRComponent {
 private:
 	int position;
 public:
-	virtual int getPosition();//retourne la position du composant
-	virtual std::string to_string();//retourne le string de la positon du composant
+	//retourne la position du composant
+	virtual int getPosition();
+	//retourne le string de la positon du composant
+	virtual std::string to_string();
 };

@@ -10,8 +10,11 @@ private:
 	double maxValue;
 	double minValue;
 	double oldValue;
-	void updateMinMax();//va mettre à jour les minimums et les maximums en fonction de la valeur captée
+	//va mettre à jour les minimums et les maximums en fonction de la valeur captée
+	void updateMinMax();
 public:
-	void setValue(double value);	//va mettre à jour la valeur du composant (brute)
-	std::string to_string();	//va retourner la valeur du composant sous format string
+	//va mettre à jour la valeur du composant (brute)
+	void setValue(double value);
+	//va retourner la valeur du composant sous format string
+	string to_string();
 };

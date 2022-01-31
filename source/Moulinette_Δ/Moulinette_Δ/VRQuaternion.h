@@ -3,7 +3,17 @@
 #include"VRComponent.h"
 #include"../../madgwickRotations library/MadgwickRotator.h"
 
+/// <summary>
+/// Cette classe représente le quaternion de rotation d'un appareil unique, il en existe un par appareil et il est construit
+/// à partir des données de gyroscope, d'accéléromètre, et de magnetomètre
+/// </summary>
 class VRQuaternion : public VRComponent {
 private:
+	//Le quaternion de rotation du composant
 	Quaternion value;
+	//l'instance de MadgwickRotator qui s'occupe de créer le quaternion value
+	MadgwickRotator transformator;
+public:
+	void setValue(madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro);
+	string to_string();
 };

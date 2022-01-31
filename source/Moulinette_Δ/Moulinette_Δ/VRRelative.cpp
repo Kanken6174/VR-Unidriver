@@ -20,5 +20,5 @@ void VRRelative::setValue(double value)
 
 string VRRelative::to_string()
 {
-	return string();
+	return string(VRRelative::value);
 }
