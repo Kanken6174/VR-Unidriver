@@ -1,29 +1,35 @@
 #include "VRDevice.h"
+#include <stdexcept>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 
-VRDevice::VRDevice(list<VRDevice> components, SerialPort serial){
-    this->serialPort=serial;
-    this->components=components;
+
+
+VRDevice::VRDevice(list<VRComponent> , SerialPort serial)
+{
+	this->serialPort = serial;
+	this->components = Vrcomponents;
 }
 
-
 void VRDevice::updateValues(){
-    requestTramDevice(this, this->serialPort);
+    requestTramDevice(this->lastLatence,this->components, this->serialPort);
 }
 
 
 string VRDevice::to_string(){
-    list<VRComponent>::iterator itComponents;
+    list<VRComponent>::iterator it;
     string message;
     it=components.begin();
     while(it != components.end()){
-        mesage+= components.value()+"|";
+		message += components.value+"|";
     }
     return message;
 }
 
 
-void requestTramDevice(VRDevice *periph, SerialPort w) {
+void requestTramDevice(float lastLatence, list<VRComponent> components, SerialPort w) {
 	clock_t t;
 
 	char buf[1024];
@@ -38,7 +44,7 @@ void requestTramDevice(VRDevice *periph, SerialPort w) {
 	if (!w.receive(buf, 1024))						//reception des donn?es arduino
 		throw runtime_error("Erreur receive Packet!");
 	t = clock() - t;
-	periph->lastLatence = (((float)t) / CLOCKS_PER_SEC);
+	lastLatence = (((float)t) / CLOCKS_PER_SEC);
 
 	if (buf[0] != 'A')
 		return;
@@ -60,8 +66,8 @@ void requestTramDevice(VRDevice *periph, SerialPort w) {
 				conc = "";
 			}
 			sw = true;
-			it = periph->components.begin();
-			while (it != periph->components.end()) {
+			it = components.begin();
+			while (it != components.end()) {
 				string tmp_string(1, s);
 				if (it->flag == tmp_string) {
 					break;

@@ -19,4 +19,5 @@ public:
     VRDevice(list<VRComponent>, SerialPort);//TODO instance le VRDevice sans reponsabilité de lire le DMC
     void updateValues();//TODO code
     string to_string();//TODO code pour Preparer la trame pour le Driver
+    float lastLatence;
 };

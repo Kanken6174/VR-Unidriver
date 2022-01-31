@@ -1,4 +1,5 @@
 #include "VRComponent.h"
+
 int VRComponent::getPosition() {
 	return VRComponent::position;
 }
