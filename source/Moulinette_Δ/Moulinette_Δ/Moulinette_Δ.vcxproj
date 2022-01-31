@@ -144,8 +144,10 @@
     <ClCompile Include="..\SerialPort\Device.cpp" />
     <ClCompile Include="..\SerialPort\serialPort.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Manager.cpp" />
     <ClCompile Include="VRAnalog.cpp" />
     <ClCompile Include="VRComponent.cpp" />
+    <ClCompile Include="VRDevice.cpp" />
     <ClCompile Include="VRRelative.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -63,6 +63,12 @@
     <ClCompile Include="VRRelative.cpp">
       <Filter>Fichiers sources\components</Filter>
     </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="VRDevice.cpp">
+      <Filter>Fichiers sources\components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\IPCPIPE\IPCServer.h">
