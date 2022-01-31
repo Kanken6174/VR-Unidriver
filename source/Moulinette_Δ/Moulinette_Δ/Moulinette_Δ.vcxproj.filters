@@ -19,6 +19,12 @@
     <Filter Include="Fichiers sources\main">
       <UniqueIdentifier>{e8e94bcf-ab20-4c1c-8cf6-a30c63cf7877}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\components">
+      <UniqueIdentifier>{9aeb00d0-3a4c-4fde-9cc7-e1cc0bfa9593}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SerialPort">
+      <UniqueIdentifier>{9f17eec4-1f02-465f-84f6-0c5d0a089481}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\IPCPIPE\utilities.cpp">
@@ -30,10 +36,37 @@
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources\main</Filter>
     </ClCompile>
+    <ClCompile Include="..\SerialPort\Device.cpp">
+      <Filter>SerialPort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SerialPort\serialPort.cpp">
+      <Filter>SerialPort</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\IPCPIPE\IPCServer.h">
       <Filter>IPCPIPE</Filter>
+    </ClInclude>
+    <ClInclude Include="VRComponent.h">
+      <Filter>Fichiers d%27en-tête\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SerialPort\Device.h">
+      <Filter>SerialPort</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SerialPort\serialPort.h">
+      <Filter>SerialPort</Filter>
+    </ClInclude>
+    <ClInclude Include="VRAnalog.h">
+      <Filter>Fichiers d%27en-tête\components</Filter>
+    </ClInclude>
+    <ClInclude Include="VRButton.h">
+      <Filter>Fichiers d%27en-tête\components</Filter>
+    </ClInclude>
+    <ClInclude Include="VRQuaternion.h">
+      <Filter>Fichiers d%27en-tête\components</Filter>
+    </ClInclude>
+    <ClInclude Include="VRRelative.h">
+      <Filter>Fichiers d%27en-tête\components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

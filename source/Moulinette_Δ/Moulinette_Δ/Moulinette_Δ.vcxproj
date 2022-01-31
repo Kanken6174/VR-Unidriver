@@ -141,10 +141,19 @@
   <ItemGroup>
     <ClCompile Include="..\IPCPIPE\IPCServer.cpp" />
     <ClCompile Include="..\IPCPIPE\utilities.cpp" />
+    <ClCompile Include="..\SerialPort\Device.cpp" />
+    <ClCompile Include="..\SerialPort\serialPort.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\IPCPIPE\IPCServer.h" />
+    <ClInclude Include="..\SerialPort\Device.h" />
+    <ClInclude Include="..\SerialPort\serialPort.h" />
+    <ClInclude Include="VRAnalog.h" />
+    <ClInclude Include="VRButton.h" />
+    <ClInclude Include="VRComponent.h" />
+    <ClInclude Include="VRQuaternion.h" />
+    <ClInclude Include="VRRelative.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
