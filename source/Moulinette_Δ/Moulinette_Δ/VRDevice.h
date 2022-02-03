@@ -1,8 +1,8 @@
 #include "../SerialPort/serialPort.h"
 #include "../SerialPort/Device.h"
+
 #include "includes.h"
-#include "VRComponent.h"
-#include <list>
+#include "componentHeaders.h"
 
 using namespace serialport;
 
@@ -11,13 +11,13 @@ using namespace serialport;
 /// </summary>
 class VRDevice {
 private:
-    SerialPort serialPort;
-    list<VRComponent> components;
-    float lastLatence;
+    SerialPort* serialPort;
+    vector<VRComponent*> components;
+    VRQuaternion* internalRotation;
+    float lastLatency;
 
 public:
-    VRDevice(list<VRComponent>, SerialPort);//TODO instance le VRDevice sans reponsabilité de lire le DMC
-    void updateValues();//TODO code
-    string to_string();//TODO code pour Preparer la trame pour le Driver
-    float lastLatence;
+    VRDevice(vector<VRComponent*> components, SerialPort* serialPort);//TODO instance le VRDevice sans reponsabilité de lire le DMC
+    virtual void updateValues();//TODO code
+    virtual string to_string();//TODO code pour Preparer la trame pour le Driver
 };

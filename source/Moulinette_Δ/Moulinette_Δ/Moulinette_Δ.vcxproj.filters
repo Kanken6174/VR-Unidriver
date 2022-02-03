@@ -58,6 +58,9 @@
     <Filter Include="Fichiers d%27en-tête\components\headers">
       <UniqueIdentifier>{a863ed9e-4069-4088-85ce-ff44444d90b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\devices">
+      <UniqueIdentifier>{a98fb4b1-e0e9-4bcc-be47-1689ec6467af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\IPCPIPE\utilities.cpp">
@@ -95,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="ComponentReflector.cpp">
       <Filter>Fichiers sources\typeutils</Filter>
+    </ClCompile>
+    <ClCompile Include="VRDevicecpp.cpp">
+      <Filter>Fichiers sources\devices</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

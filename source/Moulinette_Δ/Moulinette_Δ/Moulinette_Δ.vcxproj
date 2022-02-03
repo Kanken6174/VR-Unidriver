@@ -151,6 +151,7 @@
     <ClCompile Include="VRAnalog.cpp" />
     <ClCompile Include="VRBoolean.cpp" />
     <ClCompile Include="VRComponent.cpp" />
+    <ClCompile Include="VRDevicecpp.cpp" />
     <ClCompile Include="VRQuaternion.cpp" />
     <ClCompile Include="VRRelative.cpp" />
   </ItemGroup>
