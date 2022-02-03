@@ -1,4 +1,10 @@
-﻿  main.cpp
+﻿  IPCServer.cpp
+Y:\domocap\source\Moulinette_Δ\IPCPIPE\IPCServer.cpp(56,6): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
+  utilities.cpp
+  Device.cpp
+  serialPort.cpp
+  stringUtilities.cpp
+  main.cpp
   VRAnalog.cpp
 Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\VRAnalog.cpp(31,19): warning C4244: 'argument' : conversion de 'double' en '_Elem', perte possible de données
           with
@@ -8,6 +14,11 @@ Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\VRAnalog.cpp(31,19): warning C4244
   VRBoolean.cpp
   VRComponent.cpp
   VRQuaternion.cpp
+Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\VRQuaternion.cpp(20,92): warning C4267: 'argument' : conversion de 'size_t' en '_Elem', perte possible de données
+          with
+          [
+              _Elem=char
+          ]
   VRRelative.cpp
   Génération de code en cours...
   Moulinette_Δ.vcxproj -> Y:\domocap\source\Moulinette_Δ\x64\Debug\Moulinette_Δ.exe

@@ -9,3 +9,4 @@
 
 using namespace std;
 using namespace madgwickRotations;
+using namespace utilities;
