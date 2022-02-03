@@ -6,15 +6,17 @@
 /// </summary>
 class VRAnalog : public VRComponent {
 private:
-	double value;
-	double maxValue;
-	double minValue;
-	double oldValue;
+	double value = 0;
+	double maxValue = 0;
+	double minValue = 0;
+	double oldValue = 0;
 	//va mettre à jour les minimums et les maximums en fonction de la valeur captée
 	void updateMinMax();
 	//va mettre à jour la valeur du composant (brute)
 	void setValue(double value);
 public:
+	VRAnalog();
+
 	void receiveData(string data) override;
 	//va retourner la valeur du composant sous format string
 	string to_string() override;

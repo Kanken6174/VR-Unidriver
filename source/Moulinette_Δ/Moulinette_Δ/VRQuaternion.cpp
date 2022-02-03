@@ -15,7 +15,7 @@ string VRQuaternion::to_string()
 void VRQuaternion::receiveData(string data)
 {
     vector<string> splitData = vector<string>();
-    splitData = utilities::split(data, '|');
+    splitData = utilities::split(data, '/');
     if (splitData.size() != 9)
         throw new runtime_error(std::string("size mismatch, size was ") += splitData.size());
 

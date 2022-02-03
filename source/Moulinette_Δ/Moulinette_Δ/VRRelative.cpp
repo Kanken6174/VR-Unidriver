@@ -18,6 +18,11 @@ void VRRelative::setValue(double value)
 	VRRelative::value *= 2; //on multiplie par 2 pour obtenir la véritable valeur (|-1|+1 = 2) : -0.125*2 = -0.25
 }
 
+VRRelative::VRRelative()
+{
+	this->settype(RELATIVE);
+}
+
 void VRRelative::receiveData(string data)
 {
 	try {

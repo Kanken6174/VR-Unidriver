@@ -14,6 +14,11 @@ void VRAnalog::setValue(double value) {
 	VRAnalog::value /= VRAnalog::maxValue;
 }
 
+VRAnalog::VRAnalog()
+{
+	this->settype(1);
+}
+
 void VRAnalog::receiveData(string data)
 {
 	try {
@@ -27,7 +32,5 @@ void VRAnalog::receiveData(string data)
 
 
 string VRAnalog::to_string() {
-	string str = "";
-	str += VRAnalog::value;
-	return str;
+	return std::to_string(this->value);
 }

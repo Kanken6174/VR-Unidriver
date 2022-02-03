@@ -21,7 +21,7 @@ int VRComponent::getPosition() {
 
 void VRComponent::receiveData(string data)
 {
-	throw new exception("Abstract method was called");
+	//throw new exception("Abstract method was called");
 }
 
 string VRComponent::to_string() {
