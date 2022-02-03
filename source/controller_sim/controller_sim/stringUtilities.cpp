@@ -2,7 +2,7 @@
 
 namespace utilities {
 
-	vector<string> split(string input, char splitter) {
+	vector<string> split(string input, char splitter, bool remove = false) {
 		stringstream strs = stringstream(input);
 		vector<string> toreturn = vector<string>();
 		string segment = "";
@@ -10,6 +10,12 @@ namespace utilities {
 		while (getline(strs, segment, splitter))
 		{
 			toreturn.push_back(segment);
+		}
+
+		if (remove) {
+			for (string str : toreturn) {
+				str.erase(std::remove(str.begin(), str.end(), splitter), str.end());
+			}
 		}
 
 		return toreturn;

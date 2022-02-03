@@ -64,8 +64,14 @@ const char* const* Controller_simDriverServer::GetInterfaceVersions()
 void Controller_simDriverServer::RunFrame()
 {
 	if (inited) {
-		for (DoMoDriver* driver : Controller_simDriverServer::Drivers)
-			driver->RunFrameStub();
+		if (bool stubmode = true) {
+			for (DoMoDriver* driver : Controller_simDriverServer::Drivers) {	//stubbed mode
+				driver->RunFrameStub();
+			}
+		}
+		else {
+			this->serverDispatcher->feedPipeDataToDrivers(Controller_simDriverServer::Drivers);	//prod mode
+		}
 	}
 	else {
 		DriverLog("Not inited yet!");
@@ -85,7 +91,7 @@ Controller_simDriverServer controller_simServer;	//c'est global, c'est moche, c'
 
 /**
 * La fonction qui sera exportée vers OpenVR, il s'agit de
-* notre point d'entrée! (void main() en gros)
+* notre point d'entrée! (int main() en gros)
 *
 * Elle va récupérer des pointeurs vers des classes prédéfinies pour les charger dans SVR
 */
