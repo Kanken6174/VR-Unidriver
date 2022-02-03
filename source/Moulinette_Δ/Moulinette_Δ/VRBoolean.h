@@ -7,9 +7,10 @@
 class VRBoolean : VRComponent {
 private:
 	bool value = false;
-public:
 	//va changer la valeur du composant (true ou false)
 	void setValue(bool value);
+public:
+	void receiveData(string data) override;
 	//va retourner la valeur du composant en tant que string
-	string to_string();
+	string to_string() override;
 };

@@ -43,6 +43,9 @@
     <Filter Include="Fichiers sources\components\abstract">
       <UniqueIdentifier>{1775bc0d-6ff0-4614-b894-0a61d30585e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\components\static">
+      <UniqueIdentifier>{fa2f2ec1-8b8b-4e3f-ab5c-9f6c9adadccc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\IPCPIPE\utilities.cpp">
@@ -92,9 +95,6 @@
     <ClInclude Include="VRBoolean.h">
       <Filter>Fichiers d%27en-tête\components</Filter>
     </ClInclude>
-    <ClInclude Include="VRQuaternion.h">
-      <Filter>Fichiers d%27en-tête\components</Filter>
-    </ClInclude>
     <ClInclude Include="VRRelative.h">
       <Filter>Fichiers d%27en-tête\components</Filter>
     </ClInclude>
@@ -109,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="VRComponent.h">
       <Filter>Fichiers d%27en-tête\components\abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="VRQuaternion.h">
+      <Filter>Fichiers d%27en-tête\components\static</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

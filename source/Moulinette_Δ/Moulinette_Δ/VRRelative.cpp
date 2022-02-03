@@ -18,6 +18,16 @@ void VRRelative::setValue(double value)
 	VRRelative::value *= 2; //on multiplie par 2 pour obtenir la véritable valeur (|-1|+1 = 2) : -0.125*2 = -0.25
 }
 
+void VRRelative::receiveData(string data)
+{
+	try {
+		this->setValue(std::stod(data));
+	}
+	catch (std::out_of_range e) {
+		//throw away the error if can't convert
+	}
+}
+
 string VRRelative::to_string()
 {
 	return std::to_string(VRRelative::value);

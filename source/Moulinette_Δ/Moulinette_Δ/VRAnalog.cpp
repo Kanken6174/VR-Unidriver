@@ -14,6 +14,18 @@ void VRAnalog::setValue(double value) {
 	VRAnalog::value /= VRAnalog::maxValue;
 }
 
+void VRAnalog::receiveData(string data)
+{
+	try {
+		this->setValue(std::stod(data));
+	}
+	catch (std::out_of_range e) {
+		//throw away the error if can't convert
+	}
+}
+
+
+
 string VRAnalog::to_string() {
 	string str = "";
 	str += VRAnalog::value;

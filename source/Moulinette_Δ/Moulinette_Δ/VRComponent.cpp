@@ -2,15 +2,26 @@
 
 void VRComponent::settype(int type)
 {
+	this->sclType = type;
 }
 
 int VRComponent::gettype()
 {
-	return 0;
+	return this->sclType;
+}
+
+void VRComponent::setPosition(int position)
+{
+	this->position = position;
 }
 
 int VRComponent::getPosition() {
 	return VRComponent::position;
+}
+
+void VRComponent::receiveData(string data)
+{
+	//TODO
 }
 
 string VRComponent::to_string() {

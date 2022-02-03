@@ -12,9 +12,10 @@ private:
 	double oldValue;
 	//va mettre à jour les minimums et les maximums en fonction de la valeur captée
 	void updateMinMax();
-public:
 	//va mettre à jour la valeur du composant (brute)
 	void setValue(double value);
+public:
+	void receiveData(string data) override;
 	//va retourner la valeur du composant sous format string
-	string to_string();
+	string to_string() override;
 };

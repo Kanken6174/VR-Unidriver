@@ -12,7 +12,8 @@ int main(int argc, char* argv[]) {
 	composants.push_back(test);
 	switch (composants[0].gettype()) {
 	case 3:
-
+		break;
 	default:
+		break;
 	}
 }

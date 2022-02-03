@@ -11,3 +11,7 @@ string VRQuaternion::to_string()
     toReturn += std::to_string(value.getW()) + "_" + std::to_string(value.getX()) + "_" + std::to_string(value.getY()) + "_" + std::to_string(value.getZ());
     return toReturn;
 }
+
+void VRQuaternion::receiveData(string data)
+{
+}
