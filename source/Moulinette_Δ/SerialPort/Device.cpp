@@ -1,22 +1,15 @@
 #include "Device.h"
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-
-using namespace std;
-
 
 namespace serialport
 {
     Device::Device() {}
 
-    void Device::ReadConfigAndBuildDrivers(string file) {
-        ifstream fichier(file, ios::in);
+    void Device::ReadConfigAndBuildDrivers(std::string file) {
+        std::ifstream fichier(file, std::ios::in);
 
         if (fichier)
         {
-            string ligne;
+            std::string ligne;
             while (getline(fichier, ligne))
             {
                 char id = ligne[0];
@@ -42,15 +35,15 @@ namespace serialport
 
                     getline(fichier, ligne);
                     ligne = ligne.erase(0, 1);
-                    istringstream iss(ligne);
+                    std::istringstream iss(ligne);
                     int number;
                     iss >> number;
                     if (iss.fail()) {
-                        cerr << "ERROR!\n";
+                        std::cerr << "ERROR!\n";
                         return;
                     }
 
-                    string type;
+                    std::string type;
                     switch (number) {
                     case 0:
                         type = "ABSOLUTE_T";
@@ -90,19 +83,19 @@ namespace serialport
             }
         }
         else {
-            cerr << "Erreur lecture fichier" << endl;
+            std::cerr << "Erreur lecture fichier" << std::endl;
         }
 
     }
 
     void Device::affichageList() {
-        list<Device::Prop>::iterator it;
+        std::list<Device::Prop>::iterator it;
         it = this->listProp.begin();
         while (it != this->listProp.end()) {
-            cout << "Valeur: " << it->valeur << " Flag: " << it->flag << endl;
+            std::cout << "Valeur: " << it->valeur << " Flag: " << it->flag << std::endl;
             it++;
         }
-        cout << "Ping : " << this->ping << endl;
+        std::cout << "Ping : " << this->ping << std::endl;
     }
 
 }

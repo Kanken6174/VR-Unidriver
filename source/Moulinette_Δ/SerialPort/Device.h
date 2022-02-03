@@ -1,31 +1,33 @@
 #include <list>
 #include <string>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
-using namespace std;
 
 namespace serialport
 {
 	class Device {
 	public:
 		Device();
-		void ReadConfigAndBuildDrivers(string file);
+		void ReadConfigAndBuildDrivers(std::string file);
 
 
 
 		struct Prop
 		{
-			string nom;
-			string type;
-			string flag;
+			std::string nom;
+			std::string type;
+			std::string flag;
 			float valeur;
 		};
 
 		void affichageList();
 
-		string nom;
-		string port;
+		std::string nom;
+		std::string port;
 		int baudrate;
-		list<Prop> listProp;
+		std::list<Prop> listProp;
 		float ping = 0;
 	};
 }
