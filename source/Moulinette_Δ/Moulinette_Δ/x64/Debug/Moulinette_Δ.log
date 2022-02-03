@@ -1,3 +1,9 @@
-﻿  main.cpp
-Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentTyper.h(13,2): warning C4091: 'static ' : ignoré à gauche de 'ComponentTyper' quand aucune variable n'est déclarée
+﻿  ComponentReflector.cpp
+Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.h(28,2): warning C4091: 'static ' : ignoré à gauche de 'ComponentReflector' quand aucune variable n'est déclarée
+  main.cpp
+Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.h(28,2): warning C4091: 'static ' : ignoré à gauche de 'ComponentReflector' quand aucune variable n'est déclarée
+  VRComponent.cpp
+Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.h(28,2): warning C4091: 'static ' : ignoré à gauche de 'ComponentReflector' quand aucune variable n'est déclarée
+  Génération de code en cours...
+Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.cpp(44): warning C4715: 'ComponentReflector::requestDataFromComponent' : les chemins de contrôle ne retournent pas tous une valeur
   Moulinette_Δ.vcxproj -> Y:\domocap\source\Moulinette_Δ\x64\Debug\Moulinette_Δ.exe

@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
 
 	for (int i = 0; i < 10; i++) {
 		for (VRComponent* component : composants) {
-			ComponentReflector::provideDataToComponent(component,std::to_string(i * 24));
+			component->receiveData(std::to_string(i * 24));
 		}
 	}
 
@@ -27,6 +27,6 @@ int main(int argc, char* argv[]) {
 	}
 
 	for (VRComponent* component : composants) {
-		std::cout << ComponentReflector::requestDataFromComponent(component)+"\n";
+		std::cout << component->to_string();
 	}
 }

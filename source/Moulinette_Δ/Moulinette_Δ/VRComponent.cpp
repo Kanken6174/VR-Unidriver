@@ -1,4 +1,5 @@
 #include "VRComponent.h"
+#include "ComponentReflector.h"
 
 void VRComponent::settype(int type)
 {
@@ -21,11 +22,9 @@ int VRComponent::getPosition() {
 
 void VRComponent::receiveData(string data)
 {
-	//throw new exception("Abstract method was called");
+	ComponentReflector::provideDataToComponent(this, data);
 }
 
 string VRComponent::to_string() {
-	string str = "";
-	str += VRComponent::position;
-	return str;
+	return ComponentReflector::requestDataFromComponent(this);
 }
