@@ -144,6 +144,7 @@
     <ClCompile Include="..\IPCPIPE\utilities.cpp" />
     <ClCompile Include="..\SerialPort\Device.cpp" />
     <ClCompile Include="..\SerialPort\serialPort.cpp" />
+    <ClCompile Include="..\utilities\stringUtilities.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="VRAnalog.cpp" />
     <ClCompile Include="VRBoolean.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="..\IPCPIPE\IPCServer.h" />
     <ClInclude Include="..\SerialPort\Device.h" />
     <ClInclude Include="..\SerialPort\serialPort.h" />
+    <ClInclude Include="..\utilities\utilities.h" />
     <ClInclude Include="includes.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="VRAnalog.h" />

@@ -1,0 +1,56 @@
+#include"utilities.h"
+
+namespace utilities {
+
+	vector<string> split(string input, char splitter) {
+		stringstream strs = stringstream(input);
+		vector<string> toreturn = vector<string>();
+		string segment = "";
+
+		while (getline(strs, segment, splitter))
+		{
+			toreturn.push_back(segment);
+		}
+
+		return toreturn;
+	}
+
+	string getFirstAndRemoveFromVector(vector<string> source) {
+		string toReturn = source[0];
+		source.erase(std::next(source.begin()));	//on supprime le premier élément (correspond à un comportement de dépilage)
+		return toReturn;
+	}
+
+	int stringToInt(string input) {
+		int toReturn = 0;
+		toReturn = stoi(input);
+		return toReturn;
+	}
+
+	bool stringToBool(string input) {
+		bool toReturn = false;
+		toReturn = (input[0] == 1);
+		return toReturn;
+	}
+
+	float stringToFloat(string input) {
+		float toReturn = 0;
+		toReturn = stof(input);
+		return toReturn;
+	}
+
+	double stringToDouble(string input) {
+		double toReturn = 0;
+		toReturn = stod(input);
+		return toReturn;
+	}
+
+	vector<float> delimitedStringToFloats(string input, char delimiter) {
+		vector<float> toReturn = vector<float>();
+		vector<string> temp = split(input, delimiter);
+		for (string str : temp)
+			toReturn.push_back(stringToFloat(str));
+
+		return toReturn;
+	}
+}

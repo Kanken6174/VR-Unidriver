@@ -46,6 +46,9 @@
     <Filter Include="Fichiers d%27en-tête\components\static">
       <UniqueIdentifier>{fa2f2ec1-8b8b-4e3f-ab5c-9f6c9adadccc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="utilities">
+      <UniqueIdentifier>{168150a4-9ebf-41d4-946a-8e233adab6fb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\IPCPIPE\utilities.cpp">
@@ -77,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="VRQuaternion.cpp">
       <Filter>Fichiers sources\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utilities\stringUtilities.cpp">
+      <Filter>utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="VRQuaternion.h">
       <Filter>Fichiers d%27en-tête\components\static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utilities\utilities.h">
+      <Filter>utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

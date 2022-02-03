@@ -20,7 +20,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <windows.h>	//si sur windows, on inclut le header du système windows
+#include <windows.h>	//si sur windows, on inclut le header du systï¿½me windows
 #include <WinUser.h>	//requis pour les hooks de clavier
 #include <stdio.h>
 #include <Windows.h>
@@ -31,7 +31,7 @@
 #include "comutil.h"
 #include <sstream>
 
-using namespace vr;		//on utilise l'espace de noms d'openVR à travers tout le projet
+using namespace vr;		//on utilise l'espace de noms d'openVR ï¿½ travers tout le projet
 using namespace std;	//idem pour l'espace de noms standard
 
-#include "entry_point.h"	//le point d'entrée du DLL, chargé par SteamVR
+#include "entry_point.h"	//le point d'entrï¿½e du DLL, chargï¿½ par SteamVR
