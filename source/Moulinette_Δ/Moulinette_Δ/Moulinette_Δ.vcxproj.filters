@@ -55,6 +55,9 @@
     <Filter Include="Fichiers sources\typeutils">
       <UniqueIdentifier>{639882f1-6476-4646-b8ec-29bb20ceab0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\components\headers">
+      <UniqueIdentifier>{a863ed9e-4069-4088-85ce-ff44444d90b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\IPCPIPE\utilities.cpp">
@@ -90,7 +93,7 @@
     <ClCompile Include="..\utilities\stringUtilities.cpp">
       <Filter>utilities</Filter>
     </ClCompile>
-    <ClCompile Include="ComponentTyper.cpp">
+    <ClCompile Include="ComponentReflector.cpp">
       <Filter>Fichiers sources\typeutils</Filter>
     </ClCompile>
   </ItemGroup>
@@ -131,8 +134,11 @@
     <ClInclude Include="..\utilities\utilities.h">
       <Filter>utilities</Filter>
     </ClInclude>
-    <ClInclude Include="ComponentTyper.h">
+    <ClInclude Include="ComponentReflector.h">
       <Filter>Fichiers d%27en-tête\typeutils</Filter>
+    </ClInclude>
+    <ClInclude Include="componentHeaders.h">
+      <Filter>Fichiers d%27en-tête\components\headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

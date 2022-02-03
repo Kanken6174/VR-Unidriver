@@ -4,13 +4,12 @@
 #include "VRBoolean.h"
 #include "VRQuaternion.h"
 
-#include "ComponentTyper.h"	
+#include "ComponentReflector.h"	
 
 #include<vector>
 #include<iostream>
 
 int main(int argc, char* argv[]) {
-	//TODO code
 	VRAnalog* test = new VRAnalog();
 	VRRelative* test2 = new VRRelative();
 	vector<VRComponent*> composants = vector<VRComponent*>();
@@ -19,15 +18,15 @@ int main(int argc, char* argv[]) {
 
 	for (int i = 0; i < 10; i++) {
 		for (VRComponent* component : composants) {
-			ComponentTyper::provideDataToComponent(component,std::to_string(i * 24));
+			ComponentReflector::provideDataToComponent(component,std::to_string(i * 24));
 		}
 	}
 
 	for (VRComponent* component : composants) {
-		ComponentTyper::provideDataToComponent(component, std::to_string(24*4));
+		ComponentReflector::provideDataToComponent(component, std::to_string(24*4));
 	}
 
 	for (VRComponent* component : composants) {
-		std::cout << ComponentTyper::requestDataFromComponent(component);
+		std::cout << ComponentReflector::requestDataFromComponent(component)+"\n";
 	}
 }
