@@ -32,6 +32,7 @@ VRDevice lectureDMC(string file ) {
             ligne = ligne.erase(0, 1);
             ligne.erase(remove(ligne.begin(), ligne.end(), '\n'), ligne.end()); //on enlve les \n parasites
 
+
             switch (id)
             {
             case '$':   // Nom
@@ -50,6 +51,9 @@ VRDevice lectureDMC(string file ) {
                 istringstream iss(ligne);
                 int number;
                 iss >> number;
+
+                //cout << "Type nombre : " << number << endl;
+
                 if (iss.fail()) {
                     cerr << "ERROR! conversion\n";
                 }
@@ -96,26 +100,23 @@ VRDevice lectureDMC(string file ) {
                     //"DEFAULT"
                     break;
                 }
-
-                
-
-                try
-                {
-                    w = w.connect();
-                }
-                catch (const runtime_error& e)
-                {
-                    cout << e.what() << endl;
-                    getchar();
-                }
-
-                device.setSerialport(w);
-
-                return device;
-                break;
             }
+            
         }
-        
+
+        try
+        {
+            w = w.connect();
+        }
+        catch (const runtime_error& e)
+        {
+            cout << e.what() << endl;
+            getchar();
+        }
+
+        device.setSerialport(w);
+
+        return device;
     }
     else {
         cerr << "Erreur lecture fichier DMC" << endl;
@@ -131,7 +132,6 @@ int main(int argc, char* argv[]) {
     devices.updateValues();
 
     cout << devices.to_string() << endl;
-    cout << devices.getName() << endl;
     cout << "---------------------------" << endl;
  
 
