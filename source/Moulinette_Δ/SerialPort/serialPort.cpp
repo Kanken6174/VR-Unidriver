@@ -1,13 +1,5 @@
 ﻿#include "serialPort.h"
 
-#include <stdio.h>
-#include <string.h>
-#include <iostream>
-#include <WinSock2.h>
-#include <windows.h>
-#include <iostream>
-#include <fstream>
-#include <sstream>
 
 using namespace std;
 
@@ -126,15 +118,25 @@ namespace serialport
 
 	}
 
-	SerialPort SerialPort::connect(char* p, int b) {
+	SerialPort SerialPort::connect() {
 		SerialPort w; //(const char* portname, int baudrate, char databit);
-		if (w.open(p, b, 8))
+		if (w.open(this->port, this->baudrate, 8))
 		{
 			return w;
 		}
 		else {
 			throw runtime_error("Port connection erreur !");
 		}
+	}
+
+	void SerialPort::setPort(char* port)
+	{
+		this->port = port;
+	}
+
+	void SerialPort::setBaudrate(int baud)
+	{
+		this->baudrate = baud;
 	}
 
 }

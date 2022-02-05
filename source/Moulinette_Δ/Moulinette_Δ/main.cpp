@@ -17,8 +17,11 @@ char* portName(string U) {
     return src;
 }
 
-int lectureDMC(vector<VRDevice*> *devices, string file ) {
+VRDevice lectureDMC(string file ) {
     ifstream fichier(file, ios::in);
+
+    VRDevice device;
+    SerialPort w;
 
     if (fichier)
     {
@@ -29,23 +32,16 @@ int lectureDMC(vector<VRDevice*> *devices, string file ) {
             ligne = ligne.erase(0, 1);
             ligne.erase(remove(ligne.begin(), ligne.end(), '\n'), ligne.end()); //on enlve les \n parasites
 
-            string nom;
-
-            string port;
-            int baudrate;
-
-            vector<VRComponent*> composants = vector<VRComponent*>();
-
             switch (id)
             {
             case '$':   // Nom
-                nom = ligne;
+                device.setName(ligne);
                 break;
             case '&':   // Port COM
-                port = ligne;
+                w.setPort(portName(ligne));
                 break;
             case '!':   // baudrate a terminer
-                baudrate = 74880;
+                w.setBaudrate(74880);
                 break;
             case '=':   // nouvel input = nouveau flag 
 
@@ -56,7 +52,6 @@ int lectureDMC(vector<VRDevice*> *devices, string file ) {
                 iss >> number;
                 if (iss.fail()) {
                     cerr << "ERROR! conversion\n";
-                    return 0;
                 }
 
                 string type;
@@ -66,21 +61,24 @@ int lectureDMC(vector<VRDevice*> *devices, string file ) {
                 {VRAnalog* component = new VRAnalog();
                 getline(fichier, ligne);
                 ligne = ligne.erase(0, 1);
-                component->setFlag(ligne); }
+                component->setFlag(ligne);
+                device.addComponents(component); }
                     break;
                 case 1:
                     //"RELATIVE_T";
                 {VRRelative* component = new VRRelative();
                 getline(fichier, ligne);
                 ligne = ligne.erase(0, 1);
-                component->setFlag(ligne); }
+                component->setFlag(ligne);
+                device.addComponents(component); }
                     break;
                 case 2:
                     //"DIGITAL";
                 {VRBoolean* component = new VRBoolean();
                 getline(fichier, ligne);
                 ligne = ligne.erase(0, 1);
-                component->setFlag(ligne); }
+                component->setFlag(ligne);
+                device.addComponents(component); }
                     break;
                 case 3:
                     //"HAPTIC"
@@ -99,29 +97,47 @@ int lectureDMC(vector<VRDevice*> *devices, string file ) {
                     break;
                 }
 
-                SerialPort w;
+                
 
+                try
+                {
+                    w = w.connect();
+                }
+                catch (const runtime_error& e)
+                {
+                    cout << e.what() << endl;
+                    getchar();
+                }
 
-                VRDevice* device = new VRDevice(nom,composants,&w);
-                devices->push_back(device);
+                device.setSerialport(w);
+
+                return device;
                 break;
             }
         }
-        return 1;
+        
     }
     else {
         cerr << "Erreur lecture fichier DMC" << endl;
-        return 0;
+
     }
 }
 
 int main(int argc, char* argv[]) {
+    
 
-    vector<VRDevice*> devices = vector<VRDevice*>();
-
-    lectureDMC(&devices, "gant.dmc");
+    VRDevice devices = lectureDMC("gant.dmc");
 
 
+    cout << devices.to_string() << endl;
+    cout << devices.getName() << endl;
+    cout << "---------------------------" << endl;
+ 
+
+
+
+
+    
     /*
     VRAnalog* test = new VRAnalog();
     test->setFlag("A");
@@ -148,6 +164,8 @@ int main(int argc, char* argv[]) {
         std::cout << component->to_string() << endl;
         std::cout << component->getFlag() << endl;
     }
+    
+    cout << device->to_string() << endl;
     */
 }
 
