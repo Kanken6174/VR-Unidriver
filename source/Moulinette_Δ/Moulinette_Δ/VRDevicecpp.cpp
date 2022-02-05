@@ -1,6 +1,6 @@
 #include "VRDevice.h"
 
-VRDevice::VRDevice(string nom, vector<VRComponent*> components, SerialPort* serialPort) {
+VRDevice::VRDevice(string nom, vector<VRComponent*> components, SerialPort serialPort) {
 	this->serialPort = serialPort;
 	this->components = components;
 	this->nom = nom;
@@ -12,6 +12,26 @@ VRDevice::VRDevice()
 
 void VRDevice::updateValues()
 {
+	clock_t t;
+	char buf[1024];
+
+	string ask = "#";							//symbole envoyé a l arduino
+	t = clock();
+
+	if (!this->serialPort.send(ask.c_str(), ask.length()))
+		throw runtime_error("Erreur send Packet !");
+
+
+	memset(buf, NULL, 1024);					//mise a NULL tout les éléments du buffeur
+	if (!this->serialPort.receive(buf, 1024))						//reception des données arduino
+		throw runtime_error("Erreur receive Packet!");
+	t = clock() - t;
+	this->lastLatency = (((float)t) / CLOCKS_PER_SEC);
+
+	if (buf[0] != 'A')
+		return;
+
+	cout << buf << endl;
 
 }
 
@@ -40,7 +60,7 @@ void VRDevice::setName(string name)
 
 void VRDevice::setSerialport(SerialPort serial)
 {
-	this->serialPort = &serial;
+	this->serialPort = serial;
 }
 
 void VRDevice::addComponents(VRComponent* component)

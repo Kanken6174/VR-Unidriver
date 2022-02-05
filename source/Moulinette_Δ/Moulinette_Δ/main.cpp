@@ -128,6 +128,7 @@ int main(int argc, char* argv[]) {
 
     VRDevice devices = lectureDMC("gant.dmc");
 
+    devices.updateValues();
 
     cout << devices.to_string() << endl;
     cout << devices.getName() << endl;
