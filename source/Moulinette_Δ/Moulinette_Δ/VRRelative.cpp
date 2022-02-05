@@ -18,6 +18,21 @@ void VRRelative::setValue(double value)
 	VRRelative::value *= 2; //on multiplie par 2 pour obtenir la véritable valeur (|-1|+1 = 2) : -0.125*2 = -0.25
 }
 
+double VRRelative::getValue()
+{
+	return this->value;
+}
+
+void VRRelative::setValueOld(double value)
+{
+	this->oldValue = value;
+}
+
+double VRRelative::getValueOld()
+{
+	return this->oldValue;
+}
+
 VRRelative::VRRelative()
 {
 	this->settype(RELATIVE);
@@ -26,6 +41,7 @@ VRRelative::VRRelative()
 void VRRelative::receiveData(string data)
 {
 	try {
+		this->setValueOld(this->getValue());
 		this->setValue(std::stod(data));
 	}
 	catch (std::out_of_range e) {

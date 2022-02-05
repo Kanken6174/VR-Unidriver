@@ -9,6 +9,7 @@ private:
 	bool value = false;
 	//va changer la valeur du composant (true ou false)
 	void setValue(bool value);
+	bool getValue();
 public:
 	VRBoolean();
 

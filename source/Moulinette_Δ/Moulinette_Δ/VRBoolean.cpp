@@ -5,6 +5,11 @@ void VRBoolean::setValue(bool value)
 	VRBoolean::value = value;
 }
 
+bool VRBoolean::getValue()
+{
+	return this->value;
+}
+
 VRBoolean::VRBoolean()
 {
 	this->settype(0);

@@ -29,7 +29,6 @@ void VRDevice::updateValues()
 	t = clock() - t;
 	this->lastLatency = (((float)t) / CLOCKS_PER_SEC);
 
-
 	cout << buf << endl;									//recupere la tram
 
 	string conc;								//string pour la concatenation
@@ -61,7 +60,6 @@ void VRDevice::updateValues()
 		else if (s >= '0' && s <= '9' || s == '-') {
 			conc += s;
 		}
-
 
 		if (s == NULL)
 			break;

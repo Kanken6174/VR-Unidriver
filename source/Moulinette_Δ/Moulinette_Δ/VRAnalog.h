@@ -14,6 +14,9 @@ private:
 	void updateMinMax();
 	//va mettre à jour la valeur du composant (brute)
 	void setValue(double value);
+	double getValue();
+	void setValueOld(double value);
+	double getValueOld();
 public:
 	VRAnalog();
 
