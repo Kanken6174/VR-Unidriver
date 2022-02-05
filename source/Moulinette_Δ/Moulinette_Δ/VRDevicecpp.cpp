@@ -1,8 +1,9 @@
 #include "VRDevice.h"
 
-VRDevice::VRDevice(vector<VRComponent*> components, SerialPort* serialPort) {
+VRDevice::VRDevice(string nom, vector<VRComponent*> components, SerialPort* serialPort) {
 	this->serialPort = serialPort;
 	this->components = components;
+	this->nom = nom;
 }
 
 void VRDevice::updateValues()

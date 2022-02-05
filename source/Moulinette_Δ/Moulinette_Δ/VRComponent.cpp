@@ -11,13 +11,13 @@ int VRComponent::gettype()
 	return this->sclType;
 }
 
-void VRComponent::setPosition(int position)
+void VRComponent::setFlag(string flag)
 {
-	this->position = position;
+	this->flag = flag;
 }
 
-int VRComponent::getPosition() {
-	return VRComponent::position;
+string VRComponent::getFlag() {
+	return VRComponent::flag;
 }
 
 void VRComponent::receiveData(string data)

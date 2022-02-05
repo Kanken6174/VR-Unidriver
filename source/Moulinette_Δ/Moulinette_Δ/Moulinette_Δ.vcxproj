@@ -171,6 +171,9 @@
     <ClInclude Include="VRQuaternion.h" />
     <ClInclude Include="VRRelative.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="gant.dmc" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

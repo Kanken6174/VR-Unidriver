@@ -15,9 +15,10 @@ private:
     vector<VRComponent*> components;
     VRQuaternion* internalRotation;
     float lastLatency;
+    string nom;
 
 public:
-    VRDevice(vector<VRComponent*> components, SerialPort* serialPort);//TODO instance le VRDevice sans reponsabilité de lire le DMC
+    VRDevice(string nom, vector<VRComponent*> components, SerialPort* serialPort);//TODO instance le VRDevice sans reponsabilité de lire le DMC
     virtual void updateValues();//TODO code
     virtual string to_string();//TODO code pour Preparer la trame pour le Driver
 };

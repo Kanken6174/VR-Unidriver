@@ -147,4 +147,9 @@
       <Filter>Fichiers d%27en-tête\components\headers</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="gant.dmc">
+      <Filter>Fichiers de ressources</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
