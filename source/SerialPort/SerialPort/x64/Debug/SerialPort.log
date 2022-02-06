@@ -1,7 +1,0 @@
-﻿  main.cpp
-C:\Users\ASUS\Documents\2A\projet\domocap\source\SerialPort\SerialPort\main.cpp(27,5): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\ASUS\Documents\2A\projet\domocap\source\SerialPort\SerialPort\main.cpp(75,8): warning C4101: 'response' : variable locale non référencée
-  serialPort.cpp
-  Device.cpp
-  Génération de code en cours...
-  SerialPort.vcxproj -> C:\Users\ASUS\Documents\2A\projet\domocap\source\SerialPort\x64\Debug\SerialPort.exe
