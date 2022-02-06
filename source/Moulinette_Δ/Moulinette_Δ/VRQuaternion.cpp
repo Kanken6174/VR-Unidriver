@@ -1,4 +1,6 @@
 #include "VRQuaternion.h"
+#include <iostream>
+#include <iostream>
 
 void VRQuaternion::setValue(time_t delay, madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro)
 {
@@ -23,6 +25,7 @@ string VRQuaternion::to_string()
 
 void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont. delay doit être **au début** du string
 {
+    cout << data << endl;
     vector<string> delimiters = vector<string>();
     vector<string> splitData = vector<string>();
 

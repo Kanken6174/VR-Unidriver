@@ -32,30 +32,41 @@ void VRDevice::updateValues()
 	cout << buf << endl;									//recupere la tram
 
 	string conc;								//string pour la concatenation
-	bool sw = true;
-	string tmp_string(1, buf[0]);
+	bool sw = false;
+	string flag(1, buf[0]);
+	string quaternion = "";
+	int i_quaternion = 0;
 	for (char s : buf) {
-
-		if (s != buf[0] && s >= 'A' && s <= 'Z' || s == NULL) {										// en présence d'une lettre		
-
-				//cout << tmp_string << endl;
-				
+		if (s >= 'A' && s <= 'Z' || s == NULL) {										// en présence d'une lettre	
+		
+			if (sw) {
 				for (VRComponent* component : this->components) {
-					
-					if (component->getFlag() == tmp_string) {
-						//cout << conc << endl;
-						component->receiveData(conc);
-						conc = "";
-						sw = false;
-						tmp_string = s;
-						break;
+
+					string tmp_flag = component->getFlag();
+					vector<string> tmp = utilities::split(tmp_flag, '|');
+
+					for (string elem : tmp) {
+						if (elem == flag) {
+							if (component->gettype() == -1) {
+								quaternion += conc + "|";
+								i_quaternion++;
+
+								if(i_quaternion ==3)
+									component->receiveData(quaternion);
+							}
+							else {
+								component->receiveData(conc);
+							}
+							conc = "";
+							sw = false;
+							break;
+						}
 					}
-					
+
 				}
-
+				flag = s;
+			}
 			sw = true;
-			
-
 		}
 		else if (s >= '0' && s <= '9' || s == '-') {
 			conc += s;

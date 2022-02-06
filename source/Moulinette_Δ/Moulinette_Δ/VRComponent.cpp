@@ -18,7 +18,6 @@ void VRComponent::setFlag(string flag)
 }
 
 string VRComponent::getFlag() {
-	//cout << VRComponent::flag << endl;
 	return VRComponent::flag;
 }
 
