@@ -14,7 +14,7 @@ private:
 	//l'instance de MadgwickRotator qui s'occupe de créer le quaternion value
 	MadgwickRotator transformator = MadgwickRotator();
 
-	void setValue(madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro);
+	void setValue(time_t delay, madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro);
 public:
 	string to_string() override;
 	

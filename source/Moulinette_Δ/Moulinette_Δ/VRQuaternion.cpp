@@ -1,8 +1,8 @@
 #include "VRQuaternion.h"
 
-void VRQuaternion::setValue(madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro)
+void VRQuaternion::setValue(time_t delay, madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro)
 {
-    //TODO @eliott
+    value = transformator.update(delay, acc, mag, gyro);
 }
 
 string VRQuaternion::to_string()
@@ -12,11 +12,11 @@ string VRQuaternion::to_string()
     return toReturn;
 }
 
-void VRQuaternion::receiveData(string data)
+void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont. delay doit être **au début** du string
 {
     vector<string> splitData = vector<string>();
     splitData = utilities::split(data, '/');
-    if (splitData.size() != 9)
+    if (splitData.size() != 10)
         throw new runtime_error(std::string("size mismatch, size was ") += splitData.size());
 
     vector<double> numbers = vector<double>();
@@ -25,9 +25,10 @@ void VRQuaternion::receiveData(string data)
         numbers.push_back(stod(number));
     }
 
-    madgwickRotations::Vector accelerometerData = Vector(numbers[0],numbers[1],numbers[2]);
+    time_t delay = numbers[0];
+    madgwickRotations::Vector accelerometerData = Vector(numbers[1],numbers[2],numbers[3]);
     madgwickRotations::Vector gyroscopeData = Vector(numbers[4],numbers[5],numbers[6]);
     madgwickRotations::Vector magnetometerData = Vector(numbers[7],numbers[8],numbers[9]);
 
-    this->setValue(accelerometerData, magnetometerData, gyroscopeData);
+    this->setValue(delay, accelerometerData, magnetometerData, gyroscopeData);
 }
