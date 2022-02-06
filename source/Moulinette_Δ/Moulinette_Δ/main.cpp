@@ -61,8 +61,12 @@ VRDevice lectureDMC(string file ) {
                     //"ABSOLUTE_T";
                 {VRAnalog* component = new VRAnalog();
                 getline(fichier, ligne);
-                ligne = ligne.erase(0, 1);
-                component->setFlag(ligne);
+                ligne = ligne.erase(0, 1); 
+                ligne.erase(remove(ligne.begin(), ligne.end(), ' '), ligne.end());
+                string flag_string(1, ligne[0]);
+                component->setFlag(flag_string);
+                component->setMin(ligne[1]);
+                component->setMax(ligne[2]);
                 device.addComponents(component); }
                     break;
                 case 1:
@@ -70,7 +74,11 @@ VRDevice lectureDMC(string file ) {
                 {VRRelative* component = new VRRelative();
                 getline(fichier, ligne);
                 ligne = ligne.erase(0, 1);
-                component->setFlag(ligne);
+                ligne.erase(remove(ligne.begin(), ligne.end(), ' '), ligne.end());
+                string flag_string(1, ligne[0]);
+                component->setFlag(flag_string);
+                component->setMin(ligne[1]);
+                component->setMax(ligne[2]);
                 device.addComponents(component); }
                     break;
                 case 2:

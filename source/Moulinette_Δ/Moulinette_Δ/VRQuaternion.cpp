@@ -2,7 +2,7 @@
 
 void VRQuaternion::setValue(time_t delay, madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro)
 {
-    value = transformator.update(delay, acc, mag, gyro);
+    //value = transformator.update(delay, acc, mag, gyro);
 }
 
 VRQuaternion::VRQuaternion(float accCorrectionStrength, float magCorrectionStrength) : transformator(accCorrectionStrength, magCorrectionStrength)

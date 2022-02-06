@@ -34,6 +34,16 @@ VRAnalog::VRAnalog()
 	this->settype(1);
 }
 
+void VRAnalog::setMin(double value)
+{
+	this->minValue = value;
+}
+
+void VRAnalog::setMax(double value)
+{
+	this->maxValue = value;
+}
+
 void VRAnalog::receiveData(string data)
 {
 	try {

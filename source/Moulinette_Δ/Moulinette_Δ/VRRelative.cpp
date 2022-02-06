@@ -38,6 +38,16 @@ VRRelative::VRRelative()
 	this->settype(RELATIVE);
 }
 
+void VRRelative::setMin(double value)
+{
+	this->minValue = value;
+}
+
+void VRRelative::setMax(double value)
+{
+	this->maxValue = value;
+}
+
 void VRRelative::receiveData(string data)
 {
 	try {

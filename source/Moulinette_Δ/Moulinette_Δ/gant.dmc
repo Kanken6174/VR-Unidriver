@@ -8,24 +8,24 @@ $mess
 <2
 #on définit désormais les composants de ce driver
 =/input/a/click
-:2
-~A
+:1
+~A 0 10
 =/input/b/click
-:2
-~B
+:1
+~B 0 10
 =/input/system/click
-:2
-~C
+:1
+~C 0 10
 =/input/x/click
-:2
-~D
+:1
+~D 0 10
 =/pose/mag/x
-:2
+:6
 ~E
 =/pose/mag/y
-:2
+:6
 ~F
 =/pose/mag/z
-:2
+:6
 ~G
 
