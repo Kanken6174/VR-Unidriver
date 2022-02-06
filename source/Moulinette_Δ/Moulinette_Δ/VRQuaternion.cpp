@@ -23,7 +23,16 @@ string VRQuaternion::to_string()
 
 void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont. delay doit être **au début** du string
 {
+    vector<string> delimiters = vector<string>();
     vector<string> splitData = vector<string>();
+
+    delimiters = utilities::split(this->getFlag(), '|');    //on récupère les 9 flages du composant
+
+    if (delimiters.size() != 9) //flags manquants ou en excès
+        return;
+
+
+
     splitData = utilities::split(data, '/');
     if (splitData.size() != 10)
         throw new runtime_error(std::string("size mismatch, size was ") += splitData.size());
