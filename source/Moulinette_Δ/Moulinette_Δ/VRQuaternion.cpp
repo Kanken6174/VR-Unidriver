@@ -9,6 +9,11 @@ VRQuaternion::VRQuaternion(float accCorrectionStrength, float magCorrectionStren
 {
 }
 
+VRQuaternion::VRQuaternion()
+{
+    //Version sans offsets (par défaut)
+}
+
 string VRQuaternion::to_string()
 {
     string toReturn = "";

@@ -100,6 +100,11 @@ VRDevice lectureDMC(string file ) {
                     break;
                 case 6:
                     //"QUATERNIONS"
+                {VRQuaternion* component = new VRQuaternion();
+                getline(fichier, ligne);
+                ligne = ligne.erase(0, 1);
+                component->setFlag(ligne);      //le flag d'un quaternion est de la forme A|B|C|D|E|F|G|H|I (9 tags car 3x3 [gyro[xyz], acc[xyz], mag[xyz]])
+                device.addComponents(component); }
                     break;
                 default:
                     //"DEFAULT"
