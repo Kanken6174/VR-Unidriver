@@ -16,6 +16,8 @@ private:
 
 	void setValue(time_t delay, madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro);
 public:
+	VRQuaternion(float accCorrectionStrength, float magCorrectionStrength);
+
 	string to_string() override;
 	
 	void receiveData(string data) override;

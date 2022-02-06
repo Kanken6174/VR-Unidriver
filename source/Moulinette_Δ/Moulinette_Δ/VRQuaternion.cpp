@@ -5,6 +5,10 @@ void VRQuaternion::setValue(time_t delay, madgwickRotations::Vector acc, madgwic
     value = transformator.update(delay, acc, mag, gyro);
 }
 
+VRQuaternion::VRQuaternion(float accCorrectionStrength, float magCorrectionStrength) : transformator(accCorrectionStrength, magCorrectionStrength)
+{
+}
+
 string VRQuaternion::to_string()
 {
     string toReturn = "";
