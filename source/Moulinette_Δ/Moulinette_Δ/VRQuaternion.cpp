@@ -31,21 +31,17 @@ void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont.
     if (delimiters.size() != 9) //flags manquants ou en excès
         return;
 
-
-
-    splitData = utilities::split(data, '/');
-    if (splitData.size() != 10)
-        throw new runtime_error(std::string("size mismatch, size was ") += splitData.size());
-
     vector<double> numbers = vector<double>();
 
-    for (string number : splitData) {
+    for (string delimiter : delimiters) {
+        string number =  utilities::getDelimitedValueFromRawString(data, delimiter);
         numbers.push_back(stod(number));
     }
 
     time_t delay = numbers[0];
-    madgwickRotations::Vector accelerometerData = Vector(numbers[1],numbers[2],numbers[3]);
-    madgwickRotations::Vector gyroscopeData = Vector(numbers[4],numbers[5],numbers[6]);
+
+    madgwickRotations::Vector gyroscopeData = Vector(numbers[1], numbers[2], numbers[3]);
+    madgwickRotations::Vector accelerometerData = Vector(numbers[4],numbers[5],numbers[6]);
     madgwickRotations::Vector magnetometerData = Vector(numbers[7],numbers[8],numbers[9]);
 
     this->setValue(delay, accelerometerData, magnetometerData, gyroscopeData);

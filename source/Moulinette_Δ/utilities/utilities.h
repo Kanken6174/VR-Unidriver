@@ -32,6 +32,7 @@ namespace utilities {
 	/// <param name="source">le vecteur de strings à traiter</param>
 	/// <returns>le premier string du vecteur</returns>
 	string getFirstAndRemoveFromVector(vector<string> source);
+	string getDelimitedValueFromRawString(string raw, string delimiter);
 	int stringToInt(string input);
 	bool stringToBool(string input);
 	float stringToFloat(string input);
