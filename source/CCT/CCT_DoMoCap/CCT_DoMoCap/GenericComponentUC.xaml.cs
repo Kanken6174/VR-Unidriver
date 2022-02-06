@@ -21,14 +21,45 @@ namespace CCT_DoMoCap
         public GenericComponentUC()
         {
             InitializeComponent();
+            ListeBox_AddItem();
+
         }
 
 
-        private void ListeBox_AddItem(object sender, EventArgs e)
+        private void ListeBox_AddItem()
         {
             LBGen.Items.Add("Test d'ajout à la listbox");
             LBGen.Items.Add("Et celui ci ?");
             LBGen.Items.Add("Un dernier pour le détour");
+            LBGen.Items.Add("Remplissage");
+            LBGen.Items.Add("Remplissage2");
+            LBGen.Items.Add("Remplissage3");
+            LBGen.Items.Add("Remplissage4");
+
+        }
+
+
+        private void ChangeLetter( KeyEventArgs e)
+        {
+           if (e.Key >= Key.A || e.Key <= Key.Z)
+            {
+                LetterBox.Content = e.Key.ToString();
+            }
+        }
+
+
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+
+            if (LetterBox.IsPressed == true && LetterBox.IsFocused == true)
+            {
+                if (Keyboard.IsKeyDown(e.Key))
+                {
+                    ChangeLetter(e);
+                }
+
+            }
 
         }
     }

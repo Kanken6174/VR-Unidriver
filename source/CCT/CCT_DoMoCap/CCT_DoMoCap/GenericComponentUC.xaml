@@ -13,10 +13,10 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox Grid.Column="0" Text="A" Width="50" Height="50" TextAlignment="Center" VerticalContentAlignment="Center" />
+        <ToggleButton Grid.Column="0" Content="A" Width="50" Height="50"  VerticalContentAlignment="Center" Name="LetterBox"  Keyboard.KeyDown="OnKeyDownHandler"  />
 
         <ListBox Grid.Column="1" Width="400" Height="75"  Name="LBGen"/>
 
-        <Button Height="50" Width="70" Click="ListeBox_AddItem">ClickHere</Button>
+        
     </Grid>
 </UserControl>
