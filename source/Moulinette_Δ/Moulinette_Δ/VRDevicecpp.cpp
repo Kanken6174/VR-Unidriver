@@ -38,12 +38,12 @@ void VRDevice::updateValues()
 
 		if (s != buf[0] && s >= 'A' && s <= 'Z' || s == NULL) {										// en présence d'une lettre		
 
-				cout << tmp_string << endl;
+				//cout << tmp_string << endl;
 				
 				for (VRComponent* component : this->components) {
 					
 					if (component->getFlag() == tmp_string) {
-						cout << conc << endl;
+						//cout << conc << endl;
 						component->receiveData(conc);
 						conc = "";
 						sw = false;

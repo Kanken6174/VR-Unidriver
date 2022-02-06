@@ -31,7 +31,7 @@ VRDevice lectureDMC(string file ) {
             char id = ligne[0];
             ligne = ligne.erase(0, 1);
             ligne.erase(remove(ligne.begin(), ligne.end(), '\n'), ligne.end()); //on enlve les \n parasites
-
+            //cout << ligne << endl;
             switch (id)
             {
             case '$':   // Nom

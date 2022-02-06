@@ -22,10 +22,10 @@ $mess
 =/pose/mag/x
 :6
 ~E
-=/pose/mag/y
+=/pose/acc/y
 :6
 ~F
-=/pose/mag/z
+=/pose/gyro/z
 :6
 ~G
 
