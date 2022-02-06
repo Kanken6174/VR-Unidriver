@@ -19,13 +19,8 @@ $mess
 =/input/x/click
 :1
 ~D 0 10
-=/pose/mag/x
+=/pose/device
 :6
-~E
-=/pose/acc/y
-:6
-~F
-=/pose/gyro/z
-:6
-~G
+~E|F|G
+
 

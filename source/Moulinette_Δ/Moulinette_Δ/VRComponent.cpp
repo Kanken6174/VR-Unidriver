@@ -1,5 +1,6 @@
 #include "VRComponent.h"
 #include "ComponentReflector.h"
+#include <iostream>
 
 void VRComponent::settype(int type)
 {
@@ -17,6 +18,7 @@ void VRComponent::setFlag(string flag)
 }
 
 string VRComponent::getFlag() {
+	//cout << VRComponent::flag << endl;
 	return VRComponent::flag;
 }
 

@@ -70,11 +70,19 @@ void VRDevice::updateValues()
 string VRDevice::to_string()
 {
 	string toReturn = "";
-
+	
 	//toReturn += std::to_string(this->lastLatency)+"|"+this->internalRotation->to_string();	//trame initiale (sans les composants)
 
 	for (VRComponent* component : this->components) {	//ajout des composants
-		toReturn += "|"+component->to_string();
+		if (component->gettype() == -1) {
+			toReturn += std::to_string(this->lastLatency) + "|" + component->to_string();	//trame initiale (sans les composants)
+			break;
+		}
+	}
+
+	for (VRComponent* component : this->components) {	//ajout des composants
+		if(component->gettype() != -1)
+			toReturn += "|"+component->to_string();
 	}
 
 	return toReturn;
@@ -93,6 +101,11 @@ void VRDevice::setName(string name)
 void VRDevice::setSerialport(SerialPort serial)
 {
 	this->serialPort = serial;
+}
+
+void VRDevice::setQuaternions(VRQuaternion* component)
+{
+	this->internalRotation = component;
 }
 
 void VRDevice::addComponents(VRComponent* component)
