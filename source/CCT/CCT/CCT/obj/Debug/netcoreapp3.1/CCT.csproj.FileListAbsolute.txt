@@ -5,3 +5,4 @@ C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT\CCT\obj\Debug\netcoreapp
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT\CCT\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT\CCT\obj\Debug\netcoreapp3.1\CCT_MarkupCompile.cache
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT\CCT\obj\Debug\netcoreapp3.1\CCT_MarkupCompile.lref
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT\CCT\obj\Debug\netcoreapp3.1\CCT.csprojAssemblyReference.cache

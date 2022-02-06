@@ -1,0 +1,42 @@
+﻿<Window x:Class="CCT_DoMoCap.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CCT_DoMoCap"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness ="2" BorderBrush="Black" >
+            <TextBlock Text="CCT" VerticalAlignment="Center" TextAlignment="Center" />
+        </Border>
+
+        <Border Grid.Column="1" BorderThickness ="2" BorderBrush="Black" >
+            
+        </Border>
+
+        <Border Grid.Row="1" BorderThickness ="2" BorderBrush="Black" >
+
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2" >
+            <Grid>
+                <local:GenericComponentUC  VerticalAlignment="Top" Margin="10" />
+                <local:Footer  VerticalContentAlignment="Bottom" Margin="10" />
+            </Grid>
+        </Border>
+
+        
+        
+    </Grid>
+</Window>
