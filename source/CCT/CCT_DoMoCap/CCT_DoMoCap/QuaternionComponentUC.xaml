@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="CCT_DoMoCap.QuaternionComponentUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CCT_DoMoCap"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <ToggleButton Grid.Column="0" Content="A" FontSize="22" Width="75" Height="75"  VerticalContentAlignment="Center" Name="LetterBox"  Keyboard.KeyDown="OnKeyDownHandler" VerticalAlignment="Top" Margin="25" />
+        <Grid Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+
+            <TextBlock Text="Type" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"    FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap"/>
+            <ListBox Grid.Column="1" Width="auto" Height="50"  Name="LBGen" VerticalAlignment="Center" Margin="25" FontSize="26" />
+
+            <TextBlock Grid.Row="1" Text="Magnetometric Correction Strength" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="1" Width="auto" Height="55"  VerticalAlignment="Center" Margin="25" VerticalContentAlignment="Center" FontSize="22" Name="MagnetoBox" />
+
+            <TextBlock Grid.Row="2" Text="Gyroscopic Correction Strength" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Width="auto" Height="55"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="22"  Margin="25" Name="GyroBox" />
+        </Grid>
+
+    </Grid>
+</UserControl>
