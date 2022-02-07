@@ -22,8 +22,9 @@ class madgwickRotations::MadgwickRotator
 private://attributes
 
 	/**
-	 * @brief LEO stands for Last Estimated Orientation. Needed to calculate current estimated orientation. Automatically updated.
-	 * 
+	 * @brief LEO stands for Last Estimated Orientation. 
+	 * Needed to calculate current estimated orientation. 
+	 * Automatically updated.
 	 */
 	Quaternion leo;
 

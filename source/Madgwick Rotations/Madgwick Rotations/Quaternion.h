@@ -24,13 +24,12 @@ public: //constructors
 	 * @param z Value for z
 	 * @param w Value for w
 	 */
-	Quaternion(double x, double y, double z, double w) : x(x), y(y), z(z), w(w) {}
+	Quaternion(double x, double y, double z, double w);
 
 	/**
-	 * @brief Construct a null Quaternion object
-	 * 
+	 * @brief Default constructor
 	 */
-	Quaternion() : x(0), y(0), z(0), w(0) {}
+	Quaternion();
 
 public: //methods defined in Quaternion.cpp
 	/**
@@ -91,8 +90,8 @@ private: //coordinates of a quaternion
 	double w; 
 
 public: //getters for the coordinates
-	double getX() { return x; }
-	double getY() { return y; }
-	double getZ() { return z; }
-	double getW() { return w; }
+	double getX();
+	double getY();
+	double getZ();
+	double getW();
 };

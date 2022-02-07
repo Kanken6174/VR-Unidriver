@@ -22,13 +22,12 @@ public: //constructors
 	 * @param y Value for y
 	 * @param z Value for z
 	 */
-	Vector(double x, double y, double z) : x(x), y(y), z(z) {}
+	Vector(double x, double y, double z);
 
 	/**
-	 * @brief Construct a null Vector object
-	 * 
+	 * @brief Default constructor 
 	 */
-	Vector() : x(0), y(0), z(0) {}
+	Vector();
 	
 public: //methods defined in Vector.cpp
 	/**
@@ -58,7 +57,7 @@ private: //coordinates of a vector
 	double z;
 
 public: //getters fpr the coordinates
-	double getX() { return x; }
-	double getY() { return y; }
-	double getZ() { return z; }
+	double getX();
+	double getY();
+	double getZ();
 };

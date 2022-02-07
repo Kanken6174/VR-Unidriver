@@ -9,6 +9,11 @@
 
 using namespace madgwickRotations;
 
+madgwickRotations::Quaternion::Quaternion(double x, double y, double z, double w)
+	: x(x), y(y), z(z), w(w){}
+
+madgwickRotations::Quaternion::Quaternion(){}
+
 Quaternion Quaternion::conjuguate() {
 	return Quaternion(x, -y, -z, -w);
 }
@@ -28,3 +33,8 @@ Quaternion Quaternion::multiplyByReal(double f) {
 Quaternion Quaternion::negative() {
 	return Quaternion(-x, -y, -z, -w);
 }
+
+double Quaternion::getX() { return x; }
+double Quaternion::getY() { return y; }
+double Quaternion::getZ() { return z; }
+double Quaternion::getW() { return w; }

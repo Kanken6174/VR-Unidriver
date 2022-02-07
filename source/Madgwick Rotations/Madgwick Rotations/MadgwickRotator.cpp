@@ -12,18 +12,19 @@ void MadgwickRotator::init(Vector zGyro, Vector zAccel, Vector zMagneto) {
 	this->zAccel = zAccel;
 	this->zMagneto = zMagneto;
 	inited = true;
+	leo = Quaternion(0, 0, 0, 0);
 }
 void MadgwickRotator::setAStepSize(float value) { aStepSize = value; }
 
 void MadgwickRotator::setMStepSize(float value) { mStepSize = value; }
 
-Quaternion MadgwickRotator::update(time_t delay, Vector g, Vector a, Vector m) {
+Quaternion MadgwickRotator::update(time_t delay, Vector gyroscope, Vector accelerometer, Vector magnetometer) {
 	Quaternion change, aCorrection, mCorrection;
 
-	if (!inited) init(g, a, m);
-	aCorrection = correctionFunction(a, zGyro);
-	mCorrection = correctionFunction(m, zMagneto);
-	change = changeSincePrevious(g, aCorrection, mCorrection);
+	if (!inited) init(gyroscope, accelerometer, magnetometer);
+	aCorrection = correctionFunction(accelerometer, zGyro);
+	mCorrection = correctionFunction(magnetometer, zMagneto);
+	change = changeSincePrevious(gyroscope, aCorrection, mCorrection);
 	leo = addQuaternions(leo, change.multiplyByReal(delay / 1000.0));
 	return leo;
 }

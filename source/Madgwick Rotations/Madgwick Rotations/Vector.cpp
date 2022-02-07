@@ -12,6 +12,15 @@
 
 using namespace madgwickRotations;
 
+madgwickRotations::Vector::Vector(double x, double y, double z)
+	: x(x), y(y), z(z) {}
+
+madgwickRotations::Vector::Vector(){}
+
 Quaternion Vector::toQuaternion() {
 	return Quaternion(x, y, z, 0);
 }
+
+double Vector::getX() { return x; }
+double Vector::getY() { return y; }
+double Vector::getZ() { return z; }
