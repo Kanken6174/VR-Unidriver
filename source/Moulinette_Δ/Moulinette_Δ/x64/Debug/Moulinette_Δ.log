@@ -1,0 +1,8 @@
+﻿  VRQuaternion.cpp
+D:\Documents\repos\domocap\source\Moulinette_Δ\Moulinette_Δ\VRQuaternion.cpp(43,18): warning C4244: 'initialisation' : conversion de '_Ty' en 'time_t', perte possible de données
+          with
+          [
+              _Ty=double
+          ]
+VRQuaternion.obj : error LNK2019: symbole externe non résolu "public: struct madgwickRotations::Quaternion __cdecl madgwickRotations::MadgwickRotator::update(__int64,struct madgwickRotations::Vector,struct madgwickRotations::Vector,struct madgwickRotations::Vector)" (?update@MadgwickRotator@madgwickRotations@@QEAA?AUQuaternion@2@_JUVector@2@11@Z) référencé dans la fonction "private: void __cdecl VRQuaternion::setValue(__int64,struct madgwickRotations::Vector,struct madgwickRotations::Vector,struct madgwickRotations::Vector)" (?setValue@VRQuaternion@@AEAAX_JUVector@madgwickRotations@@11@Z)
+D:\Documents\repos\domocap\source\Moulinette_?\x64\Debug\Moulinette_?.exe : fatal error LNK1120: 1 externes non résolus

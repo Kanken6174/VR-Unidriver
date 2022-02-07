@@ -9,8 +9,8 @@
 #include<string>
 
 #include "../utilities/utilities.h"
-#include"../../madgwickRotations library/Quaternion.h"
-#include"../../madgwickRotations library/Vector.h"
+#include"../Rotations/Quaternion.h"
+#include"../Rotations/Vector.h"
 
 using namespace std;
 using namespace madgwickRotations;
