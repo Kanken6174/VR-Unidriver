@@ -1,7 +1,7 @@
 #pragma once
 #include"includes.h"
 #include"VRComponent.h"
-#include"../../madgwickRotations library/MadgwickRotator.h"
+#include"../../Madgwick Rotations/Madgwick Rotations/MadgwickRotator.h"
 
 /// <summary>
 /// Cette classe représente le quaternion de rotation d'un appareil unique, il en existe un par appareil et il est construit

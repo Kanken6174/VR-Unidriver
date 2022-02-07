@@ -1,0 +1,29 @@
+﻿  IPCServer.cpp
+D:\Documents\repos\domocap\source\Moulinette_Δ\IPCPIPE\IPCServer.cpp(56,6): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
+  utilities.cpp
+  Device.cpp
+  serialPort.cpp
+  stringUtilities.cpp
+  ComponentReflector.cpp
+D:\Documents\repos\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.h(28,2): warning C4091: 'static ' : ignoré à gauche de 'ComponentReflector' quand aucune variable n'est déclarée
+  main.cpp
+D:\Documents\repos\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.h(28,2): warning C4091: 'static ' : ignoré à gauche de 'ComponentReflector' quand aucune variable n'est déclarée
+  VRAnalog.cpp
+  VRBoolean.cpp
+  VRComponent.cpp
+D:\Documents\repos\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.h(28,2): warning C4091: 'static ' : ignoré à gauche de 'ComponentReflector' quand aucune variable n'est déclarée
+  VRDevicecpp.cpp
+D:\Documents\repos\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.h(28,2): warning C4091: 'static ' : ignoré à gauche de 'ComponentReflector' quand aucune variable n'est déclarée
+D:\Documents\repos\domocap\source\Moulinette_Δ\Moulinette_Δ\VRDevicecpp.cpp(21,5): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+  VRQuaternion.cpp
+D:\Documents\repos\domocap\source\Moulinette_Δ\Moulinette_Δ\VRQuaternion.cpp(43,18): warning C4244: 'initialisation' : conversion de '_Ty' en 'time_t', perte possible de données
+          with
+          [
+              _Ty=double
+          ]
+  VRRelative.cpp
+  Génération de code en cours...
+D:\Documents\repos\domocap\source\Moulinette_Δ\Moulinette_Δ\main.cpp(135): warning C4715: 'lectureDMC' : les chemins de contrôle ne retournent pas tous une valeur
+D:\Documents\repos\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.cpp(44): warning C4715: 'ComponentReflector::requestDataFromComponent' : les chemins de contrôle ne retournent pas tous une valeur
+VRQuaternion.obj : error LNK2019: symbole externe non résolu "public: struct madgwickRotations::Quaternion __cdecl madgwickRotations::MadgwickRotator::update(__int64,struct madgwickRotations::Vector,struct madgwickRotations::Vector,struct madgwickRotations::Vector)" (?update@MadgwickRotator@madgwickRotations@@QEAA?AUQuaternion@2@_JUVector@2@11@Z) référencé dans la fonction "private: void __cdecl VRQuaternion::setValue(__int64,struct madgwickRotations::Vector,struct madgwickRotations::Vector,struct madgwickRotations::Vector)" (?setValue@VRQuaternion@@AEAAX_JUVector@madgwickRotations@@11@Z)
+D:\Documents\repos\domocap\source\Moulinette_Δ\x64\Debug\Moulinette_Δ.exe : fatal error LNK1120: 1 externes non résolus
