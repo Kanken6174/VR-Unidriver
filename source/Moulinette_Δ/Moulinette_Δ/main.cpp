@@ -1,14 +1,5 @@
-#include"VRAnalog.h"
-#include"VRComponent.h"
-#include"VRRelative.h"
-#include "VRBoolean.h"
-#include "VRQuaternion.h"
-#include "VRDevice.h"
+#include "VRDevice.h"	
 
-#include "ComponentReflector.h"	
-
-#include<vector>
-#include<iostream>
 
 
 char* portName(string U) {
@@ -144,39 +135,5 @@ int main(int argc, char* argv[]) {
     cout << devices.to_string() << endl;
     cout << "---------------------------" << endl;
  
-
-
-
-
-    
-    /*
-    VRAnalog* test = new VRAnalog();
-    test->setFlag("A");
-    VRRelative* test2 = new VRRelative();
-    vector<VRComponent*> composants = vector<VRComponent*>();
-    composants.push_back(test);
-    composants.push_back(test2);
-
-    SerialPort w;
-    VRDevice* device = new VRDevice("test", composants, &w);
-
-
-    for (int i = 0; i < 10; i++) {
-        for (VRComponent* component : composants) {
-            component->receiveData(std::to_string(i * 24));
-        }
-    }
-
-    for (VRComponent* component : composants) {
-        ComponentReflector::provideDataToComponent(component, std::to_string(24*4));
-    }
-
-    for (VRComponent* component : composants) {
-        std::cout << component->to_string() << endl;
-        std::cout << component->getFlag() << endl;
-    }
-    
-    cout << device->to_string() << endl;
-    */
 }
 
