@@ -1,85 +1,106 @@
 #include "VRDevice.h"
-#include <stdexcept>
-#include <iostream>
-#include <fstream>
-#include <sstream>
 
+VRDevice::VRDevice(string nom, vector<VRComponent*> components, SerialPort serialPort) {
+	this->serialPort = serialPort;
+	this->components = components;
+	this->nom = nom;
+}
 
-
-
-VRDevice::VRDevice(list<VRComponent> , SerialPort serial)
+VRDevice::VRDevice()
 {
-	this->serialPort = serial;
-	this->components = Vrcomponents;
 }
 
-void VRDevice::updateValues(){
-    requestTramDevice(this->lastLatence,this->components, this->serialPort);
+void VRDevice::updateValues()
+{
+
+	string buf = requestTram();
+
+
+	string quaternion = "";
+	int i_quaternion = 0;
+
+	for (VRComponent* component : this->components) {
+
+		string tmp_flag = component->getFlag();
+		vector<string> tmp = utilities::split(tmp_flag, '|');
+
+		for (string elem : tmp) {
+
+			string nul = getDelimitedValueFromRawString(buf, elem);
+			if (component->gettype() == -1) {
+				quaternion += nul + "|";
+				i_quaternion++;
+				if (i_quaternion == 3)												// 9 donnée de quaternions 3*{x,y,z}
+					component->receiveData(quaternion);
+			}
+			else {
+				component->receiveData(nul);
+			}
+		}
+	}
 }
 
-
-string VRDevice::to_string(){
-    list<VRComponent>::iterator it;
-    string message;
-    it=components.begin();
-    while(it != components.end()){
-		message += components.value+"|";
-    }
-    return message;
-}
-
-
-void requestTramDevice(float lastLatence, list<VRComponent> components, SerialPort w) {
+string VRDevice::requestTram()
+{
 	clock_t t;
-
 	char buf[1024];
 
-	string ask = "#";							//symbole envoy? a l arduino
+	string ask = "#";							//symbole envoyé a l arduino
 	t = clock();
-	if (!w.send(ask.c_str(), ask.length()))
+
+	if (!this->serialPort.send(ask.c_str(), ask.length()))
 		throw runtime_error("Erreur send Packet !");
 
+	memset(buf, NULL, 1024);					//mise a NULL tout les éléments du buffeur
 
-	memset(buf, NULL, 1024);					//mise a NULL tout les ?l?ments du buffeur
-	if (!w.receive(buf, 1024))						//reception des donn?es arduino
+	if (!this->serialPort.receive(buf, 1024))						//reception des données arduino
 		throw runtime_error("Erreur receive Packet!");
+
 	t = clock() - t;
-	lastLatence = (((float)t) / CLOCKS_PER_SEC);
+	this->lastLatency = (((float)t) / CLOCKS_PER_SEC);
 
-	if (buf[0] != 'A')
-		return;
+	cout << buf << endl;									//recupere la tram
 
-	//cout << buf << endl;
+	return buf;
+}
 
-	string conc;								//string pour la concatenation
-	list<VRDevice::Prop>::iterator it;
-	bool sw = false;
-	for (char s : buf) {
+string VRDevice::to_string()
+{
+	string toReturn = "";
 
-		if (s >= 'A' && s <= 'Z' || s == NULL) {										// en pr?sence d'une lettre
-			if (sw) {
-				float val = 0;
-				istringstream iss(conc);									//transformation du string en int 
-				iss >> val;
-				it->valeur = val;
-				sw = false;
-				conc = "";
-			}
-			sw = true;
-			it = components.begin();
-			while (it != components.end()) {
-				string tmp_string(1, s);
-				if (it->flag == tmp_string) {
-					break;
-				}
-				it++;
-			}
-		}
-		else if (s >= '0' && s <= '9' || s == '-') {
-			conc += s;
-		}
+	//toReturn += std::to_string(this->lastLatency)+"|"+this->internalRotation->to_string();	//trame initiale (sans les composants)
 
-		if (s == NULL)
+	for (VRComponent* component : this->components) {	//ajout des composants
+		if (component->gettype() == -1) {
+			toReturn += std::to_string(this->lastLatency) + "|" + component->to_string();	//trame initiale (sans les composants)
 			break;
+		}
 	}
+
+	for (VRComponent* component : this->components) {	//ajout des composants
+		if (component->gettype() != -1)
+			toReturn += "|" + component->to_string();
+	}
+
+	return toReturn;
+}
+
+string VRDevice::getName()
+{
+	return this->nom;
+}
+
+void VRDevice::setName(string name)
+{
+	this->nom = name;
+}
+
+void VRDevice::setSerialport(SerialPort serial)
+{
+	this->serialPort = serial;
+}
+
+void VRDevice::addComponents(VRComponent* component)
+{
+	this->components.push_back(component);
 }

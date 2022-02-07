@@ -105,7 +105,7 @@
     <ClCompile Include="ComponentReflector.cpp">
       <Filter>Fichiers sources\typeutils</Filter>
     </ClCompile>
-    <ClCompile Include="VRDevicecpp.cpp">
+    <ClCompile Include="VRDevice.cpp">
       <Filter>Fichiers sources\devices</Filter>
     </ClCompile>
     <ClCompile Include="..\Rotations\madgwickRotations.cpp">
