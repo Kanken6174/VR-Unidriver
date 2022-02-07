@@ -143,6 +143,10 @@
   <ItemGroup>
     <ClCompile Include="..\IPCPIPE\IPCServer.cpp" />
     <ClCompile Include="..\IPCPIPE\utilities.cpp" />
+    <ClCompile Include="..\Rotations\madgwickRotations.cpp" />
+    <ClCompile Include="..\Rotations\MadgwickRotator.cpp" />
+    <ClCompile Include="..\Rotations\Quaternion.cpp" />
+    <ClCompile Include="..\Rotations\Vector.cpp" />
     <ClCompile Include="..\SerialPort\Device.cpp" />
     <ClCompile Include="..\SerialPort\serialPort.cpp" />
     <ClCompile Include="..\utilities\stringUtilities.cpp" />
@@ -157,6 +161,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\IPCPIPE\IPCServer.h" />
+    <ClInclude Include="..\Rotations\madgwickRotations.h" />
+    <ClInclude Include="..\Rotations\MadgwickRotator.h" />
+    <ClInclude Include="..\Rotations\Quaternion.h" />
+    <ClInclude Include="..\Rotations\Vector.h" />
     <ClInclude Include="..\SerialPort\Device.h" />
     <ClInclude Include="..\SerialPort\serialPort.h" />
     <ClInclude Include="..\utilities\utilities.h" />

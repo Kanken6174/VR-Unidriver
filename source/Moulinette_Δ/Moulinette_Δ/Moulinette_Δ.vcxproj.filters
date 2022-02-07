@@ -61,6 +61,12 @@
     <Filter Include="Fichiers sources\devices">
       <UniqueIdentifier>{a98fb4b1-e0e9-4bcc-be47-1689ec6467af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\rotations">
+      <UniqueIdentifier>{44405968-ebb4-40a3-8d23-fa1c208adf8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\rotations">
+      <UniqueIdentifier>{12347cff-4188-4db6-a691-0df4e19ce73d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\IPCPIPE\utilities.cpp">
@@ -101,6 +107,18 @@
     </ClCompile>
     <ClCompile Include="VRDevicecpp.cpp">
       <Filter>Fichiers sources\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Rotations\madgwickRotations.cpp">
+      <Filter>Fichiers sources\rotations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Rotations\MadgwickRotator.cpp">
+      <Filter>Fichiers sources\rotations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Rotations\Quaternion.cpp">
+      <Filter>Fichiers sources\rotations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Rotations\Vector.cpp">
+      <Filter>Fichiers sources\rotations</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +163,18 @@
     </ClInclude>
     <ClInclude Include="componentHeaders.h">
       <Filter>Fichiers d%27en-tête\components\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Rotations\madgwickRotations.h">
+      <Filter>Fichiers d%27en-tête\rotations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Rotations\MadgwickRotator.h">
+      <Filter>Fichiers d%27en-tête\rotations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Rotations\Quaternion.h">
+      <Filter>Fichiers d%27en-tête\rotations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Rotations\Vector.h">
+      <Filter>Fichiers d%27en-tête\rotations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
