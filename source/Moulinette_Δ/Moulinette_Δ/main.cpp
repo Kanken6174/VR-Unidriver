@@ -1,11 +1,7 @@
 #include "VRDevice.h"	
 #include "../IPCPIPE/IPCServer.h"
 
-char* portName(string U) {
-    char* src = new char[U.length() + 1];
-    strcpy_s(src, U.length() + 1, U.c_str());
-    return src;
-}
+
 
 VRDevice lectureDMC(string file ) {
     ifstream fichier(file, ios::in);
@@ -28,10 +24,10 @@ VRDevice lectureDMC(string file ) {
                 device.setName(ligne);
                 break;
             case '&':   // Port COM
-                w.setPort(portName(ligne));
+                w.setPort(stringToChar(ligne));
                 break;
             case '!':   // baudrate a terminer
-                w.setBaudrate(74880);
+                w.setBaudrate(stringToInt(ligne));
                 break;
             case '=':   // nouvel input = nouveau flag 
 
@@ -94,7 +90,8 @@ VRDevice lectureDMC(string file ) {
                 getline(fichier, ligne);
                 ligne = ligne.erase(0, 1);
                 component->setFlag(ligne);      //le flag d'un quaternion est de la forme A|B|C|D|E|F|G|H|I (9 tags car 3x3 [gyro[xyz], acc[xyz], mag[xyz]])
-                device.addComponents(component); }
+                device.addComponents(component); 
+                }
                     break;
                 default:
                     //"DEFAULT"
@@ -133,7 +130,7 @@ int main(int argc, char* argv[]) {
 
     cout << devices.to_string() << endl;
     cout << "---------------------------" << endl;
-
+    /*
     string received = "";
     PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeMoulinette");
 
@@ -144,5 +141,6 @@ int main(int argc, char* argv[]) {
         cout << "got request!!! Sending data right away...\n";
         ps->WriteToPipe(devices.to_string(), "\\\\.\\pipe\\pipeDriver");
     }
+    */
 }
 

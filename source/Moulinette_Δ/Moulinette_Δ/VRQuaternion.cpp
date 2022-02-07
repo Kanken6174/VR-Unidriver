@@ -24,30 +24,17 @@ string VRQuaternion::to_string()
 
 void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont. delay doit être **au début** du string
 {
+    cout << data << endl;
     vector<string> splitData = vector<string>();
     vector<double> numbers = vector<double>();
-    /*
-    cout << data << endl;
 
-    delimiters = utilities::split(this->getFlag(), '|');    //on récupère les 9 flages du composant
-
-    if (delimiters.size() != 9) //flags manquants ou en excès
-        return;
-
-    vector<double> numbers = vector<double>();
-
-    for (string delimiter : delimiters) {
-        string number =  utilities::getDelimitedValueFromRawString(data, delimiter);
-        numbers.push_back(stod(number));
-    }
-    */
     splitData = utilities::split(data, '|');
 
     for (string data : splitData) {
         numbers.push_back(utilities::stringToDouble(data));
     }
 
-    time_t delay = numbers[0];
+    time_t delay = numbers[0]*1000;
 
     madgwickRotations::Vector gyroscopeData = Vector(numbers[1], numbers[2], numbers[3]);
     madgwickRotations::Vector accelerometerData = Vector(numbers[4],numbers[5],numbers[6]);

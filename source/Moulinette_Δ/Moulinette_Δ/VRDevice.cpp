@@ -16,7 +16,7 @@ void VRDevice::updateValues()
 	string buf = requestTram();
 
 
-	string quaternion = "";
+	string quaternion = std::to_string(this->lastLatency)+"|";
 	int i_quaternion = 0;
 
 	for (VRComponent* component : this->components) {
@@ -30,7 +30,7 @@ void VRDevice::updateValues()
 			if (component->gettype() == -1) {
 				quaternion += nul + "|";
 				i_quaternion++;
-				if (i_quaternion == 3)												// 9 donnée de quaternions 3*{x,y,z}
+				if (i_quaternion == 9)												// 9 donnée de quaternions 3*{x,y,z}
 					component->receiveData(quaternion);
 			}
 			else {
@@ -71,6 +71,7 @@ string VRDevice::to_string()
 	//toReturn += std::to_string(this->lastLatency)+"|"+this->internalRotation->to_string();	//trame initiale (sans les composants)
 
 	for (VRComponent* component : this->components) {	//ajout des composants
+		
 		if (component->gettype() == -1) {
 			toReturn += std::to_string(this->lastLatency) + "|" + component->to_string();	//trame initiale (sans les composants)
 			break;
