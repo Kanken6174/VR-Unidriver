@@ -12,6 +12,36 @@ VRDevice::VRDevice()
 
 void VRDevice::updateValues()
 {
+
+	string buf = requestTram();
+
+
+	string quaternion = "";
+	int i_quaternion = 0;
+
+	for (VRComponent* component : this->components) {
+
+		string tmp_flag = component->getFlag();
+		vector<string> tmp = utilities::split(tmp_flag, '|');
+
+		for (string elem : tmp) {
+
+			string nul = getDelimitedValueFromRawString(buf, elem);
+			if (component->gettype() == -1) {
+				quaternion += nul + "|";
+				i_quaternion++;
+				if (i_quaternion == 3)												// 9 donnée de quaternions 3*{x,y,z}
+					component->receiveData(quaternion);
+			}
+			else {
+				component->receiveData(nul);
+			}
+		}
+	}
+}
+
+string VRDevice::requestTram()
+{
 	clock_t t;
 	char buf[1024];
 
@@ -31,57 +61,13 @@ void VRDevice::updateValues()
 
 	cout << buf << endl;									//recupere la tram
 
-	string conc;								//string pour la concatenation
-	bool sw = false;
-	string flag(1, buf[0]);
-	string quaternion = "";
-	int i_quaternion = 0;
-	for (char s : buf) {
-		if (s >= 'A' && s <= 'Z' || s == NULL) {										// en présence d'une lettre	
-		
-			if (sw) {
-				for (VRComponent* component : this->components) {
-
-					string tmp_flag = component->getFlag();
-					vector<string> tmp = utilities::split(tmp_flag, '|');
-
-					for (string elem : tmp) {
-						if (elem == flag) {
-							if (component->gettype() == -1) {
-								quaternion += conc + "|";
-								i_quaternion++;
-
-								if(i_quaternion ==3)
-									component->receiveData(quaternion);
-							}
-							else {
-								component->receiveData(conc);
-							}
-							conc = "";
-							sw = false;
-							break;
-						}
-					}
-
-				}
-				flag = s;
-			}
-			sw = true;
-		}
-		else if (s >= '0' && s <= '9' || s == '-') {
-			conc += s;
-		}
-
-		if (s == NULL)
-			break;
-	}
-
+	return buf;
 }
 
 string VRDevice::to_string()
 {
 	string toReturn = "";
-	
+
 	//toReturn += std::to_string(this->lastLatency)+"|"+this->internalRotation->to_string();	//trame initiale (sans les composants)
 
 	for (VRComponent* component : this->components) {	//ajout des composants
@@ -92,8 +78,8 @@ string VRDevice::to_string()
 	}
 
 	for (VRComponent* component : this->components) {	//ajout des composants
-		if(component->gettype() != -1)
-			toReturn += "|"+component->to_string();
+		if (component->gettype() != -1)
+			toReturn += "|" + component->to_string();
 	}
 
 	return toReturn;
@@ -112,11 +98,6 @@ void VRDevice::setName(string name)
 void VRDevice::setSerialport(SerialPort serial)
 {
 	this->serialPort = serial;
-}
-
-void VRDevice::setQuaternions(VRQuaternion* component)
-{
-	this->internalRotation = component;
 }
 
 void VRDevice::addComponents(VRComponent* component)

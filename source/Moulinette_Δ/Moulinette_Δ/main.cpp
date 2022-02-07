@@ -141,10 +141,8 @@ int main(int argc, char* argv[]) {
         received = ps->ReadPipe();
         cout << "Received data\n";
         cout << received;
-        Sleep(1400);
         cout << "got request!!! Sending data right away...\n";
         ps->WriteToPipe(devices.to_string(), "\\\\.\\pipe\\pipeDriver");
-        Sleep(100);
     }
 }
 
