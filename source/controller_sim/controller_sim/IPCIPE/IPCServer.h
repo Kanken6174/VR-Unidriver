@@ -27,6 +27,7 @@ private:
     std::string pipeName;   //le nom du tunnel, sous le format windows standard "\\.\\\\pipe\\nom_du_tunnel_ici"
     DWORD dwRead = 0;       //le nombre de caractères lus dans le tunnel (utilisé en interne)
     bool connected = false; // si le tunnel est connecté
+    bool isExternConnected = false;
 
 public:
     /// <summary>

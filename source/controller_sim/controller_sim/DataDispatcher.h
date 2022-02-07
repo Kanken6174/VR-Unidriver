@@ -17,14 +17,19 @@ using namespace vr;
 class DataDispatcher
 {
 	private:
+		string lastFrame = "";
 		/// Un vecteur contenant les données séparées de la trame d'arrivée, produite en interne en appellant <code>Split()</code> sur la trame brute.
 		vector<string> splitData;
 		/// Le nom du tunnel nommé local
-		string pipeName = "\\\\.\\pipe\\DriverPipe";
+		string pipeName = "\\\\.\\pipe\\pipeDriver";
 		/// Le nom du tunnel nommé distant (de la moulinette dans ce cas)
-		string targetName = "\\\\.\\pipe\\MoulinettePipe";
+		string targetName = "\\\\.\\pipe\\pipeMoulinette";
 		/// Le pointeur vers le PipeServer que cette class enrobe
 		PipeServer* localServer;
+
+		int cyclesToIgnore = 200;
+
+		bool dispatcherRunning = false;
 
 	public:
 		/// <summary>
@@ -40,4 +45,6 @@ class DataDispatcher
 		/// </summary>
 		/// <param name="drivers"> une collection de drivers (vecteur)</param>
 		virtual void feedPipeDataToDrivers(vector<DoMoDriver*> drivers);
+
+		virtual void doPipeAction();
 };

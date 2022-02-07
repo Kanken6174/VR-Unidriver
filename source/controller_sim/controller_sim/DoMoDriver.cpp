@@ -52,12 +52,7 @@
 
 	EVRInitError DoMoDriver::Activate(vr::TrackedDeviceIndex_t unObjectId)
 	{
-		if (ObsoleteMode) {
-			//ObsoleteActivation(unObjectId);
-		}
-		else {
-			ModernActivation(unObjectId);
-		}
+		ModernActivation(unObjectId);
 		DriverLog("________________________Registering components_______________");
 		for (VRcomponent* component : DoMoDriver::components) {	//foreach
 			EVRInputError ER = component->registerSelf();

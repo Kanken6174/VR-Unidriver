@@ -82,7 +82,6 @@ string VRDevice::to_string()
 		if (component->gettype() != -1)
 			toReturn += "|" + component->to_string();
 	}
-
 	return toReturn;
 }
 

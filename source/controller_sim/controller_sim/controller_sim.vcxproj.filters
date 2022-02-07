@@ -138,4 +138,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ressources\controller_sim\bin\win64\driverCfg.dmc">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\ressources\controller_sim\bin\win64\driverCfg_old.dmc">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

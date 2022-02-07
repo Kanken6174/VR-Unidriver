@@ -23,15 +23,15 @@ EVRInitError Controller_simDriverServer::Init(vr::IVRDriverContext* pDriverConte
 	InitDriverLog(vr::VRDriverLog());	//initialise le logging d'informations visible sur la console web
 
 	DriverLog("log inited\n");;
-	DriverLog("Connecting to named pipe...");
-	this->serverDispatcher = new DataDispatcher();
-	DriverLog("Successfully connected!");
 
 	DriverTemplates = utilities::ReadConfigAndBuildDrivers();
 	Drivers = utilities::makeDriversFromTemplates(DriverTemplates);
 	DriverLog("driver(s) inited\n");
 	RegisterInternalDrivers();
 	DriverLog("driver(s) registered");
+	DriverLog("Connecting to named pipe...");
+	this->serverDispatcher = new DataDispatcher();
+	DriverLog("Successfully connected!");
 	inited = true;
 
 	return VRInitError_None;
@@ -64,7 +64,7 @@ const char* const* Controller_simDriverServer::GetInterfaceVersions()
 void Controller_simDriverServer::RunFrame()
 {
 	if (inited) {
-		if (bool stubmode = true) {
+		if (false) {
 			for (DoMoDriver* driver : Controller_simDriverServer::Drivers) {	//stubbed mode
 				driver->RunFrameStub();
 			}

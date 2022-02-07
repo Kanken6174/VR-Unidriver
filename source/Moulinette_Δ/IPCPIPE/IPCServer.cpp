@@ -5,6 +5,14 @@ PipeServer::PipeServer(std::string pipeName) {
 	LPCSTR ptr = pipeName.c_str();
 
 	this->hPipe = CreateNamedPipeA(ptr, PIPE_ACCESS_DUPLEX, PIPE_TYPE_BYTE | PIPE_READMODE_BYTE | PIPE_WAIT, 1, 1024 * 16, 1024 * 16, NMPWAIT_WAIT_FOREVER, NULL);
+
+	if (!isConnected()) {
+		cout << "pipe failed to connect!!!\n";
+		cout << GetLastErrorAsString();
+	}
+	else {
+		cout << "successfully created pipe " + pipeName + " with handle " + std::to_string((DWORD)this->hPipe) + " invalid is " + std::to_string((DWORD)INVALID_HANDLE_VALUE) + "\n";
+	}
 }
 
 std::string PipeServer::ReadPipe() {
@@ -31,8 +39,10 @@ std::string PipeServer::ReadPipe() {
 
 bool PipeServer::WriteToPipe(std::string message, string targetPipe = "") {
 	message[message.length()] = '\0';
-	if (targetPipe == "")
+	if (targetPipe == "") {
+		cout << "target was null, set to self\n";
 		targetPipe = this->pipeName;
+	}
 
 	LPCSTR lpcStr = targetPipe.c_str();
 	DWORD dwordsEcrits = 0;
@@ -40,11 +50,13 @@ bool PipeServer::WriteToPipe(std::string message, string targetPipe = "") {
 	if (this->isExternConnected == true) {
 		this->isExternConnected = false;
 	}
-
-	BOOL returned = WaitNamedPipeA(lpcStr, 2000);
+	cout << "Waiting for named pipe...\n";
+	BOOL returned = WaitNamedPipeA(lpcStr, 1000);	
 	if (returned == 0) {
+		cout << "waiting for a pipe on " + targetPipe + " timed out\n";
 		return false;
 	}
+	cout << "Done\n";
 	this->externPipe = CreateFileA(lpcStr, GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, 0, NULL);
 	this->isExternConnected = (this->externPipe != INVALID_HANDLE_VALUE);
 
@@ -53,14 +65,22 @@ bool PipeServer::WriteToPipe(std::string message, string targetPipe = "") {
 		LPDWORD dwordPtr = &dwordsEcrits;
 
 		if (!WriteFile(this->externPipe, message.c_str(), message.length() + 1, dwordPtr, NULL)) {
+			cout << "failed to write to "+ std::to_string((DWORD)this->externPipe) +"\n";
 			return false;
 		}
 		bool returned = CloseHandle(this->externPipe);
-		if (returned)
+		if (returned) {
 			if (this->externPipe != INVALID_HANDLE_VALUE)
 				this->externPipe = INVALID_HANDLE_VALUE;
+		}
+		else {
+			cout << "failed to close handle\n";
+		}
+
 	}
 	else {
+		CloseHandle(this->externPipe);
+		cout << "was not connected, write attempt failed\n";
 		return false;
 	}
 	return true;

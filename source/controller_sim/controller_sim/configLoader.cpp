@@ -14,7 +14,11 @@ namespace utilities {
 
 	vector<DriverDataTemplate*> ReadConfigAndBuildDrivers() {
 		ifstream driverCfgFile;	//create readonly stream
-		string filePath = "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\ressources\\controller_sim\\bin\\win64\\driverCfg.dmc";
+		//wstring path;
+		//PWSTR* pathptr = new PWSTR();
+		//SHGetKnownFolderPath(FOLDERID_AppDataProgramData, 0, NULL, pathptr);
+		string filePath = "C:\\Users\\Yorick\\AppData\\Roaming\\.DoMoCap\\driverCfg.dmc";	//full path
+		DriverLog(("Opening configuration file from "+filePath).c_str());
 		driverCfgFile.open(filePath);	//proprietary config file -> .doMoCap -> .dmc
 
 		if (!driverCfgFile) {

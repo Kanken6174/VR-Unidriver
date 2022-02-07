@@ -140,7 +140,10 @@ int main(int argc, char* argv[]) {
         //cout << received;
         devices.updateValues();
         //cout << " got request!!! Sending data right away...\n";
-        ps->WriteToPipe(devices.to_string(), "\\\\.\\pipe\\pipeDriver");
+        string toSend = devices.to_string();
+        cout << toSend + "\n";
+        Sleep(20);
+        bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
 
 }
