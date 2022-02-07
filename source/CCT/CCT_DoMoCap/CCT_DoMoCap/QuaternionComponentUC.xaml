@@ -26,13 +26,15 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Type" VerticalAlignment="Center" HorizontalAlignment="Center"    FontSize="18" FontWeight="DemiBold" TextWrapping="Wrap"/>
+
+
+            <TextBlock Text="Type" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"    FontSize="18" FontWeight="DemiBold" TextWrapping="Wrap"/>
             <ListBox Grid.Column="1" Width="auto" Height="55"  Name="LBGen" VerticalAlignment="Center" Margin="25" />
 
-            <TextBlock Grid.Row="1" Text="Magnetometric Correction Strength" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" />
+            <TextBlock Grid.Row="1" Text="Magnetometric Correction Strength" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" />
             <ListBox Grid.Column="1" Grid.Row="1" Width="auto" Height="55"  Name="Opt2" VerticalAlignment="Center" Margin="25"/>
 
-            <TextBlock Grid.Row="2" Text="Gyroscopic Correction Strength" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="18" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center"/>
+            <TextBlock Grid.Row="2" Text="Gyroscopic Correction Strength" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="18" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center"/>
             <ListBox Grid.Column="1" Grid.Row="2" Width="auto" Height="55"  Name="Opt3" VerticalAlignment="Center" Margin="25"/>
         </Grid>
 

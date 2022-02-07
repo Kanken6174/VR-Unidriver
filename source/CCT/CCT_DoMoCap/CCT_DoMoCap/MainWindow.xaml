@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
 
         <Border BorderThickness ="2" BorderBrush="Black" >
-            <TextBlock Text="CCT" VerticalAlignment="Center" TextAlignment="Center" />
+            <TextBlock Text="CCT" VerticalAlignment="Center" TextAlignment="Center" FontSize="22" />
         </Border>
 
         <Border Grid.Column="1" BorderThickness ="2" BorderBrush="Black" >
