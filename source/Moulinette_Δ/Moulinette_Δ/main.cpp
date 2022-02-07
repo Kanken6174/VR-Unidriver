@@ -130,17 +130,18 @@ int main(int argc, char* argv[]) {
 
     cout << devices.to_string() << endl;
     cout << "---------------------------" << endl;
-    /*
+
     string received = "";
     PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeMoulinette");
 
     while (true) {
         received = ps->ReadPipe();
-        cout << "Received data\n";
-        cout << received;
-        cout << "got request!!! Sending data right away...\n";
+        //cout << "Received data\n";
+        //cout << received;
+        devices.updateValues();
+        //cout << " got request!!! Sending data right away...\n";
         ps->WriteToPipe(devices.to_string(), "\\\\.\\pipe\\pipeDriver");
     }
-    */
+
 }
 

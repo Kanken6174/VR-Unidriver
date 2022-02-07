@@ -35,4 +35,5 @@ namespace utilities {
 	bool stringToBool(string input);
 	float stringToFloat(string input);
 	double stringToDouble(string input);
+	char* stringToChar(string U);
 }

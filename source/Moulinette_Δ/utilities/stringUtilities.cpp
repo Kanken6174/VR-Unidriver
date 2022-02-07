@@ -65,6 +65,12 @@ namespace utilities {
 		return toReturn;
 	}
 
+	char* stringToChar(string U) {
+		char* src = new char[U.length() + 1];
+		strcpy_s(src, U.length() + 1, U.c_str());
+		return src;
+	}
+
 	vector<float> delimitedStringToFloats(string input, char delimiter) {
 		vector<float> toReturn = vector<float>();
 		vector<string> temp = split(input, delimiter);

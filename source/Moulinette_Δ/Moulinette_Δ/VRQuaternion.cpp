@@ -24,7 +24,7 @@ string VRQuaternion::to_string()
 
 void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont. delay doit être **au début** du string
 {
-    cout << data << endl;
+    //cout << data << endl;
     vector<string> splitData = vector<string>();
     vector<double> numbers = vector<double>();
 

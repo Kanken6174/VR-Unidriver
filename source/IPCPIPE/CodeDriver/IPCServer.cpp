@@ -17,7 +17,7 @@ PipeServer::PipeServer(std::string pipeName) {
 std::string PipeServer::ReadPipe() {
 	std::string toReturn = "";
 	char buf[1024];
-	cout << "attempting to connect a client to the local pipe with handle " + std::to_string((DWORD)this->hPipe) + "\n";
+	//cout << "attempting to connect a client to the local pipe with handle " + std::to_string((DWORD)this->hPipe) + "\n";
 	do {
 		this->connected = ConnectNamedPipe(this->hPipe, NULL);
 		if (!this->connected) {
@@ -40,7 +40,7 @@ std::string PipeServer::ReadPipe() {
 		cout << "still not connected...\n";
 	}
 	if (this->connected) {
-		cout << "was connected, disconnecting...\n";
+		//cout << "was connected, disconnecting...\n";
 		bool  success = DisconnectNamedPipe(this->hPipe);
 		cout << success ? "Successfully disconnected" : "Error disconnecting" + GetLastErrorAsString();
 	}

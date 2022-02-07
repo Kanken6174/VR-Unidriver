@@ -59,7 +59,7 @@ string VRDevice::requestTram()
 	t = clock() - t;
 	this->lastLatency = (((float)t) / CLOCKS_PER_SEC);
 
-	cout << buf << endl;									//recupere la tram
+	//cout << buf << endl;									//recupere la tram
 
 	return buf;
 }
