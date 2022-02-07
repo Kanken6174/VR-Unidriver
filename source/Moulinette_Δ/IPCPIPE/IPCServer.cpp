@@ -12,7 +12,6 @@ std::string PipeServer::ReadPipe() {
 	char buf[1024];
 	do {
 		this->connected = ConnectNamedPipe(this->hPipe, NULL);
-		Sleep(100);
 	} while (this->connected == false);
 	if (this->connected) {
 		LPDWORD dwordPtr = &this->dwRead;    //juste un pointeur vers un DWORD

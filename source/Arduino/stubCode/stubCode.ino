@@ -15,7 +15,7 @@ char ID = 'R';
 
 void setup()
 {
-  Serial.begin(38400);
+  Serial.begin(74800);
   fV[0] = 0;
   fV[1] = 100;
   fV[2] = 200;

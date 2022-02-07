@@ -12,6 +12,9 @@
 #include <sstream>	//stringstream
 #include <regex>
 
+#define ERROR_STOD -2.2250738585072014
+#define ERROR_MAJOR -2.2250738585072013
+
 using namespace std;
 
 //-----------------------------------------Utilitaires---------------------------------------------

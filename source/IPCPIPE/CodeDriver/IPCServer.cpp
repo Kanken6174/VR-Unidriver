@@ -24,7 +24,6 @@ std::string PipeServer::ReadPipe() {
 			cout << "still not connected after connect call, retrying...\n";
 			cout << GetLastErrorAsString() + "\n";
 		}
-		Sleep(100);
 	} while (this->connected == false);
 	if (this->connected) {
 		LPDWORD dwordPtr = &this->dwRead;    //juste un pointeur vers un DWORD

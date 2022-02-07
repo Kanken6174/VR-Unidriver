@@ -31,7 +31,12 @@ void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont.
     splitData = utilities::split(data, '|');
 
     for (string data : splitData) {
-        numbers.push_back(utilities::stringToDouble(data));
+        double number = utilities::stringToDouble(data);
+        if (number == ERROR_STOD || number == ERROR_MAJOR) {
+            cout << "STOD return error";
+            return;
+        }
+        numbers.push_back(number);
     }
 
     time_t delay = numbers[0]*1000;

@@ -61,7 +61,15 @@ namespace utilities {
 
 	double stringToDouble(string input) {
 		double toReturn = 0;
-		toReturn = stod(input);
+		try {
+			toReturn = stod(input);
+		}
+		catch (std::invalid_argument err) {
+			return ERROR_STOD;
+		}
+		catch (exception e) {
+			return ERROR_MAJOR;
+		}
 		return toReturn;
 	}
 
