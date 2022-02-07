@@ -28,13 +28,10 @@ namespace CCT_DoMoCap
 
         private void ListeBox_AddItem()
         {
-            LBGen.Items.Add("Test d'ajout à la listbox");
-            LBGen.Items.Add("Et celui ci ?");
-            LBGen.Items.Add("Un dernier pour le détour");
-            LBGen.Items.Add("Remplissage");
-            LBGen.Items.Add("Remplissage2");
-            LBGen.Items.Add("Remplissage3");
-            LBGen.Items.Add("Remplissage4");
+            LBGen.Items.Add("Boolean");
+            LBGen.Items.Add("Relatif");
+            LBGen.Items.Add("Absolu");
+
 
         }
 
@@ -52,12 +49,11 @@ namespace CCT_DoMoCap
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
 
-            if (LetterBox.IsPressed == true && LetterBox.IsFocused == true)
+            if (LetterBox.IsChecked == true && LetterBox.IsFocused == true)
             {
-                if (Keyboard.IsKeyDown(e.Key))
-                {
-                    ChangeLetter(e);
-                }
+
+               ChangeLetter(e);
+               
 
             }
 

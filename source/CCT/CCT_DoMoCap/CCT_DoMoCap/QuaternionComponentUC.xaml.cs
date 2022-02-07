@@ -26,13 +26,7 @@ namespace CCT_DoMoCap
 
         private void ListeBox_AddItem()
         {
-            LBGen.Items.Add("Test d'ajout à la listbox");
-            LBGen.Items.Add("Et celui ci ?");
-            LBGen.Items.Add("Un dernier pour le détour");
-            LBGen.Items.Add("Remplissage");
-            LBGen.Items.Add("Remplissage2");
-            LBGen.Items.Add("Remplissage3");
-            LBGen.Items.Add("Remplissage4");
+            LBGen.Items.Add("Quaternion");
 
         }
 
@@ -49,16 +43,46 @@ namespace CCT_DoMoCap
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
 
-            if (LetterBox.IsPressed == true && LetterBox.IsFocused == true)
-            {
-                if (Keyboard.IsKeyDown(e.Key))
-                {
+            if (LetterBox.IsChecked == true && LetterBox.IsFocused == true)
+            {                   
                     ChangeLetter(e);
+            }
+
+        }
+
+        private void OnEnterVerifyFloatMagneto(object sender, KeyEventArgs e)
+        {
+
+            if (e.Key == Key.Return)
+            {
+                try {
+                    float mag = float.Parse(MagnetoBox.Text);
+                    
                 }
+                catch  (Exception ex)
+                {
+                    string err = ex.ToString();
+
+                    Console.WriteLine(err);
+                   
+                }
+               
+
+            }
+   
+
+        }
+
+        private void OnEnterVerifyFloatGyro(object sender, KeyEventArgs e)
+        {
+
+            if (e.Key == Key.Return)
+            {
 
             }
 
         }
+
 
     }
 }

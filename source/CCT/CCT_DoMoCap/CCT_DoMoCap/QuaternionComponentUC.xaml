@@ -28,14 +28,14 @@
 
 
 
-            <TextBlock Text="Type" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"    FontSize="18" FontWeight="DemiBold" TextWrapping="Wrap"/>
-            <ListBox Grid.Column="1" Width="auto" Height="55"  Name="LBGen" VerticalAlignment="Center" Margin="25" />
+            <TextBlock Text="Type" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"    FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap"/>
+            <ListBox Grid.Column="1" Width="auto" Height="50"  Name="LBGen" VerticalAlignment="Center" Margin="25" FontSize="26" />
 
-            <TextBlock Grid.Row="1" Text="Magnetometric Correction Strength" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" />
-            <ListBox Grid.Column="1" Grid.Row="1" Width="auto" Height="55"  Name="Opt2" VerticalAlignment="Center" Margin="25"/>
+            <TextBlock Grid.Row="1" Text="Magnetometric Correction Strength" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" />
+            <TextBox Grid.Column="1" Grid.Row="1" Width="auto" Height="55"  VerticalAlignment="Center" Margin="25" VerticalContentAlignment="Center" FontSize="22" Name="MagnetoBox" />
 
-            <TextBlock Grid.Row="2" Text="Gyroscopic Correction Strength" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="18" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center"/>
-            <ListBox Grid.Column="1" Grid.Row="2" Width="auto" Height="55"  Name="Opt3" VerticalAlignment="Center" Margin="25"/>
+            <TextBlock Grid.Row="2" Text="Gyroscopic Correction Strength" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Width="auto" Height="55"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="22"  Margin="25" Name="GyroBox" />
         </Grid>
 
     </Grid>

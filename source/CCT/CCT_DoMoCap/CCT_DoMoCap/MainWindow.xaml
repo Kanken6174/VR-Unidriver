@@ -13,8 +13,8 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
 
         <Border BorderThickness ="2" BorderBrush="Black" >
@@ -31,8 +31,20 @@
 
         <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2" >
             <Grid>
-                <local:GenericComponentUC  VerticalAlignment="Top" Margin="10" />
-                <local:Footer  VerticalContentAlignment="Bottom" Margin="10" />
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <ScrollViewer>
+                    <Grid>
+                        <local:QuaternionComponentUC  VerticalAlignment="Top" Margin="10" Padding="0,0,40,0" Height="auto" />
+                        
+                    </Grid>
+                </ScrollViewer>
+
+                <local:Footer  VerticalContentAlignment="Center" Margin="10" Grid.Row="1" />
             </Grid>
         </Border>
 

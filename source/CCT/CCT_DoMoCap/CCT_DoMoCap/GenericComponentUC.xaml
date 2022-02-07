@@ -16,7 +16,7 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <ToggleButton Grid.Column="0" Content="A" FontSize="22" Width="75" Height="75"  VerticalContentAlignment="Center" Name="LetterBox"  Keyboard.KeyDown="OnKeyDownHandler" VerticalAlignment="Top" Margin="25"  />
+            <ToggleButton Grid.Column="0" Content="A" FontSize="22" Width="75" Height="75"  VerticalContentAlignment="Center" Name="LetterBox"  KeyDown="OnKeyDownHandler" VerticalAlignment="Top" Margin="25"  />
 
 
             <Grid Grid.Column="1" >
@@ -36,7 +36,7 @@
                 <TextBlock Text="Type" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"    FontSize="18" FontWeight="DemiBold" TextWrapping="Wrap" />
                 </Border>
 
-                <ListBox Grid.Column="1" Width="auto" Height="55"  Name="LBGen" VerticalAlignment="Center" Margin="25"/>
+                <ListBox Grid.Column="1" Width="auto" Height="50"  Name="LBGen" VerticalAlignment="Center" Margin="25" FontSize="26" />
 
             </Grid>
 
