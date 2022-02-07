@@ -9,8 +9,6 @@
 #include<string>
 #include<vector>
 #include <fstream>
-#include "atlbase.h"
-#include "atlstr.h"
 #include <sstream>	//stringstream
 #include <regex>
 
