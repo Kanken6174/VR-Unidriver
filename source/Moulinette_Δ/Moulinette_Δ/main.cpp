@@ -1,6 +1,5 @@
 #include "VRDevice.h"	
-
-
+#include "../IPCPIPE/IPCServer.h"
 
 char* portName(string U) {
     char* src = new char[U.length() + 1];
@@ -134,6 +133,18 @@ int main(int argc, char* argv[]) {
 
     cout << devices.to_string() << endl;
     cout << "---------------------------" << endl;
- 
+
+    string received = "";
+    PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeMoulinette");
+
+    while (true) {
+        received = ps->ReadPipe();
+        cout << "Received data\n";
+        cout << received;
+        Sleep(1400);
+        cout << "got request!!! Sending data right away...\n";
+        ps->WriteToPipe(devices.to_string(), "\\\\.\\pipe\\pipeDriver");
+        Sleep(100);
+    }
 }
 
