@@ -86,9 +86,6 @@ bool Controller_simDriverServer::ShouldBlockStandbyMode() { return false; }
 void Controller_simDriverServer::EnterStandby() {/*standby code for the gloves here??*/ }
 void Controller_simDriverServer::LeaveStandby() {/*Wake up for the gloves here?*/ }
 
-
-Controller_simDriverServer controller_simServer;	//c'est global, c'est moche, c'est SteamVR
-
 /**
 * La fonction qui sera exportée vers OpenVR, il s'agit de
 * notre point d'entrée! (int main() en gros)
@@ -99,7 +96,8 @@ HMD_DLL_EXPORT FUNCTION_POINTER HmdDriverFactory(const char* pInterfaceName, int
 {
 	if (0 == strcmp("IServerTrackedDeviceProvider_004", pInterfaceName))	//on vérifie que le nom d'interface correspond
 	{
-		return &controller_simServer;	//on renvoie l'addresse de la classe du serveur du driver
+		Controller_simDriverServer* controller_simServer = new Controller_simDriverServer();
+		return controller_simServer;	//on renvoie l'addresse de la classe du serveur du driver
 	}
 
 	if (0 == strcmp(IVRWatchdogProvider_Version, pInterfaceName))
