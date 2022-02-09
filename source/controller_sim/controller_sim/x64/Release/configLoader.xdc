@@ -135,19 +135,19 @@ Cette fonction gère la mise à jour de valeurs par celles reçues du tunnel nom
 @date 16/01/2022
 
 </member>
-<member name="M:PipeServer.#ctor(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.h" line="33">
+<member name="M:PipeServer.#ctor(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.h" line="34">
 <summary>
 Le constructeur du PipeServer
 </summary>
 <param name="pipeName">Le nom système du tunnel, sous le format windows standard "\\.\\\\pipe\\nom_du_tunnel_ici"</param>
 </member>
-<member name="M:PipeServer.ReadPipe" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.h" line="38">
+<member name="M:PipeServer.ReadPipe" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.h" line="39">
 <summary>
 Permet de lire les données qui ont été écrites dans le tunnel nommé local (hPipe)
 </summary>
 <returns>Le texte lu depuis le tunnel nommé</returns>
 </member>
-<member name="M:PipeServer.WriteToPipe(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.h" line="43">
+<member name="M:PipeServer.WriteToPipe(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.h" line="44">
 <summary>
 Permet d'écrire vers un tunnel nommé spécifié
 </summary>
@@ -155,7 +155,7 @@ Permet d'écrire vers un tunnel nommé spécifié
 <param name="targetPipe"> Le nom système du tunnel nommé vers lequel écrire</param>
 <returns>Le succès ou l'échec de l'écriture</returns>
 </member>
-<member name="M:PipeServer.isConnected" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.h" line="50">
+<member name="M:PipeServer.isConnected" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.h" line="51">
 <returns>condition si le tunnel nommé local est fonctionnel (connecté) ou non</returns>
 </member>
 <member name="T:DataDispatcher" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\DataDispatcher.h" line="14">

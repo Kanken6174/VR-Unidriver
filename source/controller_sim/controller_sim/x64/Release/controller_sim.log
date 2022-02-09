@@ -1,9 +1,37 @@
-﻿  ctrlSimServer.cpp
+﻿  DataDispatcher.cpp
+  DoMoDriver.cpp
+  IPCServer.cpp
+Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(14): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
+Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(14): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
+Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(14): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
+Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(14): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
+Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(25): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
+Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(25): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
+Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(73): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
+Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(74): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
+Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(74): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
+  utilities.cpp
+  InterfaceRequires.cpp
+  Obsolete.cpp
+  Pose.cpp
+  PropertyUtilities.cpp
+  Register.cpp
+  RunFrame.cpp
+  Update.cpp
+  UpdateValues.cpp
+  component.cpp
+  configLoader.cpp
+  ctrlSimServer.cpp
 Y:\domocap\source\controller_sim\controller_sim\ctrlSimServer.cpp(21): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  dataObjects.h
+  driverlog.cpp
+  maths.cpp
+  stringUtilities.cpp
+  typeConverters.cpp
      Création de la bibliothèque Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib et de l'objet Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.exp
   Génération de code en cours
-  1 of 869 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    27 functions had inline decision re-evaluated but remain unchanged
+  51 of 878 functions ( 5.8%) were compiled, the rest were copied from previous compilation.
+    9 functions were new in current compilation
+    54 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   controller_sim.vcxproj -> Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll

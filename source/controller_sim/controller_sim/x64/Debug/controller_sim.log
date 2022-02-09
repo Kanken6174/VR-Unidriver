@@ -1,0 +1,15 @@
+﻿  dataObjects.h
+  The contents of <filesystem> are available only with C++17 or later.
+  typeConverters.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h(81,5): warning C5051: l'attribut 'maybe_unused' nécessite au moins '/std:c++17' ; ignoré
+Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h(82,5): warning C5051: l'attribut 'maybe_unused' nécessite au moins '/std:c++17' ; ignoré
+Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h(83,5): warning C5051: l'attribut 'maybe_unused' nécessite au moins '/std:c++17' ; ignoré
+Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h(84,5): warning C5051: l'attribut 'maybe_unused' nécessite au moins '/std:c++17' ; ignoré
+Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h(85,5): warning C5051: l'attribut 'maybe_unused' nécessite au moins '/std:c++17' ; ignoré
+Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h(86,5): warning C5051: l'attribut 'maybe_unused' nécessite au moins '/std:c++17' ; ignoré
+Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h(108,5): warning C5051: l'attribut 'maybe_unused' nécessite au moins '/std:c++17' ; ignoré
+  Génération de code en cours...
+Y:\domocap\source\controller_sim\controller_sim\typeConverters.cpp(15): warning C4172: retourne l'adresse d'une variable locale ou : resultBuff temporaire
+     Création de la bibliothèque Y:\domocap\source\controller_sim\x64\Debug\controller_sim.lib et de l'objet Y:\domocap\source\controller_sim\x64\Debug\controller_sim.exp
+  controller_sim.vcxproj -> Y:\domocap\source\controller_sim\x64\Debug\controller_sim.dll

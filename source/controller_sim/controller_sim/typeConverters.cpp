@@ -30,6 +30,7 @@ namespace utilities {
 			MultiByteToWideChar(CP_ACP, 0, toConvert.c_str(), lenA, output, lenW);
 		}
 		LPWSTR out = output;
+		return out;
 	}
 
 	//encore une autre méthode, utilisant CA2CT, c'est une covnersion ATL assez ancienne, mais elle devrait marcher
