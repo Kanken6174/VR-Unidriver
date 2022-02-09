@@ -6,15 +6,15 @@
 /// </summary>
 class VRComponent{
 private:
-	string flag;
+	vector<char> flag;
 	int sclType = -1;
 public:
 	virtual void settype(int type);
 	virtual int gettype();
 
-	virtual void setFlag(string flag);
+	virtual void setFlag(vector<char> flag);
 	//retourne la position du composant
-	virtual string getFlag();
+	virtual vector<char> getFlag();
 
 	//Envoie des données au composant
 	virtual void receiveData(string data);

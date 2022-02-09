@@ -47,9 +47,10 @@ VRDevice lectureDMC(string file ) {
                     //"ABSOLUTE_T";
                 {VRAnalog* component = new VRAnalog();
                 getline(fichier, ligne);
-                ligne = ligne.erase(0, 1); 
+                ligne = ligne.erase(0, 1);
                 ligne.erase(remove(ligne.begin(), ligne.end(), ' '), ligne.end());
-                string flag_string(1, ligne[0]);
+                vector<char> flag_string;
+                flag_string.push_back(ligne[0]);
                 component->setFlag(flag_string);
                 component->setMin(ligne[1]);
                 component->setMax(ligne[2]);
@@ -61,7 +62,8 @@ VRDevice lectureDMC(string file ) {
                 getline(fichier, ligne);
                 ligne = ligne.erase(0, 1);
                 ligne.erase(remove(ligne.begin(), ligne.end(), ' '), ligne.end());
-                string flag_string(1, ligne[0]);
+                vector<char> flag_string;
+                flag_string.push_back(ligne[0]);
                 component->setFlag(flag_string);
                 component->setMin(ligne[1]);
                 component->setMax(ligne[2]);
@@ -72,7 +74,9 @@ VRDevice lectureDMC(string file ) {
                 {VRBoolean* component = new VRBoolean();
                 getline(fichier, ligne);
                 ligne = ligne.erase(0, 1);
-                component->setFlag(ligne);
+                vector<char> flag_string;
+                flag_string.push_back(ligne[0]);
+                component->setFlag(flag_string);
                 device.addComponents(component); }
                     break;
                 case 3:
@@ -89,7 +93,8 @@ VRDevice lectureDMC(string file ) {
                 {VRQuaternion* component = new VRQuaternion();
                 getline(fichier, ligne);
                 ligne = ligne.erase(0, 1);
-                component->setFlag(ligne);      //le flag d'un quaternion est de la forme A|B|C|D|E|F|G|H|I (9 tags car 3x3 [gyro[xyz], acc[xyz], mag[xyz]])
+                vector<char> tmp = utilities::splitChar(ligne, '|');
+                component->setFlag(tmp);      //le flag d'un quaternion est de la forme A|B|C|D|E|F|G|H|I (9 tags car 3x3 [gyro[xyz], acc[xyz], mag[xyz]])
                 device.addComponents(component); 
                 }
                     break;
@@ -125,12 +130,12 @@ int main(int argc, char* argv[]) {
     
 
     VRDevice devices = lectureDMC("gant.dmc");
-
-    devices.updateValues();
+    devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues();
 
     cout << devices.to_string() << endl;
     cout << "---------------------------" << endl;
 
+    /*
     string received = "";
     PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeMoulinette");
 
@@ -145,6 +150,6 @@ int main(int argc, char* argv[]) {
         Sleep(20);
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
-
+    */
 }
 

@@ -20,13 +20,14 @@ void VRDevice::updateValues()
 	int i_quaternion = 0;
 
 	for (VRComponent* component : this->components) {
-
+		/*
 		string tmp_flag = component->getFlag();
 		vector<string> tmp = utilities::split(tmp_flag, '|');
-
-		for (string elem : tmp) {
-
-			string nul = getDelimitedValueFromRawString(buf, elem);
+		*/
+		vector<char> tmp = component->getFlag();
+		for (char elem : tmp) {
+			string c(1, elem);
+			string nul = getDelimitedValueFromRawString(buf, c);
 			if (component->gettype() == -1) {
 				quaternion += nul + "|";
 				i_quaternion++;
