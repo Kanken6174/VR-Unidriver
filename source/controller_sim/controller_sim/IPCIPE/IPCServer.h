@@ -22,7 +22,8 @@ dedans.
 */
 class PipeServer {
 private:
-    HANDLE hPipe = nullptr; //le handle du tunnel nommé local (seulement lu par le possesseur, écrit par les agents extérieurs)
+    HANDLE hPipe = INVALID_HANDLE_VALUE;
+    HANDLE externPipe = INVALID_HANDLE_VALUE; //le handle du tunnel nommé local (seulement lu par le possesseur, écrit par les agents extérieurs)
     char buffer[1024];      //le buffer qui permet de lire à partir du tunnel nommé (pas limité à 1024 caractères, on lit juste 1024 caractères à chaque fois)
     std::string pipeName;   //le nom du tunnel, sous le format windows standard "\\.\\\\pipe\\nom_du_tunnel_ici"
     DWORD dwRead = 0;       //le nombre de caractères lus dans le tunnel (utilisé en interne)
