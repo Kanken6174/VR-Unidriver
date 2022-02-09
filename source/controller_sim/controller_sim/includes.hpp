@@ -31,6 +31,7 @@
 #include "comutil.h"
 #include "shlobj_core.h"	//pour trouver %appdata%
 #include <sstream>
+#include <mutex>
 
 using namespace vr;		//on utilise l'espace de noms d'openVR � travers tout le projet
 using namespace std;	//idem pour l'espace de noms standard
