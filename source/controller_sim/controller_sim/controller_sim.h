@@ -30,7 +30,9 @@ class Controller_simDriverServer : public IServerTrackedDeviceProvider
 private:
 	vector<DriverDataTemplate*> DriverTemplates;
 	vector<DoMoDriver*> Drivers;
-	bool inited = false;
+	atomic<bool> inited = false;
+	atomic<bool> workThreadRunning = false;
+	thread workthread;
 	DataDispatcher* serverDispatcher = nullptr;	//sera bloquant tant que la communication ne sera pas établie
 
 	virtual void RegisterInternalDrivers();
@@ -44,6 +46,12 @@ public:
 	virtual bool ShouldBlockStandbyMode();
 	virtual void EnterStandby();
 	virtual void LeaveStandby();
+
+	virtual void beginThreadedWork();
+	virtual int doThreadedWork();
+	virtual void stopThreadedWork();
+
+	virtual bool shouldWorkThreadRun();
 };
 
 namespace utilities {

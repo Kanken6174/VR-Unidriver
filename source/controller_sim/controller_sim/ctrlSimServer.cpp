@@ -50,6 +50,7 @@ void Controller_simDriverServer::RegisterInternalDrivers() {
 
 void Controller_simDriverServer::Cleanup()
 {
+	this->stopThreadedWork();
 	inited = false;
 	CleanupDriverLog();
 	for (DoMoDriver* driver : Controller_simDriverServer::Drivers)
@@ -63,28 +64,57 @@ const char* const* Controller_simDriverServer::GetInterfaceVersions()
 
 void Controller_simDriverServer::RunFrame()
 {
-	if (inited) {
-		if (false) {
-			for (DoMoDriver* driver : Controller_simDriverServer::Drivers) {	//stubbed mode
-				driver->RunFrameStub();
-			}
-		}
-		else {
-			this->serverDispatcher->feedPipeDataToDrivers(Controller_simDriverServer::Drivers);	//prod mode
-		}
+	if (!workThreadRunning) {
+		DriverLog("workthread was not started, starting...");
+		this->beginThreadedWork();
+		this->workThreadRunning = true;
 	}
-	else {
-		DriverLog("Not inited yet!");
+
+	if(!inited) {
+		DriverLog("RunFrame was called and driver not inited yet!");
 	}
 
 	vr::VREvent_t vrEvent;
 	while (vr::VRServerDriverHost()->PollNextEvent(&vrEvent, sizeof(vrEvent)))
 	{
+		//ignore events
 	}
 }
 bool Controller_simDriverServer::ShouldBlockStandbyMode() { return false; }
 void Controller_simDriverServer::EnterStandby() {/*standby code for the gloves here??*/ }
 void Controller_simDriverServer::LeaveStandby() {/*Wake up for the gloves here?*/ }
+
+void Controller_simDriverServer::beginThreadedWork()
+{
+	DriverLog("Starting work thread...");
+	this->workThreadRunning = true;
+	this->workthread = thread(&Controller_simDriverServer::doThreadedWork,this);
+	DriverLog("Done starting work thread.");
+}
+
+int Controller_simDriverServer::doThreadedWork()
+{
+	DriverLog("Workthread running");
+	while (shouldWorkThreadRun()) {
+		this->serverDispatcher->feedPipeDataToDrivers(Controller_simDriverServer::Drivers);	//prod mode
+		Sleep(5);
+	}
+	DriverLog("Workthread stopped");
+	return 0;
+}
+
+void Controller_simDriverServer::stopThreadedWork()
+{
+	DriverLog("Stopping threaded work...");
+	this->workThreadRunning = false;
+}
+
+bool Controller_simDriverServer::shouldWorkThreadRun()
+{
+	return this->workThreadRunning;
+}
+
+
 
 /**
 * La fonction qui sera exportée vers OpenVR, il s'agit de
