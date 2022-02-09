@@ -44,7 +44,7 @@ class DataDispatcher
 		/// permet de faire passer les données reçues par le tunnel nommé aux drivers correspondants (ordre naturel)
 		/// </summary>
 		/// <param name="drivers"> une collection de drivers (vecteur)</param>
-		virtual void feedPipeDataToDrivers(vector<DoMoDriver*> drivers);
+		virtual void feedPipeDataToDrivers(vector<DoMoDriver*>* drivers);
 
 		virtual void doPipeAction();
 };

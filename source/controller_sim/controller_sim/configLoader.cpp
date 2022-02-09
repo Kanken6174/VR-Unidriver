@@ -12,7 +12,7 @@ namespace utilities {
 		return std::wstring(buffer).substr(0, pos);
 	}
 
-	vector<DriverDataTemplate*> ReadConfigAndBuildDrivers() {
+	vector<DriverDataTemplate*>* ReadConfigAndBuildDrivers() {
 		ifstream driverCfgFile;	//create readonly stream
 		//wstring path;
 		//PWSTR* pathptr = new PWSTR();
@@ -27,10 +27,10 @@ namespace utilities {
 		if (!driverCfgFile) {
 			//on récupère le chemin courant et on le convertit en string
 			DriverLog("Unable to open driver config file from path: %s", filePath.c_str());
-			return vector<DriverDataTemplate*>();
+			return new vector<DriverDataTemplate*>();
 		}
 
-		vector<DriverDataTemplate*> DriverTemplates = vector<DriverDataTemplate*>();
+		vector<DriverDataTemplate*>* DriverTemplates = new vector<DriverDataTemplate*>();
 
 		int activeDriverVector = -1;
 		int activeCompomentVector = -1;
@@ -52,32 +52,32 @@ namespace utilities {
 
 				DriverTemp = new DriverDataTemplate;
 				DriverTemp->name = buf;
-				DriverTemplates.push_back(DriverTemp);
+				DriverTemplates->push_back(DriverTemp);
 
 				DriverLog(("Discovered driver named : " + buf).c_str());
 				break;
 			case '>':	//modèle 3d du driver
-				if (DriverTemplates.at(activeDriverVector)->role == 2) {
+				if (DriverTemplates->at(activeDriverVector)->role == 2) {
 					DriverLog("Switched to hardcoded render path");
-					DriverTemplates.at(activeDriverVector)->renderModel = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SteamVR\\resources\\rendermodels\\vr_glove\\vr_glove_left_model.glb";
+					DriverTemplates->at(activeDriverVector)->renderModel = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SteamVR\\resources\\rendermodels\\vr_glove\\vr_glove_left_model.glb";
 				}
 				else {
-					DriverTemplates.at(activeDriverVector)->renderModel = buf;
+					DriverTemplates->at(activeDriverVector)->renderModel = buf;
 				}
 				break;
 			case '<':	//nature du driver (quelle main entre autres)
 				intBuf = stoi(buf);
-				DriverTemplates.at(activeDriverVector)->role = intBuf;
+				DriverTemplates->at(activeDriverVector)->role = intBuf;
 				break;
 			case '=':	//nouveau composant pour le driver, la ligne commençant par = contient le chemin d'input du driver, ex: /input/a/click
 				activeCompomentVector++;
 				CompoTemp = new ComponentDataTemplate;
-				DriverTemplates.at(activeDriverVector)->components.push_back(CompoTemp);
-				DriverTemplates.at(activeDriverVector)->components[activeCompomentVector]->inputPath = buf;
+				DriverTemplates->at(activeDriverVector)->components.push_back(CompoTemp);
+				DriverTemplates->at(activeDriverVector)->components[activeCompomentVector]->inputPath = buf;
 				break;
 			case ':':	//le type d'input du driver (0-5 pour digital, analog, ect...; 5+ pour bool stub mode)
 				intBuf = stoi(buf);
-				DriverTemplates.at(activeDriverVector)->components[activeCompomentVector]->inputType = intBuf;
+				DriverTemplates->at(activeDriverVector)->components[activeCompomentVector]->inputType = intBuf;
 				break;
 			case '#':
 				//this is a .dmc comment line, it will be ignored, any unrecognized symbol will also be ignored
@@ -94,11 +94,11 @@ namespace utilities {
 		return DriverTemplates;
 	}
 
-	vector<DoMoDriver*> makeDriversFromTemplates(vector<DriverDataTemplate*> DriverTemplates) {
-		vector<DoMoDriver*> drivers = vector<DoMoDriver*>();
-		DriverLog("Found %d drivers", DriverTemplates.size());
+	vector<DoMoDriver*>* makeDriversFromTemplates(vector<DriverDataTemplate*>* DriverTemplates) {
+		vector<DoMoDriver*>* drivers = new vector<DoMoDriver*>();
+		DriverLog("Found %d drivers", DriverTemplates->size());
 		DriverLog("============================================");
-		for (DriverDataTemplate* dtemp : DriverTemplates) {
+		for (DriverDataTemplate* dtemp : *DriverTemplates) {
 			DriverLog("Driver named : %s has %d components with role %d", dtemp->name.c_str(), dtemp->components.size(), dtemp->role);
 
 			for (ComponentDataTemplate* ctemp : dtemp->components) {
@@ -106,10 +106,10 @@ namespace utilities {
 			}
 			DriverLog("------------------------------------------");
 			DoMoDriver* driver = new DoMoDriver(*dtemp);
-			drivers.push_back(driver);
+			drivers->push_back(driver);
 			DriverLog("============================================");
 		}
-		DriverLog("Created %d drivers", drivers.size());
+		DriverLog("Created %d drivers", drivers->size());
 
 		return drivers;
 	}

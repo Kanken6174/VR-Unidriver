@@ -22,7 +22,6 @@ std::string PipeServer::ReadPipe() {
 	do {
 		this->connected = ConnectNamedPipe(this->hPipe, NULL);
 	} while (this->connected == false);
-	DriverLog(("Connected a client to the local pipe " + std::to_string((DWORD)this->hPipe)).c_str());
 	if (this->connected) {
 		LPDWORD dwordPtr = &this->dwRead;    //juste un pointeur vers un DWORD
 
@@ -35,10 +34,6 @@ std::string PipeServer::ReadPipe() {
 	}
 	if (this->connected) {
 		bool success = DisconnectNamedPipe(this->hPipe);
-		if (!success)
-			DriverLog("Failed to disconnect from pipe");
-		else
-			DriverLog("Successfully disconnected pipe");
 	}
 	return toReturn;
 }

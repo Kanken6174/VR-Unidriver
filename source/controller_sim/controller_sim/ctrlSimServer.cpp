@@ -33,13 +33,13 @@ EVRInitError Controller_simDriverServer::Init(vr::IVRDriverContext* pDriverConte
 	this->serverDispatcher = new DataDispatcher();
 	DriverLog("Successfully connected!");
 	inited = true;
-
+	this->beginThreadedWork();
 	return VRInitError_None;
 }
 
 
 void Controller_simDriverServer::RegisterInternalDrivers() {
-	for (DoMoDriver* driver : Controller_simDriverServer::Drivers) {
+	for (DoMoDriver* driver : *Controller_simDriverServer::Drivers) {
 		bool success = vr::VRServerDriverHost()->TrackedDeviceAdded(driver->GetSerialNumber().c_str(), vr::TrackedDeviceClass_Controller, driver);
 		if (success)
 			DriverLog("driver registered successfully\n");
@@ -53,7 +53,7 @@ void Controller_simDriverServer::Cleanup()
 	this->stopThreadedWork();
 	inited = false;
 	CleanupDriverLog();
-	for (DoMoDriver* driver : Controller_simDriverServer::Drivers)
+	for (DoMoDriver* driver : *Controller_simDriverServer::Drivers)
 		driver->~DoMoDriver();	//appel de destructeur
 }
 
@@ -64,21 +64,6 @@ const char* const* Controller_simDriverServer::GetInterfaceVersions()
 
 void Controller_simDriverServer::RunFrame()
 {
-	if (!workThreadRunning) {
-		DriverLog("workthread was not started, starting...");
-		this->beginThreadedWork();
-		this->workThreadRunning = true;
-	}
-
-	if(!inited) {
-		DriverLog("RunFrame was called and driver not inited yet!");
-	}
-
-	vr::VREvent_t vrEvent;
-	while (vr::VRServerDriverHost()->PollNextEvent(&vrEvent, sizeof(vrEvent)))
-	{
-		//ignore events
-	}
 }
 bool Controller_simDriverServer::ShouldBlockStandbyMode() { return false; }
 void Controller_simDriverServer::EnterStandby() {/*standby code for the gloves here??*/ }
@@ -95,8 +80,10 @@ void Controller_simDriverServer::beginThreadedWork()
 int Controller_simDriverServer::doThreadedWork()
 {
 	DriverLog("Workthread running");
+	DriverLog("Calling feed with %d drivers", this->Drivers->size());
+
 	while (shouldWorkThreadRun()) {
-		this->serverDispatcher->feedPipeDataToDrivers(Controller_simDriverServer::Drivers);	//prod mode
+		this->serverDispatcher->feedPipeDataToDrivers(this->Drivers);	//prod mode
 		Sleep(5);
 	}
 	DriverLog("Workthread stopped");

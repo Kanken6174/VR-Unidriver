@@ -185,7 +185,7 @@ Le constructeur de la classe DataDispatcher, il créé également le tunnel nomm
 Le destructeur de la classe DataDispatcher, il déconnecte également le tunnel nommé interne
 </summary>
 </member>
-<member name="M:DataDispatcher.feedPipeDataToDrivers(std.vector&lt;DoMoDriver**,std.allocator&lt;DoMoDriver**&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DataDispatcher.h" line="43">
+<member name="M:DataDispatcher.feedPipeDataToDrivers(std.vector&lt;DoMoDriver**,std.allocator&lt;DoMoDriver**&gt;&gt;*)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DataDispatcher.h" line="43">
 <summary>
 permet de faire passer les données reçues par le tunnel nommé aux drivers correspondants (ordre naturel)
 </summary>

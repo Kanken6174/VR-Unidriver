@@ -36,8 +36,10 @@ EVRInputError VRcomponent::UpdateSelf(bool value) {
 }
 
 EVRInputError VRcomponent::UpdateSelf(float value) {
-	if (sclType == ABSOLUTE_T || sclType == RELATIVE_T || value > 1 || value < -1)
+	if ((sclType != ABSOLUTE_T && sclType != RELATIVE_T) || value > 1 || value < -1) {
+		DriverLog("Value was incorrect for type %d, got value %f",sclType,value);
 		return vr::VRInputError_WrongType;
+	}
 
 	return vr::VRDriverInput()->UpdateScalarComponent(handle, value, 0);
 }
@@ -49,6 +51,7 @@ EVRInputError VRcomponent::UpdateSelf(vr::VRBoneTransform_t* hand, int size = 31
 //-------------------------------------------------------------Mode stub clavier-------------------------------------------------------------------------------------
 
 EVRInputError VRcomponent::UpdateSelf() {
+	DriverLog("Called update float on component of type stub");
 	bool value = ((0x8000 & GetAsyncKeyState(sclType)) != 0);
 
 	if (keyState != value) {

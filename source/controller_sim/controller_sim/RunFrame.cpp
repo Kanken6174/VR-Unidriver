@@ -27,5 +27,8 @@ void DoMoDriver::RunFrameRaw(string raw)
 	int index = 0;
 	for (VRcomponent* component : DoMoDriver::components) {
 		component->UpdateSelf(componentData[index]);
+		index++;
+		if (index > components.size())
+			return;
 	}
 }

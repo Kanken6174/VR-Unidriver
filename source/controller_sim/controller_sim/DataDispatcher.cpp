@@ -10,7 +10,7 @@
 		delete this->localServer;
 	}
 
-	void DataDispatcher::feedPipeDataToDrivers(vector<DoMoDriver*> drivers) {
+	void DataDispatcher::feedPipeDataToDrivers(vector<DoMoDriver*>* drivers) {
 		if (this->localServer == NULL) {
 			DriverLog("Error, localserver was null");
 			return;
@@ -28,15 +28,15 @@
 			return;
 
 		vector<string> splitDriverData = utilities::split(this->lastFrame, ';', true);	//à cette étape, on split les trames des différents drivers, on enlève le séparateur
-		DriverLog("SplitData");
+
 		int index = 0;
-		for (DoMoDriver* driver : drivers) {
+		for (DoMoDriver* driver : *drivers) {
 			driver->RunFrameRaw(splitDriverData[index]);	// ce sera une trame standard de type délai|quaternion|composant1|composant2|...
 			index++;
 			if (index > splitDriverData.size())	//ne devrait arriver que si la trame envoyée contient trop peu de trames
 				break;
 		}
-		DriverLog("Done dispatching");
+
 	}
 
 	void DataDispatcher::doPipeAction()
@@ -46,12 +46,13 @@
 				DriverLog("Write failed");
 				return;
 			}
-			DriverLog("Done Writing");
 			string answer = this->localServer->ReadPipe();//bloquant
 			DriverLog(answer.c_str());
 			if (answer == "" || answer.size() < 4) {
 				DriverLog("read failed");
 				return;
 			}
-			DriverLog("Done Reading");
+			else {
+				this->lastFrame = answer;
+			}
 	}

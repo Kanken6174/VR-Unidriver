@@ -28,8 +28,8 @@
 class Controller_simDriverServer : public IServerTrackedDeviceProvider
 {
 private:
-	vector<DriverDataTemplate*> DriverTemplates;
-	vector<DoMoDriver*> Drivers;
+	vector<DriverDataTemplate*>* DriverTemplates;
+	vector<DoMoDriver*>* Drivers;
 	atomic<bool> inited = false;
 	atomic<bool> workThreadRunning = false;
 	thread workthread;
@@ -55,7 +55,7 @@ public:
 };
 
 namespace utilities {
-	vector<DriverDataTemplate*> ReadConfigAndBuildDrivers();
+	vector<DriverDataTemplate*>* ReadConfigAndBuildDrivers();
 	wstring ExePath();
-	vector<DoMoDriver*> makeDriversFromTemplates(vector<DriverDataTemplate*> DriverTemplates);
+	vector<DoMoDriver*>* makeDriversFromTemplates(vector<DriverDataTemplate*>* DriverTemplates);
 }

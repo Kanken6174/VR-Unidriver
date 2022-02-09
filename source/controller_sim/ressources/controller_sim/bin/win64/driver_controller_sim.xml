@@ -17,7 +17,7 @@ Il s'agit du serveur qui va contrôler les différents appareils, car il peut y 
 serveur.
 
 </member>
-        <member name="M:DataDispatcher.feedPipeDataToDrivers(std.vector&lt;DoMoDriver**,std.allocator&lt;DoMoDriver**&gt;&gt;)">
+        <member name="M:DataDispatcher.feedPipeDataToDrivers(std.vector&lt;DoMoDriver**,std.allocator&lt;DoMoDriver**&gt;&gt;*)">
             <summary>
 permet de faire passer les données reçues par le tunnel nommé aux drivers correspondants (ordre naturel)
 </summary>
