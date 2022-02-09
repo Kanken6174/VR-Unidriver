@@ -27,6 +27,8 @@ namespace utilities {
 	/// <param name="splitter"> le caractère de séparation</param>
 	/// <returns>un vecteur contenant les différentes parties du string d'origine</returns>
 	vector<string> split(string input, char splitter);
+
+	vector<char> splitChar(string input, char splitter);
 	/// <summary>
 	/// Va prendre le premier string d'un vecteur de string, le retirer de ce vecteur, et le retourner
 	/// </summary>

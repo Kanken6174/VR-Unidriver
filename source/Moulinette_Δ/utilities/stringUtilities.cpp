@@ -16,6 +16,20 @@ namespace utilities {
 		return toreturn;
 	}
 
+	vector<char> splitChar(string input, char splitter)
+	{
+		stringstream strs = stringstream(input);
+		vector<char> toreturn = vector<char>();
+		string segment = "";
+
+		while (getline(strs, segment, splitter))
+		{
+			toreturn.push_back(segment[0]);
+		}
+
+		return toreturn;
+	}
+
 	string getDelimitedValueFromRawString(string raw, string delimiter) {
 		string toReturn = raw;
 		size_t delimiterPosition = raw.find(delimiter);

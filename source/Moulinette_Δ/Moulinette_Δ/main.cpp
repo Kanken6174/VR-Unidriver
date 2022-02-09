@@ -130,12 +130,13 @@ int main(int argc, char* argv[]) {
     
 
     VRDevice devices = lectureDMC("gant.dmc");
-    devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues(); devices.updateValues();
+
+    devices.updateValues();
 
     cout << devices.to_string() << endl;
     cout << "---------------------------" << endl;
 
-    /*
+   
     string received = "";
     PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeMoulinette");
 
@@ -150,6 +151,6 @@ int main(int argc, char* argv[]) {
         Sleep(20);
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
-    */
+
 }
 
