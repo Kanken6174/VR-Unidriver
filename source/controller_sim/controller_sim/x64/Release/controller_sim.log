@@ -1,26 +1,7 @@
-﻿  DataDispatcher.cpp
-  DoMoDriver.cpp
-  IPCServer.cpp
-Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(14): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(14): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(14): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(14): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(27): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(27): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(32): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(32): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-Y:\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp(76): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
-  utilities.cpp
-  ctrlSimServer.cpp
-Y:\domocap\source\controller_sim\controller_sim\ctrlSimServer.cpp(21): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-  dataObjects.h
-  driverlog.cpp
-  maths.cpp
-  stringUtilities.cpp
-     Création de la bibliothèque Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib et de l'objet Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.exp
+﻿  configLoader.cpp
+     Création de la bibliothèque C:\Users\ASUS\Documents\2A\projet\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib et de l'objet C:\Users\ASUS\Documents\2A\projet\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.exp
   Génération de code en cours
-  4 of 825 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    46 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 881 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Fin de la génération du code
-  controller_sim.vcxproj -> Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll
+  controller_sim.vcxproj -> C:\Users\ASUS\Documents\2A\projet\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll

@@ -4,7 +4,6 @@
 	DataDispatcher::DataDispatcher() {
 		this->pipeName = "\\\\.\\pipe\\pipeDriver";
 		this->localServer = new PipeServer("\\\\.\\pipe\\pipeDriver");
-		//std::thread Thread = std::thread([this] { this->beginThreadedPipeDataUpdater(std::ref(lastFrame)); });
 	}
 
 	DataDispatcher::~DataDispatcher() {

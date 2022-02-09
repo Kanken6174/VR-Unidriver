@@ -17,7 +17,10 @@ namespace utilities {
 		//wstring path;
 		//PWSTR* pathptr = new PWSTR();
 		//SHGetKnownFolderPath(FOLDERID_AppDataProgramData, 0, NULL, pathptr);
-		string filePath = "C:\\Users\\Yorick\\AppData\\Roaming\\.DoMoCap\\driverCfg.dmc";	//full path
+		char* usrname = nullptr;
+		size_t sz = 0;
+		_dupenv_s(&usrname, &sz, "username");
+		string filePath = "C:\\Users\\"+string(usrname)+"\\AppData\\Roaming\\.DoMoCap\\driverCfg.dmc";	//full path
 		DriverLog(("Opening configuration file from "+filePath).c_str());
 		driverCfgFile.open(filePath);	//proprietary config file -> .doMoCap -> .dmc
 
