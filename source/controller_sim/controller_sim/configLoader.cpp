@@ -41,43 +41,55 @@ namespace utilities {
 		int intBuf = 99;
 		std::string buf = "";
 
+		bool toignore = false;
+
 		while (std::getline(driverCfgFile, buf)) {
 			char id = buf[0];
 			buf = buf.erase(0, 1);
 			buf.erase(std::remove(buf.begin(), buf.end(), '\n'), buf.end()); //on enlève les \n parasites
 			switch (id) {
 			case '$':	//nouveau driver
-				activeDriverVector++;
-				activeCompomentVector = -1;
+					toignore = false;
+					activeDriverVector++;
+					activeCompomentVector = -1;
 
-				DriverTemp = new DriverDataTemplate;
-				DriverTemp->name = buf;
-				DriverTemplates->push_back(DriverTemp);
+					DriverTemp = new DriverDataTemplate;
+					DriverTemp->name = buf;
+					DriverTemplates->push_back(DriverTemp);
 
-				DriverLog(("Discovered driver named : " + buf).c_str());
-				break;
+					DriverLog(("Discovered driver named : " + buf).c_str());
+					break;
 			case '>':	//modèle 3d du driver
-				if (DriverTemplates->at(activeDriverVector)->role == 2) {
-					DriverLog("Switched to hardcoded render path");
-					DriverTemplates->at(activeDriverVector)->renderModel = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SteamVR\\resources\\rendermodels\\vr_glove\\vr_glove_left_model.glb";
-				}
-				else {
-					DriverTemplates->at(activeDriverVector)->renderModel = buf;
-				}
+					if (DriverTemplates->at(activeDriverVector)->role == 2) {
+						DriverLog("Switched to hardcoded render path");
+						DriverTemplates->at(activeDriverVector)->renderModel = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SteamVR\\resources\\rendermodels\\vr_glove\\vr_glove_left_model.glb";
+					}
+					else {
+						DriverTemplates->at(activeDriverVector)->renderModel = buf;
+					}
 				break;
 			case '<':	//nature du driver (quelle main entre autres)
-				intBuf = stoi(buf);
-				DriverTemplates->at(activeDriverVector)->role = intBuf;
+					intBuf = stoi(buf);
+					DriverTemplates->at(activeDriverVector)->role = intBuf;
 				break;
 			case '=':	//nouveau composant pour le driver, la ligne commençant par = contient le chemin d'input du driver, ex: /input/a/click
-				activeCompomentVector++;
-				CompoTemp = new ComponentDataTemplate;
-				DriverTemplates->at(activeDriverVector)->components.push_back(CompoTemp);
-				DriverTemplates->at(activeDriverVector)->components[activeCompomentVector]->inputPath = buf;
+				if (buf[1] == 'p') {	// /pose/... ignoré, on vérifie le p car ce sera différent de /input/ et /ouput/
+					toignore = true;
+					DriverLog("an incorrectly pathed component was ignored (path = %s)", buf);
+				}
+				else {
+					toignore = false;
+					activeCompomentVector++;
+					CompoTemp = new ComponentDataTemplate;
+					DriverTemplates->at(activeDriverVector)->components.push_back(CompoTemp);
+					DriverTemplates->at(activeDriverVector)->components[activeCompomentVector]->inputPath = buf;
+				}
 				break;
 			case ':':	//le type d'input du driver (0-5 pour digital, analog, ect...; 5+ pour bool stub mode)
-				intBuf = stoi(buf);
-				DriverTemplates->at(activeDriverVector)->components[activeCompomentVector]->inputType = intBuf;
+				if (!toignore) {
+					intBuf = stoi(buf);
+					DriverTemplates->at(activeDriverVector)->components[activeCompomentVector]->inputType = intBuf;
+				}
 				break;
 			case '#':
 				//this is a .dmc comment line, it will be ignored, any unrecognized symbol will also be ignored

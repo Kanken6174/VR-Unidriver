@@ -18,6 +18,10 @@ EVRInputError VRcomponent::UpdateSelf(string providedValue) {
 		toReturn = VRInputError_WrongType;
 		break;
 	}
+
+	if (toReturn != EVRInputError::VRInputError_None)
+		DriverLog("Update of component with path %s had an error for value %s", this->inputPath, providedValue);
+
 	return toReturn;
 }
 
@@ -45,7 +49,8 @@ EVRInputError VRcomponent::UpdateSelf(float value) {
 }
 
 EVRInputError VRcomponent::UpdateSelf(vr::VRBoneTransform_t* hand, int size = 31) {
-	return vr::VRDriverInput()->UpdateSkeletonComponent(handle, vr::EVRSkeletalMotionRange::VRSkeletalMotionRange_WithoutController, hand, size);
+	EVRInputError ER = vr::VRDriverInput()->UpdateSkeletonComponent(handle, vr::EVRSkeletalMotionRange::VRSkeletalMotionRange_WithoutController, hand, size);
+	return ER;
 }
 
 //-------------------------------------------------------------Mode stub clavier-------------------------------------------------------------------------------------
