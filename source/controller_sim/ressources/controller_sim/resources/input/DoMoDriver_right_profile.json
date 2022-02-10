@@ -1,7 +1,7 @@
 {
     "jsonid": "input_profile",
     "legacy_binding": "{controller_sim}/input/legacy_binding_mycontroller.json",
-    "controller_type": "DoMoDriver_right",
+    "controller_type": "mess",
     "input_bindingui_mode": "controller_handed",
     "input_bindingui_left": {
         "transform": "scale(1,-1)",
@@ -33,6 +33,21 @@
             "binding_image_point": [80, 60],
             "type": "button",
             "order": 4
+        },
+
+        "/input/joystick": {
+            "type": "joystick",
+            "x": true,
+            "y": true,
+            "click": true,
+            "binding_image_point": [11, 60],
+            "order": 2
+        },
+
+        "/input/finger/index": {
+            "type": "trigger",
+            "visibility": "InputValueVisibility_AvailableButHidden",
+            "binding_image_point": [56, 86]
         }
     }
 }

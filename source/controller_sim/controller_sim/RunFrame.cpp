@@ -24,7 +24,7 @@ void DoMoDriver::RunFrameRaw(string raw)
 
 	if (components.size() <= 0) { DriverLog("No components on device, skipping..."); return; }
 
-	int index = 0;
+	int index = 2;
 	for (VRcomponent* component : DoMoDriver::components) {
 		component->UpdateSelf(componentData[index]);
 		index++;

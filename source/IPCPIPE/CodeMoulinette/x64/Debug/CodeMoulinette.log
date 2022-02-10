@@ -1,13 +1,1 @@
-﻿  IPCServer.cpp
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(13,104): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(13,104): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(13,167): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(13,167): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(20,109): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(20,109): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(45,73): warning C4834: abandon de la valeur de retour de la fonction ayant l'attribut 'nodiscard'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(81,6): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
-  moulinette.cpp
-  utilities.cpp
-  Génération de code en cours...
-  CodeMoulinette.vcxproj -> C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\x64\Debug\CodeMoulinette.exe
+﻿  CodeMoulinette.vcxproj -> C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\x64\Debug\CodeMoulinette.exe
