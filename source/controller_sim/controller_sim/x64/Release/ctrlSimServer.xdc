@@ -197,7 +197,7 @@ Il s'agit du serveur qui va contrôler les différents appareils, car il peut y 
 serveur.
 
 </member>
-<member name="M:HmdDriverFactory(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*,System.Int32*)" decl="false" source="C:\Users\ASUS\Documents\2A\projet\domocap\source\controller_sim\controller_sim\ctrlSimServer.cpp" line="106">
+<member name="M:HmdDriverFactory(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*,System.Int32*)" decl="false" source="C:\Users\ASUS\Documents\2A\projet\domocap\source\controller_sim\controller_sim\ctrlSimServer.cpp" line="109">
  La fonction qui sera exportée vers OpenVR, il s'agit de
  notre point d'entrée! (int main() en gros)
 

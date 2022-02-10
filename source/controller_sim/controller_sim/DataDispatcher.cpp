@@ -21,8 +21,11 @@
 			cyclesToIgnore--;
 			return;
 		}
-
+		clock_t t;
+		t = clock();
 		this->doPipeAction();
+		t = clock() - t;
+		DriverLog("pipe time : % d ms", t);
 
 		if (this->lastFrame == "")
 			return;
@@ -46,6 +49,7 @@
 				DriverLog("Write failed");
 				return;
 			}
+			Sleep(10);
 			string answer = this->localServer->ReadPipe();//bloquant
 			DriverLog(answer.c_str());
 			if (answer == "" || answer.size() < 4) {

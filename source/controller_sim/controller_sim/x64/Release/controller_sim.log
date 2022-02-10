@@ -1,10 +1,4 @@
 ﻿  DataDispatcher.cpp
-  Register.cpp
-  RunFrame.cpp
-  configLoader.cpp
-  ctrlSimServer.cpp
-C:\Users\ASUS\Documents\2A\projet\domocap\source\controller_sim\controller_sim\ctrlSimServer.cpp(21): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-  typeConverters.cpp
      Création de la bibliothèque C:\Users\ASUS\Documents\2A\projet\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.lib et de l'objet C:\Users\ASUS\Documents\2A\projet\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.exp
   Génération de code en cours
   1 of 886 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
