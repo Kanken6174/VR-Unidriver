@@ -81,12 +81,12 @@ int Controller_simDriverServer::doThreadedWork()
 {
 	DriverLog("Workthread running");
 	DriverLog("Calling feed with %d drivers", this->Drivers->size());
-	clock_t t;
+	//clock_t t;
 	while (shouldWorkThreadRun()) {
-		t = clock();
+		//t = clock();
 		this->serverDispatcher->feedPipeDataToDrivers(this->Drivers);	//prod mode
-		t = clock() - t;
-		DriverLog("full cycle time : % d ms", t);
+		//t = clock() - t;
+		//DriverLog("full cycle time : % d ms", t);
 		//Sleep(5);
 	}
 	DriverLog("Workthread stopped");

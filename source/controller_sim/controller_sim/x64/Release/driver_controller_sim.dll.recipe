@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\ASUS\Documents\2A\projet\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll</FullPath>
+      <FullPath>Y:\domocap\source\controller_sim\ressources\controller_sim\bin\win64\driver_controller_sim.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

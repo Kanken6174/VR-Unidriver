@@ -3,5 +3,5 @@ Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(13,104): warning C4311:
 Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(13,104): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
 Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(13,167): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
 Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(13,167): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(77,6): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
+Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(74,6): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
   CodeMoulinette.vcxproj -> Y:\domocap\source\IPCPIPEV2\CodeMoulinette\x64\Debug\CodeMoulinette.exe

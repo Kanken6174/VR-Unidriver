@@ -49,9 +49,8 @@
 				DriverLog("Write failed");
 				return;
 			}
-			Sleep(10);
 			string answer = this->localServer->ReadPipe();//bloquant
-			DriverLog(answer.c_str());
+			//DriverLog(answer.c_str());
 			if (answer == "" || answer.size() < 4) {
 				DriverLog("read failed");
 				return;

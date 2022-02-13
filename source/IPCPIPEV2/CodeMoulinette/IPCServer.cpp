@@ -20,7 +20,7 @@ std::string PipeServer::ReadPipe() {
 	//cout << "attempting to connect a client to the local pipe with handle " + std::to_string((DWORD)this->hPipe) + "\n";
 	do {
 		this->connected = ConnectNamedPipe(this->hPipe, NULL);
-		Sleep(5);
+		Sleep(2);
 	} while (this->connected == false);
 	if (this->connected) {
 		LPDWORD dwordPtr = &this->dwRead;    //juste un pointeur vers un DWORD
@@ -37,11 +37,8 @@ std::string PipeServer::ReadPipe() {
 	}
 	if (this->connected) {
 		//cout << "was connected, disconnecting...\n";
-		bool  success = DisconnectNamedPipe(this->hPipe);
+		DisconnectNamedPipe(this->hPipe);
 		//cout << success ? "Successfully disconnected" : "Error disconnecting" + GetLastErrorAsString();
-	}
-	else {
-		//cout << "was not connected, not disconnecting...\n";
 	}
 
 
@@ -61,7 +58,7 @@ bool PipeServer::WriteToPipe(std::string message, string targetPipe = "") {
 		this->isExternConnected = false;
 	}
 
-	BOOL returned = WaitNamedPipeA(lpcStr, NULL);
+	BOOL returned = WaitNamedPipeA(lpcStr, 1000);
 	if (returned == 0) {
 		//cout << "pipe " + targetPipe + " timed out, resume wait...\n";
 		return false;

@@ -9,8 +9,9 @@ int main() {
 	srand(time(NULL));
 	while (true) {
 		float rand = ((float)std::rand()) / (float)RAND_MAX;
+		float randy = ((float)std::rand()) / (float)RAND_MAX;
 		float range = 1 - (-1);
-		string myData = "20|0_0_0_0|" + std::to_string((rand * range) - 1)+"|-0.3|0.1|0.1|0.1|0.1|0|0|0|0|";	//une trame de données standard
+		string myData = "20|0_0_0_0|" + std::to_string((rand * range) - 1)+"|"+ std::to_string((randy * range) - 1) +"|0.1|0.1|0.1|0.1|0|0|0|0|";	//une trame de données standard
 		received = ps->ReadPipe();
 		ps->WriteToPipe(myData, "\\\\.\\pipe\\pipeDriver");
 	}
