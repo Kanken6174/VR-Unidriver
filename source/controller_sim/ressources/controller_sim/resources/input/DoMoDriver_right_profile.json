@@ -46,22 +46,18 @@
 
         "/input/finger/index": {
             "type": "trigger",
-            "visibility": "InputValueVisibility_AvailableButHidden",
             "binding_image_point": [56, 86]
         },
         "/input/finger/middle": {
             "type": "trigger",
-            "visibility": "InputValueVisibility_AvailableButHidden",
             "binding_image_point": [56, 86]
         },
         "/input/finger/ring": {
             "type": "trigger",
-            "visibility": "InputValueVisibility_AvailableButHidden",
             "binding_image_point": [56, 86]
         },
         "/input/finger/pinky": {
             "type": "trigger",
-            "visibility": "InputValueVisibility_AvailableButHidden",
             "binding_image_point": [56, 86]
         }
     }

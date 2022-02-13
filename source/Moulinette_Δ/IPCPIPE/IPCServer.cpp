@@ -20,7 +20,7 @@ std::string PipeServer::ReadPipe() {
 	char buf[1024];
 	do {
 		this->connected = ConnectNamedPipe(this->hPipe, NULL);
-		Sleep(5);
+		Sleep(2);
 	} while (this->connected == false);
 	if (this->connected) {
 		LPDWORD dwordPtr = &this->dwRead;    //juste un pointeur vers un DWORD
@@ -51,13 +51,13 @@ bool PipeServer::WriteToPipe(std::string message, string targetPipe = "") {
 	if (this->isExternConnected == true) {
 		this->isExternConnected = false;
 	}
-	cout << "Waiting for named pipe...\n";
+	//cout << "Waiting for named pipe...\n";
 	BOOL returned = WaitNamedPipeA(lpcStr, 1000);	
 	if (returned == 0) {
 		cout << "waiting for a pipe on " + targetPipe + " timed out\n";
 		return false;
 	}
-	cout << "Done\n";
+	//cout << "Done\n";
 	this->externPipe = CreateFileA(lpcStr, GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, 0, NULL);
 	this->isExternConnected = (this->externPipe != INVALID_HANDLE_VALUE);
 

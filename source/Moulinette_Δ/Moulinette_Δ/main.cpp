@@ -127,14 +127,19 @@ VRDevice lectureDMC(string file ) {
 }
 
 int main(int argc, char* argv[]) {
-    
+    char* usrname = nullptr;
+    size_t sz = 0;
+    _dupenv_s(&usrname, &sz, "username");
+    if (usrname == nullptr)
+        return -2333;
+    string filePath = "C:\\Users\\" + string(usrname) + "\\AppData\\Roaming\\.DoMoCap\\driverCfg.dmc";	//full path
 
-    VRDevice devices = lectureDMC("gant.dmc");
+    VRDevice devices = lectureDMC(filePath);
 
     devices.updateValues();
 
-    cout << devices.to_string() << endl;
-    cout << "---------------------------" << endl;
+    //cout << devices.to_string() << endl;
+    //cout << "---------------------------" << endl;
 
    
     string received = "";
@@ -144,6 +149,9 @@ int main(int argc, char* argv[]) {
         received = ps->ReadPipe();
         //cout << "Received data\n";
         //cout << received;
+        if (received == "cleanup") {
+            return 0;
+        }
         devices.updateValues();
         //cout << " got request!!! Sending data right away...\n";
         string toSend = devices.to_string();
