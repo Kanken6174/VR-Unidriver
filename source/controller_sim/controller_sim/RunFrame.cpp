@@ -14,8 +14,10 @@ void DoMoDriver::RunFrameStub()
 	}
 	if (components.size() <= 0) { DriverLog("No components on device, skipping..."); return; }
 
-	for (VRcomponent* component : DoMoDriver::components)
+	for (VRcomponent* component : DoMoDriver::components) {
+		component->setLastLatency(lastLatency);
 		component->UpdateSelf();
+	}
 }
 
 void DoMoDriver::RunFrameRaw(string raw)

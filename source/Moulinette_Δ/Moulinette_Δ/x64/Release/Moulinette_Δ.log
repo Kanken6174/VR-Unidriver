@@ -1,17 +1,8 @@
-﻿  IPCServer.cpp
-Y:\domocap\source\Moulinette_Δ\IPCPIPE\IPCServer.cpp(14,104): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-Y:\domocap\source\Moulinette_Δ\IPCPIPE\IPCServer.cpp(14,104): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-Y:\domocap\source\Moulinette_Δ\IPCPIPE\IPCServer.cpp(14,167): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-Y:\domocap\source\Moulinette_Δ\IPCPIPE\IPCServer.cpp(14,167): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-Y:\domocap\source\Moulinette_Δ\IPCPIPE\IPCServer.cpp(68,6): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
-Y:\domocap\source\Moulinette_Δ\IPCPIPE\IPCServer.cpp(69,73): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-Y:\domocap\source\Moulinette_Δ\IPCPIPE\IPCServer.cpp(69,73): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-  main.cpp
+﻿  main.cpp
 Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.h(28,2): warning C4091: 'static ' : ignoré à gauche de 'ComponentReflector' quand aucune variable n'est déclarée
   Génération de code en cours
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
-Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.cpp(44): warning C4715: 'ComponentReflector::requestDataFromComponent' : les chemins de contrôle ne retournent pas tous une valeur
-Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\main.cpp(127): warning C4715: 'lectureDMC' : les chemins de contrôle ne retournent pas tous une valeur
-  All 596 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  0 of 596 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Moulinette_Δ.vcxproj -> Y:\domocap\source\Moulinette_Δ\x64\Release\Moulinette_Δ.exe

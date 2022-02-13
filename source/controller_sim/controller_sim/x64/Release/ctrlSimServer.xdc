@@ -66,7 +66,7 @@ Le constructeur d'une classe DoMoDriver (version moderne, désactive le mode obs
 Le destructeur de ce driver
 </summary>
 </member>
-<member name="M:DoMoDriver.ModernActivation(System.UInt32)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="67">
+<member name="M:DoMoDriver.ModernActivation(System.UInt32)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="69">
 Fonctions d'activation du driver SteamVR
 <summary>
 Cette fonction va activer et enregistrer le driver auprès de SteamVR, à partir des DataTemplates enregistrées en interne
@@ -74,53 +74,53 @@ Cette fonction va activer et enregistrer le driver auprès de SteamVR, à partir
 <param name="unObjectId"></param>
 <returns></returns>
 </member>
-<member name="M:DoMoDriver.Activate(System.UInt32)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="80">
+<member name="M:DoMoDriver.Activate(System.UInt32)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="82">
 fonctions requises par l'interface ITrackedDeviceServerDriver, commes données dans le sample, elles ne sont pas utilisées
 </member>
-<member name="M:DoMoDriver.GetKeypresses" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="88">
+<member name="M:DoMoDriver.GetKeypresses" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="90">
 Ces fonctions gèrent la position (rotation quaternionique et position par vecteur) de l'objet,qrotation est responsable de l'angle et Vecposition[3] de la position.
 <summary>
 récupère les touches de clavier, utilisé par la versions stub de GetPose uniquement
 </summary>
 </member>
-<member name="M:DoMoDriver.GetPoseStubmode" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="93">
+<member name="M:DoMoDriver.GetPoseStubmode" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="95">
 <summary>
 appelle GetKeypresses() et récupère les informations d'angle d'euler et de position puis en fait une pose.
 </summary>
 <returns> Une pose Steamvr DriverPose_t</returns>
 </member>
-<member name="M:DoMoDriver.GetPoseProvided" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="98">
+<member name="M:DoMoDriver.GetPoseProvided" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="100">
 <summary>
 recupère les informations locales de quaternion et de position (obtenus via le tunnel nommé normalement) et en fait une pose
 </summary>
 <returns> Une pose Steamvr DriverPose_t</returns>
 </member>
-<member name="M:DoMoDriver.GetPose" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="104">
+<member name="M:DoMoDriver.GetPose" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="106">
 <summary>
 version forcée par SteamVR et pas utilisée (décrite dans interfaceRequires.cpp), ne devrait pas être utilisée
 </summary>
 <returns> Une pose Steamvr DriverPose_t</returns>
 </member>
-<member name="M:DoMoDriver.RunFrameStub" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="110">
+<member name="M:DoMoDriver.RunFrameStub" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="112">
 Les fonctions ici gèrent la mise à jour des données à chaque frame-----------------------------------------------------------------
 <summary>
 Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu (version stub)
 </summary>
 </member>
-<member name="M:DoMoDriver.RunFrameRaw(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="115">
+<member name="M:DoMoDriver.RunFrameRaw(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="117">
 <summary>
 Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
 </summary>
 <param name="raw">Un string contenant toutes les valeurs relatives à cet appareil (trame de driver standard)</param>
 </member>
-<member name="M:DoMoDriver.GetSerialNumber" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="120">
+<member name="M:DoMoDriver.GetSerialNumber" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="122">
 fonctions requises par l'interface de SteamVR (peut être non-utilisé)---------------------------------------------------------------
 <summary>
 Requis par SteamVR, renvoie l'identifiant unique de l'appareil (décrit dans InterfaceRequires.h)
 </summary>
 <returns>L'identifiant de l'appareil</returns>
 </member>
-<member name="M:DoMoDriver.UpdateInternalValuesFromPipedData(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="126">
+<member name="M:DoMoDriver.UpdateInternalValuesFromPipedData(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="128">
 fonction de mise à jour des valeurs internes
 <summary>
 Cette fonction gère la mise à jour de valeurs par celles reçues du tunnel nommé (appellée par RunFrameRaw())

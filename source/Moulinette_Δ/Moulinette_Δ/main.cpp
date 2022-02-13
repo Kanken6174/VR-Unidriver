@@ -155,8 +155,6 @@ int main(int argc, char* argv[]) {
         devices.updateValues();
         //cout << " got request!!! Sending data right away...\n";
         string toSend = devices.to_string();
-        cout << toSend + "\n";
-        Sleep(20);
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
 

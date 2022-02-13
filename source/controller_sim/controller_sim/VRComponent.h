@@ -34,7 +34,7 @@ private:
 	vr::VRInputComponentHandle_t handle;
 	vr::PropertyContainerHandle_t parentHandle;
 	int sclType = 0;
-
+	long lastLatency = 0;
 	bool keyState = false;//utilisé par le stub uniquement
 public:
 	VRcomponent();
@@ -50,4 +50,6 @@ public:
 	virtual vr::EVRInputError UpdateSelf(vr::VRBoneTransform_t* hand, int size);	//size est mis à 31 si non-précisé
 
 	virtual vr::EVRInputError UpdateSelf(string providedValue);
+
+	virtual void setLastLatency(long latency);
 };

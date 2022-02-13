@@ -30,7 +30,7 @@ private:
 			X = 0,		Y = 0,		Z = 0;		//composants utilisés par les 2 versions (position)
 	double PosOffsets[3];
 	HmdQuaternion_t* DeviceRotation = new HmdQuaternion_t();	//composant de rotation de la version poseProvided() (non-stub)
-
+	long lastLatency = 0;
 	bool ObsoleteMode = false;	//définit la version de la méthode d'activation à utiliser, faux par défaut pour utiliser la version moderne
 
 	//Obsolètes, sauf si utilisation du driver sans les dataTemplates
@@ -64,6 +64,8 @@ public:
 		virtual void setUInt64Property(vr::ETrackedDeviceProperty SVRproperty, uint64_t value);
 		virtual void setBoolProperty(vr::ETrackedDeviceProperty SVRproperty, bool value);
 
+
+		virtual void setLastLatency(long latency);
 	///Fonctions d'activation du driver SteamVR
 		/// <summary>
 		/// Cette fonction va activer et enregistrer le driver auprès de SteamVR, à partir des DataTemplates enregistrées en interne

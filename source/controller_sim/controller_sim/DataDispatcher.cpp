@@ -26,7 +26,7 @@
 		this->doPipeAction();
 		t = clock() - t;
 		DriverLog("pipe time : % d ms", t);
-
+		long latency = t;
 		if (this->lastFrame == "")
 			return;
 
@@ -34,6 +34,7 @@
 
 		int index = 0;
 		for (DoMoDriver* driver : *drivers) {
+			driver->setLastLatency(latency);	//latence du hardware
 			driver->RunFrameRaw(splitDriverData[index]);	// ce sera une trame standard de type délai|quaternion|composant1|composant2|...
 			index++;
 			if (index > splitDriverData.size())	//ne devrait arriver que si la trame envoyée contient trop peu de trames
@@ -50,7 +51,7 @@
 				return;
 			}
 			string answer = this->localServer->ReadPipe();//bloquant
-			DriverLog(answer.c_str());
+			//DriverLog(answer.c_str());
 			if (answer == "" || answer.size() < 4) {
 				DriverLog("read failed");
 				return;

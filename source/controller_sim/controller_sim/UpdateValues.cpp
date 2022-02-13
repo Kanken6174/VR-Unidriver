@@ -35,3 +35,8 @@ vector<string> DoMoDriver::UpdateInternalValuesFromPipedData(string pipedData) {
 
 	return ComponentData;
 }
+
+void DoMoDriver::setLastLatency(long latency)
+{
+	lastLatency = latency;
+}
