@@ -8,8 +8,7 @@ int main() {
 
 	while (true) {
 		//cout << "\nwriting to pipe\n";
-		while (!ps->WriteToPipe("REQUEST", "\\\\.\\pipe\\pipeMoulinette")) 
-		Sleep(100);
+		ps->WriteToPipe("REQUEST", "\\\\.\\pipe\\pipeMoulinette");
 		cout << "getting answer\n";
 		cout << ps->ReadPipe() << endl;
 	}

@@ -20,11 +20,7 @@ std::string PipeServer::ReadPipe() {
 	//cout << "attempting to connect a client to the local pipe with handle " + std::to_string((DWORD)this->hPipe) + "\n";
 	do {
 		this->connected = ConnectNamedPipe(this->hPipe, NULL);
-		if (!this->connected) {
-			//cout << "still not connected after connect call, retrying...\n";
-			//cout << GetLastErrorAsString() + "\n";
-		}
-		Sleep(100);
+		Sleep(5);
 	} while (this->connected == false);
 	if (this->connected) {
 		LPDWORD dwordPtr = &this->dwRead;    //juste un pointeur vers un DWORD

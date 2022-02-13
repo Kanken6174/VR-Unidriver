@@ -41,7 +41,6 @@ std::string PipeServer::ReadPipe() {
 	if (this->connected) {
 		//cout << "was connected, disconnecting...\n";
 		bool  success = DisconnectNamedPipe(this->hPipe);
-		cout << success ? "Successfully disconnected" : "Error disconnecting" + GetLastErrorAsString();
 	}
 	else {
 		cout << "was not connected, not disconnecting...\n";
@@ -71,7 +70,6 @@ bool PipeServer::WriteToPipe(std::string message, string targetPipe = "") {
 	}
 	this->externPipe = CreateFileA(lpcStr, GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, 0, NULL);
 	this->isExternConnected = (this->externPipe != INVALID_HANDLE_VALUE);
-	cout << (this->isExternConnected) ? "Connected to distant pipe\n" : "not connected to distant pipe!\n";
 
 	if (this->isExternConnected)
 	{

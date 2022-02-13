@@ -20,10 +20,6 @@ void VRDevice::updateValues()
 	int i_quaternion = 0;
 
 	for (VRComponent* component : this->components) {
-		/*
-		string tmp_flag = component->getFlag();
-		vector<string> tmp = utilities::split(tmp_flag, '|');
-		*/
 		vector<char> tmp = component->getFlag();
 		for (char elem : tmp) {
 			string c(1, elem);
@@ -31,7 +27,7 @@ void VRDevice::updateValues()
 			if (component->gettype() == -1) {
 				quaternion += nul + "|";
 				i_quaternion++;
-				if (i_quaternion == 9)												// 9 donnée de quaternions 3*{x,y,z}
+				if (i_quaternion == 9)												// 9 donnï¿½e de quaternions 3*{x,y,z}
 					component->receiveData(quaternion);
 			}
 			else {
@@ -46,15 +42,15 @@ string VRDevice::requestTram()
 	clock_t t;
 	char buf[1024];
 
-	string ask = "#";							//symbole envoyé a l arduino
+	string ask = "#";							//symbole envoyï¿½ a l arduino
 	t = clock();
 
 	if (!this->serialPort.send(ask.c_str(), ask.length()))
 		throw runtime_error("Erreur send Packet !");
 
-	memset(buf, NULL, 1024);					//mise a NULL tout les éléments du buffeur
+	memset(buf, NULL, 1024);					//mise a NULL tout les ï¿½lï¿½ments du buffeur
 
-	if (!this->serialPort.receive(buf, 1024))						//reception des données arduino
+	if (!this->serialPort.receive(buf, 1024))						//reception des donnï¿½es arduino
 		throw runtime_error("Erreur receive Packet!");
 
 	t = clock() - t;

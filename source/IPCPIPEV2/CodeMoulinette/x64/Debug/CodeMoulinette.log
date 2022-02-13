@@ -1,10 +1,7 @@
 ﻿  IPCServer.cpp
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(13,104): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(13,104): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(13,167): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(13,167): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\IPCServer.cpp(81,6): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
-  moulinette.cpp
-C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\moulinette.cpp(9,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-  Génération de code en cours...
-  CodeMoulinette.vcxproj -> C:\Users\ASUS\Documents\2A\projet\domocap\source\IPCPIPE\CodeMoulinette\x64\Debug\CodeMoulinette.exe
+Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(13,104): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
+Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(13,104): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
+Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(13,167): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
+Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(13,167): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
+Y:\domocap\source\IPCPIPEV2\CodeMoulinette\IPCServer.cpp(77,6): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
+  CodeMoulinette.vcxproj -> Y:\domocap\source\IPCPIPEV2\CodeMoulinette\x64\Debug\CodeMoulinette.exe
