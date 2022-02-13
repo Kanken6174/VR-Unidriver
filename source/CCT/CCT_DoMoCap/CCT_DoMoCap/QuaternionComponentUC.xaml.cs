@@ -78,7 +78,18 @@ namespace CCT_DoMoCap
 
             if (e.Key == Key.Return)
             {
+                try
+                {
+                    float mag = float.Parse(GyroBox.Text);
 
+                }
+                catch (Exception ex)
+                {
+                    string err = ex.ToString();
+
+                    Console.WriteLine(err);
+
+                }
             }
 
         }

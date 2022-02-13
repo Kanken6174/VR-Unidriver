@@ -26,7 +26,14 @@ namespace CCT_DoMoCap
             InitializeComponent();
         }
 
+        private void OnLoadTrame(object sender, KeyEventArgs e)
+        {
 
+            Window footerParentWindow = Window.GetWindow(Footer);
+            // Footer.TrameButton.DataContext;
+
+
+        }
 
     }
 

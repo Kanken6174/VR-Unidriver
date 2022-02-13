@@ -26,7 +26,7 @@
         </Border>
 
         <Border Grid.Row="1" BorderThickness ="2" BorderBrush="Black" >
-
+            <local:TrameMenuElementUC x:Name="TrameLBox" />
         </Border>
 
         <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2" >
@@ -44,7 +44,7 @@
                     </Grid>
                 </ScrollViewer>
 
-                <local:Footer  VerticalContentAlignment="Center" Margin="10" Grid.Row="1" />
+                <local:Footer  VerticalContentAlignment="Center" Margin="10" Grid.Row="1" x:Name="Footer" />
             </Grid>
         </Border>
 

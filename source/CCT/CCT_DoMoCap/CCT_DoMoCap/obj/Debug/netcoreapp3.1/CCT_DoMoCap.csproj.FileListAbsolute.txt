@@ -24,3 +24,5 @@ C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\CCT_DoMoCap.csprojAssemblyReference.cache
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\QuaternionComponentUC.g.cs
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\QuaternionComponentUC.baml
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\TrameMenuElementUC.g.cs
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\TrameMenuElementUC.baml

@@ -16,6 +16,9 @@
     <Compile Update="QuaternionComponentUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="TrameMenuElementUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Footer.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="QuaternionComponentUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TrameMenuElementUC.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

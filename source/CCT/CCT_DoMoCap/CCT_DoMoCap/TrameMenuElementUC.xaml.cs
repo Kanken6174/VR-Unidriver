@@ -14,23 +14,13 @@ using System.Windows.Shapes;
 namespace CCT_DoMoCap
 {
     /// <summary>
-    /// Logique d'interaction pour Footer.xaml
+    /// Logique d'interaction pour TrameMenuElementUC.xaml
     /// </summary>
-    public partial class Footer : UserControl
+    public partial class TrameMenuElementUC : UserControl
     {
-        public Footer()
+        public TrameMenuElementUC()
         {
             InitializeComponent();
         }
-
-
-        private void OnLoadTrame(object sender, KeyEventArgs e)
-        {
-
-
-
-        }
-
-       
     }
 }
