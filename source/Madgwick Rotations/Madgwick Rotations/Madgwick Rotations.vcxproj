@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="madgwickRotations.cpp" />
     <ClCompile Include="MadgwickRotator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Quaternion.cpp" />
@@ -149,7 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers.h" />
-    <ClInclude Include="madgwickRotations.h" />
     <ClInclude Include="MadgwickRotator.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="test0.h" />

@@ -2,6 +2,6 @@
 #include"test0.h"
 
 int main(void) {
-	testAllValuesToZero();
+	rotationTest();
 	return 0;
 }

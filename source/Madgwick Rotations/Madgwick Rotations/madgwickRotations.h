@@ -22,30 +22,7 @@ namespace madgwickRotations {
 	//for doc see MadgwickRotator.h
 	class MadgwickRotator;
 
-	/**
-	 * @brief Rotate a vector using a quaternion consists of multiplying the quaternion by the vector, and then by the quaternion's reciprocal
-	 * 
-	 * @param q A quaternion to rotate v
-	 * @param v A vector to be rotated by q
-	 * @return Quaternion = the resulting rotation
-	 */
+	
 	Quaternion rotate(Quaternion q, Vector v);
 
-	/**
-	 * @brief Multiplies q1 by q2. Caution : q1 * q2 != q2 * q1 => order matters!
-	 * 
-	 * @param q1 the left quaternion
-	 * @param q2 the right quaternion
-	 * @return Quaternion = the result of the multiplication
-	 */
-	Quaternion multiplyQuaternions(Quaternion q1, Quaternion q2);
-
-	/**
-	 * @brief Adds q1 and q2
-	 * 
-	 * @param q1 the left quaternion
-	 * @param q2 the right quaternion
-	 * @return Quaternion = the result of the addition
-	 */
-	Quaternion addQuaternions(Quaternion q1, Quaternion q2);
 }
