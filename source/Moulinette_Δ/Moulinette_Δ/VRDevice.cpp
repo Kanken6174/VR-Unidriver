@@ -20,10 +20,9 @@ void VRDevice::updateValues()
 	int i_quaternion = 0;
 
 	for (VRComponent* component : this->components) {
-		vector<char> tmp = component->getFlag();
-		for (char elem : tmp) {
-			string c(1, elem);
-			string nul = getDelimitedValueFromRawString(buf, c);
+		vector<string> tmp = component->getFlag();
+		for (string elem : tmp) {
+			string nul = getDelimitedValueFromRawString(buf, elem);
 			if (component->gettype() == -1) {
 				quaternion += nul + "|";
 				i_quaternion++;
@@ -56,7 +55,7 @@ string VRDevice::requestTram()
 	t = clock() - t;
 	this->lastLatency = (((float)t) / CLOCKS_PER_SEC);
 
-	//cout << buf << endl;									//recupere la tram
+	cout << buf << endl;									//recupere la tram
 
 	return buf;
 }

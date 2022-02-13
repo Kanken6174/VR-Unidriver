@@ -12,12 +12,12 @@ int VRComponent::gettype()
 	return this->sclType;
 }
 
-void VRComponent::setFlag(vector<char> flag)
+void VRComponent::setFlag(vector<string> flag)
 {
 	this->flag = flag;
 }
 
-vector<char> VRComponent::getFlag() {
+vector<string> VRComponent::getFlag() {
 	return VRComponent::flag;
 }
 

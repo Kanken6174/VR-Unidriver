@@ -145,7 +145,6 @@
   <ItemGroup>
     <ClCompile Include="..\IPCPIPE\IPCServer.cpp" />
     <ClCompile Include="..\IPCPIPE\utilities.cpp" />
-    <ClCompile Include="..\Rotations\madgwickRotations.cpp" />
     <ClCompile Include="..\Rotations\MadgwickRotator.cpp" />
     <ClCompile Include="..\Rotations\Quaternion.cpp" />
     <ClCompile Include="..\Rotations\Vector.cpp" />

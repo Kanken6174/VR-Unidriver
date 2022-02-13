@@ -1,6 +1,6 @@
 #on donne le nom du driver, cela en créé un nouveau à chaque $
 $mess
-&COM7
+&COM3
 !74800
 #on donne le modèle 3d à utiliser pour le driver
 >oculus_cv1_controller_right
@@ -9,22 +9,22 @@ $mess
 #on définit désormais les composants de ce driver
 =/input/a/click
 :0
-~A 0 10
+~A
 =/input/b/click
 :0
-~B 0 10
+~B
 =/input/system/click
 :0
-~C 0 10
+~C
 =/input/x/click
 :0
-~D 0 10
+~D
 =/input/x/click
 :0
-~E 0 10
+~E
 =/input/x/click
 :0
-~F 0 10
+~F
 =/input/x/click
 :2
 ~G
