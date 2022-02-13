@@ -13,11 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Testing">
+      <UniqueIdentifier>{35e2d5c5-f1e6-49c1-a9f4-a339cac12dd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Testing\Fichiers d%27en-tête">
+      <UniqueIdentifier>{c5c2c332-f7b5-4ac1-afc6-6324e32e0cc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Testing\Fichiers sources">
+      <UniqueIdentifier>{f1b5fddb-b320-4fa6-b211-b6f7d21a4ffe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="madgwickRotations.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="MadgwickRotator.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -27,11 +33,17 @@
     <ClCompile Include="Vector.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Testing\Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Testing\Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test0.cpp">
+      <Filter>Testing\Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="madgwickRotations.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="MadgwickRotator.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -40,6 +52,15 @@
     </ClInclude>
     <ClInclude Include="Vector.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="headers.h">
+      <Filter>Testing\Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="test0.h">
+      <Filter>Testing\Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Testing\Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

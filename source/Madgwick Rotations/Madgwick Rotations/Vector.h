@@ -2,63 +2,71 @@
  * @file Vector.h
  * @author elliott.le_guehennec@etu.uca.fr
  * @brief Defines struct Vector, which is used as input.
- * @version 0.1
- * @date 2021-12-13
+ * @version 0.2
+ * @date 2022-02-13
  */
 #pragma once
 
-#include "madgwickRotations.h"
+namespace madgwickRotations {
+	/**
+	 * @brief A three-dimensional vector representing the forces measured by an instrument (e.g. gyroscope).
+	 *
+	 */
+	struct Vector {
+	public: //constructors
+		/**
+		 * @brief Construct a new Vector object
+		 *
+		 * @param x Value for x
+		 * @param y Value for y
+		 * @param z Value for z
+		 */
+		Vector(double x, double y, double z);
 
-/**
- * @brief A three-dimensional vector representing the forces measured by an instrument (e.g. gyroscope).
- * 
- */
-struct madgwickRotations::Vector {
-public: //constructors
-	/**
-	 * @brief Construct a new Vector object
-	 * 
-	 * @param x Value for x
-	 * @param y Value for y
-	 * @param z Value for z
-	 */
-	Vector(double x, double y, double z) : x(x), y(y), z(z) {}
+		/**
+		 * @brief Default constructor
+		 */
+		Vector();
+
+	public: //methods defined in Vector.cpp
+		/**
+		 * @brief Used for quaternion multiplication. A quaternion and a vector cannot just be multiplied, therefore we convert our vector, setting its W value to 0, so that it is compatible for multiplication.
+		 *
+		 * @return Quaternion version of self
+		 */
+		Quaternion toQuaternion(); //converts vector to a quaternion
+
+	private: //coordinates of a vector
+		/**
+		 * @brief Value on axis x
+		 *
+		 */
+		double x;
+
+		/**
+		 * @brief Value on axis y
+		 *
+		 */
+		double y;
+
+		/**
+		 * @brief Value on axis z
+		 *
+		 */
+		double z;
+
+	public: //getters for the coordinates
+		double getX();
+		double getY();
+		double getZ();
+	};
 
 	/**
-	 * @brief Construct a null Vector object
-	 * 
+	 * @brief Rotate a vector using a quaternion consists of multiplying the quaternion by the vector, and then by the quaternion's reciprocal
+	 *
+	 * @param q A quaternion to rotate v
+	 * @param v A vector to be rotated by q
+	 * @return Quaternion = the resulting rotation
 	 */
-	Vector() : x(0), y(0), z(0) {}
-	
-public: //methods defined in Vector.cpp
-	/**
-	 * @brief Used for quaternion multiplication. A quaternion and a vector cannot just be multiplied, therefore we convert our vector, setting its W value to 0, so that it is compatible for multiplication.
-	 * 
-	 * @return Quaternion version of self
-	 */
-	Quaternion toQuaternion(); //converts vector to a quaternion
-
-private: //coordinates of a vector
-	/**
-	 * @brief Value on axis x
-	 * 
-	 */
-	double x;
-	
-	/**
-	 * @brief Value on axis y
-	 * 
-	 */
-	double y;
-
-	/**
-	 * @brief Value on axis z
-	 * 
-	 */
-	double z;
-
-public: //getters fpr the coordinates
-	double getX() { return x; }
-	double getY() { return y; }
-	double getZ() { return z; }
-};
+	Quaternion rotate(Quaternion q, Vector v);
+}
