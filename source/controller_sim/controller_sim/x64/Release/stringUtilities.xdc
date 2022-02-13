@@ -25,5 +25,12 @@ Va prendre le premier string d'un vecteur de string, le retirer de ce vecteur, e
 <param name="source">le vecteur de strings à traiter</param>
 <returns>le premier string du vecteur</returns>
 </member>
+<member name="M:DriverLog(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*,BTEllipsis)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\driverlog.h" line="1">
+@author Valve corporation
+@brief this file holds the declaration of the driver logging related functions
+@version 0.1
+@date 16/12/2021
+
+</member>
 </members>
 </doc>

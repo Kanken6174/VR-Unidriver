@@ -3,7 +3,22 @@
 
 void VRQuaternion::setValue(time_t delay, madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro)
 {
-    value = transformator.update(delay, acc, mag, gyro);
+    //value = transformator.update(delay, acc, mag, gyro);
+
+    // Abbreviations for the various angular functions
+    double cy = cos((acc.getX()/10000) * 0.5);
+    double sy = sin((acc.getX()/10000) * 0.5);
+    double cp = cos((acc.getY()/10000) * 0.5);
+    double sp = sin((acc.getY()/10000) * 0.5);
+    double cr = cos((acc.getZ()/10000) * 0.5);
+    double sr = sin((acc.getZ()/10000) * 0.5);
+
+    Quaternion q = Quaternion(sr * cp * cy - cr * sp * sy,
+                              cr * sp * cy + sr * cp * sy, 
+                              cr * cp * sy - sr * sp * cy, 
+                              cr * cp * cy + sr * sp * sy);
+    
+    value = q;
 }
 
 VRQuaternion::VRQuaternion(float accCorrectionStrength, float magCorrectionStrength) : transformator(accCorrectionStrength, magCorrectionStrength)
@@ -41,8 +56,8 @@ void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont.
 
     time_t delay = numbers[0]*1000;
 
-    madgwickRotations::Vector gyroscopeData = Vector(numbers[1], numbers[2], numbers[3]);
-    madgwickRotations::Vector accelerometerData = Vector(numbers[4],numbers[5],numbers[6]);
+    madgwickRotations::Vector accelerometerData = Vector(numbers[1], numbers[2], numbers[3]);
+    madgwickRotations::Vector gyroscopeData = Vector(numbers[4], numbers[5], numbers[6]);
     madgwickRotations::Vector magnetometerData = Vector(numbers[7],numbers[8],numbers[9]);
 
     this->setValue(delay, accelerometerData, magnetometerData, gyroscopeData);

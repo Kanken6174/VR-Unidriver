@@ -1,7 +1,5 @@
-﻿  main.cpp
-Y:\domocap\source\Moulinette_Δ\Moulinette_Δ\ComponentReflector.h(28,2): warning C4091: 'static ' : ignoré à gauche de 'ComponentReflector' quand aucune variable n'est déclarée
-  Génération de code en cours
-  0 of 596 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+﻿  Génération de code en cours
+  2 of 586 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code

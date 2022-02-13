@@ -6,10 +6,8 @@
 vector<string> DoMoDriver::UpdateInternalValuesFromPipedData(string pipedData) {
 	vector<string> ComponentData = utilities::split(pipedData, '|');
 
-	int LatencyData = utilities::stringToInt(utilities::getFirstAndRemoveFromVector(ComponentData));
-	HmdQuaternion_t* rotationOfDevice = utilities::stringToQuaternion(utilities::getFirstAndRemoveFromVector(ComponentData), '_');
-
-	this->DeviceRotation = rotationOfDevice;
+	this->lastLatency = std::stol(ComponentData[0]);
+	this->DeviceRotation = utilities::stringToQuaternion(ComponentData[1], '_');
 
 
 	/*	//Le shadowing, PLUS TARD

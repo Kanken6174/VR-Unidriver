@@ -25,7 +25,7 @@
 		t = clock();
 		this->doPipeAction();
 		t = clock() - t;
-		DriverLog("pipe time : % d ms", t);
+		//DriverLog("pipe time : % d ms", t);
 		long latency = t;
 		if (this->lastFrame == "")
 			return;
@@ -51,7 +51,7 @@
 				return;
 			}
 			string answer = this->localServer->ReadPipe();//bloquant
-			//DriverLog(answer.c_str());
+			DriverLog(answer.c_str());
 			if (answer == "" || answer.size() < 4) {
 				DriverLog("read failed");
 				return;

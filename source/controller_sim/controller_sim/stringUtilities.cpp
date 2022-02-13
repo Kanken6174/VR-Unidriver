@@ -1,5 +1,5 @@
 #include"utilities.h"
-
+#include"driverlog.h"
 namespace utilities {
 
 	vector<string> split(string input, char splitter, bool remove) {
@@ -34,9 +34,10 @@ namespace utilities {
 
 	HmdQuaternion_t* stringToQuaternion(string input, char splitter) {
 		vector<string> values = split(input, splitter);
-		if (values.size() < 4)
+		if (values.size() != 4) {
+			DriverLog("Quaternion size mismatch! got %d", values.size());
 			return new HmdQuaternion_t();	//0,0,0,0 si on a une erreur
-		
+		}
 		HmdQuaternion_t* quat = new HmdQuaternion_t();
 		
 		quat->x = (values[0].find_first_not_of("0123456789.-") == std::string::npos) ? stringToDouble(values[0]) : 0;

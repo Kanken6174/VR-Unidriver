@@ -14,8 +14,7 @@ DriverPose_t DoMoDriver::GetPoseProvided() {
 	pose.vecDriverFromHeadTranslation[2] = -0.5;	//on met la manette juste devant la caméra par défaut (la caméra est en -1, car l'axe X est inversé)
 	pose.vecDriverFromHeadTranslation[1] = -0.25;
 	pose.vecDriverFromHeadTranslation[0] = 0.25;
-
-	pose.qRotation = ToQuaternion(roll, yaw, pitch);
+	pose.qRotation = *DeviceRotation;
 	pose.vecPosition[2] = X;
 	pose.vecPosition[1] = Z;
 	pose.vecPosition[0] = Y;
