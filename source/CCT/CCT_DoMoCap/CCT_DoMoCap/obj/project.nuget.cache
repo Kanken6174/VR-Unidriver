@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FZzmwKFnwLlhqAUKHRfXMkA3HnDiwlnLX/tfz/3N7icZgOx1bHKikEunZ8aIByr8qXza3b4ZOAhKzlIw/o9OQg==",
+  "dgSpecHash": "8duraHwcfXUMUmdtb5AsFGeZJc172ZFpNUqlK+a3JTNskt8FcyWCmF4xx517SkWCyKwr/mjkqCihUel8mbJNLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jorda\\Documents\\DOMOCAP\\domocap\\source\\CCT\\CCT_DoMoCap\\CCT_DoMoCap\\CCT_DoMoCap.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\user\\Desktop\\Erwan\\DoMoCap\\domocap\\source\\CCT\\CCT_DoMoCap\\CCT_DoMoCap\\CCT_DoMoCap.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.18\\microsoft.netcore.app.host.win-x64.3.1.18.nupkg.sha512"
+  ],
   "logs": []
 }

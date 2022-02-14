@@ -7,33 +7,33 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Footer.xaml.cs">
+    <Compile Update="view\Footer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="GenericComponentUC.xaml.cs">
+    <Compile Update="view\GenericComponentUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="QuaternionComponentUC.xaml.cs">
+    <Compile Update="view\QuaternionComponentUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="TrameMenuElementUC.xaml.cs">
+    <Compile Update="view\TrameMenuElementUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Footer.xaml">
+    <Page Update="view\Footer.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="GenericComponentUC.xaml">
+    <Page Update="view\GenericComponentUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="view\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="QuaternionComponentUC.xaml">
+    <Page Update="view\QuaternionComponentUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="TrameMenuElementUC.xaml">
+    <Page Update="view\TrameMenuElementUC.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
