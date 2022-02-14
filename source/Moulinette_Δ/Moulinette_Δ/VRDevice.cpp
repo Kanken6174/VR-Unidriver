@@ -1,6 +1,6 @@
 #include "VRDevice.h"
 
-VRDevice::VRDevice(string nom, vector<VRComponent*> components, SerialPort serialPort) {
+VRDevice::VRDevice(string nom, vector<VRComponent*> components, SerialPort* serialPort) {
 	this->serialPort = serialPort;
 	this->components = components;
 	this->nom = nom;
@@ -15,12 +15,12 @@ void VRDevice::updateValues()
 
 	string buf = requestTram();
 
-
 	string quaternion = std::to_string(this->lastLatency)+"|";
 	int i_quaternion = 0;
-
+	
 	for (VRComponent* component : this->components) {
 		vector<string> tmp = component->getFlag();
+		
 		for (string elem : tmp) {
 			string nul = getDelimitedValueFromRawString(buf, elem);
 			if (component->gettype() == -1) {
@@ -32,8 +32,11 @@ void VRDevice::updateValues()
 			else {
 				component->receiveData(nul);
 			}
+			
 		}
+		
 	}
+	
 }
 
 string VRDevice::requestTram()
@@ -44,17 +47,38 @@ string VRDevice::requestTram()
 	string ask = "#";							//symbole envoy� a l arduino
 	t = clock();
 
-	if (!this->serialPort.send(ask.c_str(), ask.length()))
+	if (!this->serialPort->send(ask.c_str(), ask.length()))
 		throw runtime_error("Erreur send Packet !");
 
 	memset(buf, NULL, 1024);					//mise a NULL tout les �l�ments du buffeur
 
-	if (!this->serialPort.receive(buf, 1024))						//reception des donn�es arduino
+	if (!this->serialPort->receive(buf, 1024))						//reception des donn�es arduino
 		throw runtime_error("Erreur receive Packet!");
 
 	t = clock() - t;
 	this->lastLatency = (((float)t) / CLOCKS_PER_SEC);
 
+	if (buf[0] <= 13 ) {		
+		HANDLE hCom = *(HANDLE*)this->serialPort->getHandle();
+
+		if (PurgeComm(hCom, PURGE_TXCLEAR | PURGE_RXCLEAR)) {
+			cout << "PURGE" << endl;
+			try
+			{
+				cout << this->serialPort->getBaudrate() << endl;
+				this->serialPort->connect(this->serialPort);
+			}
+			catch (const runtime_error& e)
+			{
+				cout << e.what() << endl;
+				getchar();
+			}
+		}
+		else {
+			cout << "FAIL" << endl;
+		}
+		
+	}
 	//cout << buf << endl;									//recupere la tram
 
 	return buf;
@@ -91,7 +115,7 @@ void VRDevice::setName(string name)
 	this->nom = name;
 }
 
-void VRDevice::setSerialport(SerialPort serial)
+void VRDevice::setSerialport(SerialPort* serial)
 {
 	this->serialPort = serial;
 }

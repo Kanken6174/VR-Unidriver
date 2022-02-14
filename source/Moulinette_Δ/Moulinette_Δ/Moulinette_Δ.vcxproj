@@ -148,7 +148,6 @@
     <ClCompile Include="..\Rotations\MadgwickRotator.cpp" />
     <ClCompile Include="..\Rotations\Quaternion.cpp" />
     <ClCompile Include="..\Rotations\Vector.cpp" />
-    <ClCompile Include="..\SerialPort\Device.cpp" />
     <ClCompile Include="..\SerialPort\serialPort.cpp" />
     <ClCompile Include="..\utilities\stringUtilities.cpp" />
     <ClCompile Include="ComponentReflector.cpp" />
@@ -166,7 +165,6 @@
     <ClInclude Include="..\Rotations\MadgwickRotator.h" />
     <ClInclude Include="..\Rotations\Quaternion.h" />
     <ClInclude Include="..\Rotations\Vector.h" />
-    <ClInclude Include="..\SerialPort\Device.h" />
     <ClInclude Include="..\SerialPort\serialPort.h" />
     <ClInclude Include="..\utilities\utilities.h" />
     <ClInclude Include="componentHeaders.h" />

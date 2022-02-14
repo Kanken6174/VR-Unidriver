@@ -10,7 +10,7 @@ using namespace serialport;
 /// </summary>
 class VRDevice {
 private:
-    SerialPort serialPort;
+    SerialPort* serialPort;
     vector<VRComponent*> components;
     VRQuaternion* internalRotation;
     float lastLatency;
@@ -18,10 +18,10 @@ private:
 
 public:
     VRDevice();
-    VRDevice(string nom, vector<VRComponent*> components, SerialPort serialPort);//TODO instance le VRDevice sans reponsabilité de lire le DMC
+    VRDevice(string nom, vector<VRComponent*> components, SerialPort* serialPort);//TODO instance le VRDevice sans reponsabilité de lire le DMC
     virtual string getName();
     virtual void setName(string name);
-    virtual void setSerialport(SerialPort serial);
+    virtual void setSerialport(SerialPort* serial);
     virtual void addComponents(VRComponent* components);
     virtual void updateValues();//TODO code
     string requestTram();

@@ -78,9 +78,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources\main</Filter>
     </ClCompile>
-    <ClCompile Include="..\SerialPort\Device.cpp">
-      <Filter>SerialPort</Filter>
-    </ClCompile>
     <ClCompile Include="..\SerialPort\serialPort.cpp">
       <Filter>SerialPort</Filter>
     </ClCompile>
@@ -121,9 +118,6 @@
   <ItemGroup>
     <ClInclude Include="..\IPCPIPE\IPCServer.h">
       <Filter>IPCPIPE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SerialPort\Device.h">
-      <Filter>SerialPort</Filter>
     </ClInclude>
     <ClInclude Include="..\SerialPort\serialPort.h">
       <Filter>SerialPort</Filter>

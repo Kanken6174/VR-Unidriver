@@ -21,10 +21,13 @@ public:
 	int send(const void* buf, int len);
 	int receive(void* buf, int maxlen);
 
-	SerialPort connect();
+	void connect(SerialPort* w);
 
 	void setPort(char* port);
 	void setBaudrate(int baud);
+
+	int getBaudrate();
+	int* getHandle();
 
 private:
 	int pHandle[16];

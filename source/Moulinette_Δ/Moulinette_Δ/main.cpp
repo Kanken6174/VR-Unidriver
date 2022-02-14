@@ -1,13 +1,14 @@
 #include "VRDevice.h"	
 #include "../IPCPIPE/IPCServer.h"
-
+#include <thread>
+#include <mutex>
 
 
 VRDevice *lectureDMC(string file ) {
     ifstream fichier(file, ios::in);
 
     VRDevice *device = new VRDevice();
-    SerialPort w ;
+    SerialPort *w = new SerialPort();
     if (fichier)
     {
         string ligne;
@@ -23,10 +24,10 @@ VRDevice *lectureDMC(string file ) {
                 device->setName(ligne);
                 break;
             case '&':   // Port COM
-                w.setPort(stringToChar(ligne));
+                w->setPort(stringToChar(ligne));
                 break;
             case '!':   // baudrate a terminer
-                w.setBaudrate(stringToInt(ligne));
+                w->setBaudrate(stringToInt(ligne));
                 break;
             case '=':   // nouvel input = nouveau flag 
                 
@@ -90,7 +91,7 @@ VRDevice *lectureDMC(string file ) {
 
         try
         {
-            w = w.connect();
+            w->connect(w);
         }
         catch (const runtime_error& e)
         {
@@ -108,6 +109,7 @@ VRDevice *lectureDMC(string file ) {
     }
 }
 
+
 int main(int argc, char* argv[]) {
     char* usrname = nullptr;
     size_t sz = 0;
@@ -120,13 +122,28 @@ int main(int argc, char* argv[]) {
 
     VRDevice *devices = lectureDMC("gant.dmc");
 
+    mutex t1Lock;
 
-    devices->updateValues();
+    thread t1([&t1Lock, devices]() {
+        while (true) {
+            try {
+                devices->requestTram();
+            }
+            catch (exception e) {
+                cout << e.what() << endl;
+            }
+        }
+    });
+    
+    while (getchar()) {
+        
+        t1Lock.lock();
+        cout << devices->to_string() << endl;
+        t1Lock.unlock();
+    }
 
-    cout << devices->to_string() << endl;
 
-
-   
+   /*
     string received = "";
     PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeMoulinette");
 
@@ -142,5 +159,5 @@ int main(int argc, char* argv[]) {
         string toSend = devices->to_string();
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
-    
+    */
 }

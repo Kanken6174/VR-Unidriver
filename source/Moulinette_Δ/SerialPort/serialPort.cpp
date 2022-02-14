@@ -91,10 +91,12 @@ namespace serialport
 			dwBytesWrite, //Nombre d'octets de données à envoyer
 			&dwBytesWrite, //DWORD*, utilisé pour recevoir et renvoyer le nombre d'octets de données envoyés avec succès
 			NULL); //NULL signifie envoi synchrone, OVERLAPPED* signifie envoi asynchrone
+		
 		if (!bWriteStat)
 		{
 			return 0;
 		}
+
 		return dwBytesWrite;
 
 	}
@@ -109,20 +111,22 @@ namespace serialport
 			wCount, //Nombre maximum d'octets de données à lire
 			&wCount, //DWORD*, utilisé pour recevoir et retourner le nombre d'octets de données lus avec succès
 			NULL); //NULL signifie envoi synchrone, OVERLAPPED* signifie envoi asynchrone
+
+		//cout << "SerialPort " << buf << endl;
 		if (!bReadStat)
 		{
 			return 0;
 		}
+		
 		return wCount;
 
 
 	}
 
-	SerialPort SerialPort::connect() {
-		SerialPort w; //(const char* portname, int baudrate, char databit);
-		if (w.open(this->port, this->baudrate, 8))
+	void SerialPort::connect(SerialPort* w) {
+		if (w->open(this->port, this->baudrate, 8))
 		{
-			return w;
+			cout << "CONNECTED" << endl;
 		}
 		else {
 			throw runtime_error("Port connection erreur !");
@@ -137,6 +141,16 @@ namespace serialport
 	void SerialPort::setBaudrate(int baud)
 	{
 		this->baudrate = baud;
+	}
+
+	int SerialPort::getBaudrate()
+	{
+		return this->baudrate;
+	}
+
+	int* SerialPort::getHandle()
+	{
+		return this->pHandle;
 	}
 
 }
