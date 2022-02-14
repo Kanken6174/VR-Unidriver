@@ -12,7 +12,6 @@ VRDevice::VRDevice()
 
 void VRDevice::updateValues()
 {
-
 	string buf = requestTram();
 
 	string quaternion = std::to_string(this->lastLatency)+"|";
@@ -31,12 +30,9 @@ void VRDevice::updateValues()
 			}
 			else {
 				component->receiveData(nul);
-			}
-			
-		}
-		
-	}
-	
+			}			
+		}		
+	}	
 }
 
 string VRDevice::requestTram()
@@ -58,27 +54,6 @@ string VRDevice::requestTram()
 	t = clock() - t;
 	this->lastLatency = (((float)t) / CLOCKS_PER_SEC);
 
-	if (buf[0] <= 13 ) {		
-		HANDLE hCom = *(HANDLE*)this->serialPort->getHandle();
-
-		if (PurgeComm(hCom, PURGE_TXCLEAR | PURGE_RXCLEAR)) {
-			cout << "PURGE" << endl;
-			try
-			{
-				cout << this->serialPort->getBaudrate() << endl;
-				this->serialPort->connect(this->serialPort);
-			}
-			catch (const runtime_error& e)
-			{
-				cout << e.what() << endl;
-				getchar();
-			}
-		}
-		else {
-			cout << "FAIL" << endl;
-		}
-		
-	}
 	//cout << buf << endl;									//recupere la tram
 
 	return buf;

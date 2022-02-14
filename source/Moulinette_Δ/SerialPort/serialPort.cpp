@@ -112,7 +112,6 @@ namespace serialport
 			&wCount, //DWORD*, utilisé pour recevoir et retourner le nombre d'octets de données lus avec succès
 			NULL); //NULL signifie envoi synchrone, OVERLAPPED* signifie envoi asynchrone
 
-		//cout << "SerialPort " << buf << endl;
 		if (!bReadStat)
 		{
 			return 0;
