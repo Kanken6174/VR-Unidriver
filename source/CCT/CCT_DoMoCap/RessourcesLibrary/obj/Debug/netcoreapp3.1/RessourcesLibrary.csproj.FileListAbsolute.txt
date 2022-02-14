@@ -1,0 +1,10 @@
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\bin\Debug\netcoreapp3.1\RessourcesLibrary.deps.json
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\bin\Debug\netcoreapp3.1\RessourcesLibrary.dll
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\bin\Debug\netcoreapp3.1\RessourcesLibrary.pdb
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.Resource.resources
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.csproj.GenerateResource.cache
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.AssemblyInfoInputs.cache
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.AssemblyInfo.cs
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.dll
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.pdb

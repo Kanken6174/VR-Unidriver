@@ -9,12 +9,17 @@ CCT_DoMoCap
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+<<<<<<< HEAD
 C:\Users\user\Desktop\Erwan\DoMoCap\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\App.xaml
 5-1106473310
+=======
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\App.xaml
+6269047211
+>>>>>>> a031ef6a59084a8769ec11fa8fed57f18cdc36d7
 
 7-871524289
-192-1533232326
-Footer.xaml;GenericComponentUC.xaml;MainWindow.xaml;QuaternionComponentUC.xaml;TrameMenuElementUC.xaml;
+1931318222616
+Footer.xaml;GenericComponentUC.xaml;MainWindow.xaml;QuaternionComponentUC.xaml;Ressources\Dictionary.xaml;TrameMenuElementUC.xaml;
 
 False
 

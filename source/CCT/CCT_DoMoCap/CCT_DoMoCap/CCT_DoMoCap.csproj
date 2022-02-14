@@ -6,4 +6,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Ressources\edit.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RessourcesLibrary\RessourcesLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Ressources\edit.png" />
+  </ItemGroup>
+
 </Project>

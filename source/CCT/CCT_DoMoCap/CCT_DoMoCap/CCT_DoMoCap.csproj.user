@@ -33,7 +33,14 @@
     <Page Update="view\QuaternionComponentUC.xaml">
       <SubType>Designer</SubType>
     </Page>
+<<<<<<< HEAD
     <Page Update="view\TrameMenuElementUC.xaml">
+=======
+    <Page Update="Ressources\Dictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TrameMenuElementUC.xaml">
+>>>>>>> a031ef6a59084a8769ec11fa8fed57f18cdc36d7
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

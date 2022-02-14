@@ -13,7 +13,11 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+<<<<<<< HEAD:source/CCT/CCT_DoMoCap/CCT_DoMoCap/view/Footer.xaml
         <Button Grid.Column="0" Content="Request Trame" Width="120" Height="40" Name="TrameButton"/>
+=======
+        <Button Grid.Column="0" Content="Request Trame" Width="120" Height="40" Name="TrameButton"  />
+>>>>>>> a031ef6a59084a8769ec11fa8fed57f18cdc36d7:source/CCT/CCT_DoMoCap/CCT_DoMoCap/Footer.xaml
         <Button Grid.Column="1" Content="Save Changes" Width="120" Height=" 40"/>
         <Button Grid.Column="2" Content="Undo" Width="120" Height=" 40"/>
     </Grid>

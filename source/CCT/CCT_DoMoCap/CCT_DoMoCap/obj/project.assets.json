@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "RessourcesLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/RessourcesLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RessourcesLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "RessourcesLibrary/1.0.0": {
+      "type": "project",
+      "path": "../RessourcesLibrary/RessourcesLibrary.csproj",
+      "msbuildProject": "../RessourcesLibrary/RessourcesLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "RessourcesLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\user\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\jorda\\Documents\\DOMOCAP\\domocap\\source\\CCT\\CCT_DoMoCap\\RessourcesLibrary\\RessourcesLibrary.csproj": {
+              "projectPath": "C:\\Users\\jorda\\Documents\\DOMOCAP\\domocap\\source\\CCT\\CCT_DoMoCap\\RessourcesLibrary\\RessourcesLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

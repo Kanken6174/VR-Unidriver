@@ -21,14 +21,10 @@ namespace CCT_DoMoCap
         public QuaternionComponentUC()
         {
             InitializeComponent();
-            ListeBox_AddItem();
+            
         }
 
-        private void ListeBox_AddItem()
-        {
-            LBGen.Items.Add("Quaternion");
 
-        }
 
         private void ChangeLetter(KeyEventArgs e)
         {
@@ -80,7 +76,7 @@ namespace CCT_DoMoCap
             {
                 try
                 {
-                    float mag = float.Parse(GyroBox.Text);
+                    float mag = float.Parse(AccelBox.Text);
 
                 }
                 catch (Exception ex)
