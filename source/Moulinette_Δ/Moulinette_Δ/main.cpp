@@ -126,7 +126,7 @@ int main(int argc, char* argv[]) {
     cout << devices->to_string() << endl;
 
 
-   /*
+   
     string received = "";
     PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeMoulinette");
 
@@ -137,10 +137,10 @@ int main(int argc, char* argv[]) {
         if (received == "cleanup") {
             return 0;
         }
-        devices.updateValues();
+        devices->updateValues();
         //cout << " got request!!! Sending data right away...\n";
-        string toSend = devices.to_string();
+        string toSend = devices->to_string();
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
-    */
+    
 }
