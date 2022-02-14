@@ -33,6 +33,9 @@
     <Page Update="QuaternionComponentUC.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Ressources\Dictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="TrameMenuElementUC.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -5,30 +5,61 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CCT_DoMoCap"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="125" d:DesignWidth="800"
+             >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
 
-            <ColumnDefinition Width="2*"/>
+        <Grid.Resources>
+            <Image Source="Ressources/edit.png" Stretch="Fill" x:Key="edit"/>
+        </Grid.Resources>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <ToggleButton Grid.Column="0" Content="A" FontSize="22" Width="75" Height="75"  VerticalContentAlignment="Center" Name="LetterBox"  Keyboard.KeyDown="OnKeyDownHandler" VerticalAlignment="Top" Margin="25" />
-        <Grid Grid.Column="1" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+        <ToggleButton Grid.Column="1" Content="Text to fill later on" FontSize="22" Width="auto" Height="auto"  VerticalContentAlignment="Center" Name="LetterBox"  Keyboard.KeyDown="OnKeyDownHandler" VerticalAlignment="Center"   />
+        <Grid Grid.Column="0" >
 
-                <ColumnDefinition Width="3*"/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition/>
+
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <TextBlock  Grid.Row="0" Text="Type : Rotation" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+
+            <Grid Grid.Row="1"    >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid >
+                    <TextBlock Grid.Row="1" Text="MCS =" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" />
+                    <TextBox Grid.Row="1" Text="0" VerticalAlignment="Center"  Margin="55,0,0,0" FontSize="16" Name="MagnetoBox" />
+                </Grid>
 
 
 
-            <TextBlock Text="Type" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"    FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap"/>
+                <Grid Grid.Column="1">
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="ACS =" TextDecorations="Underline" VerticalAlignment="Center"  FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap"  />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="0" VerticalAlignment="Center"  Margin="55,0,0,0" FontSize="16"  Name="AccelBox" ToolTip="Lorem ipsum" />
+                </Grid>
+
+
+
+            </Grid>
+            
+        </Grid>
+
+            
+
+
+
+            <!-- <TextBlock Text="Type" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"    FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap"/>
             <ListBox Grid.Column="1" Width="auto" Height="40"  Name="LBGen" VerticalAlignment="Center" Margin="25" FontSize="18" />
 
             <TextBlock Grid.Row="1" Text="Magnetometric Correction Strength" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" />
@@ -36,7 +67,9 @@
 
             <TextBlock Grid.Row="2" Text="Gyroscopic Correction Strength" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center"/>
             <TextBox Grid.Column="1" Grid.Row="2" Width="auto" Height="40"  VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="16"  Margin="25" Name="GyroBox"  Keyboard.KeyDown="OnEnterVerifyFloatGyro" />
-        </Grid>
+        </Grid>-->
 
-    </Grid>
+
+
+        </Grid>
 </UserControl>

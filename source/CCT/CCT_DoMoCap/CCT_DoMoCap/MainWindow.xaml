@@ -39,7 +39,7 @@
 
                 <ScrollViewer>
                     <Grid>
-                        <local:QuaternionComponentUC  VerticalAlignment="Top" Margin="10" Padding="0,0,40,0" Height="auto" />
+                        <local:QuaternionComponentUC  VerticalAlignment="Top" Margin="10" Height="auto" />
                         
                     </Grid>
                 </ScrollViewer>

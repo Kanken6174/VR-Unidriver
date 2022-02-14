@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCT_DoMoCap", "CCT_DoMoCap\CCT_DoMoCap.csproj", "{8C698170-5C20-476C-BEED-B03A79279A19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCT_DoMoCap", "CCT_DoMoCap\CCT_DoMoCap.csproj", "{8C698170-5C20-476C-BEED-B03A79279A19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RessourcesLibrary", "RessourcesLibrary\RessourcesLibrary.csproj", "{3E0D2683-332A-42AB-ACF5-7423543239F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8C698170-5C20-476C-BEED-B03A79279A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C698170-5C20-476C-BEED-B03A79279A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C698170-5C20-476C-BEED-B03A79279A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E0D2683-332A-42AB-ACF5-7423543239F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E0D2683-332A-42AB-ACF5-7423543239F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E0D2683-332A-42AB-ACF5-7423543239F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E0D2683-332A-42AB-ACF5-7423543239F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

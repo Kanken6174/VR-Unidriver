@@ -13,7 +13,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="0" Content="Request Trame" Width="120" Height="40" Name="TrameButton" Click="AddTrame" />
+        <Button Grid.Column="0" Content="Request Trame" Width="120" Height="40" Name="TrameButton"  />
         <Button Grid.Column="1" Content="Save Changes" Width="120" Height=" 40"/>
         <Button Grid.Column="2" Content="Undo" Width="120" Height=" 40"/>
     </Grid>

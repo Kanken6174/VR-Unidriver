@@ -61,7 +61,7 @@ namespace CCT_DoMoCap {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CCT_DoMoCap;V1.0.0.0;component/tramemenuelementuc.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CCT_DoMoCap;component/tramemenuelementuc.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\TrameMenuElementUC.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
