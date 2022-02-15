@@ -8,3 +8,4 @@ C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrar
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.csproj.CoreCompileInputs.cache
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.dll
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.pdb
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\RessourcesLibrary\obj\Debug\netcoreapp3.1\RessourcesLibrary.csprojAssemblyReference.cache
