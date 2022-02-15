@@ -35,6 +35,13 @@ namespace CCT_DoMoCap
 
         }
 
+
+       private void OpenOptionWindow(object sender, RoutedEventArgs e )
+        {
+            OptionWindow w = new OptionWindow();
+            w.Show();
+        }
+
     }
 
 

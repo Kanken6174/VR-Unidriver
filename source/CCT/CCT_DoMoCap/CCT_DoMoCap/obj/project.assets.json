@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "C:\\Users\\jorda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\Erwan\\DoMoCap\\domocap\\source\\CCT\\CCT_DoMoCap\\CCT_DoMoCap\\CCT_DoMoCap.csproj",
+      "projectUniqueName": "C:\\Users\\jorda\\Documents\\DOMOCAP\\domocap\\source\\CCT\\CCT_DoMoCap\\CCT_DoMoCap\\CCT_DoMoCap.csproj",
       "projectName": "CCT_DoMoCap",
-      "projectPath": "C:\\Users\\user\\Desktop\\Erwan\\DoMoCap\\domocap\\source\\CCT\\CCT_DoMoCap\\CCT_DoMoCap\\CCT_DoMoCap.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\Erwan\\DoMoCap\\domocap\\source\\CCT\\CCT_DoMoCap\\CCT_DoMoCap\\obj\\",
+      "projectPath": "C:\\Users\\jorda\\Documents\\DOMOCAP\\domocap\\source\\CCT\\CCT_DoMoCap\\CCT_DoMoCap\\CCT_DoMoCap.csproj",
+      "packagesPath": "C:\\Users\\jorda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jorda\\Documents\\DOMOCAP\\domocap\\source\\CCT\\CCT_DoMoCap\\CCT_DoMoCap\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jorda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -78,12 +78,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.18, 3.1.18]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -92,7 +86,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.211\\RuntimeIdentifierGraph.json"
       }
     }
   }

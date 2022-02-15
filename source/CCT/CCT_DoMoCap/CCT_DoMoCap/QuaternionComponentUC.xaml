@@ -18,7 +18,7 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <ToggleButton Grid.Column="1" Content="Text to fill later on" FontSize="22" Width="auto" Height="auto"  VerticalContentAlignment="Center" Name="LetterBox"  Keyboard.KeyDown="OnKeyDownHandler" VerticalAlignment="Center"   />
+        <ToggleButton Grid.Column="1" Content="Text to fill later on" FontSize="22" Width="auto" Height="auto"  VerticalContentAlignment="Center" Name="LetterBox"  Keyboard.KeyDown="OnKeyDownHandler" VerticalAlignment="Center" Margin="5,0,0,0"   />
         <Grid Grid.Column="0" >
 
             <Grid.RowDefinitions>
@@ -37,16 +37,16 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Grid >
+                <Grid ToolTip="Lorem ipsum">
                     <TextBlock Grid.Row="1" Text="MCS =" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" />
                     <TextBox Grid.Row="1" Text="0" VerticalAlignment="Center"  Margin="55,0,0,0" FontSize="16" Name="MagnetoBox" />
                 </Grid>
 
 
 
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="1" ToolTip="Lorem ipsum">
                     <TextBlock Grid.Row="1" Grid.Column="1" Text="ACS =" TextDecorations="Underline" VerticalAlignment="Center"  FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap"  />
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="0" VerticalAlignment="Center"  Margin="55,0,0,0" FontSize="16"  Name="AccelBox" ToolTip="Lorem ipsum" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="0" VerticalAlignment="Center"  Margin="55,0,0,0" FontSize="16"  Name="AccelBox"  />
                 </Grid>
 
 

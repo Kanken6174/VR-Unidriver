@@ -4,26 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\user\Desktop\Erwan\DoMoCap\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\
 CCT_DoMoCap
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-<<<<<<< HEAD
-C:\Users\user\Desktop\Erwan\DoMoCap\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\App.xaml
-5636148579
-
-11-108765259
-192-1533232326
-view\Footer.xaml;view\GenericComponentUC.xaml;view\MainWindow.xaml;view\QuaternionComponentUC.xaml;view\TrameMenuElementUC.xaml;
-=======
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\App.xaml
-6269047211
+7-344999077
 
-91433650083
+10-419753397
 1931318222616
-Footer.xaml;GenericComponentUC.xaml;MainWindow.xaml;QuaternionComponentUC.xaml;Ressources\Dictionary.xaml;TrameMenuElementUC.xaml;
->>>>>>> a031ef6a59084a8769ec11fa8fed57f18cdc36d7
+Footer.xaml;GenericComponentUC.xaml;MainWindow.xaml;OptionWindow.xaml;QuaternionComponentUC.xaml;Ressources\Dictionary.xaml;TrameMenuElementUC.xaml;
 
 False
 

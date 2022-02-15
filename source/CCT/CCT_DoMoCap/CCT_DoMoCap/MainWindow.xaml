@@ -22,7 +22,11 @@
         </Border>
 
         <Border Grid.Column="1" BorderThickness ="2" BorderBrush="Black" >
-            
+            <Grid HorizontalAlignment="Left">
+
+
+                <Button  x:Name="OptionButton" Content="Options" MinWidth="50" FontSize="18" Margin="5" Click="OpenOptionWindow"/>
+            </Grid>
         </Border>
 
         <Border Grid.Row="1" BorderThickness ="2" BorderBrush="Black" >
