@@ -7,68 +7,43 @@ namespace Business
     public class DriverDataTemplate
     {
 
-        public DriverDataTemplate( String name, string renderModel, string serialNumber, int role)
+        public string Name { get; set; }  //le nom de l'appareil qui sera ajouté
+        public string RenderModel { get; set; }      //le modèle 3d de l'appareil (optionnel)
+        public string SerialNumber { get; set; }     //le numéro de série (révision) de l'appareil
+        public string Driver { get; set; } // The driver Steam vr will use
+        public int Role { get; set; }   //défaut à invalid (0), de 0 à 5 (1 main droite, 2 main gauche)
+        
+        
+        public List<Component> components = new List<Component>();
+
+        public void display(List<Component> components)
+        {
+            List<Component> l = components;
+            foreach (Component c in l)
+            {
+                Console.WriteLine(c);
+            }
+        }
+        
+
+        public DriverDataTemplate(String name, string serialNumber, string renderModel, string driver, int role)
         {
             Name = name;
             RenderModel = renderModel;
             SerialNumber = serialNumber;
+            Driver = driver;
             Role = role;
         }
 
-        public string Name
+        public override string ToString()
         {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
+            return $"#on donne le nom du driver, cela en créé un nouveau à chaque $\n" +
+                $"${ Name}\n&{RenderModel}\n!{SerialNumber}\n" +
+                $"#on donne le modèle 3d à utiliser pour le driver\n" +
+                $">{Driver}\n" +
+                $"#on définit le rôle du driver (1 = main gauche, " +
+                $"2 = droite, 3 = pas applicable,...)\n" +
+                $"<{Role}";
         }
-        private string name;    //le nom de l'appareil qui sera ajouté
-
-
-        public string RenderModel
-        {
-            get
-            {
-                return renderModel;
-            }
-            set
-            {
-                renderModel = value;
-            }
-        }
-        private string renderModel;        //le modèle 3d de l'appareil (optionnel)
-
-        public string SerialNumber
-        {
-            get
-            {
-                return serialNumber;
-            }
-            set
-            {
-                serialNumber = value;
-            }
-        }
-        private string serialNumber;        //le numéro de série (révision) de l'appareil
-
-        public int Role
-        {
-            get
-            {
-                return role;
-            }
-            set
-            {
-                role = value;
-            }
-        }
-        private int role;    //défaut à invalid (0), de 0 à 5 (1 main droite, 2 main gauche)
-        
-        
-        ///vector<ComponentDataTemplate*> components;    //les divers composants du driver (boutons, joysticks, entrées squelette...)
-    };
+    }
 }

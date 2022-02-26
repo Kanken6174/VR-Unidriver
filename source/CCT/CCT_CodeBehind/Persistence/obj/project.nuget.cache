@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "GgOegvolYtqY8Z3Y5xFEIIrrkHnu2ci7oXr1UTFKy4VMd/om6bMEjeFPrmmjOSTERGIlUxvQexte6ZK6GLEI0A==",
+  "dgSpecHash": "OUZFagjWCAJ2xT/qg8Jj6FmAPIdZ0WOr1nhrRJP3gaCC+bpMe4TQNKYRbWEBlEmtScqq6yNlpMoKxxVMOVXb+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\Erwan\\DoMoCap\\domocap\\source\\CCT\\CCT_CodeBehind\\Persistence\\Persistence.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\erwan\\Desktop\\IUT\\domocap\\source\\CCT\\CCT_CodeBehind\\Persistence\\Persistence.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\erwan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\erwan\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\erwan\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

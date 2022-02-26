@@ -6,37 +6,15 @@ namespace Business
 {
     class QuaternionCorrection : ComponentDataTemplate
     {
-        public QuaternionCorrection(int inputType, string inputPath, char flag, double magCorrectionStepSize, double gyroCorrectionStepSize) 
-            : base(inputType, inputPath, flag)
+        
+        public double MagCorrectionStepSize { get; set; }
+        public double GyroCorrectionStepSize { get; set; }
+
+        public QuaternionCorrection(string inputPath, int inputType,char flag, double magCorrectionStepSize, double gyroCorrectionStepSize)
+            : base(inputPath, inputType, flag)
         {
             MagCorrectionStepSize = magCorrectionStepSize;
             GyroCorrectionStepSize = gyroCorrectionStepSize;
         }
-
-        public double MagCorrectionStepSize
-        {
-            get
-            {
-                return magCorrectionStepSize;
-            }
-            private set
-            {
-                magCorrectionStepSize = value;
-            }
-        }
-        private double magCorrectionStepSize;
-
-        public double GyroCorrectionStepSize
-        {
-            get
-            {
-                return gyroCorrectionStepSize;
-            }
-            private set
-            {
-                gyroCorrectionStepSize = value;
-            }
-        }
-        private double gyroCorrectionStepSize;
     }
 }
