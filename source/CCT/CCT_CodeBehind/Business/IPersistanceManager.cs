@@ -6,6 +6,9 @@ namespace Business
 {
     public interface IPersistanceManager
     {
-        (DriverDataTemplate driver, List<Component> components) chargeDonnees();
+        (IEnumerable<DriverDataTemplate> driver, IEnumerable<Component> components) chargeDonnees();
+        void SauvegardeDonnees(IEnumerable<DriverDataTemplate> driver, IEnumerable<Component> components);
     }
+
+    
 }

@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TestConsole/1.0.0": {
+        "dependencies": {
+          "Business": "1.0.0",
+          "Stub": "1.0.0"
+        },
+        "runtime": {
+          "TestConsole.dll": {}
+        }
+      },
+      "Business/1.0.0": {
+        "runtime": {
+          "Business.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "dependencies": {
+          "Business": "1.0.0"
+        },
+        "runtime": {
+          "Stub.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TestConsole/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Stub/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

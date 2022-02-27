@@ -7,13 +7,21 @@ namespace Stub
         {
         }
 
-        public (DriverDataTemplate driver, List<Component> components) chargeDonnees()
+        public (IEnumerable<DriverDataTemplate> driver, IEnumerable<Component> components) chargeDonnees()
         {
-            DriverDataTemplate driver = new DriverDataTemplate("ApexGlove_Right", "COM8",
-                "500000", "oculus_cv1_controller_right", 2);
+            List<DriverDataTemplate> driver = ChargeDriver();
             List<Component> components = ChargeComponent();
             return (driver, components);
         }
+
+        private List<DriverDataTemplate> ChargeDriver()
+        {
+            List<DriverDataTemplate> driver = new List<DriverDataTemplate>();
+            driver.Add(new DriverDataTemplate("ApexGlove_Right", "COM8",
+                "500000", "oculus_cv1_controller_right", 2));
+            return driver;
+        }
+
 
         private List<Component> ChargeComponent()
         {
@@ -36,6 +44,10 @@ namespace Stub
             return components;
         }
 
+        public void SauvegardeDonnees(IEnumerable<DriverDataTemplate> driver, IEnumerable<Component> components)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

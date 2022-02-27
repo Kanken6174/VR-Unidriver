@@ -1,0 +1,15 @@
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\obj\Debug\net6.0\EcriturefichierDataContract.csproj.AssemblyReference.cache
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\obj\Debug\net6.0\EcriturefichierDataContract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\obj\Debug\net6.0\EcriturefichierDataContract.AssemblyInfoInputs.cache
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\obj\Debug\net6.0\EcriturefichierDataContract.AssemblyInfo.cs
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\obj\Debug\net6.0\EcriturefichierDataContract.csproj.CoreCompileInputs.cache
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\bin\Debug\net6.0\EcriturefichierDataContract.deps.json
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\bin\Debug\net6.0\EcriturefichierDataContract.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\bin\Debug\net6.0\ref\EcriturefichierDataContract.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\bin\Debug\net6.0\EcriturefichierDataContract.pdb
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\bin\Debug\net6.0\Business.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\bin\Debug\net6.0\Business.pdb
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\obj\Debug\net6.0\EcriturefichierDataContract.csproj.CopyComplete
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\obj\Debug\net6.0\EcriturefichierDataContract.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\obj\Debug\net6.0\ref\EcriturefichierDataContract.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\EcriturefichierDataContract\obj\Debug\net6.0\EcriturefichierDataContract.pdb

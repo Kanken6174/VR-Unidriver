@@ -1,31 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business
 {
+    [DataContract]
     public class DriverDataTemplate
     {
 
+        [DataMember]
         public string Name { get; set; }  //le nom de l'appareil qui sera ajouté
+        [DataMember]
         public string RenderModel { get; set; }      //le modèle 3d de l'appareil (optionnel)
+        [DataMember]
         public string SerialNumber { get; set; }     //le numéro de série (révision) de l'appareil
+        [DataMember]
         public string Driver { get; set; } // The driver Steam vr will use
+        [DataMember]
         public int Role { get; set; }   //défaut à invalid (0), de 0 à 5 (1 main droite, 2 main gauche)
         
-        
-        public List<Component> components = new List<Component>();
-
-        public void display(List<Component> components)
-        {
-            List<Component> l = components;
-            foreach (Component c in l)
-            {
-                Console.WriteLine(c);
-            }
-        }
-        
-
         public DriverDataTemplate(String name, string serialNumber, string renderModel, string driver, int role)
         {
             Name = name;
