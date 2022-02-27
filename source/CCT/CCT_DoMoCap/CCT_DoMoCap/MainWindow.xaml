@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CCT_DoMoCap"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="CCT" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -18,19 +18,39 @@
         </Grid.RowDefinitions>
 
         <Border BorderThickness ="2" BorderBrush="Black" >
-            <TextBlock Text="CCT" VerticalAlignment="Center" TextAlignment="Center" FontSize="22" />
+            <Grid >
+                <TextBlock Margin="15,0,0,0" Text="Your Devices" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Center" FontSize="14"  FontWeight="Bold" TextDecorations="Underline" />
+                <Button Margin="0,5,15,5" Content="Add Device" Width="auto"  FontSize="12" HorizontalAlignment="Right" Click="OpenDeviceAddingWindow" />
+            </Grid>
         </Border>
 
         <Border Grid.Column="1" BorderThickness ="2" BorderBrush="Black" >
-            <Grid HorizontalAlignment="Left">
+            <Grid >
 
-
-                <Button  x:Name="OptionButton" Content="Options" MinWidth="50" FontSize="18" Margin="5" Click="OpenOptionWindow"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock  Text="Device's Name" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold" Margin="15,0,0,0" Name="DeviceName" />
+                <Button Grid.Column="1" Content="Edit Name" HorizontalAlignment="Left" Margin="15,5,0,5" Click="ChangeDeviceName" />
+                <Button Grid.Column="1" Content="Delete" HorizontalAlignment="Right" Margin="0,5,15,5"/>
             </Grid>
         </Border>
 
         <Border Grid.Row="1" BorderThickness ="2" BorderBrush="Black" >
-            <local:TrameMenuElementUC x:Name="TrameLBox" />
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="9*" />
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <local:DeviceListUC/>
+
+                <Button  Grid.Row="1"  x:Name="OptionButton" Content="Options" MinWidth="50" FontSize="18" Margin="5" Click="OpenOptionWindow"/>
+
+            </Grid>
         </Border>
 
         <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2" >
@@ -42,10 +62,12 @@
                 </Grid.RowDefinitions>
 
                 <ScrollViewer>
-                    <Grid>
-                        <local:QuaternionComponentUC  VerticalAlignment="Top" Margin="10" Height="auto" />
-                        
-                    </Grid>
+                    <StackPanel Orientation="Vertical">
+                        <local:DeviceInfoUC Margin="10"/>
+                        <local:QuaternionComponentUC  Margin="10" Height="auto" />
+                        <local:ModelViewerUC Margin="10"/>
+
+                    </StackPanel>
                 </ScrollViewer>
 
                 <local:Footer  VerticalContentAlignment="Center" Margin="10" Grid.Row="1" x:Name="Footer" />

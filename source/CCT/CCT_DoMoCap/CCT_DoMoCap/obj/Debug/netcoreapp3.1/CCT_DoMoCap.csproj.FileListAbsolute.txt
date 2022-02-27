@@ -12,7 +12,6 @@ C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\GenericComponentUC.g.cs
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\QuaternionComponentUC.g.cs
-C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\TrameMenuElementUC.g.cs
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\CCT_DoMoCap_MarkupCompile.cache
@@ -21,7 +20,6 @@ C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\GenericComponentUC.baml
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\MainWindow.baml
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\QuaternionComponentUC.baml
-C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\TrameMenuElementUC.baml
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\CCT_DoMoCap.g.resources
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\CCT_DoMoCap.AssemblyInfoInputs.cache
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\CCT_DoMoCap.AssemblyInfo.cs
@@ -32,3 +30,11 @@ C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\CCT_DoMoCap.genruntimeconfig.cache
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\OptionWindow.g.cs
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\OptionWindow.baml
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\DeviceListUC.g.cs
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\DeviceListUC.baml
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\DeviceInfoUC.g.cs
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\DeviceInfoUC.baml
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\ModelViewerUC.g.cs
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\ModelViewerUC.baml
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\DeviceAdding.g.cs
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\obj\Debug\netcoreapp3.1\DeviceAdding.baml

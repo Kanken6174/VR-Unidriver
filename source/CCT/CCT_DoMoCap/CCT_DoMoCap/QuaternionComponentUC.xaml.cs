@@ -26,25 +26,9 @@ namespace CCT_DoMoCap
 
 
 
-        private void ChangeLetter(KeyEventArgs e)
-        {
-            if (e.Key >= Key.A || e.Key <= Key.Z)
-            {
-                LetterBox.Content = e.Key.ToString();
-            }
-        }
 
 
 
-        private void OnKeyDownHandler(object sender, KeyEventArgs e)
-        {
-
-            if (LetterBox.IsChecked == true && LetterBox.IsFocused == true)
-            {                   
-                    ChangeLetter(e);
-            }
-
-        }
 
         private void OnEnterVerifyFloatMagneto(object sender, KeyEventArgs e)
         {

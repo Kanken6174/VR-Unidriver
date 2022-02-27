@@ -1,0 +1,76 @@
+﻿<Window x:Class="CCT_DoMoCap.DeviceAdding"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CCT_DoMoCap"
+        mc:Ignorable="d"
+        Title="Add a Device" Height="250" Width="400">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="Name :" Margin="15" FontSize="16" FontWeight="DemiBold" />
+            <TextBox Grid.Column="1" Margin="15" />
+
+        </Grid>
+
+        <Grid Grid.Row="1" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="Baudrate :" Margin="15" FontSize="16" FontWeight="DemiBold" />
+            <TextBox Grid.Column="1" Margin="15" />
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="COM Socket :" Margin="15" FontSize="16" FontWeight="DemiBold" />
+            <TextBox Grid.Column="1" Margin="15" />
+
+        </Grid>
+
+        <Grid Grid.Row="3">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Cancel" Margin="15" />
+                <Button Content="Add" Grid.Column="1" Margin="15" />
+                
+            </Grid>
+            
+        </Grid>
+
+    </Grid>
+</Window>

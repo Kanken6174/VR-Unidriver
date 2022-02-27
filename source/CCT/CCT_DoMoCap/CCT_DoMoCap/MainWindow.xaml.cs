@@ -36,12 +36,23 @@ namespace CCT_DoMoCap
         }
 
 
-       private void OpenOptionWindow(object sender, RoutedEventArgs e )
+        private void ChangeDeviceName (object sender, RoutedEventArgs e)
+        {
+            DeviceName.Text = "New Name";
+        }
+
+        private void OpenOptionWindow(object sender, RoutedEventArgs e )
         {
             OptionWindow w = new OptionWindow();
             w.Show();
         }
 
+
+        private void OpenDeviceAddingWindow(object sender, RoutedEventArgs e)
+        {
+            DeviceAdding w = new DeviceAdding();
+            w.Show();
+        }
     }
 
 

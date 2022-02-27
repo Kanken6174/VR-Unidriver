@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_DoMoCap\CCT_DoMoCap\App.xaml
-7-344999077
+10-2005792822
 
-12491242225
+151817162919
 1931318222616
-Footer.xaml;GenericComponentUC.xaml;MainWindow.xaml;OptionWindow.xaml;QuaternionComponentUC.xaml;Ressources\Dictionary.xaml;TrameMenuElementUC.xaml;
+DeviceAdding.xaml;DeviceInfoUC.xaml;DeviceListUC.xaml;Footer.xaml;GenericComponentUC.xaml;MainWindow.xaml;ModelViewerUC.xaml;OptionWindow.xaml;QuaternionComponentUC.xaml;Ressources\Dictionary.xaml;
 
-True
+False
 

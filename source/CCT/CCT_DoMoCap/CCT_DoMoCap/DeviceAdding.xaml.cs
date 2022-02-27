@@ -8,17 +8,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CCT_DoMoCap
 {
     /// <summary>
-    /// Logique d'interaction pour TrameMenuElementUC.xaml
+    /// Logique d'interaction pour DeviceAdding.xaml
     /// </summary>
-    public partial class TrameMenuElementUC : UserControl
+    public partial class DeviceAdding : Window
     {
-        public TrameMenuElementUC()
+        public DeviceAdding()
         {
             InitializeComponent();
         }
