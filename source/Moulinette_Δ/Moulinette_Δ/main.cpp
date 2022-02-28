@@ -2,16 +2,17 @@
 #include "../IPCPIPE/IPCServer.h"
 
 
-VRDevice *lectureDMC(string file ) {
-    ifstream fichier(file, ios::in);
+
+VRDevice *lectureDMC(ifstream &fichier ) {
 
     VRDevice *device = new VRDevice();
     SerialPort *w = new SerialPort();
-    if (fichier)
-    {
+
         string ligne;
         while (getline(fichier, ligne))
         {
+            if (ligne == "/.")
+                return device;
             char id = ligne[0];
             ligne = ligne.erase(0, 1);
             ligne.erase(remove(ligne.begin(), ligne.end(), '\n'), ligne.end()); //on enlve les \n parasites
@@ -94,19 +95,32 @@ VRDevice *lectureDMC(string file ) {
         catch (const runtime_error& e)
         {
             cout << e.what() << endl;
-            getchar();
+            //getchar();
         }
 
         device->setSerialport(w);
 
         return device;
-    }
-    else {
-        cerr << "Erreur lecture fichier DMC" << endl;
-
-    }
+    
 }
 
+vector<VRDevice*> getAllDevice(string file) {
+    ifstream fichier(file, ios::in);
+    vector<VRDevice*> toto;
+
+    if (fichier.is_open()) {
+        while (fichier.good()) {
+            VRDevice* devices = lectureDMC(fichier);
+            toto.push_back(devices);
+        }
+        fichier.close();
+    }
+    else {
+        cout << "Erreur lecture file DMC" << endl;
+    }
+
+    return toto;
+}
 
 int main(int argc, char* argv[]) {
     char* usrname = nullptr;
@@ -117,12 +131,7 @@ int main(int argc, char* argv[]) {
 
     string filePath = "C:\\Users\\" + string(usrname) + "\\AppData\\Roaming\\.DoMoCap\\driverCfg.dmc";	//full path
 
-
-    VRDevice *devices = lectureDMC("gant.dmc");
-
-    devices->updateValues();
-
-    cout << devices->to_string() << endl;
+    vector<VRDevice*> toto = getAllDevice("gant.dmc");
 
 
     string received = "";
@@ -135,9 +144,18 @@ int main(int argc, char* argv[]) {
         if (received == "cleanup") {
             return 0;
         }
-        devices->updateValues();
+
+        string toSend;
+        for (VRDevice* test : toto)
+        {
+            test->updateValues();
+            toSend += test->to_string();                //modif a prevoir
+        }
+
+        //devices->updateValues();
         //cout << " got request!!! Sending data right away...\n";
-        string toSend = devices->to_string();
+        //string toSend = devices->to_string();
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
+    
 }

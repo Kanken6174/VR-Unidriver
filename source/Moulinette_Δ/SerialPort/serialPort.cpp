@@ -123,11 +123,12 @@ namespace serialport
 	}
 
 	void SerialPort::connect(SerialPort* w) {
-		if (w->open(this->port, this->baudrate, 8))
+		if(w->open(this->port, this->baudrate, 8))
 		{
-			cout << "CONNECTED" << endl;
+			//cout << "CONNECTED" << endl;
 		}
 		else {
+			//cout << "FAILED" << endl;
 			throw runtime_error("Port connection erreur !");
 		}
 	}
