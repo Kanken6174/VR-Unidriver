@@ -1,5 +1,6 @@
 #include "VRDevice.h"	
 #include "../IPCPIPE/IPCServer.h"
+#include <thread>
 
 
 
@@ -122,6 +123,15 @@ vector<VRDevice*> getAllDevice(string file) {
     return toto;
 }
 
+void start(VRDevice* device) {
+
+    while (true) {
+        device->updateValues();
+        //cout << device->to_string() << endl;
+        //cout << " got request!!! Sending data right away...\n";
+    }
+}
+
 int main(int argc, char* argv[]) {
     char* usrname = nullptr;
     size_t sz = 0;
@@ -133,6 +143,16 @@ int main(int argc, char* argv[]) {
 
     vector<VRDevice*> toto = getAllDevice("gant.dmc");
 
+    vector<thread> readerThreads;
+
+    for (VRDevice* reader : toto)
+    {
+        readerThreads.push_back(thread(&start,reader));
+    }
+
+    
+
+
 
     string received = "";
     PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeMoulinette");
@@ -142,20 +162,21 @@ int main(int argc, char* argv[]) {
         //cout << "Received data\n";
         //cout << received;
         if (received == "cleanup") {
+            for (auto& t : readerThreads) t.join();
             return 0;
         }
 
         string toSend;
         for (VRDevice* test : toto)
         {
-            test->updateValues();
-            toSend += test->to_string();                //modif a prevoir
+            toSend += test->to_string()+";";
         }
-
-        //devices->updateValues();
-        //cout << " got request!!! Sending data right away...\n";
+        
         //string toSend = devices->to_string();
+        toSend.erase(toSend.length()-1,toSend.length());
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
     
+
+    return 0;
 }

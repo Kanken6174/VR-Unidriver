@@ -47,8 +47,10 @@ void VRAnalog::setMax(double value)
 void VRAnalog::receiveData(string data)
 {
 	try {
-		this->setValueOld(this->getValue());
-		this->setValue(std::stod(data));
+		if (data != "") {
+			this->setValueOld(this->getValue());
+			this->setValue(std::stod(data));
+		}
 	}
 	catch (std::out_of_range e) {
 		//throw away the error if can't convert

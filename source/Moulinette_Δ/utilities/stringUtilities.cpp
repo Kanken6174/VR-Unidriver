@@ -10,6 +10,9 @@ namespace utilities {
 
 		while (getline(strs, segment, splitter))
 		{
+			if (segment == "")
+				segment = "0";							//permet d'éviter des erreurs de conversions mais ne permet pas de garder la derniere valeur en mémoire
+
 			toreturn.push_back(segment);
 		}
 

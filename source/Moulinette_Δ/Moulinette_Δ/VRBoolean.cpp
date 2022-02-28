@@ -18,7 +18,8 @@ VRBoolean::VRBoolean()
 void VRBoolean::receiveData(string data)
 {
 	try {
-		this->setValue(std::stod(data));
+		if(data != "")
+			this->setValue(std::stod(data));
 	}
 	catch (std::out_of_range e) {
 		//throw away the error if can't convert
