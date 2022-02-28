@@ -15,7 +15,7 @@ namespace utilities {
 
 			toreturn.push_back(segment);
 		}
-
+		
 		return toreturn;
 	}
 

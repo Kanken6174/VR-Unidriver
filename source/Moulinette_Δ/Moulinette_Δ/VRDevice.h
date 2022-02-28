@@ -18,12 +18,12 @@ private:
 
 public:
     VRDevice();
-    VRDevice(string nom, vector<VRComponent*> components, SerialPort* serialPort);//TODO instance le VRDevice sans reponsabilité de lire le DMC
+    VRDevice(string nom, vector<VRComponent*> components, SerialPort* serialPort);
     virtual string getName();
     virtual void setName(string name);
     virtual void setSerialport(SerialPort* serial);
     virtual void addComponents(VRComponent* components);
-    virtual void updateValues();//TODO code
+    virtual void updateValues();
     string requestTram();
     virtual string to_string();//TODO code pour Preparer la trame pour le Driver
 };

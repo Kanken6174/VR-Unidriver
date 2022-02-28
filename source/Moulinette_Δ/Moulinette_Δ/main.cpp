@@ -2,7 +2,103 @@
 #include "../IPCPIPE/IPCServer.h"
 #include <thread>
 
+void addComponent(ifstream &fichier, VRDevice* device) {
+    string ligne = "";
 
+    if (getline(fichier, ligne)) 
+    {
+        ligne = ligne.erase(0, 1);
+        int number = stringToInt(ligne);
+
+        switch (number) {                           //Type du component a ajouté dans le vector
+        case 0:
+            //"ABSOLUTE_T";
+        {
+            if (getline(fichier, ligne))
+            {
+                VRAnalog* component = new VRAnalog();
+                ligne = ligne.erase(0, 1);
+
+                if (ligne[0] != '\0')
+                {
+                    cout << ligne[0] << endl;
+                    vector<string> flag_char = {ligne};
+                    component->setFlag(flag_char);
+                    device->addComponents(component);
+                }
+                else {
+                    cout << "PAS DE FLAG" << endl;
+                }
+            }
+        }
+        break;
+        case 1:
+            //"RELATIVE_T";
+        {
+            if (getline(fichier, ligne))
+            {
+                VRRelative* component = new VRRelative();
+                ligne = ligne.erase(0, 1);
+                if (ligne[0] != '\0')
+                {
+                    vector<string> flag_char = { ligne };
+                    component->setFlag(flag_char);
+                    device->addComponents(component);
+                }
+                else {
+                    cout << "PAS DE FLAG" << endl;
+                }
+            }
+        }
+        break;
+        case 2:
+            //"DIGITAL";
+        {
+            if (getline(fichier, ligne))
+            {
+                VRBoolean* component = new VRBoolean();
+                ligne = ligne.erase(0, 1);
+                if (ligne[0] != '\0')
+                {
+                    vector<string> flag_char = { ligne };
+                    component->setFlag(flag_char);
+                    device->addComponents(component);
+                }
+                else {
+                    cout << "PAS DE FLAG" << endl;
+                }
+            }
+        }
+        break;
+        case 3:
+            //"HAPTIC"
+            break;
+        case 4:
+            //"SKELETAL"
+            break;
+        case 5:
+            //"RESERVED"
+            break;
+        case 6:
+            //"QUATERNIONS"
+        {
+            if (getline(fichier, ligne))
+            {
+                VRQuaternion* component = new VRQuaternion();
+                ligne = ligne.erase(0, 1);
+                vector<string> tmp = split(ligne, '|');
+                component->setFlag(tmp);                                          //le flag d'un quaternion est de la forme A|B|C|D|E|F|G|H|I (9 tags car 3x3 [gyro[xyz], acc[xyz], mag[xyz]])
+                device->addComponents(component);
+            }
+        }
+        break;
+        default:
+            //"DEFAULT"
+            break;
+        }
+    }
+    
+}
 
 VRDevice *lectureDMC(ifstream &fichier ) {
 
@@ -30,62 +126,7 @@ VRDevice *lectureDMC(ifstream &fichier ) {
                 w->setBaudrate(stringToInt(ligne));
                 break;
             case '=':   // nouvel input = nouveau flag 
-                
-                getline(fichier, ligne);
-                ligne = ligne.erase(0, 1);
-                int number = stringToInt(ligne);
-
-                switch (number) {                           //Type du component a ajouté dans le vector
-                case 0:
-                    //"ABSOLUTE_T";
-                {VRAnalog* component = new VRAnalog();
-                getline(fichier, ligne);
-                ligne = ligne.erase(0, 1);
-                vector<string> flag_char = split(ligne,' ');
-                component->setFlag(flag_char);
-                device->addComponents(component); }
-                    break;
-                case 1:
-                    //"RELATIVE_T";
-                {VRRelative* component = new VRRelative();
-                getline(fichier, ligne);
-                ligne = ligne.erase(0, 1);
-                vector<string> flag_char = split(ligne, ' ');
-                component->setFlag(flag_char);
-                device->addComponents(component); }
-                    break;
-                case 2:
-                    //"DIGITAL";
-                {VRBoolean* component = new VRBoolean();
-                getline(fichier, ligne);
-                ligne = ligne.erase(0, 1);
-                vector<string> flag_char = split(ligne, ' ');
-                component->setFlag(flag_char);
-                device->addComponents(component); }
-                    break;
-                case 3:
-                    //"HAPTIC"
-                    break;
-                case 4:
-                    //"SKELETAL"
-                    break;
-                case 5:
-                    //"RESERVED"
-                    break;
-                case 6:
-                    //"QUATERNIONS"
-                {VRQuaternion* component = new VRQuaternion();
-                getline(fichier, ligne);
-                ligne = ligne.erase(0, 1);
-                vector<string> tmp = split(ligne, '|');
-                component->setFlag(tmp);                                          //le flag d'un quaternion est de la forme A|B|C|D|E|F|G|H|I (9 tags car 3x3 [gyro[xyz], acc[xyz], mag[xyz]])
-                device->addComponents(component);
-                }
-                    break;
-                default:
-                    //"DEFAULT"
-                    break;
-                }
+                addComponent(fichier, device);                
             }            
         }
 
@@ -112,6 +153,7 @@ vector<VRDevice*> getAllDevice(string file) {
     if (fichier.is_open()) {
         while (fichier.good()) {
             VRDevice* devices = lectureDMC(fichier);
+            cout << devices->to_string() << endl;
             toto.push_back(devices);
         }
         fichier.close();
@@ -143,16 +185,14 @@ int main(int argc, char* argv[]) {
 
     vector<VRDevice*> toto = getAllDevice("gant.dmc");
 
+    /*
     vector<thread> readerThreads;
 
     for (VRDevice* reader : toto)
     {
         readerThreads.push_back(thread(&start,reader));
     }
-
     
-
-
 
     string received = "";
     PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeMoulinette");
@@ -177,6 +217,6 @@ int main(int argc, char* argv[]) {
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
     
-
+    */
     return 0;
 }
