@@ -10,6 +10,9 @@ VRDevice::VRDevice()
 {
 }
 
+/*
+* Traite la Trame pour répartir les valeurs de chaque composants
+*/
 void VRDevice::updateValues()
 {
 	string buf = requestTram();
@@ -35,12 +38,15 @@ void VRDevice::updateValues()
 	}	
 }
 
+/*
+*	Demande Tram par Serial
+*/
 string VRDevice::requestTram()
 {
 	clock_t t;
 	char buf[1024];
 
-	string ask = "#";							//symbole envoy� a l arduino
+	string ask = "#";							//symbole envoye a l arduino
 	t = clock();
 
 	if (!this->serialPort->send(ask.c_str(), ask.length()))
@@ -59,6 +65,9 @@ string VRDevice::requestTram()
 	return buf;
 }
 
+/*
+*	To_String de l'ensemble de composants pour preparation d'envoie au Driver
+*/
 string VRDevice::to_string()
 {
 	string toReturn = "";

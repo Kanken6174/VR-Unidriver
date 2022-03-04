@@ -2,6 +2,10 @@
 #include "../IPCPIPE/IPCServer.h"
 #include <thread>
 
+
+/**
+*   Lecture d'un Component dans un fichier pour l'ajouter au VRDevice
+*/
 void addComponent(ifstream &fichier, VRDevice* device) {
     string ligne = "";
 
@@ -100,6 +104,9 @@ void addComponent(ifstream &fichier, VRDevice* device) {
     
 }
 
+/**
+*   Lecture d'un nouveau VRDevice dans un fichier
+*/
 VRDevice *lectureDMC(ifstream &fichier ) {
 
     VRDevice *device = new VRDevice();
@@ -146,6 +153,9 @@ VRDevice *lectureDMC(ifstream &fichier ) {
     
 }
 
+/**
+*   Lecture de tout les VRDevices dans le fichier
+*/
 vector<VRDevice*> getAllDevice(string file) {
     ifstream fichier(file, ios::in);
     vector<VRDevice*> toto;
@@ -165,6 +175,9 @@ vector<VRDevice*> getAllDevice(string file) {
     return toto;
 }
 
+/**
+*   Fonction Thread pour chaque VRDevice
+*/
 void start(VRDevice* device) {
 
     while (true) {
@@ -183,17 +196,24 @@ int main(int argc, char* argv[]) {
 
     string filePath = "C:\\Users\\" + string(usrname) + "\\AppData\\Roaming\\.DoMoCap\\driverCfg.dmc";	//full path
 
+    /*
+    *   Lecture DMC pour lister VRDevice
+    */
     vector<VRDevice*> toto = getAllDevice("gant.dmc");
 
+    
     /*
+    *   Demarrage Threads
+    */
     vector<thread> readerThreads;
-
     for (VRDevice* reader : toto)
     {
         readerThreads.push_back(thread(&start,reader));
     }
-    
 
+    /*
+    *   Partie PIPE Windows pour communiquer avec le Driver
+    */
     string received = "";
     PipeServer* ps = new PipeServer("\\\\.\\pipe\\pipeMoulinette");
 
@@ -217,6 +237,5 @@ int main(int argc, char* argv[]) {
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
     
-    */
     return 0;
 }
