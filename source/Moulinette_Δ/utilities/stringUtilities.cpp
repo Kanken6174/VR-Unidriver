@@ -105,7 +105,8 @@ namespace utilities {
 		return toReturn;
 	}
 
-	double map(double x, double in_min, double in_max, double out_min, double out_max) {
-		return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+	double map(double x, double in_min, double in_max, double out_min, double out_max) {		
+		double diviseur = (in_max - in_min) + out_min;
+		return (diviseur != 0) ? (x - in_min) * (out_max - out_min) / diviseur : +0;
 	}
 }

@@ -115,7 +115,8 @@ VRDevice *lectureDMC(ifstream &fichier ) {
         while (getline(fichier, ligne))
         {
             if (ligne == "/.")
-                return device;
+                break;
+
             char id = ligne[0];
             ligne = ligne.erase(0, 1);
             ligne.erase(remove(ligne.begin(), ligne.end(), '\n'), ligne.end()); //on enlve les \n parasites
@@ -162,6 +163,7 @@ vector<VRDevice*> getAllDevice(string file) {
     if (fichier.is_open()) {
         while (fichier.good()) {
             VRDevice* devices = lectureDMC(fichier);
+            cout << devices->getName() << endl;
             toto.push_back(devices);
         }
         fichier.close();
@@ -198,7 +200,6 @@ int main(int argc, char* argv[]) {
     *   Lecture DMC pour lister VRDevice
     */
     vector<VRDevice*> toto = getAllDevice("gant.dmc");
-
 
     /*
     *   Demarrage Threads

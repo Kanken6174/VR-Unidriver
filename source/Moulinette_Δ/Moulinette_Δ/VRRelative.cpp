@@ -1,4 +1,5 @@
 #include "VRRelative.h"
+#include <iostream>
 
 void VRRelative::updateMinMax()
 {

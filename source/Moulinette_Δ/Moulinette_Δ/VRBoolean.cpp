@@ -1,4 +1,5 @@
 #include "VRBoolean.h"
+#include <iostream>
 
 void VRBoolean::setValue(bool value)
 {
@@ -28,6 +29,5 @@ void VRBoolean::receiveData(string data)
 
 string VRBoolean::to_string()
 {
-	string toreturn = (this->value) ? "1" : "0";
-	return toreturn;
+	return (this->value) ? "1" : "0";
 }
