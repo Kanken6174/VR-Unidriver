@@ -17,6 +17,8 @@ void VRDevice::updateValues()
 {
 	string buf = requestTram();
 
+	//cout << buf << endl;
+
 	string quaternion = std::to_string(this->lastLatency)+"|";
 	int i_quaternion = 0;
 	

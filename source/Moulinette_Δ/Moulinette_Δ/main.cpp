@@ -25,7 +25,6 @@ void addComponent(ifstream &fichier, VRDevice* device) {
 
                 if (ligne[0] != '\0')
                 {
-                    cout << ligne[0] << endl;
                     vector<string> flag_char = {ligne};
                     component->setFlag(flag_char);
                     device->addComponents(component);
@@ -163,7 +162,6 @@ vector<VRDevice*> getAllDevice(string file) {
     if (fichier.is_open()) {
         while (fichier.good()) {
             VRDevice* devices = lectureDMC(fichier);
-            cout << devices->to_string() << endl;
             toto.push_back(devices);
         }
         fichier.close();
@@ -201,7 +199,7 @@ int main(int argc, char* argv[]) {
     */
     vector<VRDevice*> toto = getAllDevice("gant.dmc");
 
-    
+
     /*
     *   Demarrage Threads
     */
@@ -236,6 +234,5 @@ int main(int argc, char* argv[]) {
         toSend.erase(toSend.length()-1,toSend.length());
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
-    
     return 0;
 }
