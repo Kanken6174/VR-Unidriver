@@ -1,5 +1,5 @@
 #include "../SerialPort/serialPort.h"
-#include "../SerialPort/Device.h"
+//#include "../SerialPort/Device.h"
 
 #include "ComponentReflector.h"	
 
