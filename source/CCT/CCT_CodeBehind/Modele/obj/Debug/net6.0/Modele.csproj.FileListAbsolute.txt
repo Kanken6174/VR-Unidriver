@@ -1,0 +1,15 @@
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\obj\Debug\net6.0\Modele.csproj.AssemblyReference.cache
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\obj\Debug\net6.0\Modele.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\obj\Debug\net6.0\Modele.AssemblyInfoInputs.cache
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\obj\Debug\net6.0\Modele.AssemblyInfo.cs
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\obj\Debug\net6.0\Modele.csproj.CoreCompileInputs.cache
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\bin\Debug\net6.0\Modele.deps.json
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\bin\Debug\net6.0\Modele.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\bin\Debug\net6.0\ref\Modele.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\bin\Debug\net6.0\Modele.pdb
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\bin\Debug\net6.0\Business.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\bin\Debug\net6.0\Business.pdb
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\obj\Debug\net6.0\Modele.csproj.CopyComplete
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\obj\Debug\net6.0\Modele.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\obj\Debug\net6.0\ref\Modele.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\Modele\obj\Debug\net6.0\Modele.pdb

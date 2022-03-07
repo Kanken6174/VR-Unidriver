@@ -1,0 +1,5 @@
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_CodeBehind\test\obj\Debug\net5.0\test.csprojAssemblyReference.cache
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_CodeBehind\test\obj\Debug\net5.0\test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_CodeBehind\test\obj\Debug\net5.0\test.AssemblyInfoInputs.cache
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_CodeBehind\test\obj\Debug\net5.0\test.AssemblyInfo.cs
+C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_CodeBehind\test\obj\Debug\net5.0\test.csproj.CoreCompileInputs.cache

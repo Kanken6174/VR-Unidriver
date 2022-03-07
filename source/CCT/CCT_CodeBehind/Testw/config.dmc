@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfDriverDataTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Business">
+  <DriverDataTemplate>
+    <Driver>oculus_cv1_controller_right</Driver>
+    <Name>ApexGlove_Right</Name>
+    <RenderModel>500000</RenderModel>
+    <Role>2</Role>
+    <SerialNumber>COM8</SerialNumber>
+  </DriverDataTemplate>
+</ArrayOfDriverDataTemplate>
