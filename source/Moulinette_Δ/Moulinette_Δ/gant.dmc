@@ -1,63 +1,7 @@
 #on donne le nom du driver, cela en créé un nouveau à chaque $
 $ApexGlove_Right
-&COM3
-!74800
-#on donne le modèle 3d à utiliser pour le driver
->oculus_cv1_controller_right
-#on définit le rôle du driver (1 = main gauche, 2 = droite, 3 = pas applicable,...)
-<2
-#on définit désormais les composants de ce driver
-#doigts potentiomètres----------------------------------------------ABCDEF
-=/input/thumbX/value
-:0
-~A
-=/input/thumbY/value
-:0
-~B
-=/input/finger/index
-:0
-~C
-=/input/finger/middle
-:0
-~D
-=/input/finger/ring
-:0
-~E
-=/input/finger/pinky
-:0
-~F
-#joysticks--------------------------------------GHI
-=/input/joystick/x
-:1
-~G
-=/input/joystick/y
-:1
-~H
-=/input/joystick/click
-:2
-~I
-#contacts alu------------------------------------JKLM
-=/input/a/click
-:2
-~J
-=/input/b/click
-:2
-~K
-=/input/x/click
-:2
-~L
-=/input/system/click
-:2
-~M
-#IMU---------------------------------------------NOPQRSTUV
-=/pose/imu
-:6
-~N|O|P|Q|R|S|T|U|V
-/.
-#on donne le nom du driver, cela en créé un nouveau à chaque $
-$ApexGlove_Right
-&COM5
-!74800
+&COM6
+!115200
 #on donne le modèle 3d à utiliser pour le driver
 >oculus_cv1_controller_right
 #on définit le rôle du driver (1 = main gauche, 2 = droite, 3 = pas applicable,...)

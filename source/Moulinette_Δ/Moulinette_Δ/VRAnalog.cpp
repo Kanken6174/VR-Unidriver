@@ -10,7 +10,8 @@ void VRAnalog::updateMinMax() {
 void VRAnalog::setValue(double value) {
 	VRAnalog::value = value;
 	updateMinMax();
-	VRAnalog::value = map(value, VRAnalog::minValue, VRAnalog::maxValue, 0, 1);
+	VRAnalog::value -= VRAnalog::minValue;
+	VRAnalog::value /= VRAnalog::maxValue;
 }
 
 double VRAnalog::getValue()
