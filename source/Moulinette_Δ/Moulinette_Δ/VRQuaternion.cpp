@@ -3,22 +3,23 @@
 
 void VRQuaternion::setValue(time_t delay, madgwickRotations::Vector acc, madgwickRotations::Vector mag, madgwickRotations::Vector gyro)
 {
-    //value = transformator.update(delay, acc, mag, gyro);
-
+        value = transformator.update(delay, gyro, acc, mag);
+    /*
     // Abbreviations for the various angular functions
-    double cy = cos((acc.getX()/10000) * 0.5);
-    double sy = sin((acc.getX()/10000) * 0.5);
-    double cp = cos((acc.getY()/10000) * 0.5);
-    double sp = sin((acc.getY()/10000) * 0.5);
-    double cr = cos((acc.getZ()/10000) * 0.5);
-    double sr = sin((acc.getZ()/10000) * 0.5);
+    double cy = cos((acc.getX() / 20000) * 0.5);
+    double sy = sin((acc.getX()/20000) * 0.5);
+    double cp = cos((acc.getY()/20000) * 0.5);
+    double sp = sin((acc.getY()/20000) * 0.5);
+    double cr = cos((acc.getZ()/20000) * 0.5);
+    double sr = sin((acc.getZ()/20000) * 0.5);
 
     Quaternion q = Quaternion(sr * cp * cy - cr * sp * sy,
                               cr * sp * cy + sr * cp * sy, 
                               cr * cp * sy - sr * sp * cy, 
                               cr * cp * cy + sr * sp * sy);
-    
     value = q;
+    */
+    
 }
 
 VRQuaternion::VRQuaternion(float accCorrectionStrength, float magCorrectionStrength) : transformator(accCorrectionStrength, magCorrectionStrength)

@@ -1,0 +1,74 @@
+3 warnings and 2 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\configLoader.cpp.
+7 warnings and 3 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DataDispatcher.cpp.
+8 warnings and 3 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\dataObjects.h.
+11 warnings and 4 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.cpp.
+14 warnings and 5 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\ctrlSimServer.cpp.
+15 warnings and 5 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\driverlog.cpp.
+18 warnings and 6 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\InterfaceRequires.cpp.
+26 warnings and 6 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp.
+26 warnings and 6 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\IPCIPE\utilities.cpp.
+27 warnings and 6 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\maths.cpp.
+28 warnings and 6 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\component.cpp.
+31 warnings and 7 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\Obsolete.cpp.
+34 warnings and 8 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\Pose.cpp.
+37 warnings and 9 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\PropertyUtilities.cpp.
+40 warnings and 10 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\Register.cpp.
+43 warnings and 11 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\RunFrame.cpp.
+44 warnings and 11 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\stringUtilities.cpp.
+47 warnings and 12 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\typeConverters.cpp.
+47 warnings and 14 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\Update.cpp.
+50 warnings and 15 errors generated.
+Error while processing C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\UpdateValues.cpp.
+./DoMoDriver.h:78:26: error: 'deprecated' attribute cannot be applied to types [clang-diagnostic-error]
+                virtual EVRInitError [[deprecated("Ancienne version qui n'utilise pas les DataTemplate, <E0> <E9>viter")]] ObsoleteActivation(vr::TrackedDeviceIndex_t unObjectId);
+                                       ^
+Suppressed 44 warnings (44 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+Found compiler error(s).
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp:14:89: warning: cast to smaller integer type 'unsigned long' from 'void *' [clang-diagnostic-void-pointer-to-int-cast]
+                DriverLog(("successfully created pipe " + pipeName + " with handle " + std::to_string((DWORD)this->hPipe) + " invalid is " + std::to_string((DWORD)INVALID_HANDLE_VALUE) + "\n").c_str());
+                                                                                                      ^
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp:14:143: warning: cast to smaller integer type 'unsigned long' from 'void *' [clang-diagnostic-void-pointer-to-int-cast]
+                DriverLog(("successfully created pipe " + pipeName + " with handle " + std::to_string((DWORD)this->hPipe) + " invalid is " + std::to_string((DWORD)INVALID_HANDLE_VALUE) + "\n").c_str());
+                                                                                                                                                            ^
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp:21:7: warning: unused variable 'logged' [clang-diagnostic-unused-variable]
+        bool logged = false;
+             ^
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp:37:8: warning: Value stored to 'success' during its initialization is never read [clang-analyzer-deadcode.DeadStores]
+                bool success = DisconnectNamedPipe(this->hPipe);
+                     ^
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp:37:8: note: Value stored to 'success' during its initialization is never read
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp:37:8: warning: unused variable 'success' [clang-diagnostic-unused-variable]
+                bool success = DisconnectNamedPipe(this->hPipe);
+                     ^
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\IPCIPE\IPCServer.cpp:70:54: warning: cast to smaller integer type 'unsigned long' from 'void *' [clang-diagnostic-void-pointer-to-int-cast]
+                        DriverLog(("failed to write to " + std::to_string((DWORD)this->externPipe) + "\n").c_str());
+                                                                          ^
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\Update.cpp:24:81: error: cannot pass object of non-trivial type 'std::string' (aka 'basic_string<char>') through variadic function; call will abort at runtime [clang-diagnostic-non-pod-varargs]
+                DriverLog("Update of component with path %s had an error for value %s", this->inputPath, providedValue);
+                                                                                              ^
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\Update.cpp:24:92: error: cannot pass object of non-trivial type 'std::string' (aka 'basic_string<char>') through variadic function; call will abort at runtime [clang-diagnostic-non-pod-varargs]
+                DriverLog("Update of component with path %s had an error for value %s", this->inputPath, providedValue);
+                                                                                                         ^
+C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\configLoader.cpp:78:75: error: cannot pass object of non-trivial type 'std::string' (aka 'basic_string<char>') through variadic function; call will abort at runtime [clang-diagnostic-non-pod-varargs]
+                                        DriverLog("an incorrectly pathed component was ignored (path = %s)", buf);
+                                                                                                             ^

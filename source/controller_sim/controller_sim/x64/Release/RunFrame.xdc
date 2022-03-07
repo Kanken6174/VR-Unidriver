@@ -1,22 +1,22 @@
 <?xml version="1.0"?><doc>
 <members>
-<member name="M:ATL.CRegKey.#ctor(ATL.CAtlTransactionManager*)" decl="true" source="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\atlmfc\include\atlbase.h" line="1316">
+<member name="M:ATL.CRegKey.#ctor(ATL.CAtlTransactionManager*)" decl="true" source="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\atlmfc\include\atlbase.h" line="1316">
 <summary>
 CRegKey constructor</summary>
 <param name="pTM">Pointer to CAtlTransactionManager object</param>
 </member>
-<member name="F:ATL.CRegKey.m_pTM" decl="false" source="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\atlmfc\include\atlbase.h" line="1332">
+<member name="F:ATL.CRegKey.m_pTM" decl="false" source="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\atlmfc\include\atlbase.h" line="1332">
 <summary>
 Pointer to CAtlTransactionManager object</summary>
 </member>
-<member name="M:DriverLog(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*,BTEllipsis)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\entry_point.h" line="1">
+<member name="M:DriverLog(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*,BTEllipsis)" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\entry_point.h" line="1">
 @author Valve corporation
 @brief defines the HMD_DLL_EXPORT/IMPORT types which serve as entry points for the DLL
 @version 0.1
 @date 16/12/2021
 
 </member>
-<member name="M:utilities.split(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,System.Boolean)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\utilities.h" line="14">
+<member name="M:utilities.split(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,System.Boolean)" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\utilities.h" line="14">
 <summary>
 permet de séparer un string selon un délilimteur précisé
 </summary>
@@ -25,17 +25,17 @@ permet de séparer un string selon un délilimteur précisé
 <param name="remove"> (optionnel à false), si on enlève le caractère de séparation ou pas</param>
 <returns>un vecteur contenant les différentes parties du string d'origine</returns>
 </member>
-<member name="M:utilities.getFirstAndRemoveFromVector(std.vector&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,std.allocator&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\utilities.h" line="22">
+<member name="M:utilities.getFirstAndRemoveFromVector(std.vector&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,std.allocator&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;&gt;&gt;)" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\utilities.h" line="22">
 <summary>
 Va prendre le premier string d'un vecteur de string, le retirer de ce vecteur, et le retourner
 </summary>
 <param name="source">le vecteur de strings à traiter</param>
 <returns>le premier string du vecteur</returns>
 </member>
-<member name="T:VRcomponent" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\VRComponent.h" line="19">
+<member name="T:VRcomponent" decl="false" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\VRComponent.h" line="19">
 Redéfinitions de noms de méthodes de SteamVR (pour raccourcir)
 </member>
-<member name="M:ToQuaternion(System.Double,System.Double,System.Double)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\MathOps.h" line="1">
+<member name="M:ToQuaternion(System.Double,System.Double,System.Double)" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\MathOps.h" line="1">
 @author Yorick Geoffre
 @brief this file holds the declaration of maths-related functions
 @version 0.1
@@ -49,24 +49,24 @@ Une fonction qui va convertir trois angles d'euler en un quaternion SteamVR
 <param name="roll">Le roulis en degrés</param>
 <returns>HmdQuaternion_t un quaternion SteamVR</returns>
 </member>
-<member name="T:DoMoDriver" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="13">
+<member name="T:DoMoDriver" decl="false" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="13">
 <summary>
 Cette classe représente un appareil tracké (implémente ITrackedDeviceServerDriver), il a une position et une rotation, et peut
 </summary>
 </member>
-<member name="M:DoMoDriver.#ctor(DriverDataTemplate)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="42">
+<member name="M:DoMoDriver.#ctor(DriverDataTemplate)" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="42">
 Constructeurs et destructeurs
 <summary>
 Le constructeur d'une classe DoMoDriver (version moderne, désactive le mode obsolète si il est appellé)
 </summary>
 <param name="driverDataTemplate">La data Template de ce driver, qui décrit l'appareil que ce driver représente</param>
 </member>
-<member name="M:DoMoDriver.Dispose" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="56">
+<member name="M:DoMoDriver.Dispose" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="56">
 <summary>
 Le destructeur de ce driver
 </summary>
 </member>
-<member name="M:DoMoDriver.ModernActivation(System.UInt32)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="69">
+<member name="M:DoMoDriver.ModernActivation(System.UInt32)" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="69">
 Fonctions d'activation du driver SteamVR
 <summary>
 Cette fonction va activer et enregistrer le driver auprès de SteamVR, à partir des DataTemplates enregistrées en interne
@@ -74,53 +74,53 @@ Cette fonction va activer et enregistrer le driver auprès de SteamVR, à partir
 <param name="unObjectId"></param>
 <returns></returns>
 </member>
-<member name="M:DoMoDriver.Activate(System.UInt32)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="82">
+<member name="M:DoMoDriver.Activate(System.UInt32)" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="82">
 fonctions requises par l'interface ITrackedDeviceServerDriver, commes données dans le sample, elles ne sont pas utilisées
 </member>
-<member name="M:DoMoDriver.GetKeypresses" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="90">
+<member name="M:DoMoDriver.GetKeypresses" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="90">
 Ces fonctions gèrent la position (rotation quaternionique et position par vecteur) de l'objet,qrotation est responsable de l'angle et Vecposition[3] de la position.
 <summary>
 récupère les touches de clavier, utilisé par la versions stub de GetPose uniquement
 </summary>
 </member>
-<member name="M:DoMoDriver.GetPoseStubmode" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="95">
+<member name="M:DoMoDriver.GetPoseStubmode" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="95">
 <summary>
 appelle GetKeypresses() et récupère les informations d'angle d'euler et de position puis en fait une pose.
 </summary>
 <returns> Une pose Steamvr DriverPose_t</returns>
 </member>
-<member name="M:DoMoDriver.GetPoseProvided" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="100">
+<member name="M:DoMoDriver.GetPoseProvided" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="100">
 <summary>
 recupère les informations locales de quaternion et de position (obtenus via le tunnel nommé normalement) et en fait une pose
 </summary>
 <returns> Une pose Steamvr DriverPose_t</returns>
 </member>
-<member name="M:DoMoDriver.GetPose" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="106">
+<member name="M:DoMoDriver.GetPose" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="106">
 <summary>
 version forcée par SteamVR et pas utilisée (décrite dans interfaceRequires.cpp), ne devrait pas être utilisée
 </summary>
 <returns> Une pose Steamvr DriverPose_t</returns>
 </member>
-<member name="M:DoMoDriver.RunFrameStub" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="112">
+<member name="M:DoMoDriver.RunFrameStub" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="112">
 Les fonctions ici gèrent la mise à jour des données à chaque frame-----------------------------------------------------------------
 <summary>
 Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu (version stub)
 </summary>
 </member>
-<member name="M:DoMoDriver.RunFrameRaw(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="117">
+<member name="M:DoMoDriver.RunFrameRaw(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="117">
 <summary>
 Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
 </summary>
 <param name="raw">Un string contenant toutes les valeurs relatives à cet appareil (trame de driver standard)</param>
 </member>
-<member name="M:DoMoDriver.GetSerialNumber" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="122">
+<member name="M:DoMoDriver.GetSerialNumber" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="122">
 fonctions requises par l'interface de SteamVR (peut être non-utilisé)---------------------------------------------------------------
 <summary>
 Requis par SteamVR, renvoie l'identifiant unique de l'appareil (décrit dans InterfaceRequires.h)
 </summary>
 <returns>L'identifiant de l'appareil</returns>
 </member>
-<member name="M:DoMoDriver.UpdateInternalValuesFromPipedData(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="Y:\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="128">
+<member name="M:DoMoDriver.UpdateInternalValuesFromPipedData(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\DoMoDriver.h" line="128">
 fonction de mise à jour des valeurs internes
 <summary>
 Cette fonction gère la mise à jour de valeurs par celles reçues du tunnel nommé (appellée par RunFrameRaw())
@@ -128,7 +128,7 @@ Cette fonction gère la mise à jour de valeurs par celles reçues du tunnel nom
 <param name="pipeData">la trame contenant toutes les valeurs relatives à cet appareil</param>
 <returns>les valeurs de chaque composant, avec les valeurs relatives à l'appareil (latence, orientation) retirées car déjà appliquées</returns>
 </member>
-<member name="M:DoMoDriver.RunFrameStub" decl="false" source="Y:\domocap\source\controller_sim\controller_sim\RunFrame.cpp" line="3">
+<member name="M:DoMoDriver.RunFrameStub" decl="false" source="C:\Users\ASUS\Documents\2A\domocap\source\controller_sim\controller_sim\RunFrame.cpp" line="3">
 Cette fonction gère la mise à jour des valeurs d'entrée à chaque frame du jeu
 
 </member>

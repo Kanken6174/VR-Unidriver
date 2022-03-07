@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\ASUS\Documents\2A\domocap\source\Moulinette_Δ\Moulinette_Δ\</FILEPATH>
+      <FILENAME>VRDevice.cpp</FILENAME>
+      <LINE>9</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'VRDevice::internalRotation' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>VRDevice::{ctor}</FUNCTION>
+    <DECORATED>??0VRDevice@@QEAA@XZ</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>VRDevice::internalRotation</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\ASUS\Documents\2A\domocap\source\Moulinette_Δ\Moulinette_Δ\</FILEPATH>
+      <FILENAME>VRDevice.cpp</FILENAME>
+      <LINE>9</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'VRDevice::lastLatency' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>VRDevice::{ctor}</FUNCTION>
+    <DECORATED>??0VRDevice@@QEAA@XZ</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>VRDevice::lastLatency</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

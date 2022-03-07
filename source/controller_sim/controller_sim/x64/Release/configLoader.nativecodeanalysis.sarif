@@ -1,0 +1,587 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "Le type enum 'vr::ETrackedControllerRole’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/vcpkg/installed/x64-windows/include/openvr_driver.h"
+                },
+                "region": {
+                  "startLine": 241,
+                  "startColumn": 13,
+                  "endLine": 241,
+                  "endColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?IsRoleAllowedAsHand@vr@@YA_NW4ETrackedControllerRole@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "Le type enum 'vr::EVRButtonId’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/vcpkg/installed/x64-windows/include/openvr_driver.h"
+                },
+                "region": {
+                  "startLine": 997,
+                  "startColumn": 17,
+                  "endLine": 997,
+                  "endColumn": 17
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?ButtonMaskFromId@vr@@YA_KW4EVRButtonId@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "Le type enum 'vr::EVRApplicationType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/vcpkg/installed/x64-windows/include/openvr_driver.h"
+                },
+                "region": {
+                  "startLine": 1515,
+                  "startColumn": 13,
+                  "endLine": 1515,
+                  "endColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?IsOpenXRAppType@vr@@YA_NW4EVRApplicationType@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "Le type enum 'vr::EVRSettingsError’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/vcpkg/installed/x64-windows/include/openvr_driver.h"
+                },
+                "region": {
+                  "startLine": 2220,
+                  "startColumn": 15,
+                  "endLine": 2220,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?GetSettingsErrorNameFromEnum@CVRSettingHelper@vr@@QEAAPEBDW4EVRSettingsError@2@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "Le type enum 'vr::ETrackedDeviceProperty’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/vcpkg/installed/x64-windows/include/openvr_driver.h"
+                },
+                "region": {
+                  "startLine": 3121,
+                  "startColumn": 37,
+                  "endLine": 3121,
+                  "endColumn": 37
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?GetProperty@CVRPropertyHelpers@vr@@QEAAI_KW4ETrackedDeviceProperty@2@PEAXIPEAIPEAW4ETrackedPropertyError@2@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "Le type enum 'vr::ETrackedPropertyError’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/vcpkg/installed/x64-windows/include/openvr_driver.h"
+                },
+                "region": {
+                  "startLine": 3121,
+                  "startColumn": 37,
+                  "endLine": 3121,
+                  "endColumn": 37
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?GetProperty@CVRPropertyHelpers@vr@@QEAAI_KW4ETrackedDeviceProperty@2@PEAXIPEAIPEAW4ETrackedPropertyError@2@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "Le type enum 'vr::EVREye’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/vcpkg/installed/x64-windows/include/openvr_driver.h"
+                },
+                "region": {
+                  "startLine": 3603,
+                  "startColumn": 25,
+                  "endLine": 3603,
+                  "endColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?GetPropertyEnum@CVRHiddenAreaHelpers@vr@@AEAA?AW4ETrackedDeviceProperty@2@W4EVREye@2@W4EHiddenAreaMeshType@2@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "Le type enum 'vr::EHiddenAreaMeshType’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/vcpkg/installed/x64-windows/include/openvr_driver.h"
+                },
+                "region": {
+                  "startLine": 3603,
+                  "startColumn": 25,
+                  "endLine": 3603,
+                  "endColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?GetPropertyEnum@CVRHiddenAreaHelpers@vr@@AEAA?AW4ETrackedDeviceProperty@2@W4EVREye@2@W4EHiddenAreaMeshType@2@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "Le type enum 'vr::EVRInitError’ est non délimité. Préférez ’enum class’ à ’enum' (enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/vcpkg/installed/x64-windows/include/openvr_driver.h"
+                },
+                "region": {
+                  "startLine": 3936,
+                  "startColumn": 18,
+                  "endLine": 3936,
+                  "endColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?VRSettings@COpenVRDriverContext@vr@@QEAAPEAVIVRSettings@2@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.29.30133.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x00007FF77DDAFC60 -il C:\\Users\\ASUS\\AppData\\Local\\Temp\\_CL_04acab00ast -typedil -f configLoader.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930133 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -I C:\\vcpkg\\installed\\x64-windows\\include -nologo -W 3 -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -GF -Og -Ot -Oy -Oi -ltcg -DCODE_ANALYSIS -DNDEBUG -D_CONSOLE -D_WINDLL -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -MD -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -std:c++17 -Fox64\\Release\\configLoader.obj -Fdx64\\Release\\vc142.pdb -external:W 3 -Gd -analyze:projectdirectory C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim -analyze:rulesetdirectory ;C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -I Y:\\vcpkg\\installed\\x64-windows\\include -I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\%(ExternalIncludePath) -I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\include -external:I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\%(ExternalIncludePath) -I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\%(ExternalIncludePath) -external:I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\include -I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\include",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/vcpkg/installed/x64-windows/include/openvr_driver.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "5da4b8e8502110d2a892e3e8644e3291"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/updatevalues.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "d13903eb668935727dde66b4225cc355"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/domodriver.h"
+          },
+          "hashes": {
+            "md5": "b354ffa2a200a9f477bc89f902409f05"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/vrcomponent.h"
+          },
+          "hashes": {
+            "md5": "b1f33d2b28175f0ce15d9a5cc4c42a8e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/dataobjects.h"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "8f6be54ebe89621db8a5377539f85d95"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/driverlog.h"
+          },
+          "hashes": {
+            "md5": "60c03a6d8166048dab0472495a8ca6b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/includes.hpp"
+          },
+          "hashes": {
+            "md5": "5d93d64ce2650f039e91f20eab44b439"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/entry_point.h"
+          },
+          "hashes": {
+            "md5": "dd918e9eb51dcac64f67a96a82947c57"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/utilities.h"
+          },
+          "hashes": {
+            "md5": "c498eb573d78fe790aa0d3d722682955"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/mathops.h"
+          },
+          "hashes": {
+            "md5": "e18de709723b8f8b481430011abd6d2b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/controller_sim/controller_sim/Update.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "0e336ae27117ca84e4e06a827d1630cb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/typeconverters.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "55a9ef354391fdf0b18698ebff9f8023"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/controller_sim.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "7b37c566dbfb299d85a10a9b25811a87"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/datadispatcher.h"
+          },
+          "hashes": {
+            "md5": "19d6fece7d41c852f7c94f8d256f7609"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/ipcipe/ipcserver.h"
+          },
+          "hashes": {
+            "md5": "2b445fe1a3d0d1875c1d31e98dd6c865"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/stringutilities.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "b5f74e0bd8385a5afc1d4ab341f90a45"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/controller_sim/controller_sim/RunFrame.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "dbeb94c1b4078098db2099399d33bfec"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/controller_sim/controller_sim/Register.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "62237192bd9874e6f3772e6215cc9335"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/propertyutilities.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "a607137ec45dd57aab739967606e5585"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/pose.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "45019d54347403853a6e3cc408bca978"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/obsolete.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "eefc3855ce4741b67c4531563c585271"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/component.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "9bb24b35a1f21191cf6668ebf66907eb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/maths.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "e6493bab46e5147007e472e20080d8d4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/ipcipe/utilities.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "e6d8243523061670495391143b9404ad"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/ipcipe/ipcserver.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "2a30fda8c9e9046a82b01331aba09495"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/interfacerequires.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "66290261e252201c4c4e7356289cff6f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/driverlog.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "16bb0f2384e388c32f168b9abd34fd67"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/ctrlsimserver.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "392afb925c9f350b6343b702a8365ce8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/controller_sim/controller_sim/DoMoDriver.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "e833c7b50eb6b79a5283135faf87d07a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/datadispatcher.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "216669d5fff408032fd5915404701ff6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/controller_sim/controller_sim/configloader.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "69d5010bd4ac8175b5c26cbe3162c7be"
+          }
+        }
+      ]
+    }
+  ]
+}

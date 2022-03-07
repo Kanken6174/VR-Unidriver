@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\ASUS\Documents\2A\domocap\source\Moulinette_Δ\Moulinette_Δ\</FILEPATH>
+      <FILENAME>VRQuaternion.cpp</FILENAME>
+      <LINE>50</LINE>
+      <COLUMN>33</COLUMN>
+    </SFA>
+    <DEFECTCODE>6287</DEFECTCODE>
+    <DESCRIPTION>Code redondant : les sous-expressions gauche et droite sont identiques.</DESCRIPTION>
+    <FUNCTION>VRQuaternion::receiveData</FUNCTION>
+    <DECORATED>?receiveData@VRQuaternion@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z</DECORATED>
+    <FUNCLINE>40</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

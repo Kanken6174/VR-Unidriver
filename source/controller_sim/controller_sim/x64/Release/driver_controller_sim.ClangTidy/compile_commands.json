@@ -1,0 +1,102 @@
+[
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\configLoader.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\configLoader.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\DataDispatcher.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\DataDispatcher.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\dataObjects.h\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\dataObjects.h"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\DoMoDriver.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\DoMoDriver.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\ctrlSimServer.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\ctrlSimServer.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\driverlog.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\driverlog.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\InterfaceRequires.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\InterfaceRequires.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\IPCIPE\\IPCServer.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\IPCIPE\\IPCServer.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\IPCIPE\\utilities.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\IPCIPE\\utilities.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\maths.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\maths.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\component.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\component.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\Obsolete.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\Obsolete.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\Pose.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\Pose.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\PropertyUtilities.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\PropertyUtilities.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\Register.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\Register.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\RunFrame.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\RunFrame.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\stringUtilities.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\stringUtilities.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\typeConverters.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\typeConverters.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\Update.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\Update.cpp"
+  },
+  {
+    "directory": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I\"C:\\vcpkg\\installed\\\\x64-windows\\include\" \/Zi \/nologo \/W3 \/WX- \/O2 \/Oi \/D CODE_ANALYSIS \/D NDEBUG \/D _CONSOLE \/D _WINDLL \/D _UNICODE \/D UNICODE \/EHsc \/MD \/GS \/Gy \/fp:precise \/std:c++17 \/permissive- \/Fo\"x64\\Release\\\\\" \/Gd \/TP   \"C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\UpdateValues.cpp\"",
+    "file": "C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\controller_sim\\controller_sim\\UpdateValues.cpp"
+  }
+]
