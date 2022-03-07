@@ -54,7 +54,7 @@ void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont.
         numbers.push_back(number);
     }
 
-    if (numbers.size() == 9) {
+    if (numbers.size() == 10) {
         time_t delay = numbers[0] * 1000;
 
         madgwickRotations::Vector accelerometerData = Vector(numbers[1], numbers[2], numbers[3]);

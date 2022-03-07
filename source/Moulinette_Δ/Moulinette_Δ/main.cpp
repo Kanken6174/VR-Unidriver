@@ -181,7 +181,6 @@ void start(VRDevice* device) {
     clock_t t;
     while (true) {
         device->updateValues();
-        //cout << " got request!!! Sending data right away...\n";
     }
     cout << "FINISH" << endl;
 }
