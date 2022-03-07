@@ -1,7 +1,4 @@
 ﻿using Business;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Runtime.Serialization;
 using System.Xml;
 
@@ -14,7 +11,7 @@ namespace EcriturefichierDataContract
 
         public string FileName { get; set; } = "config.dmc";
 
-        public (IEnumerable<DriverDataTemplate> driver, IEnumerable<Component> components) ChargeDonnees()
+        public (IEnumerable<DriverDataTemplate> driver, IEnumerable<Component> components) chargeDonnees()
         {
             throw new NotImplementedException();
         }
@@ -37,6 +34,5 @@ namespace EcriturefichierDataContract
                 }
             }
         }
-
     }
 }

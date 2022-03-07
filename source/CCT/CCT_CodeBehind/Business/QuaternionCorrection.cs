@@ -8,13 +8,13 @@ namespace Business
     {
         
         public double MagCorrectionStepSize { get; set; }
-        public double AccCorrectionStepSize { get; set; }
+        public double GyroCorrectionStepSize { get; set; }
 
-        public QuaternionCorrection(string inputPath, int inputType,char flag, double magCorrectionStepSize, double accCorrectionStepSize)
+        public QuaternionCorrection(string inputPath, int inputType,char flag, double magCorrectionStepSize, double gyroCorrectionStepSize)
             : base(inputPath, inputType, flag)
         {
             MagCorrectionStepSize = magCorrectionStepSize;
-            AccCorrectionStepSize = accCorrectionStepSize;
+            GyroCorrectionStepSize = gyroCorrectionStepSize;
         }
     }
 }

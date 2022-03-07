@@ -1,5 +1,4 @@
 ﻿using Business;
-using System;
 using System.Linq;
 
 namespace TestConsole
@@ -9,6 +8,7 @@ namespace TestConsole
         static void Main(String[] args)
         {
             Manager manager = new Manager(new Stub.Stub());
+            manager.chargeDonnees();
             Console.WriteLine(manager.driver.First());
         }
     }

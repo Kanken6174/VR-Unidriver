@@ -1,5 +1,0 @@
-C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_CodeBehind\Business\obj\Debug\net5.0\Business.csprojAssemblyReference.cache
-C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_CodeBehind\Business\obj\Debug\net5.0\Business.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_CodeBehind\Business\obj\Debug\net5.0\Business.AssemblyInfoInputs.cache
-C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_CodeBehind\Business\obj\Debug\net5.0\Business.AssemblyInfo.cs
-C:\Users\jorda\Documents\DOMOCAP\domocap\source\CCT\CCT_CodeBehind\Business\obj\Debug\net5.0\Business.csproj.CoreCompileInputs.cache

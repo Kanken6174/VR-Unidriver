@@ -16,26 +16,26 @@ namespace Business
         [DataMember]
         public string SerialNumber { get; set; }     //le numéro de série (révision) de l'appareil
         [DataMember]
-        public string Baudrate { get; set; } // The baudrate
+        public string Driver { get; set; } // The driver Steam vr will use
         [DataMember]
         public int Role { get; set; }   //défaut à invalid (0), de 0 à 5 (1 main droite, 2 main gauche)
         
-        public DriverDataTemplate(String name, string serialNumber, string renderModel, string baudrate, int role)
+        public DriverDataTemplate(String name, string serialNumber, string renderModel, string driver, int role)
         {
             Name = name;
             RenderModel = renderModel;
             SerialNumber = serialNumber;
-            Baudrate = baudrate;
+            Driver = driver;
             Role = role;
         }
 
         public override string ToString()
         {
-            return $"#on donne le nom du audrate, cela en créé un nouveau à chaque $\n" +
+            return $"#on donne le nom du driver, cela en créé un nouveau à chaque $\n" +
                 $"${ Name}\n&{RenderModel}\n!{SerialNumber}\n" +
-                $"#on donne le modèle 3d à utiliser pour le baudrate\n" +
-                $">{Baudrate}\n" +
-                $"#on définit le rôle du audrate (1 = main gauche, " +
+                $"#on donne le modèle 3d à utiliser pour le driver\n" +
+                $">{Driver}\n" +
+                $"#on définit le rôle du driver (1 = main gauche, " +
                 $"2 = droite, 3 = pas applicable,...)\n" +
                 $"<{Role}";
         }

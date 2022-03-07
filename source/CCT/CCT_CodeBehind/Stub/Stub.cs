@@ -1,7 +1,4 @@
 ﻿using Business;
-using System;
-using System.Collections.Generic;
-
 namespace Stub
 {
     public class Stub : IPersistanceManager
@@ -10,7 +7,7 @@ namespace Stub
         {
         }
 
-        public (IEnumerable<DriverDataTemplate> driver, IEnumerable<Component> components) ChargeDonnees()
+        public (IEnumerable<DriverDataTemplate> driver, IEnumerable<Component> components) chargeDonnees()
         {
             List<DriverDataTemplate> driver = ChargeDriver();
             List<Component> components = ChargeComponent();
