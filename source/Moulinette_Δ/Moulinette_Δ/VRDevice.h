@@ -15,6 +15,7 @@ private:
     VRQuaternion* internalRotation;
     float lastLatency;
     string nom;
+    unsigned compteur = 0;
 
 public:
     VRDevice();

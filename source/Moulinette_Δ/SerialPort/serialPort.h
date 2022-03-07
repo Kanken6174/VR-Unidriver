@@ -21,6 +21,7 @@ public:
 	int send(const void* buf, int len);
 	int receive(void* buf, int maxlen);
 
+	bool isConnected();
 	void connect(SerialPort* w);
 
 	void setPort(char* port);
@@ -33,6 +34,7 @@ private:
 	int pHandle[16];
 	char* port;
 	int baudrate;
+	bool connected;
 };
 
 }

@@ -144,7 +144,6 @@ VRDevice *lectureDMC(ifstream &fichier ) {
         catch (const runtime_error& e)
         {
             cout << e.what() << endl;
-            //getchar();
         }
 
         device->setSerialport(w);
@@ -182,9 +181,9 @@ void start(VRDevice* device) {
 
     while (true) {
         device->updateValues();
-        //cout << device->to_string() << endl;
         //cout << " got request!!! Sending data right away...\n";
     }
+    cout << "FINISH" << endl;
 }
 
 int main(int argc, char* argv[]) {

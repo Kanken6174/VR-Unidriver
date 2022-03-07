@@ -34,12 +34,14 @@ namespace serialport
 
 		if (hCom == INVALID_HANDLE_VALUE)
 		{
+			this->connected = false;
 			return false;
 		}
 
 		//Configurer la taille du tampon 
 		if (!SetupComm(hCom, 1024, 1024))
 		{
+			this->connected = false;
 			return false;
 		}
 
@@ -54,6 +56,7 @@ namespace serialport
 		if (!SetCommState(hCom, &p))
 		{
 			// Échec de la définition des paramètres
+			this->connected = false;
 			return false;
 		}
 
@@ -94,6 +97,7 @@ namespace serialport
 		
 		if (!bWriteStat)
 		{
+			this->connected = false;
 			return 0;
 		}
 
@@ -114,6 +118,7 @@ namespace serialport
 
 		if (!bReadStat)
 		{
+			this->connected = false;
 			return 0;
 		}
 		
@@ -122,9 +127,16 @@ namespace serialport
 
 	}
 
+	bool SerialPort::isConnected()
+	{
+
+		return this->connected;
+	}
+
 	void SerialPort::connect(SerialPort* w) {
 		if(w->open(this->port, this->baudrate, 8))
 		{
+			Sleep(2000);
 			//cout << "CONNECTED" << endl;
 		}
 		else {

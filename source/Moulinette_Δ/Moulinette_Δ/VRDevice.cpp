@@ -15,29 +15,49 @@ VRDevice::VRDevice()
 */
 void VRDevice::updateValues()
 {
-	string buf = requestTram();
+	try {
+		string buf = requestTram();
 
-	//cout << buf << endl;
+		//cout << buf << endl;
 
-	string quaternion = std::to_string(this->lastLatency)+"|";
-	int i_quaternion = 0;
-	
-	for (VRComponent* component : this->components) {
-		vector<string> tmp = component->getFlag();
-		
-		for (string elem : tmp) {
-			string nul = getDelimitedValueFromRawString(buf, elem);
-			if (component->gettype() == -1) {
-				quaternion += nul + "|";
-				i_quaternion++;
-				if (i_quaternion == 9)												// 9 donn�e de quaternions 3*{x,y,z}
-					component->receiveData(quaternion);
+		string quaternion = std::to_string(this->lastLatency) + "|";
+		int i_quaternion = 0;
+
+		for (VRComponent* component : this->components) {
+			vector<string> tmp = component->getFlag();
+
+			for (string elem : tmp) {
+				string nul = getDelimitedValueFromRawString(buf, elem);
+				if (component->gettype() == -1) {
+					quaternion += nul + "|";
+					i_quaternion++;
+					if (i_quaternion == 9)												// 9 donn�e de quaternions 3*{x,y,z}
+						component->receiveData(quaternion);
+				}
+				else {
+					component->receiveData(nul);
+				}
 			}
-			else {
-				component->receiveData(nul);
+		}
+	}
+	catch (exception e) {
+		cout << e.what() << endl;	
+
+		VRDevice::compteur++;
+		if (VRDevice::compteur == 10) {
+			try {
+				VRDevice::compteur = 0;
+				if (VRDevice::serialPort->isConnected())
+					VRDevice::serialPort->close();
+
+				VRDevice::serialPort->connect(VRDevice::serialPort);
+			}
+			catch (exception v) {
+				cout << v.what() << endl;
 			}			
-		}		
-	}	
+		}
+	}
+
 }
 
 /*
@@ -62,7 +82,7 @@ string VRDevice::requestTram()
 	t = clock() - t;
 	this->lastLatency = (((float)t) / CLOCKS_PER_SEC);
 
-	//cout << buf << endl;									//recupere la tram
+	cout << (((float)t) / CLOCKS_PER_SEC) << endl;						
 
 	return buf;
 }
