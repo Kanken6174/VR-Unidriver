@@ -178,9 +178,13 @@ vector<VRDevice*> getAllDevice(string file) {
 *   Fonction Thread pour chaque VRDevice
 */
 void start(VRDevice* device) {
-
+    clock_t t;
     while (true) {
+        t = clock();
         device->updateValues();
+        device->to_string();
+        t=clock() - t;
+        cout << (((float)t) / CLOCKS_PER_SEC) << endl;
         //cout << " got request!!! Sending data right away...\n";
     }
     cout << "FINISH" << endl;

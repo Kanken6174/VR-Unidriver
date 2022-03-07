@@ -82,7 +82,7 @@ string VRDevice::requestTram()
 	t = clock() - t;
 	this->lastLatency = (((float)t) / CLOCKS_PER_SEC);
 
-	cout << (((float)t) / CLOCKS_PER_SEC) << endl;						
+	//cout << (((float)t) / CLOCKS_PER_SEC) << endl;						
 
 	return buf;
 }
