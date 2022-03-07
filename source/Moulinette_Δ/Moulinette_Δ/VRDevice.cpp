@@ -31,7 +31,7 @@ void VRDevice::updateValues()
 				if (component->gettype() == -1) {
 					quaternion += nul + "|";
 					i_quaternion++;
-					if (i_quaternion == 9)												// 9 donn�e de quaternions 3*{x,y,z}
+					if (i_quaternion == tmp.size())												// 9 donn�e de quaternions 3*{x,y,z}
 						component->receiveData(quaternion);
 				}
 				else {
@@ -44,7 +44,7 @@ void VRDevice::updateValues()
 		cout << e.what() << endl;	
 
 		VRDevice::compteur++;
-		if (VRDevice::compteur == 10) {
+		if (VRDevice::compteur == 100) {
 			try {
 				VRDevice::compteur = 0;
 				if (VRDevice::serialPort->isConnected())
