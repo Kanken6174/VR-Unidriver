@@ -36,15 +36,15 @@
 
 
                 <Grid ToolTip="Lorem ipsum">
-                    <TextBlock Grid.Row="1" Text="MCS =" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" />
-                    <TextBox Grid.Row="1" Text="0" VerticalAlignment="Center"  Margin="55,0,0,0" FontSize="16" Name="MagnetoBox" />
+                    <TextBlock Grid.Row="1" Text="MCS :" TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" />
+                    <TextBox Grid.Row="1" Text="" VerticalAlignment="Center"  Margin="55,0,0,0" FontSize="16" Name="MagnetoBox" />
                 </Grid>
 
 
 
                 <Grid Grid.Column="1" ToolTip="Lorem ipsum">
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="ACS =" TextDecorations="Underline" VerticalAlignment="Center"  FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap"  />
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="0" VerticalAlignment="Center"  Margin="55,0,0,0" FontSize="16"  Name="AccelBox"  />
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="ACS :" TextDecorations="Underline" VerticalAlignment="Center"  FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap"  />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="" VerticalAlignment="Center"  Margin="55,0,0,0" FontSize="16"  Name="AccelBox"  />
                 </Grid>
 
 

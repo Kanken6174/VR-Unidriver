@@ -21,6 +21,22 @@ namespace CCT_DoMoCap
         public ModelViewerUC()
         {
             InitializeComponent();
+            FillListView();
         }
+
+
+        public void FillListView()
+        {
+            
+
+            listModel.Items.Add("Lorem Ipsum");
+            listModel.Items.Add("Lorem Ipsum");
+            listModel.Items.Add("Lorem Ipsum");
+            listModel.Items.Add("Lorem Ipsum");
+            listModel.Items.Add("Lorem Ipsum");
+            listModel.Items.Add("Lorem Ipsum");
+            listModel.SelectedItem = listModel.Items[0];
+        }
+
     }
 }
