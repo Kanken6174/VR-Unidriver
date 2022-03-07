@@ -17,7 +17,6 @@ void VRRelative::setValue(double value)
 	VRRelative::value /= VRRelative::maxValue;	// 150/400 = 0.375
 	VRRelative::value -= 0.5;	//on soustrait 0.5 pour obtenir la valeur relative:  0.375-0.5 = -0.125
 	VRRelative::value *= 2; //on multiplie par 2 pour obtenir la véritable valeur (|-1|+1 = 2) : -0.125*2 = -0.25
-	cout << VRRelative::value << endl;
 }
 
 double VRRelative::getValue()

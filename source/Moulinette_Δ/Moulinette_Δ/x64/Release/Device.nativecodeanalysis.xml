@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\ASUS\Documents\2A\domocap\source\Moulinette_Δ\SerialPort\</FILEPATH>
+      <FILENAME>Device.cpp</FILENAME>
+      <LINE>5</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'serialport::Device::baudrate' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>serialport::Device::{ctor}</FUNCTION>
+    <DECORATED>??0Device@serialport@@QEAA@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>serialport::Device::baudrate</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\ASUS\Documents\2A\domocap\source\Moulinette_Δ\SerialPort\</FILEPATH>
+      <FILENAME>Device.h</FILENAME>
+      <LINE>23</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>La variable 'serialport::Device::Prop::valeur' n'est pas initialisée. Initialisez toujours une variable membre (type.6).</DESCRIPTION>
+    <FUNCTION>serialport::Device::Prop::{ctor}</FUNCTION>
+    <DECORATED>??0Prop@Device@serialport@@QEAA@XZ</DECORATED>
+    <FUNCLINE>23</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>serialport::Device::Prop::valeur</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

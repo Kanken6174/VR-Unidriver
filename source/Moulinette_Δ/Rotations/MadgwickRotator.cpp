@@ -31,7 +31,7 @@ Quaternion MadgwickRotator::update(time_t delay, Vector gyroscope, Vector accele
 	mCorrection = correctionFunction(magnetometer, zMagneto);
 
 	//calculate change and modify leo
-	change = rotate(leo, gyroscope) + aCorrection * aStepSize + mCorrection * mStepSize;
+	change = rotate(leo, gyroscope);// +aCorrection * aStepSize + mCorrection * mStepSize;
 	leo += change * delay / 1000.0;
 	return leo;
 }

@@ -1,0 +1,335 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable 'serialport::Device::baudrate' n'est pas initialisée. Initialisez toujours une variable membre (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/Moulinette_Δ/SerialPort/Device.cpp"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 13,
+                  "endLine": 5,
+                  "endColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Device@serialport@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "serialport::Device::baudrate"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "La variable 'serialport::Device::Prop::valeur' n'est pas initialisée. Initialisez toujours une variable membre (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/Moulinette_Δ/SerialPort/Device.h"
+                },
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 3,
+                  "endLine": 23,
+                  "endColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Prop@Device@serialport@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "serialport::Device::Prop::valeur"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.29.30133.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x00007FF77DDAFC60 -il C:\\Users\\ASUS\\AppData\\Local\\Temp\\_CL_bd833e42ast -typedil -f ..\\SerialPort\\Device.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930133 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -I C:\\vcpkg\\installed\\x64-windows\\include -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -GF -Og -Ot -Oy -Oi -ltcg -DCODE_ANALYSIS -DNDEBUG -D_CONSOLE -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -MD -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -std:c++17 -Fox64\\Release\\Device.obj -Fdx64\\Release\\vc142.pdb -external:W 3 -Gd -analyze:projectdirectory C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\Moulinette_Δ\\Moulinette_Δ -analyze:rulesetdirectory ;C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\Moulinette_Δ\\Moulinette_Δ\\%(ExternalIncludePath) -I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\Moulinette_Δ\\Moulinette_Δ\\include -external:I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\Moulinette_Δ\\Moulinette_Δ\\%(ExternalIncludePath) -I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\Moulinette_Δ\\Moulinette_Δ\\%(ExternalIncludePath) -external:I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\Moulinette_Δ\\Moulinette_Δ\\include -I C:\\Users\\ASUS\\Documents\\2A\\domocap\\source\\Moulinette_Δ\\Moulinette_Δ\\include",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/vrrelative.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "96ede70e6dd40c727f9f0143b6dcd0b4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/vrrelative.h"
+          },
+          "hashes": {
+            "md5": "49b738c26de2293f7120112582a659b4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/vrcomponent.h"
+          },
+          "hashes": {
+            "md5": "081ff1c35cc463e8e65c55c9d18ca147"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/includes.h"
+          },
+          "hashes": {
+            "md5": "10819d28cf40b9b5c1d7c4781dd3c23e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/utilities/utilities.h"
+          },
+          "hashes": {
+            "md5": "7f6903ba2bae1ad2fc4bda858b605c75"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/rotations/quaternion.h"
+          },
+          "hashes": {
+            "md5": "4900f55f384b7f23309a6556e3c2a52b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/rotations/vector.h"
+          },
+          "hashes": {
+            "md5": "645874d82ebef7cd918885929635d7c7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/Moulinette_Δ/Moulinette_Δ/VRQuaternion.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "fdc5a898970f8fec943c4453cf77a958"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/vrquaternion.h"
+          },
+          "hashes": {
+            "md5": "5563bc02b9ae4c2038e3b4343d13c463"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/rotations/madgwickrotator.h"
+          },
+          "hashes": {
+            "md5": "e5e1ed1b0158b2aac2d4af0082a2bf3f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/Moulinette_Δ/Moulinette_Δ/VRDevice.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "8cc1b1198bb39745dd693239f178414b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/vrdevice.h"
+          },
+          "hashes": {
+            "md5": "5a9adeda239f7bce0ee325f19fbd21a1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/serialport/serialport.h"
+          },
+          "hashes": {
+            "md5": "1f068d7bb035a485b3af6bb5792ce13d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/serialport/device.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "38050893033c8879f2a6d6a3c5af301e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/componentreflector.h"
+          },
+          "hashes": {
+            "md5": "19a80269e5b597f9a959b68eb6083a93"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/vranalog.h"
+          },
+          "hashes": {
+            "md5": "958db55683662fcf5226438117d6a65b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/vrboolean.h"
+          },
+          "hashes": {
+            "md5": "085bf52c3215852026c19ebb578f52be"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/vrcomponent.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "5d8fc7ca2e12db0c8a0ff15432650636"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/vrboolean.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "e32f057c2254ebbc69ab3c4b9c56c1a1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/vranalog.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "bedaad5708bf57a5f46e72c3fef53be3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/Moulinette_Δ/Moulinette_Δ/main.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "76ad8a91f439e5c4090da9c8251adc50"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/ipcpipe/ipcserver.h"
+          },
+          "hashes": {
+            "md5": "5e3cd1f127e2d0ed515938519bb09d2e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/moulinette_δ/componentreflector.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "2e221a812f0cc3673dcb13b39efb028b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/asus/documents/2a/domocap/source/moulinette_δ/utilities/stringutilities.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "3cc69e2b042b1f997465dba8d69ff13b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/Moulinette_Δ/SerialPort/serialPort.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "d3b5d74b7fe18cf9c868bbc0990b349c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/ASUS/Documents/2A/domocap/source/Moulinette_Δ/SerialPort/Device.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "ef67d2774ba9dd1edfa7b6b61b62ec17"
+          }
+        }
+      ]
+    }
+  ]
+}
