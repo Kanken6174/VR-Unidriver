@@ -43,6 +43,9 @@ void VRDevice::updateValues()
 	catch (exception e) {
 		cout << e.what() << endl;	
 
+		/*
+		*	Reconnection au port si Impossible de se connecter 
+		*/
 		VRDevice::compteur++;
 		if (VRDevice::compteur == 100) {
 			try {
@@ -56,6 +59,7 @@ void VRDevice::updateValues()
 				cout << v.what() << endl;
 			}			
 		}
+		
 	}
 
 }

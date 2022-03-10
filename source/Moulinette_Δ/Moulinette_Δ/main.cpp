@@ -174,16 +174,8 @@ vector<VRDevice*> getAllDevice(string file) {
     return toto;
 }
 
-/**
-*   Fonction Thread pour chaque VRDevice
-*/
-void start(VRDevice* device) {
-    clock_t t;
-    while (true) {
-        device->updateValues();
-    }
-    cout << "FINISH" << endl;
-}
+
+ static bool running_ = true;
 
 int main(int argc, char* argv[]) {
     char* usrname = nullptr;
@@ -205,7 +197,12 @@ int main(int argc, char* argv[]) {
     vector<thread> readerThreads;
     for (VRDevice* reader : toto)
     {
-        readerThreads.push_back(thread(&start,reader));
+        readerThreads.push_back(thread([=, &ref = running_]() {
+            while (running_) {
+                reader->updateValues();
+                cout << reader->to_string() << endl;
+            }
+        }));
     }
 
     /*
@@ -216,9 +213,9 @@ int main(int argc, char* argv[]) {
 
     while (true) {
         received = ps->ReadPipe();
-        //cout << "Received data\n";
-        //cout << received;
+
         if (received == "cleanup") {
+            running_ = false;
             for (auto& t : readerThreads) t.join();
             return 0;
         }
@@ -229,7 +226,6 @@ int main(int argc, char* argv[]) {
             toSend += test->to_string()+";";
         }
         
-        //string toSend = devices->to_string();
         toSend.erase(toSend.length()-1,toSend.length());
         bool success = ps->WriteToPipe(toSend, "\\\\.\\pipe\\pipeDriver");
     }
