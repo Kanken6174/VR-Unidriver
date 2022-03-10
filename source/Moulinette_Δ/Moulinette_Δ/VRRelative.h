@@ -1,5 +1,5 @@
 #pragma once
-#include "VRComponent.h"
+#include "componentHeaders.h"	
 
 /// <summary>
 /// Représente un composant analogique dont la valeur va de -1 à 1 (double)
@@ -22,7 +22,7 @@ public:
 	VRRelative();
 	void setMin(double value);
 	void setMax(double value);
-	void receiveData(string data) override;
+	virtual void receiveData(string data) ;
 	//va retourner la valeur du composant sous format string
-	string to_string() override;
+	virtual string to_string() ;
 };

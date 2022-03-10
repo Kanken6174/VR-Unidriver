@@ -21,7 +21,7 @@ public:
 	VRAnalog();
 	void setMin(double value);
 	void setMax(double value);
-	void receiveData(string data) override;
+	virtual void receiveData(string data);
 	//va retourner la valeur du composant sous format string
-	string to_string() override;
+	virtual string to_string() ;
 };

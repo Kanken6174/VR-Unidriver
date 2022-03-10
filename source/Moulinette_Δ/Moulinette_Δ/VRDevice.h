@@ -1,7 +1,7 @@
 #include "../SerialPort/serialPort.h"
-//#include "../SerialPort/Device.h"
 
-#include "ComponentReflector.h"	
+#include "componentHeaders.h"	
+
 
 using namespace serialport;
 

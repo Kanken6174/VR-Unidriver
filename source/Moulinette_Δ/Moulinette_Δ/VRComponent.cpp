@@ -1,5 +1,4 @@
 #include "VRComponent.h"
-#include "ComponentReflector.h"
 #include <iostream>
 
 void VRComponent::settype(int type)
@@ -23,9 +22,12 @@ vector<string> VRComponent::getFlag() {
 
 void VRComponent::receiveData(string data)
 {
-	ComponentReflector::provideDataToComponent(this, data);
+	this->receiveData(data);
 }
 
-string VRComponent::to_string() {
-	return ComponentReflector::requestDataFromComponent(this);
+string VRComponent::to_string()
+{
+	return this->to_string();
 }
+
+

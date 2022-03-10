@@ -5,4 +5,4 @@
 #include "VRBoolean.h"
 #include "VRQuaternion.h"
 
-#include "ComponentReflector.h"
+//#include "ComponentReflector.h"

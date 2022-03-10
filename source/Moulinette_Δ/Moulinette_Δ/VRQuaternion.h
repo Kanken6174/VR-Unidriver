@@ -19,7 +19,7 @@ public:
 	VRQuaternion(float accCorrectionStrength, float magCorrectionStrength);
 	VRQuaternion();
 
-	string to_string() override;
+	virtual string to_string() ;
 	
-	void receiveData(string data) override;
+	virtual void receiveData(string data) ;
 };

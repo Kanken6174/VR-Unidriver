@@ -150,7 +150,6 @@
     <ClCompile Include="..\Rotations\Vector.cpp" />
     <ClCompile Include="..\SerialPort\serialPort.cpp" />
     <ClCompile Include="..\utilities\stringUtilities.cpp" />
-    <ClCompile Include="ComponentReflector.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="VRAnalog.cpp" />
     <ClCompile Include="VRBoolean.cpp" />
@@ -161,16 +160,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\IPCPIPE\IPCServer.h" />
-    <ClInclude Include="..\Rotations\madgwickRotations.h" />
     <ClInclude Include="..\Rotations\MadgwickRotator.h" />
     <ClInclude Include="..\Rotations\Quaternion.h" />
     <ClInclude Include="..\Rotations\Vector.h" />
     <ClInclude Include="..\SerialPort\serialPort.h" />
     <ClInclude Include="..\utilities\utilities.h" />
     <ClInclude Include="componentHeaders.h" />
-    <ClInclude Include="ComponentReflector.h" />
     <ClInclude Include="includes.h" />
-    <ClInclude Include="Manager.h" />
     <ClInclude Include="VRAnalog.h" />
     <ClInclude Include="VRBoolean.h" />
     <ClInclude Include="VRComponent.h" />
