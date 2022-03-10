@@ -22,7 +22,7 @@ public:
 	VRRelative();
 	void setMin(double value);
 	void setMax(double value);
-	virtual void receiveData(string data) ;
+	void receiveData(string data) ;
 	//va retourner la valeur du composant sous format string
-	virtual string to_string() ;
+	string to_string() ;
 };

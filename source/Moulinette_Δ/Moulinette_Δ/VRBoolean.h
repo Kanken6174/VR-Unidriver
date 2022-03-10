@@ -13,7 +13,7 @@ private:
 public:
 	VRBoolean();
 
-	virtual void receiveData(string data) ;
+	void receiveData(string data) ;
 	//va retourner la valeur du composant en tant que string
-	virtual string to_string() ;
+	string to_string() ;
 };
