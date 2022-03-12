@@ -67,8 +67,8 @@ namespace serialport
 		TimeOuts.ReadIntervalTimeout = 10; //Délai d'expiration de l'intervalle de lecture
 		TimeOuts.ReadTotalTimeoutMultiplier = 3; //Facteur de temps de lecture
 		TimeOuts.ReadTotalTimeoutConstant = 10; //Constante de temps de lecture
-		TimeOuts.WriteTotalTimeoutMultiplier = 200; // Écrire le facteur temps
-		TimeOuts.WriteTotalTimeoutConstant = 100; //Écrire la constante de temps
+		TimeOuts.WriteTotalTimeoutMultiplier = 20; // Écrire le facteur temps
+		TimeOuts.WriteTotalTimeoutConstant = 10; //Écrire la constante de temps
 		SetCommTimeouts(hCom, &TimeOuts);
 
 		PurgeComm(hCom, PURGE_TXCLEAR | PURGE_RXCLEAR);//Effacer le tampon série

@@ -200,7 +200,7 @@ int main(int argc, char* argv[]) {
         readerThreads.push_back(thread([=, &ref = running_]() {
             while (running_) {
                 reader->updateValues();
-                cout << reader->to_string() << endl;
+                //cout << reader->to_string() << endl;
             }
         }));
     }

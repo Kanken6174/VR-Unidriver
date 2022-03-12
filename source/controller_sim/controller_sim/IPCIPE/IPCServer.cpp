@@ -21,7 +21,6 @@ std::string PipeServer::ReadPipe() {
 	bool logged = false;
 	do {
 		this->connected = ConnectNamedPipe(this->hPipe, NULL);
-		Sleep(2);
 	} while (this->connected == false);
 	if (this->connected) {
 		LPDWORD dwordPtr = &this->dwRead;    //juste un pointeur vers un DWORD
@@ -53,7 +52,7 @@ bool PipeServer::WriteToPipe(std::string message, string targetPipe = "") {
 		this->isExternConnected = false;
 	}
 	//DriverLog("Waiting for named pipe...\n");
-	BOOL returned = WaitNamedPipeA(lpcStr, 2000);
+	BOOL returned = WaitNamedPipeA(lpcStr, 10);
 	if (returned == 0) {
 		DriverLog((string("waiting for a pipe on ") + targetPipe + " timed out\n").c_str());
 		return false;
