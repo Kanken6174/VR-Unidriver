@@ -52,5 +52,5 @@ $ApexGlove_Right
 #IMU---------------------------------------------NOPQRSTUV
 =/pose/imu
 :6
-~N|O|P|Q
+~X|Y|Z|W
 /.
