@@ -1,8 +1,4 @@
 ﻿using Business;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Xml;
 
 namespace EcriturefichierDataContract
 {
@@ -18,7 +14,7 @@ namespace EcriturefichierDataContract
             throw new NotImplementedException();
         }
 
-        public void SauvegardeDonnees(IEnumerable<DriverDataTemplate> driver, IEnumerable<DriverDmc> dmc)
+        public void SauvegardeDonnees(IEnumerable<DriverDataTemplate> driver, IEnumerable<DriverDmc> Dmc)
         {
 
 
@@ -27,16 +23,17 @@ namespace EcriturefichierDataContract
                 Directory.CreateDirectory(FilePath);
             }
 
-            using (FileStream stream = File.OpenWrite(Path.Combine(FilePath,FileName)))
+            StreamWriter sw = new StreamWriter(File.OpenWrite(Path.Combine(FilePath, FileName)));
+
+
+            sw.WriteLine(driver.First());
+            foreach (var q in Dmc)
             {
-                
-                BinaryFormatter formatter = new BinaryFormatter();
-
-#pragma warning disable SYSLIB0011 // Le type ou le membre est obsolète
-                formatter.Serialize(stream, dmc);
-#pragma warning restore SYSLIB0011 // Le type ou le membre est obsolète
-
+                foreach (var component in q.Components.Values)
+                    sw.WriteLine(component);
             }
+            sw.Close();
+            
 
         }
     }

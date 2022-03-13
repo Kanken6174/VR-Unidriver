@@ -6,7 +6,6 @@ using System.Text;
 
 namespace Business
 {
-    [Serializable()]
     public class DriverDataTemplate : IEquatable<DriverDataTemplate>
     {
 

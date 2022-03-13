@@ -24,7 +24,7 @@ namespace Business
 
         public void SauvegardeDonnees()
         {
-            Persistance.SauvegardeDonnees(driver, dmc);
+            Persistance.SauvegardeDonnees(driver, Dmc);
         }
 
         public ReadOnlyCollection<DriverDataTemplate> Driver { get; private set; }

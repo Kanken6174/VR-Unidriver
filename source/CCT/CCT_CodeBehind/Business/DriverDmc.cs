@@ -5,7 +5,6 @@ using System.Text;
 
 namespace Business
 {
-    [Serializable()]
     public class DriverDmc
     {
         public IReadOnlyDictionary<DriverDataTemplate, Component> Components => components;

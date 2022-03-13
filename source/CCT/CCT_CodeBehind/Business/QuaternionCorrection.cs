@@ -4,7 +4,6 @@ using System.Text;
 
 namespace Business
 {
-    [Serializable()]
     public class QuaternionCorrection : ComponentDataTemplate
     {
         

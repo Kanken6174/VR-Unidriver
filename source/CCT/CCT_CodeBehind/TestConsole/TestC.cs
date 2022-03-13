@@ -10,14 +10,17 @@ namespace TestConsole
         {
             Manager manager = new Manager(new Stub.Stub());
             manager.chargeDonnees();
-
-            Console.WriteLine(manager.driver.First());
+            manager.Persistance = new EcritureDmc();
+            manager.SauvegardeDonnees();
+            /*Console.WriteLine(manager.driver.First());
             foreach (var q in manager.Dmc)
             {
-                foreach( var component in q.Components.Values)
+                foreach (var component in q.Components.Values)
                     Console.WriteLine(component);
-            }
-            
+            }*/
+
+
+
 
         }
 
@@ -25,14 +28,11 @@ namespace TestConsole
         {
             Manager manager = new Manager(new Stub.Stub());
             manager.chargeDonnees();
-            foreach (var q in manager.driver)
+            Console.WriteLine(manager.driver.First());
+            foreach (var q in manager.Dmc)
             {
-                if (q.Name != null)
-                    Console.WriteLine(q);
-            }
-            foreach (var q in manager.dmc)
-            {
-                    Console.WriteLine(q);
+                foreach (var component in q.Components.Values)
+                    Console.WriteLine(component);
             }
         }
     }
