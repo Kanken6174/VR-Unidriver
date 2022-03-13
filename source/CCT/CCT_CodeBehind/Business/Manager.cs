@@ -16,27 +16,27 @@ namespace Business
             {
                 driver.Add(donne);
             }
-            foreach (var j in donnees.components)
+            foreach (var j in donnees.dmc)
             {
-                components.Add(j);
+                dmc.Add(j);
             }
         }
 
         public void SauvegardeDonnees()
         {
-            Persistance.SauvegardeDonnees(driver, components);
+            Persistance.SauvegardeDonnees(driver, dmc);
         }
 
         public ReadOnlyCollection<DriverDataTemplate> Driver { get; private set; }
         public List<DriverDataTemplate> driver = new List<DriverDataTemplate>();
 
-        public ReadOnlyCollection<Component> Components { get; private set; }
-        public List<Component> components = new List<Component>();
+        public ReadOnlyCollection<DriverDmc> Dmc { get; private set; }
+        public List<DriverDmc> dmc = new List<DriverDmc>();
         public Manager(IPersistanceManager persistance)
         {
             Persistance = persistance;
             Driver = new ReadOnlyCollection<DriverDataTemplate>(driver);
-            Components = new ReadOnlyCollection<Component>(components);
+            Dmc = new ReadOnlyCollection<DriverDmc>(dmc);
         }
 
     }

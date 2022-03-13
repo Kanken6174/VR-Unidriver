@@ -18,3 +18,5 @@ C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\TestConsole\obj\Deb
 C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\TestConsole\obj\Debug\net6.0\ref\TestConsole.dll
 C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\TestConsole\obj\Debug\net6.0\TestConsole.pdb
 C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\TestConsole\obj\Debug\net6.0\TestConsole.genruntimeconfig.cache
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\TestConsole\bin\Debug\net6.0\EcriturefichierDataContract.dll
+C:\Users\erwan\Desktop\IUT\domocap\source\CCT\CCT_CodeBehind\TestConsole\bin\Debug\net6.0\EcriturefichierDataContract.pdb

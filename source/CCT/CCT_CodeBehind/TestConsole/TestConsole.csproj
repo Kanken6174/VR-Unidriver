@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Business\Business.csproj" />
+    <ProjectReference Include="..\EcriturefichierDataContract\EcriturefichierDataContract.csproj" />
     <ProjectReference Include="..\Stub\Stub.csproj" />
   </ItemGroup>
 

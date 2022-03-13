@@ -1,5 +1,7 @@
 ﻿using Business;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Xml;
 
 namespace EcriturefichierDataContract
@@ -11,28 +13,31 @@ namespace EcriturefichierDataContract
 
         public string FileName { get; set; } = "config.dmc";
 
-        public (IEnumerable<DriverDataTemplate> driver, IEnumerable<Component> components) chargeDonnees()
+        public (IEnumerable<DriverDataTemplate> driver, IEnumerable<DriverDmc> dmc) chargeDonnees()
         {
             throw new NotImplementedException();
         }
 
-        public void SauvegardeDonnees(IEnumerable<DriverDataTemplate> driver, IEnumerable<Component> components)
+        public void SauvegardeDonnees(IEnumerable<DriverDataTemplate> driver, IEnumerable<DriverDmc> dmc)
         {
-            var serializer = new DataContractSerializer(typeof(IEnumerable<DriverDataTemplate>));
 
-            if(!Directory.Exists(FilePath))
+
+            if (!Directory.Exists(FilePath))
             {
                 Directory.CreateDirectory(FilePath);
             }
 
-            var settings = new XmlWriterSettings() { Indent = true };
-            using (TextWriter s = File.CreateText(Path.Combine(FilePath, FileName)))
+            using (FileStream stream = File.OpenWrite(Path.Combine(FilePath,FileName)))
             {
-                using (XmlWriter w = XmlWriter.Create(s, settings))
-                {
-                    serializer.WriteObject(w, driver);
-                }
+                
+                BinaryFormatter formatter = new BinaryFormatter();
+
+#pragma warning disable SYSLIB0011 // Le type ou le membre est obsolète
+                formatter.Serialize(stream, dmc);
+#pragma warning restore SYSLIB0011 // Le type ou le membre est obsolète
+
             }
+
         }
     }
 }

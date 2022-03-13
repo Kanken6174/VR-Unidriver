@@ -12,6 +12,19 @@
           "bin/placeholder/Business.dll": {}
         }
       },
+      "EcriturefichierDataContract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Business": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EcriturefichierDataContract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EcriturefichierDataContract.dll": {}
+        }
+      },
       "Stub/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -33,6 +46,11 @@
       "path": "../Business/Business.csproj",
       "msbuildProject": "../Business/Business.csproj"
     },
+    "EcriturefichierDataContract/1.0.0": {
+      "type": "project",
+      "path": "../EcriturefichierDataContract/EcriturefichierDataContract.csproj",
+      "msbuildProject": "../EcriturefichierDataContract/EcriturefichierDataContract.csproj"
+    },
     "Stub/1.0.0": {
       "type": "project",
       "path": "../Stub/Stub.csproj",
@@ -42,6 +60,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Business >= 1.0.0",
+      "EcriturefichierDataContract >= 1.0.0",
       "Stub >= 1.0.0"
     ]
   },
@@ -79,6 +98,9 @@
           "projectReferences": {
             "C:\\Users\\erwan\\Desktop\\IUT\\domocap\\source\\CCT\\CCT_CodeBehind\\Business\\Business.csproj": {
               "projectPath": "C:\\Users\\erwan\\Desktop\\IUT\\domocap\\source\\CCT\\CCT_CodeBehind\\Business\\Business.csproj"
+            },
+            "C:\\Users\\erwan\\Desktop\\IUT\\domocap\\source\\CCT\\CCT_CodeBehind\\EcriturefichierDataContract\\EcriturefichierDataContract.csproj": {
+              "projectPath": "C:\\Users\\erwan\\Desktop\\IUT\\domocap\\source\\CCT\\CCT_CodeBehind\\EcriturefichierDataContract\\EcriturefichierDataContract.csproj"
             },
             "C:\\Users\\erwan\\Desktop\\IUT\\domocap\\source\\CCT\\CCT_CodeBehind\\Stub\\Stub.csproj": {
               "projectPath": "C:\\Users\\erwan\\Desktop\\IUT\\domocap\\source\\CCT\\CCT_CodeBehind\\Stub\\Stub.csproj"

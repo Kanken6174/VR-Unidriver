@@ -4,17 +4,25 @@ using System.Text;
 
 namespace Business
 {
+    [Serializable()]
     public class Component : ComponentDataTemplate
     {
 
-        public Component(string inputPath, int inputType,  char flag) 
+        public DriverDataTemplate Driver { get; set; }
+
+        public Component(DriverDataTemplate driver,string inputPath, int inputType,  string flag) 
             : base(inputPath, inputType, flag)
         {
+            Driver = driver;
         }
 
         public override string ToString()
         {
-            return $"{InputPath} {InputType} {Flag}";
+            return $"={InputPath}\n" +
+                $":{InputType}\n" +
+                $"~{Flag}";
         }
+
+        
     }
 }
