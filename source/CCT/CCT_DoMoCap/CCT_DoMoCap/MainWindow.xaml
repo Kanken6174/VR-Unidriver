@@ -20,21 +20,18 @@
         <Border BorderThickness ="2" BorderBrush="Black" >
             <Grid >
                 <TextBlock Margin="15,0,0,0" Text="Your Devices" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Center" FontSize="14"  FontWeight="Bold" TextDecorations="Underline" />
-                <Button Margin="0,5,15,5" Content="Add Device" Width="auto"  FontSize="12" HorizontalAlignment="Right" Click="OpenDeviceAddingWindow" />
+                <Button Margin="0,5,15,5" Content="Add Device" Width="auto" MaxHeight="40"  FontSize="12" HorizontalAlignment="Right" Click="OpenDeviceAddingWindow" />
             </Grid>
         </Border>
 
         <Border Grid.Column="1" BorderThickness ="2" BorderBrush="Black" >
             <Grid >
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="7*"/>
-                    <ColumnDefinition Width="3*"/>
-                </Grid.ColumnDefinitions>
-                
+
+
                 <TextBlock  Text="Device's Name" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold" Margin="15,0,0,0" Name="DeviceName" />
-                <Button Grid.Column="1" Content="Edit Name" HorizontalAlignment="Left" Margin="15,5,0,5" Click="ChangeDeviceName" />
-                <Button Grid.Column="1" Content="Delete" HorizontalAlignment="Right" Margin="0,5,15,5"/>
+                <Button  Content="Edit Name" HorizontalAlignment="Right" Margin="0,5,75,5" Click="ChangeDeviceName" MaxHeight="40" MaxWidth="80" />
+                <Button  Content="Delete" HorizontalAlignment="Right" Margin="0,5,15,5" MaxHeight="40" MaxWidth="80" />
             </Grid>
         </Border>
 
@@ -63,9 +60,9 @@
 
                 <ScrollViewer>
                     <StackPanel Orientation="Vertical">
-                        <local:DeviceInfoUC Margin="10"/>
-                        <local:QuaternionComponentUC  Margin="10" Height="auto" />
-                        <local:ModelViewerUC Margin="10"/>
+                        <local:DeviceInfoUC Margin="10" MaxHeight="40"  />
+                        <local:QuaternionComponentUC  Margin="10" MaxHeight="40" />
+                        <local:ModelViewerUC Margin="10" MaxHeight="40" />
 
                     </StackPanel>
                 </ScrollViewer>
@@ -74,7 +71,7 @@
             </Grid>
         </Border>
 
-        
-        
+
+
     </Grid>
 </Window>

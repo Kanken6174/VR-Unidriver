@@ -22,7 +22,7 @@
 
 
             <TextBlock Text="Baudrate :" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,15,0" />
-            <TextBox Grid.Column="1" VerticalAlignment="Center" FontSize="16"  Margin="15" />
+            <TextBox Grid.Column="1" VerticalAlignment="Center" FontSize="16"   />
         </Grid>
 
         <Grid Grid.Column="1">
@@ -34,7 +34,7 @@
 
 
             <TextBlock Text="COM socket :" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,15,0" />
-            <TextBox Grid.Column="1" VerticalAlignment="Center" FontSize="16" Margin="15" />
+            <TextBox Grid.Column="1" VerticalAlignment="Center" FontSize="16" />
         </Grid>
 
     </Grid>
