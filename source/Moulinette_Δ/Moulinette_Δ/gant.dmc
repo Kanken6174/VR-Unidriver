@@ -1,6 +1,6 @@
 #on donne le nom du driver, cela en créé un nouveau à chaque $
 $ApexGlove_Right
-&COM8
+&COM6
 !115200
 #on donne le modèle 3d à utiliser pour le driver
 >oculus_cv1_controller_right

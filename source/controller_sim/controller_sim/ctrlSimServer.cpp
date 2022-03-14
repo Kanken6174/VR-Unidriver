@@ -81,6 +81,8 @@ int Controller_simDriverServer::doThreadedWork()
 {
 	DriverLog("Workthread running");
 	DriverLog("Calling feed with %d drivers", this->Drivers->size());
+	bool ran = false;
+	int z = 0;
 	//clock_t t;
 	while (shouldWorkThreadRun()) {
 		//t = clock();
@@ -88,6 +90,14 @@ int Controller_simDriverServer::doThreadedWork()
 		//t = clock() - t;
 		//DriverLog("full cycle time : % d ms", t);
 		//Sleep(5);
+		if (z > 3000) {
+				utilities::logAllDevices();
+				ran = true;
+				z = 0;
+		}
+		else {
+			z++;
+		}
 	}
 	DriverLog("Workthread stopped");
 	return 0;

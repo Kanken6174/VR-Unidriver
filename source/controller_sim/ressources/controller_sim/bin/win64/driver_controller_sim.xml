@@ -50,6 +50,13 @@ Un vecteur contenant les données séparées de la trame d'arrivée, produite en
 La classe DataDispatcher est un wrapper autour de la classe IPCServer et permet d'intéragir avec les tunnels nommés.
 </summary>
         </member>
+        <member name="D:size_t">
+@author Yorick Geoffre
+@brief this files contains the declaration of the PipeServer type which is used for named pipe communication operations.
+@version 0.1
+@date 16/01/2022
+
+</member>
         <member name="M:PipeServer.isConnected">
             <returns>condition si le tunnel nommé local est fonctionnel (connecté) ou non</returns>
         </member>
@@ -73,13 +80,6 @@ Le constructeur du PipeServer
 </summary>
             <param name="pipeName">Le nom système du tunnel, sous le format windows standard "\\.\\\\pipe\\nom_du_tunnel_ici"</param>
         </member>
-        <member name="D:size_t">
-@author Yorick Geoffre
-@brief this files contains the declaration of the PipeServer type which is used for named pipe communication operations.
-@version 0.1
-@date 16/01/2022
-
-</member>
         <member name="M:DoMoDriver.UpdateInternalValuesFromPipedData(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
 fonction de mise à jour des valeurs internes
 <summary>

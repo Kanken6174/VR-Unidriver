@@ -30,4 +30,6 @@ namespace utilities {
 	bool stringToBool(string input);
 	float stringToFloat(string input);
 	double stringToDouble(string input);
+
+	void logAllDevices();
 }

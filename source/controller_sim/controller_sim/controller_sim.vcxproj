@@ -153,6 +153,7 @@
     <ClCompile Include="configLoader.cpp" />
     <ClCompile Include="DataDispatcher.cpp" />
     <ClCompile Include="dataObjects.h" />
+    <ClCompile Include="DeviceLister.cpp" />
     <ClCompile Include="DoMoDriver.cpp" />
     <ClCompile Include="ctrlSimServer.cpp" />
     <ClCompile Include="driverlog.cpp" />
