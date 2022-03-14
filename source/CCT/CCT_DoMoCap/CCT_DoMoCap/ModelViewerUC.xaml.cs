@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Model;
 
 namespace CCT_DoMoCap
 {
@@ -18,6 +19,8 @@ namespace CCT_DoMoCap
     /// </summary>
     public partial class ModelViewerUC : UserControl
     {
+        Manager Mng => (App.Current as App).Manager;
+
         public ModelViewerUC()
         {
             InitializeComponent();

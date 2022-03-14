@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Model;
 
 namespace CCT_DoMoCap
 {
@@ -21,6 +22,7 @@ namespace CCT_DoMoCap
     /// </summary>
     public partial class MainWindow : Window
     {
+        Manager Mng => (App.Current as App).Manager;
         public MainWindow()
         {
             InitializeComponent();

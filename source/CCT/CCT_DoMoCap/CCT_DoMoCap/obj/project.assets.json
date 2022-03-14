@@ -2,6 +2,16 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
       "RessourcesLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -15,6 +25,11 @@
     }
   },
   "libraries": {
+    "Model/1.0.0": {
+      "type": "project",
+      "path": "../Model/Model.csproj",
+      "msbuildProject": "../Model/Model.csproj"
+    },
     "RessourcesLibrary/1.0.0": {
       "type": "project",
       "path": "../RessourcesLibrary/RessourcesLibrary.csproj",
@@ -23,6 +38,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Model >= 1.0.0",
       "RessourcesLibrary >= 1.0.0"
     ]
   },
@@ -53,6 +69,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\jorda\\Documents\\DOMOCAP\\domocap\\source\\CCT\\CCT_DoMoCap\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\jorda\\Documents\\DOMOCAP\\domocap\\source\\CCT\\CCT_DoMoCap\\Model\\Model.csproj"
+            },
             "C:\\Users\\jorda\\Documents\\DOMOCAP\\domocap\\source\\CCT\\CCT_DoMoCap\\RessourcesLibrary\\RessourcesLibrary.csproj": {
               "projectPath": "C:\\Users\\jorda\\Documents\\DOMOCAP\\domocap\\source\\CCT\\CCT_DoMoCap\\RessourcesLibrary\\RessourcesLibrary.csproj"
             }
@@ -86,7 +105,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.211\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

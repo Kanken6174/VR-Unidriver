@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Model;
 
 namespace CCT_DoMoCap
 {
@@ -18,9 +19,13 @@ namespace CCT_DoMoCap
     /// </summary>
     public partial class DeviceListUC : UserControl
     {
+        Manager Mng => (App.Current as App).Manager;
         public DeviceListUC()
         {
             InitializeComponent();
+            DataContext = Mng; /// ItemsSource="{Binding Dmc}" dans le xaml
+            Mng.chargeDonnees();
+            lBox.Items.Add("Device 1");
         }
     }
 }
