@@ -20,7 +20,7 @@ vector<string> VRComponent::getFlag() {
 	return VRComponent::flag;
 }
 
-void VRComponent::receiveData(string data)
+void VRComponent::receiveData(const string& data)
 {
 	this->receiveData(data);
 }

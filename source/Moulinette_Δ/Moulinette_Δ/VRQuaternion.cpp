@@ -38,7 +38,7 @@ string VRQuaternion::to_string()
     return toReturn;
 }
 
-void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont. delay doit être **au début** du string
+void VRQuaternion::receiveData(const string& data) // TODO: modifier la trame en amont. delay doit être **au début** du string
 {
     vector<string> splitData = vector<string>();
     vector<double> numbers = vector<double>();
@@ -52,7 +52,7 @@ void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont.
             return;
         }
         numbers.push_back(number);
-    }
+    }   
 
     if (numbers.size() == 10) {
         time_t delay = numbers[0] * 1000;
@@ -61,11 +61,12 @@ void VRQuaternion::receiveData(string data) // TODO: modifier la trame en amont.
         madgwickRotations::Vector gyroscopeData = Vector(numbers[4], numbers[5], numbers[6]);
         madgwickRotations::Vector magnetometerData = Vector(numbers[7], numbers[8], numbers[9]);
 
+        this->setValue(delay, accelerometerData, magnetometerData, gyroscopeData);
         
     }
     else if (numbers.size() == 5) {
        Quaternion val = Quaternion(numbers[1], numbers[2], numbers[3], numbers[4]);
-       value = val;
+       this->value = val;
     }
     
 }

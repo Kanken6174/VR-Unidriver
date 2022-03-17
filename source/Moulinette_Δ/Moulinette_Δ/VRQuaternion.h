@@ -21,5 +21,5 @@ public:
 
 	string to_string() ;
 	
-	void receiveData(string data) ;
+	void receiveData(const string& data) ;
 };

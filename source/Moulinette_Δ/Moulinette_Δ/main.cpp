@@ -20,14 +20,14 @@ void addComponent(ifstream &fichier, VRDevice* device) {
         {
             if (getline(fichier, ligne))
             {
-                VRAnalog* component = new VRAnalog();
+                unique_ptr<VRAnalog> component = make_unique<VRAnalog>();
                 ligne = ligne.erase(0, 1);
 
                 if (ligne[0] != '\0')
                 {
                     vector<string> flag_char = {ligne};
                     component->setFlag(flag_char);
-                    device->addComponents(component);
+                    device->addComponents(move(component));
                 }
                 else {
                     cout << "PAS DE FLAG" << endl;
@@ -40,13 +40,13 @@ void addComponent(ifstream &fichier, VRDevice* device) {
         {
             if (getline(fichier, ligne))
             {
-                VRRelative* component = new VRRelative();
+                unique_ptr<VRRelative> component = make_unique<VRRelative>();
                 ligne = ligne.erase(0, 1);
                 if (ligne[0] != '\0')
                 {
                     vector<string> flag_char = { ligne };
                     component->setFlag(flag_char);
-                    device->addComponents(component);
+                    device->addComponents(move(component));
                 }
                 else {
                     cout << "PAS DE FLAG" << endl;
@@ -59,13 +59,13 @@ void addComponent(ifstream &fichier, VRDevice* device) {
         {
             if (getline(fichier, ligne))
             {
-                VRBoolean* component = new VRBoolean();
+                unique_ptr<VRBoolean> component = make_unique<VRBoolean>();
                 ligne = ligne.erase(0, 1);
                 if (ligne[0] != '\0')
                 {
                     vector<string> flag_char = { ligne };
                     component->setFlag(flag_char);
-                    device->addComponents(component);
+                    device->addComponents(move(component));
                 }
                 else {
                     cout << "PAS DE FLAG" << endl;
@@ -87,11 +87,11 @@ void addComponent(ifstream &fichier, VRDevice* device) {
         {
             if (getline(fichier, ligne))
             {
-                VRQuaternion* component = new VRQuaternion();
+                unique_ptr<VRQuaternion> component = make_unique<VRQuaternion>();
                 ligne = ligne.erase(0, 1);
                 vector<string> tmp = split(ligne, '|');
                 component->setFlag(tmp);                                          //le flag d'un quaternion est de la forme A|B|C|D|E|F|G|H|I (9 tags car 3x3 [gyro[xyz], acc[xyz], mag[xyz]])
-                device->addComponents(component);
+                device->addComponents(move(component));
             }
         }
         break;
@@ -194,13 +194,14 @@ int main(int argc, char* argv[]) {
     /*
     *   Demarrage Threads
     */
+
     vector<thread> readerThreads;
     for (VRDevice* reader : toto)
     {
         readerThreads.push_back(thread([=, &ref = running_]() {
             while (running_) {
                 reader->updateValues();
-                //cout << reader->to_string() << endl;
+                cout << reader->to_string() << endl;
             }
         }));
     }

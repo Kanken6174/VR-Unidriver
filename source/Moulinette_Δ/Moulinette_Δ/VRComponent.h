@@ -17,7 +17,7 @@ public:
 	virtual vector<string> getFlag();
 
 	//Envoie des données au composant
-	virtual void receiveData(string data);
+	virtual void receiveData(const string& data);
 
 	//retourne le string de la positon du composant
 	virtual string to_string();

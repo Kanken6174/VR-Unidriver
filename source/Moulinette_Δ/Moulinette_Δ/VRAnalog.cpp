@@ -44,7 +44,7 @@ void VRAnalog::setMax(double value)
 	this->maxValue = value;
 }
 
-void VRAnalog::receiveData(string data)
+void VRAnalog::receiveData(const string& data)
 {
 	try {
 		if (data != "") {

@@ -50,7 +50,7 @@ void VRRelative::setMax(double value)
 	this->maxValue = value;
 }
 
-void VRRelative::receiveData(string data)
+void VRRelative::receiveData(const string& data)
 {
 	try {
 		if (data != "") {
@@ -65,5 +65,5 @@ void VRRelative::receiveData(string data)
 
 string VRRelative::to_string()
 {
-	return std::to_string(VRRelative::value);
+	return std::to_string(this->value);
 }

@@ -11,20 +11,20 @@ using namespace serialport;
 class VRDevice {
 private:
     SerialPort* serialPort;
-    vector<VRComponent*> components;
-    VRQuaternion* internalRotation;
+    vector<unique_ptr<VRComponent>> components;
+    unique_ptr<VRQuaternion> internalRotation;
     float lastLatency;
     string nom;
     unsigned compteur = 0;
 
 public:
     VRDevice();
-    VRDevice(string nom, vector<VRComponent*> components, SerialPort* serialPort);
+    VRDevice(string nom, vector<unique_ptr<VRComponent>> components, SerialPort* serialPort);
     virtual string getName();
     virtual void setName(string name);
     virtual void setSerialport(SerialPort* serial);
-    virtual void addComponents(VRComponent* components);
+    virtual void addComponents(unique_ptr<VRComponent> components);
     virtual void updateValues();
     string requestTram();
-    virtual string to_string();//TODO code pour Preparer la trame pour le Driver
+    virtual string to_string();
 };

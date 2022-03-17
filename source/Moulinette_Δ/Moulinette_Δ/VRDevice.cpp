@@ -1,8 +1,8 @@
 #include "VRDevice.h"
 
-VRDevice::VRDevice(string nom, vector<VRComponent*> components, SerialPort* serialPort) {
+VRDevice::VRDevice(string nom, vector<unique_ptr<VRComponent>> components, SerialPort* serialPort) {
 	this->serialPort = serialPort;
-	this->components = components;
+	this->components = move(components);
 	this->nom = nom;
 }
 
@@ -23,7 +23,7 @@ void VRDevice::updateValues()
 		string quaternion = std::to_string(this->lastLatency) + "|";
 		int i_quaternion = 0;
 
-		for (VRComponent* component : this->components) {
+		for (unique_ptr<VRComponent>& component : this->components) {
 			vector<string> tmp = component->getFlag();
 
 			for (string elem : tmp) {
@@ -100,7 +100,7 @@ string VRDevice::to_string()
 
 	//toReturn += std::to_string(this->lastLatency)+"|"+this->internalRotation->to_string();	//trame initiale (sans les composants)
 
-	for (VRComponent* component : this->components) {	//ajout des composants
+	for (unique_ptr<VRComponent>& component : this->components) {	//ajout des composants
 		
 		if (component->gettype() == -1) {
 			toReturn += std::to_string(this->lastLatency) + "|" + component->to_string();	//trame initiale (sans les composants)
@@ -108,7 +108,7 @@ string VRDevice::to_string()
 		}
 	}
 
-	for (VRComponent* component : this->components) {	//ajout des composants
+	for (unique_ptr<VRComponent>& component : this->components) {	//ajout des composants
 		if (component->gettype() != -1)
 			toReturn += "|" + component->to_string();
 	}
@@ -130,7 +130,7 @@ void VRDevice::setSerialport(SerialPort* serial)
 	this->serialPort = serial;
 }
 
-void VRDevice::addComponents(VRComponent* component)
+void VRDevice::addComponents(unique_ptr<VRComponent> component)
 {
-	this->components.push_back(component);
+	this->components.push_back(move(component));
 }

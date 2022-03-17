@@ -16,7 +16,7 @@ VRBoolean::VRBoolean()
 	this->settype(0);
 }
 
-void VRBoolean::receiveData(string data)
+void VRBoolean::receiveData(const string& data)
 {
 	try {
 		if(data != "")
