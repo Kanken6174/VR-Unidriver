@@ -1,6 +1,5 @@
 #include "utilities.h"
 #include "driverlog.h"
-
 namespace utilities {
 	void logAllDevices() {
 		TrackedDevicePose_t devicesPosesArray[vr::k_unMaxTrackedDeviceCount];
@@ -15,5 +14,18 @@ namespace utilities {
 		}
 		DriverLog("Done looking for devices");
 		
+	}
+
+	TrackedDevicePose_t getPoseFromID(TrackedDeviceIndex_t id) {
+		TrackedDevicePose_t devicesPosesArray[vr::k_unMaxTrackedDeviceCount];
+		VRServerDriverHost()->GetRawTrackedDevicePoses(0, devicesPosesArray, vr::k_unMaxTrackedDeviceCount);
+		for (vr::TrackedDeviceIndex_t i = 0; i < vr::k_unMaxTrackedDeviceCount; i++)
+			if (devicesPosesArray[i].bPoseIsValid && i == id)
+				return devicesPosesArray[i];
+
+		TrackedDevicePose_t errorPose = TrackedDevicePose_t();
+		errorPose.bPoseIsValid = false;
+		return errorPose;
+
 	}
 }

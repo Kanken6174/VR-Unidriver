@@ -16,3 +16,9 @@
 ///<param name="roll">Le roulis en degrés</param>
 ///<returns>HmdQuaternion_t un quaternion SteamVR</returns>
 vr::HmdQuaternion_t ToQuaternion(double yaw, double pitch, double roll);
+
+vr::HmdVector3_t GetPositionMatrixFromRotationPositionMatrix(const vr::HmdMatrix34_t& inputMatrix);
+
+vr::HmdMatrix33_t getRotationMatrixFromRotationPositionMatrix(const vr::HmdMatrix34_t& inputMatrix);
+
+vr::HmdQuaternion_t GetQuaternionFromMatrix(const vr::HmdMatrix33_t& inputMatrix);

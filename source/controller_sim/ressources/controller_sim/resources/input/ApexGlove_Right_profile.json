@@ -1,7 +1,7 @@
 {
     "jsonid": "input_profile",
     "legacy_binding": "{controller_sim}/input/legacy_binding_mycontroller.json",
-    "controller_type": "mess",
+    "controller_type": "ApexGlove_Right",
     "input_bindingui_mode": "controller_handed",
     "input_bindingui_left": {
         "transform": "scale(1,-1)",
@@ -14,24 +14,28 @@
         "/input/a": {
             "binding_image_point": [80, 60],
             "type": "button",
+            "click" : true,
             "order": 1
         },
 
         "/input/b": {
             "binding_image_point": [80, 50],
             "type": "button",
+            "click" : true,
             "order": 2
         },
 
         "/input/system": {
             "binding_image_point": [80, 60],
             "type": "button",
+            "click" : true,
             "order": 3
         },
 
         "/input/x": {
             "binding_image_point": [80, 60],
             "type": "button",
+            "click" : true,
             "order": 4
         },
 
@@ -44,19 +48,29 @@
             "order": 2
         },
 
-        "/input/finger/index": {
+        "/input/index": {
             "type": "trigger",
             "binding_image_point": [56, 86]
         },
-        "/input/finger/middle": {
+        "/input/middle": {
             "type": "trigger",
             "binding_image_point": [56, 86]
         },
-        "/input/finger/ring": {
+        "/input/ring": {
             "type": "trigger",
             "binding_image_point": [56, 86]
         },
-        "/input/finger/pinky": {
+        "/input/pinky": {
+            "type": "trigger",
+            "binding_image_point": [56, 86]
+        },
+        
+        "/input/thumbX": {
+            "type": "trigger",
+            "binding_image_point": [56, 86]
+        },
+        
+        "/input/thumbY": {
             "type": "trigger",
             "binding_image_point": [56, 86]
         }

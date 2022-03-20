@@ -15,10 +15,10 @@ namespace utilities {
 	/// permet de séparer un string selon un délilimteur précisé
 	/// </summary>
 	/// <param name="input"> le string à séparer</param>
-	/// <param name="splitter"> le caractère de séparation</param>
+	/// <param name="splitter"> le caractère de séparation (optionnel à '|')</param>
 	/// <param name="remove"> (optionnel à false), si on enlève le caractère de séparation ou pas</param>
 	/// <returns>un vecteur contenant les différentes parties du string d'origine</returns>
-	vector<string> split(string input, char splitter, bool remove = false);
+	vector<string> split(string input, char splitter = '|', bool remove = true);
 	/// <summary>
 	/// Va prendre le premier string d'un vecteur de string, le retirer de ce vecteur, et le retourner
 	/// </summary>
@@ -31,5 +31,9 @@ namespace utilities {
 	float stringToFloat(string input);
 	double stringToDouble(string input);
 
+	vector<double> delimitedStringToDoubles(string input, char delimiter = '|');
+	vector<float> delimitedStringToFloats(string input, char delimiter = '|');
+
 	void logAllDevices();
+	TrackedDevicePose_t getPoseFromID(TrackedDeviceIndex_t id);
 }

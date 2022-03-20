@@ -9,15 +9,43 @@ DriverPose_t DoMoDriver::GetPoseProvided() {
 	pose.result = TrackingResult_Running_OK;
 	pose.deviceIsConnected = true;
 
-	pose.qWorldFromDriverRotation = ToQuaternion(0, 0, 0);
-	pose.qDriverFromHeadRotation = ToQuaternion(0, 0, 0);
-	pose.vecDriverFromHeadTranslation[2] = 0;	//on met la manette juste devant la caméra par défaut (la caméra est en -1, car l'axe X est inversé)
-	pose.vecDriverFromHeadTranslation[1] = 0;
-	pose.vecDriverFromHeadTranslation[0] = 0;
+	pose.vecPosition[2] = localData.positionsOffsets[2];
+	pose.vecPosition[1] = localData.positionsOffsets[1];
+	pose.vecPosition[0] = -localData.positionsOffsets[0];
+
+	pose.qWorldFromDriverRotation = ToQuaternion(localData.qWorldFromDriverRotation[0], localData.qWorldFromDriverRotation[1], localData.qWorldFromDriverRotation[2]);
+	pose.qDriverFromHeadRotation = ToQuaternion(localData.qDriverFromHeadRotation[0], localData.qDriverFromHeadRotation[1], localData.qDriverFromHeadRotation[2]);
+
 	pose.qRotation = *DeviceRotation;
-	pose.vecPosition[2] = 0;
-	pose.vecPosition[1] = 0;
-	pose.vecPosition[0] = 0;
+
+	pose.vecDriverFromHeadTranslation[2] = localData.vecDriverFromHeadTranslation[2];
+	pose.vecDriverFromHeadTranslation[1] = localData.vecDriverFromHeadTranslation[1];
+	pose.vecDriverFromHeadTranslation[0] = localData.vecDriverFromHeadTranslation[0];
+
+	pose.vecWorldFromDriverTranslation[0] = localData.vecWorldFromDriverTranslation[0];
+	pose.vecWorldFromDriverTranslation[1] = localData.vecWorldFromDriverTranslation[1];
+	pose.vecWorldFromDriverTranslation[2] = localData.vecWorldFromDriverTranslation[2];
+
+	//shadowing de position et de rotation (vont réécrire les valeurs)
+	if (localData.handleToShadow >= 0) {
+		vr::TrackedDevicePose_t dt = utilities::getPoseFromID(localData.handleToShadow);
+		if (!dt.bPoseIsValid) {
+			pose.poseIsValid = false;
+			return pose;
+		}
+		HmdMatrix34_t tp = dt.mDeviceToAbsoluteTracking;
+
+		if (localData.shadowPosition) {
+			HmdVector3_t posVect = GetPositionMatrixFromRotationPositionMatrix(tp);
+			pose.vecPosition[0] = posVect.v[0] + localData.positionsOffsets[0];
+			pose.vecPosition[1] = posVect.v[1] + localData.positionsOffsets[1];
+			pose.vecPosition[2] = -(posVect.v[2] + localData.positionsOffsets[2]);
+		}
+
+		if (localData.shadowRotation) {
+			pose.qRotation = GetQuaternionFromMatrix(getRotationMatrixFromRotationPositionMatrix(tp));
+		}
+	}
 
 	return pose;
 }

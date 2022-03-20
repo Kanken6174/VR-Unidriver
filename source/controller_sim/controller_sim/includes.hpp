@@ -6,7 +6,6 @@
 */
 
 #pragma once
-
 #include <openvr_driver.h>
 #include <fstream>
 #include <iostream>

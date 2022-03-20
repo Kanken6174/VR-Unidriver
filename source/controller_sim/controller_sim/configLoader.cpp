@@ -14,9 +14,6 @@ namespace utilities {
 
 	vector<DriverDataTemplate*>* ReadConfigAndBuildDrivers() {
 		ifstream driverCfgFile;	//create readonly stream
-		//wstring path;
-		//PWSTR* pathptr = new PWSTR();
-		//SHGetKnownFolderPath(FOLDERID_AppDataProgramData, 0, NULL, pathptr);
 		char* usrname = nullptr;
 		size_t sz = 0;
 		_dupenv_s(&usrname, &sz, "username");
@@ -41,14 +38,17 @@ namespace utilities {
 		int intBuf = 99;
 		std::string buf = "";
 
+		vector<double> doubleVector = vector<double>();
+
 		bool toignore = false;
 
 		while (std::getline(driverCfgFile, buf)) {
 			char id = buf[0];
 			buf = buf.erase(0, 1);
 			buf.erase(std::remove(buf.begin(), buf.end(), '\n'), buf.end()); //on enlève les \n parasites
-			switch (id) {
-			case '$':	//nouveau driver
+			try {
+				switch (id) {
+				case '$':	//nouveau driver
 					toignore = false;
 					activeDriverVector++;
 					activeCompomentVector = -1;
@@ -59,7 +59,7 @@ namespace utilities {
 
 					DriverLog(("Discovered driver named : " + buf).c_str());
 					break;
-			case '>':	//modèle 3d du driver
+				case '>':	//modèle 3d du driver
 					if (DriverTemplates->at(activeDriverVector)->role == 2) {
 						DriverLog("Switched to hardcoded render path");
 						DriverTemplates->at(activeDriverVector)->renderModel = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SteamVR\\resources\\rendermodels\\vr_glove\\vr_glove_left_model.glb";
@@ -67,38 +67,96 @@ namespace utilities {
 					else {
 						DriverTemplates->at(activeDriverVector)->renderModel = buf;
 					}
-				break;
-			case '<':	//nature du driver (quelle main entre autres)
+					break;
+				case '<':	//nature du driver (quelle main entre autres)
 					intBuf = stoi(buf);
 					DriverTemplates->at(activeDriverVector)->role = intBuf;
-				break;
-			case '=':	//nouveau composant pour le driver, la ligne commençant par = contient le chemin d'input du driver, ex: /input/a/click
-				if (buf[1] == 'p') {	// /pose/... ignoré, on vérifie le p car ce sera différent de /input/ et /ouput/
-					toignore = true;
-					DriverLog("an incorrectly pathed component was ignored (path = %s)", buf);
+					break;
+				case '%':	//handle de l'appareil à shadow
+					DriverTemplates->at(activeDriverVector)->handleToShadow = stoi(buf);
+					break;
+				case '|':	//si on doit shadow la rotation
+					DriverTemplates->at(activeDriverVector)->shadowRotation = (buf.find("true") != std::string::npos);
+					break;
+				case '_':	//si on doit shadow la position
+					DriverTemplates->at(activeDriverVector)->shadowRotation = (buf.find("true") != std::string::npos);
+					break;
+				case '{':	//translation depuis la tête
+					doubleVector = delimitedStringToDoubles(buf);
+					DriverTemp = DriverTemplates->at(activeDriverVector);
+					DriverTemp->vecDriverFromHeadTranslation[0] = doubleVector[0];
+					DriverTemp->vecDriverFromHeadTranslation[1] = doubleVector[1];
+					DriverTemp->vecDriverFromHeadTranslation[2] = doubleVector[2];
+					DriverTemplates->at(activeDriverVector) = DriverTemp;
+					DriverLog("Current device has vecDriverFromHeadTranslation = {%f,%f,%f}", doubleVector[0], doubleVector[1], doubleVector[2]);
+					break;
+				case '}':	//translation depuis le monde
+					doubleVector = delimitedStringToDoubles(buf);
+					DriverTemp = DriverTemplates->at(activeDriverVector);
+					DriverTemp->vecWorldFromDriverTranslation[0] = doubleVector[0];
+					DriverTemp->vecWorldFromDriverTranslation[1] = doubleVector[1];
+					DriverTemp->vecDriverFromHeadTranslation[2] = doubleVector[2];
+					DriverTemplates->at(activeDriverVector) = DriverTemp;
+					DriverLog("Current device has vecWorldFromDriverTranslation = {%f,%f,%f}", doubleVector[0], doubleVector[1], doubleVector[2]);
+					break;
+				case '[':	//rotation depuis la tête
+					doubleVector = delimitedStringToDoubles(buf);
+					DriverTemp = DriverTemplates->at(activeDriverVector);
+					DriverTemp->qDriverFromHeadRotation[0] = doubleVector[0];
+					DriverTemp->qDriverFromHeadRotation[1] = doubleVector[1];
+					DriverTemp->qDriverFromHeadRotation[2] = doubleVector[2];
+					DriverTemplates->at(activeDriverVector) = DriverTemp;
+					DriverLog("Current device has qDriverFromHeadRotation = {%f,%f,%f}", doubleVector[0], doubleVector[1], doubleVector[2]);
+					break;
+				case ']':	//translation depuis la tête
+					doubleVector = delimitedStringToDoubles(buf);
+					DriverTemp = DriverTemplates->at(activeDriverVector);
+					DriverTemp->qWorldFromDriverRotation[0] = doubleVector[0];
+					DriverTemp->qWorldFromDriverRotation[1] = doubleVector[1];
+					DriverTemp->qWorldFromDriverRotation[2] = doubleVector[2];
+					DriverTemplates->at(activeDriverVector) = DriverTemp;
+					DriverLog("Current device has qWorldFromDriverRotation = {%f,%f,%f}", doubleVector[0], doubleVector[1], doubleVector[2]);
+					break;
+				case '/':	//offset de position
+					doubleVector = delimitedStringToDoubles(buf);
+					DriverTemp = DriverTemplates->at(activeDriverVector);
+					DriverTemp->positionsOffsets[0] = doubleVector[0];
+					DriverTemp->positionsOffsets[1] = doubleVector[1];
+					DriverTemp->positionsOffsets[2] = doubleVector[2];
+					DriverTemplates->at(activeDriverVector) = DriverTemp;
+					DriverLog("Current device has positionsOffsets = {%f,%f,%f}", doubleVector[0], doubleVector[1], doubleVector[2]);
+					break;
+				case '=':	//nouveau composant pour le driver, la ligne commençant par = contient le chemin d'input du driver, ex: /input/a/click
+					if (buf[1] == 'p') {	// /pose/... ignoré, on vérifie le p car ce sera différent de /input/ et /ouput/
+						toignore = true;
+						DriverLog("an incorrectly pathed component was ignored (path = %s)", buf);
+					}
+					else {
+						toignore = false;
+						activeCompomentVector++;
+						CompoTemp = new ComponentDataTemplate;
+						DriverTemplates->at(activeDriverVector)->components.push_back(CompoTemp);
+						DriverTemplates->at(activeDriverVector)->components[activeCompomentVector]->inputPath = buf;
+					}
+					break;
+				case ':':	//le type d'input du driver (0-5 pour digital, analog, ect...; 5+ pour bool stub mode)
+					if (!toignore) {
+						intBuf = stoi(buf);
+						DriverTemplates->at(activeDriverVector)->components[activeCompomentVector]->inputType = intBuf;
+					}
+					break;
+				case '#':
+					//this is a .dmc comment line, it will be ignored, any unrecognized symbol will also be ignored
+					break;
+				case '@':	// this is a "noisy" comment, it will be displayed in the driver log, useful for debugging
+					DriverLog(buf.c_str());
+					break;
+				default:
+					break;
 				}
-				else {
-					toignore = false;
-					activeCompomentVector++;
-					CompoTemp = new ComponentDataTemplate;
-					DriverTemplates->at(activeDriverVector)->components.push_back(CompoTemp);
-					DriverTemplates->at(activeDriverVector)->components[activeCompomentVector]->inputPath = buf;
-				}
-				break;
-			case ':':	//le type d'input du driver (0-5 pour digital, analog, ect...; 5+ pour bool stub mode)
-				if (!toignore) {
-					intBuf = stoi(buf);
-					DriverTemplates->at(activeDriverVector)->components[activeCompomentVector]->inputType = intBuf;
-				}
-				break;
-			case '#':
-				//this is a .dmc comment line, it will be ignored, any unrecognized symbol will also be ignored
-				break;
-			case '@':	// this is a "noisy" comment, it will be displayed in the driver log, useful for debugging
-				DriverLog(buf.c_str());
-				break;
-			default:
-				break;
+			}
+			catch (out_of_range e) {
+				DriverLog("Caught out of range exception with char %c while loading DMC", id);
 			}
 		}
 		driverCfgFile.close();

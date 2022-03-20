@@ -86,4 +86,13 @@ namespace utilities {
 
 		return toReturn;
 	}
+	
+	vector<double> delimitedStringToDoubles(string input, char delimiter) {
+		vector<double> toReturn = vector<double>();
+		vector<string> temp = split(input, delimiter);
+		for (string str : temp)
+			toReturn.push_back(stringToDouble(str));
+
+		return toReturn;
+	}
 }
