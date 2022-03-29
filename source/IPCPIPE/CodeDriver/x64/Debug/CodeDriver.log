@@ -1,9 +1,0 @@
-﻿  IPCServer.cpp
-Y:\domocap\source\IPCPIPE\CodeDriver\IPCServer.cpp(13,104): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-Y:\domocap\source\IPCPIPE\CodeDriver\IPCServer.cpp(13,104): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-Y:\domocap\source\IPCPIPE\CodeDriver\IPCServer.cpp(13,167): warning C4311: 'cast de type' : troncation de pointeur de 'HANDLE' à 'DWORD'
-Y:\domocap\source\IPCPIPE\CodeDriver\IPCServer.cpp(13,167): warning C4302: 'cast de type' : troncation de 'HANDLE' à 'DWORD'
-Y:\domocap\source\IPCPIPE\CodeDriver\IPCServer.cpp(80,6): warning C4267: 'argument' : conversion de 'size_t' en 'DWORD', perte possible de données
-  driver.cpp
-  Génération de code en cours...
-  CodeDriver.vcxproj -> Y:\domocap\source\IPCPIPE\CodeDriver\x64\Debug\CodeDriver.exe

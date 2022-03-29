@@ -1,9 +1,0 @@
-﻿  MadgwickRotator.cpp
-  Quaternion.cpp
-  Vector.cpp
-  madgwickRotations.cpp
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
-  Génération de code en cours
-  All 0 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Fin de la génération du code
-  Madgwick Rotations.vcxproj -> D:\Documents\repos\domocap\source\Madgwick Rotations\Release\Madgwick Rotations.dll

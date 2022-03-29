@@ -1,4 +1,0 @@
-C:\Users\user\Desktop\Erwan\DoMoCap\domocap\source\CCT\CCT_CodeBehind\Business\obj\Debug\netcoreapp3.1\Business.csproj.AssemblyReference.cache
-C:\Users\user\Desktop\Erwan\DoMoCap\domocap\source\CCT\CCT_CodeBehind\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfoInputs.cache
-C:\Users\user\Desktop\Erwan\DoMoCap\domocap\source\CCT\CCT_CodeBehind\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfo.cs
-C:\Users\user\Desktop\Erwan\DoMoCap\domocap\source\CCT\CCT_CodeBehind\Business\obj\Debug\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
