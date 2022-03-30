@@ -14,28 +14,28 @@
         "/input/a": {
             "binding_image_point": [80, 60],
             "type": "button",
-            "click" : true,
+            "click": true,
             "order": 1
         },
 
         "/input/b": {
             "binding_image_point": [80, 50],
             "type": "button",
-            "click" : true,
+            "click": true,
             "order": 2
         },
 
         "/input/system": {
             "binding_image_point": [80, 60],
             "type": "button",
-            "click" : true,
+            "click": true,
             "order": 3
         },
 
         "/input/x": {
             "binding_image_point": [80, 60],
             "type": "button",
-            "click" : true,
+            "click": true,
             "order": 4
         },
 
@@ -64,12 +64,12 @@
             "type": "trigger",
             "binding_image_point": [56, 86]
         },
-        
+
         "/input/thumbX": {
             "type": "trigger",
             "binding_image_point": [56, 86]
         },
-        
+
         "/input/thumbY": {
             "type": "trigger",
             "binding_image_point": [56, 86]

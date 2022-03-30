@@ -1,11 +1,12 @@
 ﻿Imports Microsoft.VisualBasic
 
-Public MustInherit Class Component
-    Protected Path As String
-    Protected Type As UInteger
-    Protected Flags As List(Of String)
+Public MustInherit Class _Component
+    Public Path As String
+    Public Type As UInteger
+    Public Flags As List(Of String)
 
-    Public Function To_string() As String
+    'To_UDC will convert a UD component to its UDC representation (UniDriver Config file)
+    Public Overridable Function To_UDC() As String
         Dim output As String = ""
         output += ("=" + Path + "\n")
         output += (":" + Type + "\n")
