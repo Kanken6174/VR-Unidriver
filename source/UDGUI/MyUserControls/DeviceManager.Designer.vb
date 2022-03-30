@@ -30,7 +30,7 @@ Partial Class DeviceManager
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.Name = "DeviceManager"
-        Me.Size = New System.Drawing.Size(579, 412)
+        Me.Size = New System.Drawing.Size(600, 400)
         Me.ResumeLayout(False)
 
     End Sub

@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{3898D626-2F49-48DB-9D57-6C6E86A88190}"
 	ProjectSection(SolutionItems) = preProject
 		Class1.vb = Class1.vb
+		Component.vb = Component.vb
 	EndProjectSection
 EndProject
 Global
