@@ -1,3 +1,3 @@
-# DoMoCap
+# VR-Unidriver
 
-Ceci est le dépôt du projet DoMoCap.
+This repository contains the source code of the Unidriver project.
