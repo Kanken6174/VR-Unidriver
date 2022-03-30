@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UDGUI", "UDGUI.vbproj", "{1A8C14F1-7ACB-49CA-BBFF-2A8B7F48975E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{3898D626-2F49-48DB-9D57-6C6E86A88190}"
+	ProjectSection(SolutionItems) = preProject
+		Class1.vb = Class1.vb
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A8C14F1-7ACB-49CA-BBFF-2A8B7F48975E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A8C14F1-7ACB-49CA-BBFF-2A8B7F48975E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A8C14F1-7ACB-49CA-BBFF-2A8B7F48975E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A8C14F1-7ACB-49CA-BBFF-2A8B7F48975E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0FEDC7E-5066-45A9-956C-187F893331CA}
+	EndGlobalSection
+EndGlobal
